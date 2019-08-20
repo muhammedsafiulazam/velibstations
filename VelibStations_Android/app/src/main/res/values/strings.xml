@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Velib Stations</string>
+    <string name="not_available">n/a</string>
+</resources>

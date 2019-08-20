@@ -1,0 +1,111 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.muhammedsafiulazam.githublister"
+        minSdkVersion 26
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Split resources by features.
+    sourceSets {
+        main.res.srcDirs += 'src/main/res/launch'
+    }
+
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.0-beta2'
+
+    // Core library
+    androidTestImplementation 'androidx.test:core:1.0.0'
+
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.0'
+
+    // Assertions
+    androidTestImplementation 'androidx.test.ext:junit:1.0.0'
+    androidTestImplementation 'androidx.test.ext:truth:1.0.0'
+    androidTestImplementation 'com.google.truth:truth:0.42'
+
+    // Espresso dependencies
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-accessibility:3.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-web:3.1.0'
+    androidTestImplementation 'androidx.test.espresso.idling:idling-concurrent:3.1.0'
+
+    // The following Espresso dependency can be either "implementation"
+    // or "androidTestImplementation", depending on whether you want the
+    // dependency to appear on your APK's compile classpath or the test APK
+    // classpath.
+    androidTestImplementation 'androidx.test.espresso:espresso-idling-resource:3.1.0'
+
+
+    // Mockito
+    testImplementation "org.mockito:mockito-core:2.19.0"
+
+    implementation 'com.google.android.material:material:1.1.0-alpha08'
+
+    //Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:1.8.0"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.8.0"
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.6.0'
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
+
+    //OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.0.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.1'
+
+    //Picasso
+    implementation ("com.squareup.picasso:picasso:2.71828"){
+        exclude group: "com.android.support"
+    }
+
+    // Kotlin Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1"
+
+    // EventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta01'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    // Lifecycle
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
+    // Kotlin multiplatform.
+    implementation project(':SharedCode')
+}
+
+androidExtensions {
+    experimental = true
+}
