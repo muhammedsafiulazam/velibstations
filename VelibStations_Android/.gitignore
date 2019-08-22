@@ -48,7 +48,7 @@ captures/
 .idea/libraries
 .idea/caches
 .idea/compiler.xml
-.idea/artifacts/SharedCode_android.xml
+.idea/artifacts/common_android.xml
 
 
 # Keystore files

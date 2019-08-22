@@ -51,7 +51,7 @@ dependencies {
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 
     // Kotlin multiplatform.
-    implementation project(':SharedCode')
+    implementation project(':common')
 }
 
 androidExtensions {

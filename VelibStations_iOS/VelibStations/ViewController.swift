@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import SharedCode
+import common
+
 
 class ViewController: UIViewController {
     
