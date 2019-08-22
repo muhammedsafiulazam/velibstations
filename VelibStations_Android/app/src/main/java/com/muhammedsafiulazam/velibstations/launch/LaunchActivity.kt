@@ -2,7 +2,6 @@ package com.muhammedsafiulazam.velibstations.launch
 
 import android.os.Bundle
 import com.muhammedsafiulazam.mobile.getPlatformName
-import com.muhammedsafiulazam.mobile.model.Person
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.activity.BaseActivity
 import com.muhammedsafiulazam.velibstations.activity.IActivityManager
@@ -19,10 +18,6 @@ class LaunchActivity : BaseActivity() {
 
         // Test expect / actual.
         lunch_txv_message.text = getPlatformName()
-
-        // Test common object.
-        val me: Person = Person("Safiul", Person.Gender.Male)
-        me.info()
     }
 
     override fun onStart() {

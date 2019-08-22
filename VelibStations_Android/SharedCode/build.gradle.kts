@@ -29,6 +29,9 @@ kotlin {
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
     }
+
+    sourceSets["iosMain"].dependencies {
+    }
 }
 
 val packForXcode by tasks.creating(Sync::class) {

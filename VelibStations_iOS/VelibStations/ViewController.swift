@@ -9,8 +9,6 @@
 import UIKit
 import SharedCode
 
-
-
 class ViewController: UIViewController {
     
     @IBOutlet var lblMessage: UILabel!
@@ -20,12 +18,6 @@ class ViewController: UIViewController {
         
         // Test expect / actual.
         lblMessage.text = CommonKt.getPlatformName()
-        
-        // Test common object.
-        let me = Person(name: "Safiul", gender: Person.Gender.male)
-        me.info()
     }
-
-
 }
 
