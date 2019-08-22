@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.muhammedsafiulazam.mobile.getPlatformName
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.activity.BaseActivity
-import com.muhammedsafiulazam.velibstations.activity.IActivityManager
 import kotlinx.android.synthetic.main.activity_launch.*
 
 /**

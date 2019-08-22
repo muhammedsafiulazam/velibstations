@@ -50,6 +50,9 @@ dependencies {
     // Lifecycle
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 
+    // Ktor client.
+    implementation 'io.ktor:ktor-client-okhttp:1.0.0'
+
     // Kotlin multiplatform.
     implementation project(':common')
 }
