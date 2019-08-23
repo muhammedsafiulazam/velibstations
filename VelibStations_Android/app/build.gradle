@@ -32,6 +32,9 @@ android {
     useLibrary 'android.test.base'
     useLibrary 'android.test.mock'
 
+    packagingOptions {
+        pickFirst  'META-INF/*'
+    }
 }
 
 dependencies {
