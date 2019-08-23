@@ -35,6 +35,11 @@ android {
     packagingOptions {
         pickFirst  'META-INF/*'
     }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
@@ -54,7 +59,7 @@ dependencies {
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 
     // Ktor client.
-    implementation 'io.ktor:ktor-client-okhttp:1.0.0'
+    implementation "io.ktor:ktor-client-okhttp:$ktor_version"
 
     // Kotlin multiplatform.
     implementation project(':common')

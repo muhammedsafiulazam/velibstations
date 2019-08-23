@@ -8,6 +8,7 @@ import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.activity.BaseActivity
 import io.ktor.client.engine.okhttp.OkHttpConfig
 import io.ktor.client.engine.okhttp.OkHttpEngine
+import io.ktor.util.InternalAPI
 import kotlinx.android.synthetic.main.activity_launch.*
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
@@ -23,6 +24,7 @@ class LaunchActivity : BaseActivity(), CoroutineScope {
     override val coroutineContext: CoroutineContext
         get() = job
 
+    @UseExperimental(InternalAPI::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
