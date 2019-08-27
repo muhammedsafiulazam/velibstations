@@ -1,49 +1,44 @@
 package com.muhammedsafiulazam.velibstations.launch
 
 import android.os.Bundle
-import com.muhammedsafiulazam.mobile.service.ServiceManager
-import com.muhammedsafiulazam.mobile.service.model.Error
-import com.muhammedsafiulazam.mobile.service.model.Weather
+import android.text.TextUtils
+import androidx.appcompat.app.AppCompatActivity
+import com.muhammedsafiulazam.mobile.event.Event
+import com.muhammedsafiulazam.mobile.knowledge.Knowledge
 import com.muhammedsafiulazam.velibstations.R
-import com.muhammedsafiulazam.velibstations.activity.BaseActivity
+import kotlinx.coroutines.channels.ReceiveChannel
+import service.weather.event.WeatherEventType
 
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.
  */
 
-class LaunchActivity : BaseActivity() {
-    private val mServiceManager: ServiceManager by lazy {
-        ServiceManager()
-    }
+class LaunchActivity : AppCompatActivity() {
+    private var mReceiveChannel: ReceiveChannel<Event>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
 
-        mServiceManager.getWeather(callback = { response: Weather?, error: Error? ->
+        mReceiveChannel = Knowledge.getEventManager().subscribe( callback = { event : Event -> Unit
+            onReceiveEvents(event)
+        })
 
+        Knowledge.getServiceManager().getWeatherService().getWeather()
+    }
+
+    fun onReceiveEvents(event: Event) {
+        if (TextUtils.equals(WeatherEventType.GET_WEATHER, event.type)) {
             var message: String
 
-            if (error != null) {
-                message = error.message.toString()
+            if (event.error != null) {
+                message = event.error.toString()
             } else {
-                message = response.toString()
+                message = event.data.toString()
             }
 
             println(message)
-        })
-    }
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
+        }
     }
 }

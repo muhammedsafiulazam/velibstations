@@ -9,8 +9,8 @@ import androidx.test.runner.lifecycle.Stage
 import com.muhammedsafiulazam.velibstations.activity.BaseActivity
 import com.muhammedsafiulazam.velibstations.addon.AddOnManager
 import com.muhammedsafiulazam.velibstations.addon.AddOnType
-import com.muhammedsafiulazam.velibstations.event.Event
-import com.muhammedsafiulazam.velibstations.event.IEventManager
+import event.Event
+import event.IEventManager
 import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.channels.ReceiveChannel
 import org.junit.Assert

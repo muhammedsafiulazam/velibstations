@@ -13,22 +13,26 @@ import common
 
 class ViewController: UIViewController {
     
-    private var mServiceManager: ServiceManager = ServiceManager()
+    private var mReceiveChannel: Kotlinx_coroutines_coreReceiveChannel? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mServiceManager.getWeather(callback: { (response: Weather?, error: Error?) in
-            var message: String? = nil
-            
-            if (error != nil) {
-                message = error?.message!
-            } else {
-                message = response?.description()
-            }
-            
-            print(message!)
+        mReceiveChannel = Knowledge().getEventManager().subscribe(callback: { event in
+            self.onReceiveEvents(event: event)
         })
+    }
+    
+    func onReceiveEvents(event: Event) {
+        var message: String? = nil
+        
+        if (event.error != nil) {
+            message = "\(event.error!)"
+        } else {
+            message = "\(event.data!)"
+        }
+        
+        print(message!)
     }
 }
 

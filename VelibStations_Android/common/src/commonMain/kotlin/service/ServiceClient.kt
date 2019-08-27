@@ -1,7 +1,8 @@
 package com.muhammedsafiulazam.mobile.service
 
-import com.muhammedsafiulazam.mobile.service.model.Data
 import com.muhammedsafiulazam.mobile.service.model.Error
+import com.muhammedsafiulazam.mobile.utils.CouroutineUtils
+import com.muhammedsafiulazam.mobile.utils.ServiceUtils
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 import kotlinx.coroutines.GlobalScope
@@ -9,8 +10,8 @@ import kotlinx.coroutines.launch
 
 class ServiceClient {
     var mBaseURL: String? = null
-    val mHttpClient: HttpClient by lazy {
-        ServiceUtils.getHttpClient()
+    val mClient: HttpClient by lazy {
+        ServiceUtils.CLIENT
     }
 
     fun setBaseURL(url: String) {
@@ -18,9 +19,9 @@ class ServiceClient {
     }
 
     inline fun <reified T> call(url: String, crossinline callback: (response: T?, error: Error?) -> Unit) : Unit {
-        GlobalScope.launch(ServiceUtils.getCoroutineDispatcher()) {
+        GlobalScope.launch(CouroutineUtils.DISPATCHER) {
             try {
-                val response = mHttpClient.get<T>("$mBaseURL$url")
+                val response = mClient.get<T>("$mBaseURL$url")
                 callback(response, null)
             } catch (e: Exception) {
                 val error = Error(null, e.message)

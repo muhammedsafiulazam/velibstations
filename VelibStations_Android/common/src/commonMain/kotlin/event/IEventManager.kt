@@ -1,6 +1,5 @@
-package com.muhammedsafiulazam.velibstations.event
+package com.muhammedsafiulazam.mobile.event
 
-import com.muhammedsafiulazam.velibstations.addon.IAddOn
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlin.coroutines.CoroutineContext
@@ -9,13 +8,13 @@ import kotlin.coroutines.CoroutineContext
  * Created by Muhammed Safiul Azam on 24/07/2019.
  */
 
-interface IEventManager : IAddOn {
+interface IEventManager {
     /**
      * Send event.
      * @param event sent event
      * @param context use context
      */
-    fun send(event: Event, context: CoroutineContext = Dispatchers.Main)
+    fun send(event: Event)
 
     /**
      * Subscribe to receiving mChannel.
@@ -29,7 +28,7 @@ interface IEventManager : IAddOn {
      * @param context use context
      * @return receiving mChannel
      */
-    fun subscribe(callback: (event: Event) -> Unit, context: CoroutineContext = Dispatchers.Main) : ReceiveChannel<Event>
+    fun subscribe(callback: (event: Event) -> Unit) : ReceiveChannel<Event>
 
     /**
      * Unsubscribe from receiving mChannel.

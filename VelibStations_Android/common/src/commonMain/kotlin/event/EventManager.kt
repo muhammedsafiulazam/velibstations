@@ -1,16 +1,17 @@
-package com.muhammedsafiulazam.velibstations.event
+package com.muhammedsafiulazam.mobile.event
 
-import com.muhammedsafiulazam.velibstations.addon.AddOn
+import com.muhammedsafiulazam.mobile.utils.CouroutineUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.*
 import kotlinx.coroutines.launch
-import kotlin.coroutines.CoroutineContext
+import kotlin.native.concurrent.ThreadLocal
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.
  */
 
-class EventManager : AddOn(), IEventManager {
+@ThreadLocal
+class EventManager : IEventManager {
     protected val mChannel = BroadcastChannel<Any>(Channel.CONFLATED)
 
     /**
@@ -18,8 +19,8 @@ class EventManager : AddOn(), IEventManager {
      * @param event sent event
      * @param context use context
      */
-    override fun send(event: Event, context: CoroutineContext) {
-        CoroutineScope(context).launch {
+    override fun send(event: Event) {
+        CoroutineScope(CouroutineUtils.DISPATCHER).launch {
             mChannel.send(event)
         }
     }
@@ -43,9 +44,9 @@ class EventManager : AddOn(), IEventManager {
      * @param context use context
      * @return receiving mChannel
      */
-    override fun subscribe(callback: (event: Event) -> Unit, context: CoroutineContext) : ReceiveChannel<Event> {
+    override fun subscribe(callback: (event: Event) -> Unit) : ReceiveChannel<Event> {
         val channel = newChannel<Event>()
-        CoroutineScope(context).launch {
+        CoroutineScope(CouroutineUtils.DISPATCHER).launch {
             for(event in channel) {
                 callback(event)
             }
