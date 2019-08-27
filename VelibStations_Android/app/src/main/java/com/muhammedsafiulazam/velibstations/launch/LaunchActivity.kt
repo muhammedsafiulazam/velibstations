@@ -1,46 +1,38 @@
 package com.muhammedsafiulazam.velibstations.launch
 
 import android.os.Bundle
-import android.widget.Toast
-import com.muhammedsafiulazam.mobile.WeatherApi
-import com.muhammedsafiulazam.mobile.getPlatformName
+import com.muhammedsafiulazam.mobile.service.ServiceManager
+import com.muhammedsafiulazam.mobile.service.model.Error
+import com.muhammedsafiulazam.mobile.service.model.Weather
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.activity.BaseActivity
-import io.ktor.client.engine.okhttp.OkHttpConfig
-import io.ktor.client.engine.okhttp.OkHttpEngine
-import io.ktor.util.InternalAPI
-import kotlinx.android.synthetic.main.activity_launch.*
-import kotlinx.coroutines.*
-import kotlin.coroutines.CoroutineContext
+
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.
  */
 
-class LaunchActivity : BaseActivity(), CoroutineScope {
+class LaunchActivity : BaseActivity() {
+    private val mServiceManager: ServiceManager by lazy {
+        ServiceManager()
+    }
 
-    private val job = Job()
-
-    override val coroutineContext: CoroutineContext
-        get() = job
-
-    @UseExperimental(InternalAPI::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
 
-        // Test expect / actual.
-        lunch_txv_message.text = getPlatformName()
+        mServiceManager.getWeather(callback = { response: Weather?, error: Error? ->
 
-        val weatherApi = WeatherApi(OkHttpEngine(OkHttpConfig()))
-        launch(Dispatchers.Main) {
-            try {
-                val result = withContext(Dispatchers.IO) { weatherApi.fetchWeather() }
-                Toast.makeText(this@LaunchActivity, result.toString(), Toast.LENGTH_LONG).show()
-            } catch (e: Exception) {
-                Toast.makeText(this@LaunchActivity, e.message, Toast.LENGTH_LONG).show()
+            var message: String
+
+            if (error != null) {
+                message = error.message.toString()
+            } else {
+                message = response.toString()
             }
-        }
+
+            println(message)
+        })
     }
 
     override fun onStart() {

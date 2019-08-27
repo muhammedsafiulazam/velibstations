@@ -10,15 +10,25 @@ import UIKit
 import common
 
 
+
 class ViewController: UIViewController {
     
-    @IBOutlet var lblMessage: UILabel!
+    private var mServiceManager: ServiceManager = ServiceManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Test expect / actual.
-        lblMessage.text = CommonKt.getPlatformName()
+        mServiceManager.getWeather(callback: { (response: Weather?, error: Error?) in
+            var message: String? = nil
+            
+            if (error != nil) {
+                message = error?.message!
+            } else {
+                message = response?.description()
+            }
+            
+            print(message!)
+        })
     }
 }
 
