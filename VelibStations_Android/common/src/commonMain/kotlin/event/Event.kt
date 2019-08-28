@@ -1,6 +1,6 @@
-package com.muhammedsafiulazam.mobile.event
+package com.muhammedsafiulazam.common.event
 
-import com.muhammedsafiulazam.mobile.service.model.Error
+import com.muhammedsafiulazam.common.service.model.Error
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.

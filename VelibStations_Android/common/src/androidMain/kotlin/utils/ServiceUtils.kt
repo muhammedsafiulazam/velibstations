@@ -1,6 +1,6 @@
-package com.muhammedsafiulazam.mobile.utils
+package com.muhammedsafiulazam.common.utils
 
-import com.muhammedsafiulazam.mobile.service.ServiceSerializer
+import com.muhammedsafiulazam.common.service.ServiceSerializer
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.features.json.JsonFeature

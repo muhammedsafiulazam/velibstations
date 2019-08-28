@@ -1,6 +1,6 @@
-package com.muhammedsafiulazam.mobile.event
+package com.muhammedsafiulazam.common.event
 
-import com.muhammedsafiulazam.mobile.utils.CouroutineUtils
+import com.muhammedsafiulazam.common.utils.CouroutineUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.*
 import kotlinx.coroutines.launch

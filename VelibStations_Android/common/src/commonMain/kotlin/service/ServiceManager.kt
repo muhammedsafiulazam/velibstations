@@ -1,8 +1,8 @@
-package com.muhammedsafiulazam.mobile.service
+package com.muhammedsafiulazam.common.service
 
-import com.muhammedsafiulazam.mobile.service.velib.IVelibService
-import com.muhammedsafiulazam.mobile.service.velib.VelibService
-import com.muhammedsafiulazam.mobile.utils.ServiceUtils
+import com.muhammedsafiulazam.common.service.velib.IVelibService
+import com.muhammedsafiulazam.common.service.velib.VelibService
+import com.muhammedsafiulazam.common.utils.ServiceUtils
 import io.ktor.client.HttpClient
 
 class ServiceManager : IServiceManager {

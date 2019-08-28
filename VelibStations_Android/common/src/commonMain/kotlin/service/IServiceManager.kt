@@ -1,6 +1,6 @@
-package com.muhammedsafiulazam.mobile.service
+package com.muhammedsafiulazam.common.service
 
-import com.muhammedsafiulazam.mobile.service.velib.IVelibService
+import com.muhammedsafiulazam.common.service.velib.IVelibService
 
 interface IServiceManager {
     fun getVelibService() : IVelibService

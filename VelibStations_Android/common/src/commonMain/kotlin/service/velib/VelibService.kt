@@ -1,11 +1,11 @@
-package com.muhammedsafiulazam.mobile.service.velib
+package com.muhammedsafiulazam.common.service.velib
 
-import com.muhammedsafiulazam.mobile.event.Event
-import com.muhammedsafiulazam.mobile.knowledge.Knowledge
-import com.muhammedsafiulazam.mobile.service.ServiceClient
-import com.muhammedsafiulazam.mobile.service.model.Error
-import com.muhammedsafiulazam.mobile.service.velib.event.VelibEventType
-import com.muhammedsafiulazam.mobile.service.velib.model.Data
+import com.muhammedsafiulazam.common.event.Event
+import com.muhammedsafiulazam.common.knowledge.Knowledge
+import com.muhammedsafiulazam.common.service.ServiceClient
+import com.muhammedsafiulazam.common.service.model.Error
+import com.muhammedsafiulazam.common.service.velib.event.VelibEventType
+import com.muhammedsafiulazam.common.service.velib.model.Data
 
 class VelibService(val serviceClient: ServiceClient) : IVelibService {
 

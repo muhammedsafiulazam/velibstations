@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.mobile.utils
+package com.muhammedsafiulazam.common.utils
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Runnable

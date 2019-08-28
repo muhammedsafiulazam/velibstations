@@ -3,9 +3,9 @@ package com.muhammedsafiulazam.velibstations.launch
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.muhammedsafiulazam.mobile.event.Event
-import com.muhammedsafiulazam.mobile.knowledge.Knowledge
-import com.muhammedsafiulazam.mobile.service.velib.event.VelibEventType
+import com.muhammedsafiulazam.common.event.Event
+import com.muhammedsafiulazam.common.knowledge.Knowledge
+import com.muhammedsafiulazam.common.service.velib.event.VelibEventType
 import com.muhammedsafiulazam.velibstations.R
 import kotlinx.coroutines.channels.ReceiveChannel
 

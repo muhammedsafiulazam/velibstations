@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.mobile.service.model
+package com.muhammedsafiulazam.common.service.model
 
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.mobile.event
+package com.muhammedsafiulazam.common.event
 
 import kotlinx.coroutines.channels.ReceiveChannel
 

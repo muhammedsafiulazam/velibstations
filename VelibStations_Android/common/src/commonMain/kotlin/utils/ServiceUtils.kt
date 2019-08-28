@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.mobile.utils
+package com.muhammedsafiulazam.common.utils
 
 import io.ktor.client.HttpClient
 
