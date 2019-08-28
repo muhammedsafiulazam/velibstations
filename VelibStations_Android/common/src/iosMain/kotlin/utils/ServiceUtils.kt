@@ -7,8 +7,13 @@ import io.ktor.client.features.json.JsonFeature
 import kotlin.native.concurrent.SharedImmutable
 import kotlin.native.concurrent.ThreadLocal
 
+/**
+ * Created by Muhammed Safiul Azam on 26/08/2019.
+ */
 @ThreadLocal
 actual object ServiceUtils {
+
+    // Http client.
     @SharedImmutable
     actual val HTTP_CLIENT: HttpClient = HttpClient(Ios) {
         install(JsonFeature) {

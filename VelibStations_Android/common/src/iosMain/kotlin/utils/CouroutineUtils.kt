@@ -9,9 +9,13 @@ import kotlin.coroutines.CoroutineContext
 import kotlin.native.concurrent.SharedImmutable
 import kotlin.native.concurrent.ThreadLocal
 
+/**
+ * Created by Muhammed Safiul Azam on 26/08/2019.
+ */
 @ThreadLocal
 actual object CouroutineUtils {
 
+    // Dispatcher.
     @SharedImmutable
     actual val DISPATCHER: CoroutineDispatcher = NsQueueDispatcher(
         dispatch_get_main_queue()

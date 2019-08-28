@@ -9,6 +9,7 @@ import io.ktor.client.features.json.JsonFeature
  * Created by Muhammed Safiul Azam on 26/08/2019.
  */
 actual object ServiceUtils {
+    // Http client.
     actual val HTTP_CLIENT: HttpClient = HttpClient(Android) {
         install(JsonFeature) {
             serializer = ServiceSerializer.getSerializer()
