@@ -2,8 +2,8 @@ package com.muhammedsafiulazam.mobile.knowledge
 
 import com.muhammedsafiulazam.mobile.event.EventManager
 import com.muhammedsafiulazam.mobile.event.IEventManager
+import com.muhammedsafiulazam.mobile.service.IServiceManager
 import com.muhammedsafiulazam.mobile.service.ServiceManager
-import service.IServiceManager
 import kotlin.native.concurrent.SharedImmutable
 import kotlin.native.concurrent.ThreadLocal
 

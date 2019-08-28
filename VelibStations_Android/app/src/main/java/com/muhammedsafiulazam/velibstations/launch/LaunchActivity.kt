@@ -5,9 +5,9 @@ import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.muhammedsafiulazam.mobile.event.Event
 import com.muhammedsafiulazam.mobile.knowledge.Knowledge
+import com.muhammedsafiulazam.mobile.service.velib.event.VelibEventType
 import com.muhammedsafiulazam.velibstations.R
 import kotlinx.coroutines.channels.ReceiveChannel
-import service.weather.event.WeatherEventType
 
 
 /**
@@ -25,11 +25,11 @@ class LaunchActivity : AppCompatActivity() {
             onReceiveEvents(event)
         })
 
-        Knowledge.getServiceManager().getWeatherService().getWeather()
+        Knowledge.getServiceManager().getVelibService().getData()
     }
 
     fun onReceiveEvents(event: Event) {
-        if (TextUtils.equals(WeatherEventType.GET_WEATHER, event.type)) {
+        if (TextUtils.equals(VelibEventType.GET_DATA, event.type)) {
             var message: String
 
             if (event.error != null) {

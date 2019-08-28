@@ -1,8 +1,7 @@
-package service
+package com.muhammedsafiulazam.mobile.service
 
-import service.weather.IWeatherService
+import com.muhammedsafiulazam.mobile.service.velib.IVelibService
 
 interface IServiceManager {
-
-    fun getWeatherService() : IWeatherService
+    fun getVelibService() : IVelibService
 }

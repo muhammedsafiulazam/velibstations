@@ -2,11 +2,8 @@ package com.muhammedsafiulazam.mobile.event
 
 import com.muhammedsafiulazam.mobile.utils.CouroutineUtils
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.*
 import kotlinx.coroutines.launch
-import kotlin.native.concurrent.SharedImmutable
-import kotlin.native.concurrent.ThreadLocal
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.

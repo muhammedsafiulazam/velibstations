@@ -1,8 +1,6 @@
 package com.muhammedsafiulazam.mobile.event
 
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.ReceiveChannel
-import kotlin.coroutines.CoroutineContext
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.

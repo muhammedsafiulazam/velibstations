@@ -2,7 +2,6 @@ package com.muhammedsafiulazam.mobile.service
 
 import com.muhammedsafiulazam.mobile.service.model.Error
 import com.muhammedsafiulazam.mobile.utils.CouroutineUtils
-import com.muhammedsafiulazam.mobile.utils.ServiceUtils
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 import kotlinx.coroutines.GlobalScope

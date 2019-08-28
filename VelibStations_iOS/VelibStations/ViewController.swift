@@ -20,7 +20,7 @@ class ViewController: UIViewController {
             self.onReceiveEvents(event: event)
         })
         
-        Knowledge().getServiceManager().getWeatherService().getWeather()
+        Knowledge().getServiceManager().getVelibService().getData(latitude: 48.864716, longitude: 2.349014, radius: 1000, index: 0, count: 10)
     }
     
     func onReceiveEvents(event: Event) {
