@@ -13,14 +13,14 @@ import common
 
 class ViewController: UIViewController {
     
-    private var mReceiveChannel: Kotlinx_coroutines_coreReceiveChannel? = nil
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mReceiveChannel = Knowledge().getEventManager().subscribe(callback: { event in
+        Knowledge().getEventManager().subscribe(callback: { event in
             self.onReceiveEvents(event: event)
         })
+        
+        Knowledge().getServiceManager().getWeatherService().getWeather()
     }
     
     func onReceiveEvents(event: Event) {

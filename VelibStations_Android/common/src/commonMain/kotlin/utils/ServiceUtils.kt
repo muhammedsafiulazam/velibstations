@@ -1,8 +1,9 @@
 package com.muhammedsafiulazam.mobile.utils
 
 import io.ktor.client.HttpClient
-import kotlinx.coroutines.CoroutineDispatcher
+import kotlin.native.concurrent.SharedImmutable
+import kotlin.native.concurrent.ThreadLocal
 
 expect object ServiceUtils {
-    val CLIENT: HttpClient
+    val HTTP_CLIENT: HttpClient
 }

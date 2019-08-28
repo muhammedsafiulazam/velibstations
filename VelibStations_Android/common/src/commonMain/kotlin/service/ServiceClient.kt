@@ -8,20 +8,11 @@ import io.ktor.client.request.get
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class ServiceClient {
-    var mBaseURL: String? = null
-    val mClient: HttpClient by lazy {
-        ServiceUtils.CLIENT
-    }
-
-    fun setBaseURL(url: String) {
-        mBaseURL = url
-    }
-
+class ServiceClient(val httpClient: HttpClient, val baseURL: String) {
     inline fun <reified T> call(url: String, crossinline callback: (response: T?, error: Error?) -> Unit) : Unit {
         GlobalScope.launch(CouroutineUtils.DISPATCHER) {
             try {
-                val response = mClient.get<T>("$mBaseURL$url")
+                val response = httpClient.get<T>("$baseURL$url")
                 callback(response, null)
             } catch (e: Exception) {
                 val error = Error(null, e.message)

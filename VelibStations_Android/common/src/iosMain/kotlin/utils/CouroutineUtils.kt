@@ -1,14 +1,18 @@
 package com.muhammedsafiulazam.mobile.utils
 
-import io.ktor.client.HttpClient
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Runnable
 import platform.darwin.dispatch_async
 import platform.darwin.dispatch_get_main_queue
 import platform.darwin.dispatch_queue_t
 import kotlin.coroutines.CoroutineContext
+import kotlin.native.concurrent.SharedImmutable
+import kotlin.native.concurrent.ThreadLocal
 
+@ThreadLocal
 actual object CouroutineUtils {
+
+    @SharedImmutable
     actual val DISPATCHER: CoroutineDispatcher = NsQueueDispatcher(
         dispatch_get_main_queue()
     )
