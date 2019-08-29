@@ -9,11 +9,10 @@ import kotlin.native.concurrent.ThreadLocal
 object ServiceSerializer {
     fun getSerializer() : KotlinxSerializer {
         return KotlinxSerializer(Json.nonstrict).apply {
-            setMapper(Data::class, Data.serializer())
+            setMapper(Dataset::class, Dataset.serializer())
             setMapper(Parameters::class, Parameters.serializer())
             setMapper(Record::class, Record.serializer())
             setMapper(Fields::class, Fields.serializer())
-            setMapper(Geometry::class, Geometry.serializer())
         }
     }
 }

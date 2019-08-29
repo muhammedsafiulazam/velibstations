@@ -34,6 +34,7 @@ android {
 
     packagingOptions {
         pickFirst  'META-INF/*'
+        exclude 'META-INF/*.kotlin_module'
     }
 
     compileOptions {
@@ -60,6 +61,8 @@ dependencies {
 
     // Ktor client.
     implementation "io.ktor:ktor-client-okhttp:$ktor_version"
+
+    implementation ("com.squareup.sqldelight:android-driver:$sqldelight_version")
 
     // Kotlin multiplatform.
     implementation project(':common')

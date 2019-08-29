@@ -49,6 +49,7 @@ captures/
 .idea/caches
 .idea/compiler.xml
 .idea/artifacts/common_android.xml
+.idea/sqldelight
 
 
 # Keystore files

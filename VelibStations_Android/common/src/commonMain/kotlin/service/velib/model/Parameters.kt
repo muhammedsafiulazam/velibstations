@@ -1,11 +1,17 @@
 package com.muhammedsafiulazam.common.service.velib.model
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Parameters(val dataset: String?,
-                      val timezone: String?,
-                      val rows: Int?,
-                      val start: Int?,
-                      val format: String?,
-                      val facet: ArrayList<String>?)
+data class Parameters(@SerialName("dataset")
+                      val id: String?,
+
+                      @SerialName("start")
+                      val index: Int?,
+
+                      @SerialName("rows")
+                      val counts: Int?,
+
+                      @SerialName("timezone")
+                      val timezone: String?)

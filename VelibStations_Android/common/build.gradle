@@ -1,7 +1,8 @@
 
 plugins {
     id("kotlin-multiplatform")
-    id ("kotlinx-serialization")
+    id("kotlinx-serialization")
+    id("com.squareup.sqldelight")
 }
 
 kotlin {
@@ -37,6 +38,8 @@ kotlin {
         implementation("io.ktor:ktor-client-android:$ktor_version")
         implementation ("io.ktor:ktor-client-json-jvm:$ktor_version")
         implementation ("io.ktor:ktor-client-serialization-jvm:$ktor_version")
+
+        implementation ("com.squareup.sqldelight:android-driver:$sqldelight_version")
     }
 
     sourceSets["iosMain"].dependencies {
@@ -48,6 +51,14 @@ kotlin {
         implementation ("io.ktor:ktor-client-serialization-native:$ktor_version")
 
         implementation ("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlin_serialization_version")
+
+        implementation ("com.squareup.sqldelight:ios-driver:$sqldelight_version")
+    }
+}
+
+sqldelight {
+    VelibDatabase {
+        packageName = 'com.muhammedsafiulazam.common.database'
     }
 }
 
