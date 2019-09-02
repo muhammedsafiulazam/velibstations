@@ -13,10 +13,12 @@ import CommonKit
 
 class ViewController: UIViewController {
     
+    private var mReceiveChannel: Kotlinx_coroutines_coreReceiveChannel? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Knowledge().getEventManager().subscribe(callback: { event in
+        mReceiveChannel = Knowledge().getEventManager().subscribe(callback: { event in
             self.onReceiveEvents(event: event)
         })
         
@@ -33,6 +35,11 @@ class ViewController: UIViewController {
         }
         
         print(message!)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        Knowledge().getEventManager().unsubscribe(receiveChannel: mReceiveChannel)
+        super.viewDidDisappear(animated)
     }
 }
 

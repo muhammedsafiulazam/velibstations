@@ -41,4 +41,9 @@ class LaunchActivity : AppCompatActivity() {
             println(message)
         }
     }
+
+    override fun onDestroy() {
+        Knowledge.getEventManager().unsubscribe(mReceiveChannel)
+        super.onDestroy()
+    }
 }
