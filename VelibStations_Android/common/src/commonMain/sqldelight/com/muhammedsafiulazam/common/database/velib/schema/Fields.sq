@@ -27,12 +27,18 @@ CREATE TABLE Fields (
 selectAll:
 SELECT * FROM Fields;
 
+selectByRecord:
+SELECT * FROM Fields WHERE recordId = ?;
+
 insert:
 INSERT OR REPLACE INTO Fields (recordId, name, code, state, type, dueDate, latitude, longitude, kioskState, creditCard, overflowActivation, maxBikeOverflow, nbEDock, nbFreeEDock, nbDock, nbFreeDock, nbEBike, nbBike, nbBikeOverflow, nbEBikeOverflow, overflow, densityLevel)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 delete:
-DELETE FROM Fields WHERE recordId = ? AND code = ?;
+DELETE FROM Fields WHERE code = ?;
 
 deleteAll:
 DELETE FROM Fields;
+
+deleteByRecord:
+DELETE FROM Fields WHERE recordId = ?;
