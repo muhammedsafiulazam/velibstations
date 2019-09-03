@@ -8,11 +8,11 @@ import kotlinx.coroutines.CoroutineDispatcher
  */
 expect object DatabaseUtils {
     // Schema.
-    val VELIB_SCHEMA: SqlDriver.Schema
+    val VELIB_DB_SCHEMA: SqlDriver.Schema
 
     // Filename.
-    val VELIB_FILENAME: String
+    val VELIB_DB_FILENAME: String
 
     // Driver.
-    var VELIB_DRIVER : SqlDriver?
+    var VELIB_DB_DRIVER : SqlDriver?
 }

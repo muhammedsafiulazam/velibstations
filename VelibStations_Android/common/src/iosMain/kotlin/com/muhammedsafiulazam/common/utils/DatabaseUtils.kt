@@ -1,7 +1,7 @@
 package com.muhammedsafiulazam.common.utils
 
 
-import com.muhammedsafiulazam.common.database.velib.VelibDatabase
+import com.muhammedsafiulazam.common.database.velib.VelibDB
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.drivers.ios.NativeSqliteDriver
 import kotlin.native.concurrent.SharedImmutable
@@ -14,13 +14,13 @@ import kotlin.native.concurrent.ThreadLocal
 actual object DatabaseUtils {
     // Schema.
     @SharedImmutable
-    actual val VELIB_SCHEMA: SqlDriver.Schema = VelibDatabase.Schema
+    actual val VELIB_DB_SCHEMA: SqlDriver.Schema = VelibDB.Schema
 
     // Filename.
     @SharedImmutable
-    actual val VELIB_FILENAME: String = "database_velib.db"
+    actual val VELIB_DB_FILENAME: String = "velib.db"
 
     // Driver.
     @SharedImmutable
-    actual var VELIB_DRIVER: SqlDriver? = NativeSqliteDriver(VELIB_SCHEMA, VELIB_FILENAME)
+    actual var VELIB_DB_DRIVER: SqlDriver? = NativeSqliteDriver(VELIB_DB_SCHEMA, VELIB_DB_FILENAME)
 }

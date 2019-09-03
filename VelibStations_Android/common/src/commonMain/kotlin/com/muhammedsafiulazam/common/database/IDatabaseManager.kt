@@ -1,7 +1,7 @@
 package com.muhammedsafiulazam.common.database
 
-import com.muhammedsafiulazam.common.database.velib.VelibDatabase
+import com.muhammedsafiulazam.common.database.velib.IVelibDatabase
 
 interface IDatabaseManager {
-    fun getVelibDatabase() : VelibDatabase
+    fun getVelibDatabase() : IVelibDatabase
 }

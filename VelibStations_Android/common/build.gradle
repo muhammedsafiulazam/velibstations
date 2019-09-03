@@ -57,7 +57,7 @@ kotlin {
 }
 
 sqldelight {
-    VelibDatabase {
+    VelibDB {
         packageName = "com.muhammedsafiulazam.common.database.velib"
     }
 }

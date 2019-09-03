@@ -1,5 +1,6 @@
 package com.muhammedsafiulazam.common.utils
 
+import com.muhammedsafiulazam.common.database.velib.VelibDB
 import com.muhammedsafiulazam.common.database.velib.VelibDatabase
 import com.squareup.sqldelight.db.SqlDriver
 
@@ -8,11 +9,11 @@ import com.squareup.sqldelight.db.SqlDriver
  */
 actual object DatabaseUtils {
     // Schema.
-    actual val VELIB_SCHEMA: SqlDriver.Schema = VelibDatabase.Schema
+    actual val VELIB_DB_SCHEMA: SqlDriver.Schema = VelibDB.Schema
 
     // Filename.
-    actual val VELIB_FILENAME: String = "database_velib.db"
+    actual val VELIB_DB_FILENAME: String = "velib.db"
 
     // Driver.
-    actual var VELIB_DRIVER: SqlDriver? = null
+    actual var VELIB_DB_DRIVER: SqlDriver? = null
 }

@@ -1,8 +1,8 @@
-CREATE TABLE FieldsSchema (
-    recordId TEXT PRIMARY KEY NOT NULL,
+CREATE TABLE Fields (
+    recordId TEXT,
 
     name TEXT,
-    code TEXT,
+    code TEXT PRIMARY KEY NOT NULL,
     state TEXT,
     type TEXT,
     dueDate TEXT,
@@ -25,11 +25,14 @@ CREATE TABLE FieldsSchema (
 
 
 selectAll:
-SELECT * FROM FieldsSchema;
+SELECT * FROM Fields;
 
-insertOrReplace:
-INSERT OR REPLACE INTO FieldsSchema (recordId, name, code, state, type, dueDate, latitude, longitude, kioskState, creditCard, overflowActivation, maxBikeOverflow, nbEDock, nbFreeEDock, nbDock, nbFreeDock, nbEBike, nbBike, nbBikeOverflow, nbEBikeOverflow, overflow, densityLevel)
+insert:
+INSERT OR REPLACE INTO Fields (recordId, name, code, state, type, dueDate, latitude, longitude, kioskState, creditCard, overflowActivation, maxBikeOverflow, nbEDock, nbFreeEDock, nbDock, nbFreeDock, nbEBike, nbBike, nbBikeOverflow, nbEBikeOverflow, overflow, densityLevel)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
+delete:
+DELETE FROM Fields WHERE recordId = ? AND code = ?;
+
 deleteAll:
-DELETE FROM FieldsSchema;
+DELETE FROM Fields;

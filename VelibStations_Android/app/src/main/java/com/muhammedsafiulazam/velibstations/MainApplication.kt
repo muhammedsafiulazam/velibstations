@@ -13,7 +13,7 @@ class MainApplication : Application() {
         super.onCreate()
 
         // Database driver.
-        DatabaseUtils.VELIB_DRIVER = AndroidSqliteDriver(DatabaseUtils.VELIB_SCHEMA, this, DatabaseUtils.VELIB_FILENAME)
+        DatabaseUtils.VELIB_DB_DRIVER = AndroidSqliteDriver(DatabaseUtils.VELIB_DB_SCHEMA, this, DatabaseUtils.VELIB_DB_FILENAME)
     }
 
     override fun onTerminate() {

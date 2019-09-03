@@ -6,7 +6,6 @@ import com.muhammedsafiulazam.common.event.EventManager
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.service.IServiceManager
 import com.muhammedsafiulazam.common.service.ServiceManager
-import com.muhammedsafiulazam.common.utils.DatabaseUtils
 import kotlin.native.concurrent.SharedImmutable
 import kotlin.native.concurrent.ThreadLocal
 
