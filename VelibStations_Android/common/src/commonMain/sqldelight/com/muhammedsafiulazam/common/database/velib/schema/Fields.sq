@@ -1,0 +1,35 @@
+CREATE TABLE FieldsSchema (
+    recordId TEXT PRIMARY KEY NOT NULL,
+
+    name TEXT,
+    code TEXT,
+    state TEXT,
+    type TEXT,
+    dueDate TEXT,
+    latitude REAL,
+    longitude REAL,
+    kioskState TEXT,
+    creditCard TEXT,
+    overflowActivation TEXT,
+    maxBikeOverflow INTEGER,
+    nbEDock INTEGER,
+    nbFreeEDock INTEGER,
+    nbDock INTEGER,
+    nbFreeDock INTEGER,
+    nbEBike INTEGER,
+    nbBike INTEGER,
+    nbBikeOverflow INTEGER,
+    nbEBikeOverflow INTEGER,
+    overflow TEXT,
+    densityLevel TEXT);
+
+
+selectAll:
+SELECT * FROM FieldsSchema;
+
+insertOrReplace:
+INSERT OR REPLACE INTO FieldsSchema (recordId, name, code, state, type, dueDate, latitude, longitude, kioskState, creditCard, overflowActivation, maxBikeOverflow, nbEDock, nbFreeEDock, nbDock, nbFreeDock, nbEBike, nbBike, nbBikeOverflow, nbEBikeOverflow, overflow, densityLevel)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+deleteAll:
+DELETE FROM FieldsSchema;

@@ -8,8 +8,8 @@ import kotlinx.coroutines.channels.ReceiveChannel
 
 interface IEventManager {
     /**
-     * Send event.
-     * @param event sent event
+     * Send com.muhammedsafiulazam.common.event.
+     * @param event sent com.muhammedsafiulazam.common.event
      * @param context use context
      */
     fun send(event: Event)
@@ -22,7 +22,7 @@ interface IEventManager {
 
     /**
      * Subscribe to receiving mChannel.
-     * @param callback event callback
+     * @param callback com.muhammedsafiulazam.common.event callback
      * @param context use context
      * @return receiving mChannel
      */

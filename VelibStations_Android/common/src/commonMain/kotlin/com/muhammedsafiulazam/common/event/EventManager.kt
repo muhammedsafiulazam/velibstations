@@ -13,8 +13,8 @@ class EventManager : IEventManager {
     private val mChannel = ConflatedBroadcastChannel<Any>(Channel.CONFLATED)
 
     /**
-     * Send event.
-     * @param event sent event
+     * Send com.muhammedsafiulazam.common.event.
+     * @param event sent com.muhammedsafiulazam.common.event
      * @param context use context
      */
     override fun send(event: Event) {
@@ -38,7 +38,7 @@ class EventManager : IEventManager {
 
     /**
      * Subscribe to receiving mChannel.
-     * @param callback event callback
+     * @param callback com.muhammedsafiulazam.common.event callback
      * @param context use context
      * @return receiving mChannel
      */

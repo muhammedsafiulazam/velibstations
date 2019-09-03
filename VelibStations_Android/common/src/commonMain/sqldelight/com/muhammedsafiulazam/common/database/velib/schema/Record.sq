@@ -1,0 +1,13 @@
+CREATE TABLE RecordSchema (
+    id TEXT PRIMARY KEY NOT NULL,
+    timestamp TEXT);
+
+
+selectAll:
+SELECT * FROM RecordSchema;
+
+insertOrReplace:
+INSERT OR REPLACE INTO RecordSchema (id, timestamp) VALUES (?, ?);
+
+deleteAll:
+DELETE FROM RecordSchema;
