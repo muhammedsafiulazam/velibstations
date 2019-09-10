@@ -11,7 +11,4 @@ data class Parameters(@SerialName("dataset")
                       val index: Int?,
 
                       @SerialName("rows")
-                      val count: Int?,
-
-                      @SerialName("timezone")
-                      val timezone: String?)
+                      val count: Int?)
