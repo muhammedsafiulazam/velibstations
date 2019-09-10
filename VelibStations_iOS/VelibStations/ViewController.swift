@@ -22,9 +22,9 @@ class ViewController: UIViewController {
             self.onReceiveEvents(event: event)
         })
         
-        //Knowledge().getServiceManager().getVelibService().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS, index: 0, count: 10)
+        Knowledge().getServiceManager().getVelibService().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS, index: 0, count: 10)
         
-        Knowledge().getDatabaseManager().getVelibDatabase().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS)
+        //Knowledge().getDatabaseManager().getVelibDatabase().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS)
     }
     
     func onReceiveEvents(event: Event) {

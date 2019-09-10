@@ -7,4 +7,6 @@ object ConstantUtils {
     const val DEFAULT_LATITUDE: Double = 48.864716
     const val DEFAULT_LONGITUDE: Double = 2.349014
     const val DEFAULT_RADIUS: Double = 1000.0
+    const val DEFAULT_INDEX: Int = 0
+    const val DEFAULT_COUNT: Int = 100
 }

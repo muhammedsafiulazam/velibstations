@@ -16,7 +16,8 @@ import kotlinx.coroutines.launch
 class VelibDatabase(val db: VelibDB) : IVelibDatabase {
     override fun getData(latitude: Double, longitude: Double, radius: Double)  {
         GlobalScope.launch(CouroutineUtils.DISPATCHER) {
-            val records: ArrayList<Record> = arrayListOf()
+
+            var records: ArrayList<Record> = arrayListOf()
 
             getRecords()?.forEach { record ->
                 if (record.isWithinGeofence(latitude, longitude, radius)) {
