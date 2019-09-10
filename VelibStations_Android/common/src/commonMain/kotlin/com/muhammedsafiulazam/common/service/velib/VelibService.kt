@@ -4,7 +4,7 @@ import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.knowledge.Knowledge
 import com.muhammedsafiulazam.common.service.ServiceClient
 import com.muhammedsafiulazam.common.service.model.Error
-import com.muhammedsafiulazam.common.service.velib.event.VelibEventType
+import com.muhammedsafiulazam.common.service.velib.event.VelibServiceEventType
 import com.muhammedsafiulazam.common.service.velib.model.Dataset
 
 class VelibService(val serviceClient: ServiceClient) : IVelibService {
@@ -15,7 +15,10 @@ class VelibService(val serviceClient: ServiceClient) : IVelibService {
         val url = "${URL_VELIB}&geofilter.distance=${latitude}%2C${longitude}%2C${radius}&start=${index}&rows=${count}"
 
         serviceClient.call(url, callback = { response: Dataset?, error: Error? ->
-            val event = Event(VelibEventType.GET_DATA, response, error)
+
+            Knowledge.getDatabaseManager().getVelibDatabase().addRecords(response?.records)
+
+            val event = Event(VelibServiceEventType.GET_DATA, response, error)
             Knowledge.getEventManager().send(event)
         })
     }

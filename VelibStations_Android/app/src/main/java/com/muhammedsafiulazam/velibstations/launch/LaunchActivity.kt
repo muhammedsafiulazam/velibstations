@@ -3,16 +3,13 @@ package com.muhammedsafiulazam.velibstations.launch
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
-import com.muhammedsafiulazam.common.database.velib.schema.Record
-import com.muhammedsafiulazam.common.database.velib.schema.RecordQueries
+import com.muhammedsafiulazam.common.database.velib.event.VelibDatabaseEventType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.knowledge.Knowledge
-import com.muhammedsafiulazam.common.service.velib.event.VelibEventType
-import com.muhammedsafiulazam.common.service.velib.model.Fields
+import com.muhammedsafiulazam.common.service.velib.event.VelibServiceEventType
+import com.muhammedsafiulazam.common.service.velib.model.Record
 import com.muhammedsafiulazam.velibstations.R
-import com.squareup.sqldelight.Query
 import kotlinx.coroutines.channels.ReceiveChannel
-import java.util.*
 
 
 /**
@@ -31,19 +28,27 @@ class LaunchActivity : AppCompatActivity() {
         })
 
         Knowledge.getServiceManager().getVelibService().getData()
+        //Knowledge.getDatabaseManager().getVelibDatabase().getRecords()
     }
 
     fun onReceiveEvents(event: Event) {
-        if (TextUtils.equals(VelibEventType.GET_DATA, event.type)) {
-            var message: String
-
+        if (TextUtils.equals(VelibServiceEventType.GET_DATA, event.type)) {
+            println("BEGIN: GET DATA")
             if (event.error != null) {
-                message = event.error.toString()
+                println(event.error.toString())
             } else {
-                message = event.data.toString()
+                println(event.data.toString())
             }
+            println("END: GET DATA")
+        } else if (TextUtils.equals(VelibDatabaseEventType.GET_RECORDS, event.type)) {
+            println("BEGIN: GET RECORDS")
+            println(event.data.toString())
+            println("END: GET RECORDS")
 
-            println(message)
+        } else if (TextUtils.equals(VelibDatabaseEventType.ADD_RECORDS, event.type)) {
+            println("BEGIN: ADD RECORDS")
+            println(event.data.toString())
+            println("END: ADD RECORDS")
         }
     }
 

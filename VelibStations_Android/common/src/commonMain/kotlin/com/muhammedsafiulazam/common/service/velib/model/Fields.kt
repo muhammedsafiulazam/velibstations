@@ -20,7 +20,7 @@ data class Fields(@SerialName("station_name")
                   val dueDate: String?,
 
                   @SerialName("geo")
-                  val geolocation: ArrayList<Float>?,
+                  val geolocation: ArrayList<Double>?,
 
                   @SerialName("kioskstate")
                   val kioskState: String?,

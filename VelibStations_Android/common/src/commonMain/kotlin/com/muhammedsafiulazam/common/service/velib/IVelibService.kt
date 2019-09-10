@@ -1,5 +1,7 @@
 package com.muhammedsafiulazam.common.service.velib
 
+import com.muhammedsafiulazam.common.utils.ConstantUtils
+
 interface IVelibService {
-    fun getData(latitude: Double = 48.864716, longitude: Double = 2.349014, radius: Double = 1000.0, index: Int = 0, count: Int = 10)
+    fun getData(latitude: Double = ConstantUtils.DEFAULT_LATITUDE, longitude: Double = ConstantUtils.DEFAULT_LONGITUDE, radius: Double = ConstantUtils.DEFAULT_RADIUS, index: Int = 0, count: Int = 10)
 }

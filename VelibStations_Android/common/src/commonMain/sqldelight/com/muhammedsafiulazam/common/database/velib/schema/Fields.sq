@@ -1,25 +1,29 @@
+import java.lang.Double;
+import java.lang.Float;
+import java.lang.Integer;
+
 CREATE TABLE Fields (
-    recordId TEXT,
+    recordId TEXT NOT NULL,
 
     name TEXT,
     code TEXT PRIMARY KEY NOT NULL,
     state TEXT,
     type TEXT,
     dueDate TEXT,
-    latitude REAL,
-    longitude REAL,
+    latitude REAL AS Double,
+    longitude REAL AS Double,
     kioskState TEXT,
     creditCard TEXT,
     overflowActivation TEXT,
-    maxBikeOverflow INTEGER,
-    nbEDock INTEGER,
-    nbFreeEDock INTEGER,
-    nbDock INTEGER,
-    nbFreeDock INTEGER,
-    nbEBike INTEGER,
-    nbBike INTEGER,
-    nbBikeOverflow INTEGER,
-    nbEBikeOverflow INTEGER,
+    maxBikeOverflow INTEGER AS Integer,
+    nbEDock INTEGER AS Integer,
+    nbFreeEDock INTEGER AS Integer,
+    nbDock INTEGER AS Integer,
+    nbFreeDock INTEGER AS Integer,
+    nbEBike INTEGER AS Integer,
+    nbBike INTEGER AS Integer,
+    nbBikeOverflow INTEGER AS Integer,
+    nbEBikeOverflow INTEGER AS Integer,
     overflow TEXT,
     densityLevel TEXT);
 

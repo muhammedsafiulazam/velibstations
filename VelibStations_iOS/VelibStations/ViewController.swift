@@ -22,19 +22,29 @@ class ViewController: UIViewController {
             self.onReceiveEvents(event: event)
         })
         
-        Knowledge().getServiceManager().getVelibService().getData(latitude: 48.864716, longitude: 2.349014, radius: 1000, index: 0, count: 10)
+        //Knowledge().getServiceManager().getVelibService().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS, index: 0, count: 10)
+        
+        Knowledge().getDatabaseManager().getVelibDatabase().getRecords(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS)
     }
     
     func onReceiveEvents(event: Event) {
-        var message: String? = nil
-        
-        if (event.error != nil) {
-            message = "\(event.error!)"
-        } else {
-            message = "\(event.data!)"
+        if (VelibServiceEventType().GET_DATA == event.type) {
+            print("BEGIN: GET DATA")
+            if (event.error != nil) {
+                print("\(event.error!)")
+            } else {
+                print("\(event.data!)")
+            }
+            print("END: GET DATA")
+        } else if (VelibDatabaseEventType().GET_RECORDS == event.type) {
+            print("BEGIN: GET RECORDS")
+            print("\(event.data!)")
+            print("END: GET RECORDS")
+        } else if (VelibDatabaseEventType().ADD_RECORDS == event.type) {
+            print("BEGIN: ADD RECORDS")
+            print("\(event.data!)")
+            print("END: ADD RECORDS")
         }
-        
-        print(message!)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
