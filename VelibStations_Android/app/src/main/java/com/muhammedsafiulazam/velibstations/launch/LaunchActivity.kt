@@ -7,7 +7,6 @@ import com.muhammedsafiulazam.common.database.velib.event.VelibDatabaseEventType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.knowledge.Knowledge
 import com.muhammedsafiulazam.common.service.velib.event.VelibServiceEventType
-import com.muhammedsafiulazam.common.service.velib.model.Record
 import com.muhammedsafiulazam.velibstations.R
 import kotlinx.coroutines.channels.ReceiveChannel
 
@@ -28,27 +27,22 @@ class LaunchActivity : AppCompatActivity() {
         })
 
         Knowledge.getServiceManager().getVelibService().getData()
-        //Knowledge.getDatabaseManager().getVelibDatabase().getRecords()
+        //Knowledge.getDatabaseManager().getVelibDatabase().getData()
     }
 
     fun onReceiveEvents(event: Event) {
         if (TextUtils.equals(VelibServiceEventType.GET_DATA, event.type)) {
-            println("BEGIN: GET DATA")
+            println("BEGIN: REMOTE DATA")
             if (event.error != null) {
                 println(event.error.toString())
             } else {
                 println(event.data.toString())
             }
-            println("END: GET DATA")
-        } else if (TextUtils.equals(VelibDatabaseEventType.GET_RECORDS, event.type)) {
-            println("BEGIN: GET RECORDS")
+            println("END: REMOTE DATA")
+        } else if (TextUtils.equals(VelibDatabaseEventType.GET_DATA, event.type)) {
+            println("BEGIN: LOCAL DATA")
             println(event.data.toString())
-            println("END: GET RECORDS")
-
-        } else if (TextUtils.equals(VelibDatabaseEventType.ADD_RECORDS, event.type)) {
-            println("BEGIN: ADD RECORDS")
-            println(event.data.toString())
-            println("END: ADD RECORDS")
+            println("END: LOCAL DATA")
         }
     }
 

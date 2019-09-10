@@ -1,7 +1,11 @@
 package com.muhammedsafiulazam.common.database.velib.event
 
 object VelibDatabaseEventType {
-    const val GET_RECORDS: String = "GET_RECORDS"
-    const val ADD_RECORDS: String = "ADD_RECORDS"
-    const val CLEAN_RECORDS: String = "CLEAN_RECORDS"
+    // Tag.
+    private const val TAG = "VELIB_DATABASE_EVENT_TYPE_"
+
+    // Types
+    const val GET_DATA: String = TAG + "GET_DATA"
+    const val ADD_DATA: String = TAG + "ADD_DATA"
+    const val CLEAN_DATA: String = TAG + "CLEAN_DATA"
 }

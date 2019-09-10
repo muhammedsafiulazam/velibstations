@@ -15,9 +15,10 @@ class VelibService(val serviceClient: ServiceClient) : IVelibService {
         val url = "${URL_VELIB}&geofilter.distance=${latitude}%2C${longitude}%2C${radius}&start=${index}&rows=${count}"
 
         serviceClient.call(url, callback = { response: Dataset?, error: Error? ->
+            // Save data.
+            Knowledge.getDatabaseManager().getVelibDatabase().addData(response)
 
-            Knowledge.getDatabaseManager().getVelibDatabase().addRecords(response?.records)
-
+            // Dispatch event.
             val event = Event(VelibServiceEventType.GET_DATA, response, error)
             Knowledge.getEventManager().send(event)
         })
