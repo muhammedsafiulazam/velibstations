@@ -12,7 +12,7 @@ import CommonKit
 
 
 class ViewController: UIViewController {
-    private var mEventSubscriber: EventSubscriber? = nil
+    private var mEventSubscriber: IEventSubscriber? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

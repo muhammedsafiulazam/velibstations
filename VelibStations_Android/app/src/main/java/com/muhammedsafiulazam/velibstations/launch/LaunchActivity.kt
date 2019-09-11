@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.muhammedsafiulazam.common.database.velib.event.VelibDatabaseEventType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.EventSubscriber
+import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.knowledge.Knowledge
 import com.muhammedsafiulazam.common.service.velib.event.VelibServiceEventType
 import com.muhammedsafiulazam.velibstations.R
@@ -17,7 +18,7 @@ import kotlinx.coroutines.channels.ReceiveChannel
  */
 
 class LaunchActivity : AppCompatActivity() {
-    private var mEventSubscriber: EventSubscriber? = null
+    private var mEventSubscriber: IEventSubscriber? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

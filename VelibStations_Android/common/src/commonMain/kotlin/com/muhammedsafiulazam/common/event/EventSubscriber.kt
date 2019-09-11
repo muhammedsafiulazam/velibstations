@@ -2,8 +2,8 @@ package com.muhammedsafiulazam.common.event
 
 import kotlinx.coroutines.channels.ReceiveChannel
 
-class EventSubscriber {
-    private var receiveChannel: ReceiveChannel<Event>
+class EventSubscriber : IEventSubscriber {
+    private val receiveChannel: ReceiveChannel<Event>
 
     constructor(receiveChannel: ReceiveChannel<Event>) {
         this.receiveChannel = receiveChannel
