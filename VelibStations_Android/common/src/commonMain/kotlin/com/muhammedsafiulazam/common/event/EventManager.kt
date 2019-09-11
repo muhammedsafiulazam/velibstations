@@ -2,6 +2,7 @@ package com.muhammedsafiulazam.common.event
 
 import com.muhammedsafiulazam.common.utils.CouroutineUtils
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.channels.*
 import kotlinx.coroutines.launch
 
@@ -18,7 +19,7 @@ class EventManager : IEventManager {
      * @param context use context
      */
     override fun send(event: Event) {
-        CoroutineScope(CouroutineUtils.DISPATCHER).launch {
+        GlobalScope.launch(CouroutineUtils.DISPATCHER) {
             mChannel.send(event)
         }
     }
@@ -31,7 +32,7 @@ class EventManager : IEventManager {
      */
     override fun subscribe(callback: (event: Event) -> Unit) : IEventSubscriber {
         val channel = newChannel<Event>()
-        CoroutineScope(CouroutineUtils.DISPATCHER).launch {
+        GlobalScope.launch(CouroutineUtils.DISPATCHER) {
             for(event in channel) {
                 callback(event)
             }
