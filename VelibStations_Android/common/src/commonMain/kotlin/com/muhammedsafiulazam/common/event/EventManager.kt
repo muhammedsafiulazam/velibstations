@@ -31,9 +31,9 @@ class EventManager : IEventManager {
      * Subscribe to receiving mChannel.
      * @return receiving mChannel
      */
-    override fun subscribe() : ReceiveChannel<Event> {
+    override fun subscribe() : EventSubscriber {
         val channel = newChannel<Event>()
-        return channel
+        return EventSubscriber(channel)
     }
 
     /**
@@ -42,21 +42,21 @@ class EventManager : IEventManager {
      * @param context use context
      * @return receiving mChannel
      */
-    override fun subscribe(callback: (event: Event) -> Unit) : ReceiveChannel<Event> {
+    override fun subscribe(callback: (event: Event) -> Unit) : EventSubscriber {
         val channel = newChannel<Event>()
         CoroutineScope(CouroutineUtils.DISPATCHER).launch {
             for(event in channel) {
                 callback(event)
             }
         }
-        return channel
+        return EventSubscriber(channel)
     }
 
     /**
      * Unsubscribe from receiving mChannel.
      * @param receiveChannel receiving mChannel
      */
-    override fun unsubscribe(receiveChannel: ReceiveChannel<Event>?) {
-        receiveChannel?.cancel()
+    override fun unsubscribe(subscriber: EventSubscriber?) {
+        subscriber?.getReceiveChannel()?.cancel()
     }
 }

@@ -18,7 +18,7 @@ interface IEventManager {
      * Subscribe to receiving mChannel.
      * @return receiving mChannel
      */
-    fun subscribe() : ReceiveChannel<Event>
+    fun subscribe() : EventSubscriber
 
     /**
      * Subscribe to receiving mChannel.
@@ -26,11 +26,11 @@ interface IEventManager {
      * @param context use context
      * @return receiving mChannel
      */
-    fun subscribe(callback: (event: Event) -> Unit) : ReceiveChannel<Event>
+    fun subscribe(callback: (event: Event) -> Unit) : EventSubscriber
 
     /**
      * Unsubscribe from receiving mChannel.
      * @param receiveChannel receiving mChannel
      */
-    fun unsubscribe(receiveChannel: ReceiveChannel<Event>?)
+    fun unsubscribe(receiveChannel: EventSubscriber?)
 }
