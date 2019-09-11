@@ -23,40 +23,35 @@ class EventManager : IEventManager {
         }
     }
 
-    private inline fun <reified T> newChannel(): ReceiveChannel<T> {
-        return mChannel.openSubscription().filter { it is T }.map { it as T }
-    }
-
-    /**
-     * Subscribe to receiving mChannel.
-     * @return receiving mChannel
-     */
-    override fun subscribe() : ReceiveChannel<Event> {
-        val channel = newChannel<Event>()
-        return channel
-    }
-
     /**
      * Subscribe to receiving mChannel.
      * @param callback com.muhammedsafiulazam.common.event callback
      * @param context use context
      * @return receiving mChannel
      */
-    override fun subscribe(callback: (event: Event) -> Unit) : ReceiveChannel<Event> {
+    override fun subscribe(callback: (event: Event) -> Unit) : IEventSubscriber {
         val channel = newChannel<Event>()
         CoroutineScope(CouroutineUtils.DISPATCHER).launch {
             for(event in channel) {
                 callback(event)
             }
         }
-        return channel
+        return EventSubscriber(channel)
     }
 
     /**
      * Unsubscribe from receiving mChannel.
      * @param receiveChannel receiving mChannel
      */
-    override fun unsubscribe(receiveChannel: ReceiveChannel<Event>?) {
-        receiveChannel?.cancel()
+    override fun unsubscribe(subscriber: IEventSubscriber?) {
+        (subscriber as? EventSubscriber)?.getReceiveChannel()?.cancel()
+    }
+
+    /**
+     * Open receive channel.
+     * @return receive channel
+     */
+    private inline fun <reified T> newChannel(): ReceiveChannel<T> {
+        return mChannel.openSubscription().filter { it is T }.map { it as T }
     }
 }

@@ -5,6 +5,8 @@ import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.muhammedsafiulazam.common.database.velib.event.VelibDatabaseEventType
 import com.muhammedsafiulazam.common.event.Event
+import com.muhammedsafiulazam.common.event.EventSubscriber
+import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.knowledge.Knowledge
 import com.muhammedsafiulazam.common.service.velib.event.VelibServiceEventType
 import com.muhammedsafiulazam.velibstations.R
@@ -16,13 +18,13 @@ import kotlinx.coroutines.channels.ReceiveChannel
  */
 
 class LaunchActivity : AppCompatActivity() {
-    private var mReceiveChannel: ReceiveChannel<Event>? = null
+    private var mEventSubscriber: IEventSubscriber? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
 
-        mReceiveChannel = Knowledge.getEventManager().subscribe( callback = { event : Event -> Unit
+        mEventSubscriber = Knowledge.getEventManager().subscribe( callback = { event : Event -> Unit
             onReceiveEvents(event)
         })
 
@@ -47,7 +49,7 @@ class LaunchActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        Knowledge.getEventManager().unsubscribe(mReceiveChannel)
+        Knowledge.getEventManager().unsubscribe(mEventSubscriber)
         super.onDestroy()
     }
 }
