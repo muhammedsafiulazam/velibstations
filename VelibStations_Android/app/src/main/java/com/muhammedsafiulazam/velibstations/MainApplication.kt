@@ -1,6 +1,8 @@
 package com.muhammedsafiulazam.velibstations
 
 import android.app.Application
+import com.muhammedsafiulazam.common.addon.AddOn
+import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.utils.DatabaseUtils
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 
@@ -14,9 +16,14 @@ class MainApplication : Application() {
 
         // Database driver.
         DatabaseUtils.VELIB_DB_DRIVER = AndroidSqliteDriver(DatabaseUtils.VELIB_DB_SCHEMA, this, DatabaseUtils.VELIB_DB_FILENAME)
+
+        // Initialize addons.
+        AddOnManager.initialize()
     }
 
     override fun onTerminate() {
+        // Clear addons.
+        AddOnManager.clearAddOns()
         super.onTerminate()
     }
 }

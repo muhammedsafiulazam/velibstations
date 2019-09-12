@@ -1,9 +1,10 @@
 package com.muhammedsafiulazam.common.utils
 
 import kotlin.math.*
+import kotlin.native.concurrent.ThreadLocal
 
+@ThreadLocal
 object MathUtils {
-
     fun calculateDistance(fromLat: Double, fromLng: Double, toLat: Double, toLng: Double): Double {
         val theta = fromLng - toLng
         var dist = sin(getDegreeToRadian(fromLat)) * sin(getDegreeToRadian(toLat)) + (cos(getDegreeToRadian(fromLat))

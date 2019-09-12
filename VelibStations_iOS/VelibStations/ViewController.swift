@@ -12,38 +12,12 @@ import CommonKit
 
 
 class ViewController: UIViewController {
-    private var mEventSubscriber: IEventSubscriber? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mEventSubscriber = Knowledge().getEventManager().subscribe(callback: { event in
-            self.onReceiveEvents(event: event)
-        })
-        
-        Knowledge().getServiceManager().getVelibService().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS, index: 0, count: 10)
-        
-        //Knowledge().getDatabaseManager().getVelibDatabase().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS)
-    }
-    
-    func onReceiveEvents(event: Event) {
-        if (VelibServiceEventType().GET_DATA == event.type) {
-            print("BEGIN: REMOTE DATA")
-            if (event.error != nil) {
-                print("\(event.error!)")
-            } else {
-                print("\(event.data!)")
-            }
-            print("END: REMOTE DATA")
-        } else if (VelibDatabaseEventType().GET_DATA == event.type) {
-            print("BEGIN: LOCAL_DATA")
-            print("\(event.data!)")
-            print("END: LOCAL_DATA")
-        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        Knowledge().getEventManager().unsubscribe(receiveChannel: mEventSubscriber)
         super.viewDidDisappear(animated)
     }
 }

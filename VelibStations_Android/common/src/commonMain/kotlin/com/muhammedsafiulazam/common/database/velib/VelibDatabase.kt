@@ -1,8 +1,10 @@
 package com.muhammedsafiulazam.common.database.velib
 
+import com.muhammedsafiulazam.common.addon.AddOn
+import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.database.velib.event.VelibDatabaseEventType
 import com.muhammedsafiulazam.common.event.Event
-import com.muhammedsafiulazam.common.knowledge.Knowledge
+import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.service.velib.model.Dataset
 import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Parameters
@@ -13,7 +15,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 
-class VelibDatabase(val db: VelibDB) : IVelibDatabase {
+class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
     override fun getData(latitude: Double, longitude: Double, radius: Double)  {
         GlobalScope.launch(CouroutineUtils.DISPATCHER) {
 
@@ -29,8 +31,12 @@ class VelibDatabase(val db: VelibDB) : IVelibDatabase {
             val parameters: Parameters = Parameters(null, 0, count)
             val dataset: Dataset = Dataset(count, parameters, records)
 
+            // Manager.
+            val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
+
+            // Dispatch event.
             val event = Event(VelibDatabaseEventType.GET_DATA, dataset, null)
-            Knowledge.getEventManager().send(event)
+            eventManager!!.send(event)
         }
     }
 
@@ -40,8 +46,12 @@ class VelibDatabase(val db: VelibDB) : IVelibDatabase {
                 addRecord(record)
             }
 
+            // Manager.
+            val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
+
+            // Dispatch event.
             val event = Event(VelibDatabaseEventType.ADD_DATA, dataset, null)
-            Knowledge.getEventManager().send(event)
+            eventManager!!.send(event)
         }
     }
 
@@ -50,8 +60,12 @@ class VelibDatabase(val db: VelibDB) : IVelibDatabase {
             db.recordQueries.deleteAll()
             db.fieldsQueries.deleteAll()
 
+            // Manager.
+            val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
+
+            // Dispatch event.
             val event = Event(VelibDatabaseEventType.CLEAN_DATA, null, null)
-            Knowledge.getEventManager().send(event)
+            eventManager!!.send(event)
         }
     }
 
