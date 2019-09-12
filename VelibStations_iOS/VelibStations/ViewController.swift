@@ -12,18 +12,26 @@ import CommonKit
 
 
 class ViewController: UIViewController {
+    private var mEventManager: IEventManager? = nil
+    private var mServiceManager: IServiceManager? = nil
+    private var mDatabaseManager: IDatabaseManager? = nil
+    
     private var mEventSubscriber: IEventSubscriber? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mEventSubscriber = Knowledge().getEventManager().subscribe(callback: { event in
+        mEventManager = AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
+        mServiceManager = AddOnManager().getAddOn(type: AddOnType().SERVICE_MANAGER) as? IServiceManager
+        mDatabaseManager = AddOnManager().getAddOn(type: AddOnType().DATABASE_MANAGER) as? IDatabaseManager
+    
+        mEventSubscriber = mEventManager?.subscribe(callback: { event in
             self.onReceiveEvents(event: event)
         })
         
-        Knowledge().getServiceManager().getVelibService().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS, index: 0, count: 10)
+        //mServiceManager?.getVelibService().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS, index: 0, count: 10)
         
-        //Knowledge().getDatabaseManager().getVelibDatabase().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS)
+        mDatabaseManager?.getVelibDatabase().getData(latitude: ConstantUtils().DEFAULT_LATITUDE, longitude: ConstantUtils().DEFAULT_LONGITUDE, radius: ConstantUtils().DEFAULT_RADIUS)
     }
     
     func onReceiveEvents(event: Event) {
@@ -43,7 +51,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        Knowledge().getEventManager().unsubscribe(receiveChannel: mEventSubscriber)
+        mEventManager?.unsubscribe(receiveChannel: mEventSubscriber)
         super.viewDidDisappear(animated)
     }
 }

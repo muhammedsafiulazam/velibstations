@@ -1,5 +1,6 @@
 package com.muhammedsafiulazam.common.event
 
+import com.muhammedsafiulazam.common.addon.AddOn
 import com.muhammedsafiulazam.common.utils.CouroutineUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.GlobalScope
@@ -10,7 +11,7 @@ import kotlinx.coroutines.launch
  * Created by Muhammed Safiul Azam on 24/07/2019.
  */
 
-class EventManager : IEventManager {
+class EventManager : AddOn(), IEventManager {
     private val mChannel = ConflatedBroadcastChannel<Any>(Channel.CONFLATED)
 
     /**
