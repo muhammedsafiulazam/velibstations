@@ -26,6 +26,8 @@ android {
     // Split resources by features.
     sourceSets {
         main.res.srcDirs += 'src/main/res/launch'
+        main.res.srcDirs += 'src/main/res/stationlist'
+        main.res.srcDirs += 'src/main/res/stationinfo'
     }
 
     useLibrary 'android.test.runner'

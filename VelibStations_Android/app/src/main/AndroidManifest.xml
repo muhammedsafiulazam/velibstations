@@ -24,6 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name="com.muhammedsafiulazam.velibstations.feature.stationlist.StationListActivity"
+                android:label="@string/stationlist_title"
+                />
+
+        <activity android:name="com.muhammedsafiulazam.velibstations.feature.stationinfo.StationInfoActivity"
+                android:label="@string/stationinfo_title"
+                />
     </application>
 
 </manifest>
