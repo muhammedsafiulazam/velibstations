@@ -58,16 +58,14 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     private var mEventManager: IEventManager? = null
     private var mEventSubscriber: IEventSubscriber? = null
     private var mLocationManager: ILocationManager? = null
-    private var mServiceManager: IServiceManager? = null
-    private var mDatabaseManager: IDatabaseManager? = null
 
     private var mMap: GoogleMap? = null
-    private var mMapFragment: SupportMapFragment? = null
+    private lateinit var mMapFragment: SupportMapFragment
     private var mUserLocation: LatLng? = null
     private var mCameraLocation: LatLng? = null
     private var mDataset: Dataset? = null
 
-    private var mContent: View? = null
+    private lateinit var mContent: View
     private var mSnackbar: Snackbar? = null
     private var mSearchMenuItem: MenuItem? = null
 
@@ -85,12 +83,10 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
         mLocationManager = getAddOn(AddOnTypeNative.LOCATION_MANAGER) as ILocationManager?
-        mServiceManager = AddOnManager.getAddOn(AddOnType.SERVICE_MANAGER) as IServiceManager?
-        mDatabaseManager = AddOnManager.getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager?
 
         Places.initialize(getApplicationContext(), getString(R.string.google_api_key), Locale.getDefault());
         mMapFragment = supportFragmentManager.findFragmentById(R.id.stationlist_mpv_map) as SupportMapFragment
-        mMapFragment?.getMapAsync(this)
+        mMapFragment.getMapAsync(this)
 
         subscribeToEvents()
     }
@@ -184,7 +180,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     private fun updateMessage(message: String?) {
         if (message != null) {
             updateMessage(null)
-            mSnackbar = Snackbar.make(mContent!!, message, Snackbar.LENGTH_INDEFINITE)
+            mSnackbar = Snackbar.make(mContent, message, Snackbar.LENGTH_INDEFINITE)
             mSnackbar?.setAction(R.string.stationlist_button_retry, View.OnClickListener {
                 onClickRetry()
             })
@@ -225,7 +221,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     private fun onClickRetry() {
         if (mMap == null) {
-            mMapFragment?.getMapAsync(this)
+            mMapFragment.getMapAsync(this)
         } else {
             mLocationManager?.requestUpdates()
         }
@@ -267,7 +263,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
                 val place: Place = Autocomplete.getPlaceFromIntent(data!!)
                 MapUtils.zoomOnLocation(mMap!!, place.latLng!!)
             } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
-                Snackbar.make(mContent!!, getString(R.string.stationlist_error_address_location), Snackbar.LENGTH_LONG)
+                Snackbar.make(mContent, getString(R.string.stationlist_error_address_location), Snackbar.LENGTH_LONG)
             }
         }
     }
