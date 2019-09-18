@@ -74,25 +74,27 @@ class StationListActivityModel : BaseActivityModel() {
 
     fun onReceiveEvents(event: Event) {
         if (TextUtils.equals(StationListEventType.LOAD_DATA_REQUEST, event.type)) {
-
             // Show loader.
             loadDataBusy(true)
 
             mLocation = event.data as List<Double>
+
+            // Call service.
             mServiceManager?.getVelibService()?.getData(mLocation?.get(0)!!, mLocation?.get(1)!!)
 
         } else if (TextUtils.equals(VelibServiceEventType.GET_DATA, event.type)) {
             if (event.error != null) {
-
                 // Show loader.
                 loadDataBusy(true)
 
+                // Call database.
                 mDatabaseManager?.getVelibDatabase()?.getData(mLocation?.get(0)!!, mLocation?.get(1)!!)
             } else {
 
                 // Hide loader.
                 loadDataBusy(false)
 
+                // Load data.
                 loadDataResponse(event.data)
             }
 
@@ -106,6 +108,7 @@ class StationListActivityModel : BaseActivityModel() {
                 // Hide loader.
                 loadDataBusy(false)
 
+                // Load data.
                 loadDataResponse(event.data)
             }
         }
