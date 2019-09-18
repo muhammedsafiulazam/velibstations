@@ -1,12 +1,18 @@
 package com.muhammedsafiulazam.velibstations.feature.stationlist
 
+import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.SearchView
 import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -31,7 +37,9 @@ import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Record
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.activity.BaseActivity
+import com.muhammedsafiulazam.velibstations.activity.IActivityManager
 import com.muhammedsafiulazam.velibstations.addon.AddOnTypeNative
+import com.muhammedsafiulazam.velibstations.feature.stationinfo.StationInfoActivity
 import com.muhammedsafiulazam.velibstations.feature.stationlist.event.StationListEventType
 import com.muhammedsafiulazam.velibstations.location.ILocationManager
 import com.muhammedsafiulazam.velibstations.location.event.LocationEventType
@@ -61,6 +69,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     private var mContent: View? = null
     private var mSnackbar: Snackbar? = null
+    private var mSearchMenuItem: MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,8 +92,19 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         mMapFragment = supportFragmentManager.findFragmentById(R.id.stationlist_mpv_map) as SupportMapFragment
         mMapFragment?.getMapAsync(this)
 
-
         subscribeToEvents()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_stationlist, menu)
+
+        mSearchMenuItem = menu.findItem(R.id.stationlist_search)
+        mSearchMenuItem?.setOnMenuItemClickListener {
+            showAutocompletePlaces()
+            true
+        }
+
+        return true
     }
 
     override fun onStart() {
@@ -135,7 +155,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        MapUtils.initializeDynamicMap(mMap!!)
+        MapUtils.initializeDynamicMap(this, mMap!!)
         mMap?.setOnMyLocationButtonClickListener {
             onClickMyLocation()
             true
@@ -187,9 +207,11 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
                 val name: String = fields.name!!
                 val latitude: Double = fields.geolocation!!.get(0)
                 val longitude: Double = fields.geolocation!!.get(1)
+                val snippet = getString(R.string.stationlist_snippet_bikes, fields.nbBike, fields.nbEBike)
 
                 val markerOptions = MarkerOptions()
                     .title(name)
+                    .snippet(snippet)
                     .position(LatLng(latitude, longitude))
 
                 val marker = mMap?.addMarker(markerOptions)
@@ -220,7 +242,8 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     private fun onClickInfoWindow(marker: Marker) {
         val record: Record = marker.tag as Record
-        showAutocompletePlaces()
+        val activityManager: IActivityManager? = getAddOn(AddOnTypeNative.ACTIVITY_MANAGER) as IActivityManager?
+        activityManager?.loadActivity(StationInfoActivity::class.java, null /* data */)
     }
 
     private fun onChangeCameraLocation(location: LatLng) {

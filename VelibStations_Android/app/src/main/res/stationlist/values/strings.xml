@@ -4,4 +4,6 @@
     <string name="stationlist_error_location">Sorry! Failed to load location.</string>
     <string name="stationlist_button_retry">Retry</string>
     <string name="stationlist_error_address_location">Sorry! Invalid address.</string>
+    <string name="stationlist_search">Search</string>
+    <string name="stationlist_snippet_bikes">Bikes: %1d | eBikes: %2d</string>
 </resources>
