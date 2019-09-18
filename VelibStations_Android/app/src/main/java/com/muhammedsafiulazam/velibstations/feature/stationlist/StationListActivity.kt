@@ -79,10 +79,10 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         mServiceManager = AddOnManager.getAddOn(AddOnType.SERVICE_MANAGER) as IServiceManager?
         mDatabaseManager = AddOnManager.getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager?
 
+        Places.initialize(getApplicationContext(), getString(R.string.google_api_key), Locale.getDefault());
         mMapFragment = supportFragmentManager.findFragmentById(R.id.stationlist_mpv_map) as SupportMapFragment
         mMapFragment?.getMapAsync(this)
 
-        Places.initialize(getApplicationContext(), getString(R.string.google_api_key), Locale.getDefault());
 
         subscribeToEvents()
     }
