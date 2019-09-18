@@ -5,10 +5,14 @@ import android.os.Parcelable
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
+import com.muhammedsafiulazam.common.addon.AddOn
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.addon.IAddOn
+import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.velibstations.addon.AddOnTypeNative
+import com.muhammedsafiulazam.velibstations.location.ILocationManager
+import com.muhammedsafiulazam.velibstations.location.LocationManager
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.
@@ -28,8 +32,9 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
         super.onCreate(savedInstanceState)
 
         // Essential addons for activity.
-        addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, AddOnManager.getAddOn(AddOnTypeNative.ACTIVITY_MANAGER)!!)
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
+        addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, AddOnManager.getAddOn(AddOnTypeNative.ACTIVITY_MANAGER)!!)
+        addAddOn(AddOnTypeNative.LOCATION_MANAGER, AddOnManager.getAddOn(AddOnTypeNative.LOCATION_MANAGER)!!)
 
         isViewReady = false
     }
@@ -91,6 +96,13 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
         clearAddOns()
         mActivityModel?.onDestroyActivity()
         super.onDestroy()
+    }
+
+    // Permission related methods.
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        val locationManager: LocationManager? = getAddOn(AddOnTypeNative.LOCATION_MANAGER) as LocationManager?
+        locationManager?.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
     // Addons related methods.

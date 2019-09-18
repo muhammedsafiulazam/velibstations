@@ -8,6 +8,6 @@ import kotlinx.coroutines.Dispatchers
  */
 actual object CouroutineUtils {
     // Dispatcher.
-    actual val DISPATCHER: CoroutineDispatcher = Dispatchers.Default
+    actual val DISPATCHER: CoroutineDispatcher = Dispatchers.Main
 }
 

@@ -10,4 +10,5 @@ object AddOnTypeNative {
 
     // Types.
     const val ACTIVITY_MANAGER: String = TAG + "ACTIVITY_MANAGER"
+    const val LOCATION_MANAGER: String = TAG + "LOCATION_MANAGER"
 }

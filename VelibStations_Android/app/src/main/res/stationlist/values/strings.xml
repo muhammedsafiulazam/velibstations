@@ -1,3 +1,7 @@
 <resources>
-    <string name="stationlist_title">Station List</string>
+    <string name="stationlist_title">Velibs Stations</string>
+    <string name="stationlist_error_data">Sorry! Failed to load data.</string>
+    <string name="stationlist_error_location">Sorry! Failed to load location.</string>
+    <string name="stationlist_button_retry">Retry</string>
+    <string name="stationlist_error_address_location">Sorry! Invalid address.</string>
 </resources>

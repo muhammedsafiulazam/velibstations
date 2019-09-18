@@ -19,7 +19,7 @@ class StationInfoActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_stationinfo)
-        setActivityModel(StationListActivityModel::class.java)
+        setActivityModel(StationInfoActivityModel::class.java)
 
         // Do things.
 

@@ -7,4 +7,21 @@
         android:layout_height="match_parent"
         tools:context=".feature.stationlist.StationListActivity">
 
+    <fragment xmlns:tools="http://schemas.android.com/tools"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/stationlist_mpv_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <ProgressBar
+            android:id="@+id/stationlist_pgb_loader"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="@dimen/stationlist_pgb_size"
+            android:layout_height="@dimen/stationlist_pgb_size"
+            android:visibility="visible"
+            android:layout_margin="@dimen/view_margin_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
