@@ -1,3 +1,27 @@
 <resources>
     <string name="stationinfo_title">Station Info</string>
+    <string name="stationinfo_error_data">Sorry! Failed to load data.</string>
+    <string name="stationinfo_button_retry">Retry</string>
+
+    <string name="stationinfo_property_name">Name:</string>
+    <string name="stationinfo_property_code">Code:</string>
+    <string name="stationinfo_property_state">State:</string>
+    <string name="stationinfo_property_duedate">Due date:</string>
+    <string name="stationinfo_property_latitude">Latitude:</string>
+    <string name="stationinfo_property_longitude">Longitude:</string>
+    <string name="stationinfo_property_kioskstate">Kiosk State:</string>
+    <string name="stationinfo_property_creditcard">Credit Card:</string>
+    <string name="stationinfo_property_overflowactivation">Overflow Activation:</string>
+    <string name="stationinfo_property_maxbikeoverflow">Max Bike Overflow:</string>
+    <string name="stationinfo_property_nbedock">eDock:</string>
+    <string name="stationinfo_property_nbfreeedock">Free eDock:</string>
+    <string name="stationinfo_property_nbdock">Dock:</string>
+    <string name="stationinfo_property_nbfreedock">Free Dock:</string>
+    <string name="stationinfo_property_nbebike">eBike:</string>
+    <string name="stationinfo_property_nbbike">Bike:</string>
+    <string name="stationinfo_property_nbbikeoverflow">Bike Overflow:</string>
+    <string name="stationinfo_property_nbebikeoverflow">eBike Overflow:</string>
+    <string name="stationinfo_property_overflow">Overflow:</string>
+    <string name="stationinfo_property_densitylevel">Density Level:</string>
+
 </resources>
