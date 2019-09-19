@@ -1,17 +1,12 @@
 package com.muhammedsafiulazam.velibstations.activity
 
 import android.os.Bundle
-import android.os.Parcelable
-import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
-import com.muhammedsafiulazam.common.addon.AddOn
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.addon.IAddOn
-import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.velibstations.addon.AddOnTypeNative
-import com.muhammedsafiulazam.velibstations.location.ILocationManager
 import com.muhammedsafiulazam.velibstations.location.LocationManager
 
 /**
@@ -20,9 +15,10 @@ import com.muhammedsafiulazam.velibstations.location.LocationManager
 
 open class BaseActivity : AppCompatActivity(), IAddOn {
     companion object {
-        const val KEY_DATA: String = "KEY_DATA"
+        const val KEY_DATA_ID: String = "KEY_DATA_ID"
     }
 
+    private var mData: Any? = null
     private var mActivityModel: BaseActivityModel? = null
     private val mAddOns: MutableMap<String, IAddOn> = mutableMapOf()
 
@@ -35,6 +31,13 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
         addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, AddOnManager.getAddOn(AddOnTypeNative.ACTIVITY_MANAGER)!!)
         addAddOn(AddOnTypeNative.LOCATION_MANAGER, AddOnManager.getAddOn(AddOnTypeNative.LOCATION_MANAGER)!!)
+
+        // Load data.
+        val dataID: String? = intent.getStringExtra(KEY_DATA_ID)
+        if (dataID != null) {
+            val activityManager: ActivityManager? = getAddOn(AddOnTypeNative.ACTIVITY_MANAGER) as ActivityManager?
+            mData = activityManager?.retrieveData(dataID)
+        }
 
         isViewReady = false
     }
@@ -69,8 +72,8 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
         super.onStop()
     }
 
-    fun getData() : Parcelable? {
-        return intent?.getParcelableExtra(KEY_DATA)
+    fun getData() : Any? {
+        return mData
     }
 
     fun getActivityModel() : BaseActivityModel? {

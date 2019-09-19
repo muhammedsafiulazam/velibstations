@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content"
+>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintGuide_begin="@dimen/view_margin_small"
+            android:id="@+id/gdlTop"/>
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintGuide_end="@dimen/view_margin_small"
+            android:id="@+id/gdlBottom"/>
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintGuide_begin="@dimen/view_margin_small"
+            android:id="@+id/gdlLeft"/>
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintGuide_end="@dimen/view_margin_small"
+            android:id="@+id/gdlRight"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/property_txv_title"
+            style="@style/TextViewPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_margin_medium"
+            android:text="@string/not_available"
+            app:layout_constraintEnd_toStartOf="@+id/property_txv_value"
+            app:layout_constraintBottom_toTopOf="@+id/gdlBottom"
+            app:layout_constraintStart_toStartOf="@+id/gdlLeft"
+            app:layout_constraintTop_toTopOf="@+id/gdlTop" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/property_txv_value"
+            style="@style/TextViewMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/not_available"
+            app:layout_constraintBottom_toTopOf="@+id/gdlBottom"
+            app:layout_constraintEnd_toStartOf="@+id/gdlRight"
+            app:layout_constraintTop_toTopOf="@+id/gdlTop" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

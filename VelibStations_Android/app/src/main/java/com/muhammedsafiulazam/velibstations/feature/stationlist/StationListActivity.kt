@@ -55,9 +55,9 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     private val AUTOCOMPLETE_REQUEST_CODE = 1598
 
-    private var mEventManager: IEventManager? = null
-    private var mEventSubscriber: IEventSubscriber? = null
-    private var mLocationManager: ILocationManager? = null
+    private lateinit var mEventManager: IEventManager
+    private lateinit var mEventSubscriber: IEventSubscriber
+    private lateinit var mLocationManager: ILocationManager
 
     private var mMap: GoogleMap? = null
     private lateinit var mMapFragment: SupportMapFragment
@@ -67,7 +67,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     private lateinit var mContent: View
     private var mSnackbar: Snackbar? = null
-    private var mSearchMenuItem: MenuItem? = null
+    private lateinit var mSearchMenuItem: MenuItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,8 +81,8 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         updateLoader(false)
         updateView(null)
 
-        mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
-        mLocationManager = getAddOn(AddOnTypeNative.LOCATION_MANAGER) as ILocationManager?
+        mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
+        mLocationManager = getAddOn(AddOnTypeNative.LOCATION_MANAGER) as ILocationManager
 
         Places.initialize(getApplicationContext(), getString(R.string.google_api_key), Locale.getDefault());
         mMapFragment = supportFragmentManager.findFragmentById(R.id.stationlist_mpv_map) as SupportMapFragment
@@ -95,7 +95,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         menuInflater.inflate(R.menu.menu_stationlist, menu)
 
         mSearchMenuItem = menu.findItem(R.id.stationlist_search)
-        mSearchMenuItem?.setOnMenuItemClickListener {
+        mSearchMenuItem.setOnMenuItemClickListener {
             showAutocompletePlaces()
             true
         }
@@ -114,18 +114,18 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     }
 
     private fun subscribeToEvents() {
-        mEventSubscriber = mEventManager?.subscribe( callback = { event : Event -> Unit
+        mEventSubscriber = mEventManager.subscribe( callback = { event : Event -> Unit
             onReceiveEvents(event)
         })
     }
 
     private fun unsubscribeFromEvents() {
-        mEventManager?.unsubscribe(mEventSubscriber)
+        mEventManager.unsubscribe(mEventSubscriber)
     }
 
     private fun loadDataRequest(latitude: Double, longitude: Double) {
         val event = Event(StationListEventType.LOAD_DATA_REQUEST, listOf(latitude, longitude), null)
-        mEventManager?.send(event)
+        mEventManager.send(event)
     }
 
     fun onReceiveEvents(event: Event) {
@@ -139,7 +139,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
                 MapUtils.zoomOnLocation(mMap!!, mUserLocation!!)
             }
         } else if (TextUtils.equals(StationListEventType.LOAD_DATA_BUSY, event.type)) {
-            updateLoader(true)
+            updateLoader(event.data as Boolean)
         } else if (TextUtils.equals(StationListEventType.LOAD_DATA_ERROR, event.type)) {
             updateMessage(getString(R.string.stationlist_error_data))
         }
@@ -166,7 +166,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         mMap?.setOnCameraIdleListener(GoogleMap.OnCameraIdleListener {
             onChangeCameraLocation(mMap?.cameraPosition?.target!!)
         })
-        mLocationManager?.requestUpdates()
+        mLocationManager.requestUpdates()
     }
 
     private fun updateLoader(show: Boolean) {
@@ -203,11 +203,9 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
                 val name: String = fields.name!!
                 val latitude: Double = fields.geolocation!!.get(0)
                 val longitude: Double = fields.geolocation!!.get(1)
-                val snippet = getString(R.string.stationlist_snippet_bikes, fields.nbBike, fields.nbEBike)
 
                 val markerOptions = MarkerOptions()
                     .title(name)
-                    .snippet(snippet)
                     .position(LatLng(latitude, longitude))
 
                 val marker = mMap?.addMarker(markerOptions)
@@ -223,7 +221,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         if (mMap == null) {
             mMapFragment.getMapAsync(this)
         } else {
-            mLocationManager?.requestUpdates()
+            mLocationManager.requestUpdates()
         }
     }
 
@@ -239,7 +237,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     private fun onClickInfoWindow(marker: Marker) {
         val record: Record = marker.tag as Record
         val activityManager: IActivityManager? = getAddOn(AddOnTypeNative.ACTIVITY_MANAGER) as IActivityManager?
-        activityManager?.loadActivity(StationInfoActivity::class.java, null /* data */)
+        activityManager?.loadActivity(StationInfoActivity::class.java, record)
     }
 
     private fun onChangeCameraLocation(location: LatLng) {
@@ -269,7 +267,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     }
 
     override fun onDestroy() {
-        mLocationManager?.cancelUpdates()
+        mLocationManager.cancelUpdates()
         unsubscribeFromEvents()
         super.onDestroy()
     }

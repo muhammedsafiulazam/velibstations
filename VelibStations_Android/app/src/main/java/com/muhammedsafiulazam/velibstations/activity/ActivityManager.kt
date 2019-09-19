@@ -1,7 +1,6 @@
 package com.muhammedsafiulazam.velibstations.activity
 
 import android.content.Intent
-import android.os.Parcelable
 import com.muhammedsafiulazam.common.addon.AddOn
 
 /**
@@ -10,6 +9,7 @@ import com.muhammedsafiulazam.common.addon.AddOn
 
 class ActivityManager : AddOn(), IActivityManager {
     private var mCurrentActivity: BaseActivity? = null
+    private var mData: MutableMap<String, Any> = mutableMapOf()
 
     /**
      * Get current activity.
@@ -50,15 +50,35 @@ class ActivityManager : AddOn(), IActivityManager {
      * @param activity activity class
      * @param data data
      */
-    override fun loadActivity(activity: Class<out BaseActivity>, data: Parcelable?) {
+    override fun loadActivity(activity: Class<out BaseActivity>, data: Any?) {
         if (mCurrentActivity != null) {
             val intent = Intent(mCurrentActivity, activity)
 
             if (data != null) {
-                intent.putExtra(BaseActivity.KEY_DATA, data)
+                val dataID = generateID()
+                intent.putExtra(BaseActivity.KEY_DATA_ID, dataID)
+                mData.put(dataID, data)
             }
 
             mCurrentActivity?.startActivity(intent)
         }
+    }
+
+    /**
+     * Generate data id.
+     * @return data id
+     */
+    private fun generateID() : String {
+        return "" + System.currentTimeMillis()
+    }
+
+    /**
+     * Retrieve data.
+     * @return data
+     */
+    fun retrieveData(id: String) : Any? {
+        val data: Any? = mData.get(id)
+        mData.remove(id)
+        return data
     }
 }
