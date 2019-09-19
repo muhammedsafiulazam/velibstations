@@ -239,7 +239,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     private fun onClickInfoWindow(marker: Marker) {
         val record: Record = marker.tag as Record
         val activityManager: IActivityManager? = getAddOn(AddOnTypeNative.ACTIVITY_MANAGER) as IActivityManager?
-        activityManager?.loadActivity(StationInfoActivity::class.java, null /* data */)
+        activityManager?.loadActivity(StationInfoActivity::class.java, record)
     }
 
     private fun onChangeCameraLocation(location: LatLng) {

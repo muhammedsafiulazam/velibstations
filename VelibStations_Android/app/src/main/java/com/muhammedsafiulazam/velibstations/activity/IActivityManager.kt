@@ -37,5 +37,5 @@ interface IActivityManager : IAddOn {
      * @param activity activity class
      * @param data data
      */
-    fun loadActivity(activity: Class<out BaseActivity>, data: Parcelable?)
+    fun loadActivity(activity: Class<out BaseActivity>, data: Any?)
 }
