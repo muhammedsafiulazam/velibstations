@@ -3,6 +3,7 @@ package com.muhammedsafiulazam.velibstations.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
+import com.muhammedsafiulazam.common.addon.AddOn
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.addon.IAddOn
@@ -20,7 +21,6 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
 
     private var mData: Any? = null
     private var mActivityModel: BaseActivityModel? = null
-    private val mAddOns: MutableMap<String, IAddOn> = mutableMapOf()
 
     private var isViewReady: Boolean = false
 
@@ -109,64 +109,35 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
     }
 
     // Addons related methods.
-
-    /**
-     * Get addon.
-     * @param type type of addon
-     * @return addon for type
-     */
-    override fun getAddOn(type: String) : IAddOn? {
-        return mAddOns.get(type)
+    private val mAddOn: IAddOn by lazy {
+        AddOn()
+    }
+    
+    override fun getAddOn(type: String): IAddOn? {
+        return mAddOn.getAddOn(type)
     }
 
-    /**
-     * Get addons.
-     * @return map of addons
-     */
-    override fun getAddOns() : Map<String, IAddOn> {
-        return mAddOns
+    override fun getAddOns(): Map<String, IAddOn> {
+        return mAddOn.getAddOns()
     }
 
-    /**
-     * Add addon.
-     * @param type type of addon
-     * @param addOn addon to be added
-     */
     override fun addAddOn(type: String, addOn: IAddOn) {
-        mAddOns.put(type, addOn)
+        mAddOn.addAddOn(type, addOn)
     }
 
-    /**
-     * Add addons.
-     * @param addons map of addons
-     */
     override fun addAddOns(addons: Map<String, IAddOn>) {
-        mAddOns.putAll(addons)
+        mAddOn.addAddOns(addons)
     }
 
-    /**
-     * Remove addon.
-     * @param type type of addon
-     */
     override fun removeAddOn(type: String) {
-        mAddOns.remove(type)
+        mAddOn.removeAddOn(type)
     }
 
-    /**
-     * Remove addons.
-     * @param types types of addons
-     */
     override fun removeAddOns(types: List<String>) {
-        types.forEach { key ->
-            mAddOns.remove(key)
-        }
+        mAddOn.removeAddOns(types)
     }
 
-    /**
-     * Clear addons.
-     */
     override fun clearAddOns() {
-        // Clear.
-        mAddOns.clear()
+        mAddOn.clearAddOns()
     }
 }
