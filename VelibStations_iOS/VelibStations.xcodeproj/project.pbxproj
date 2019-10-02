@@ -25,6 +25,7 @@
 		02D523C32302EF3800EB1080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D523C12302EF3800EB1080 /* LaunchScreen.storyboard */; };
 		02D523CE2302EF3800EB1080 /* VelibStationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523CD2302EF3800EB1080 /* VelibStationsTests.swift */; };
 		02D523D92302EF3800EB1080 /* VelibStationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523D82302EF3800EB1080 /* VelibStationsUITests.swift */; };
+		02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D2D2344D65100A105FB /* ViewControllerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		02D523D42302EF3800EB1080 /* VelibStationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelibStationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D523D82302EF3800EB1080 /* VelibStationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelibStationsUITests.swift; sourceTree = "<group>"; };
 		02D523DA2302EF3800EB1080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02E76D2D2344D65100A105FB /* ViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				02D523BF2302EF3800EB1080 /* Assets.xcassets */,
 				02D523C12302EF3800EB1080 /* LaunchScreen.storyboard */,
 				02D523C42302EF3800EB1080 /* Info.plist */,
+				02E76D2D2344D65100A105FB /* ViewControllerModel.swift */,
 			);
 			path = VelibStations;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				02B8BA90234380410087D8CF /* ViewControllerManager.swift in Sources */,
 				02B8BA9C2343A93F0087D8CF /* LocationEventType.swift in Sources */,
 				02B8BA96234399300087D8CF /* ViewControllerID.swift in Sources */,
+				02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */,
 				02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */,
 				02B8BA992343A88E0087D8CF /* ILocationManager.swift in Sources */,
 				02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */,

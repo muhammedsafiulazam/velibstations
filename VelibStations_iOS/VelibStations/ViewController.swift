@@ -21,6 +21,8 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setViewControllerModel(viewControllerModel: ViewControllerModel.self)
+        
         mEventManager = AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         mServiceManager = AddOnManager().getAddOn(type: AddOnType().SERVICE_MANAGER) as? IServiceManager
         mDatabaseManager = AddOnManager().getAddOn(type: AddOnType().DATABASE_MANAGER) as? IDatabaseManager

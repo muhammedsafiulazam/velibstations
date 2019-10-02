@@ -13,6 +13,7 @@ class BaseViewController : UIViewController, IAddOn {
     
     private var mViewControllerModel: BaseViewControllerModel? = nil
     private var mData: AnyObject? = nil
+    private var isViewControllerReady: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class BaseViewController : UIViewController, IAddOn {
         addAddOn(type: AddOnTypeNative.VIEW_CONTROLLER_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnTypeNative.VIEW_CONTROLLER_MANAGER)!)
         addAddOn(type: AddOnTypeNative.LOCATION_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnTypeNative.LOCATION_MANAGER)!)
         
-        mViewControllerModel?.viewDidLoad()
+        isViewControllerReady = false
     }
     
     func getViewControllerMode() -> BaseViewControllerModel? {
@@ -35,8 +36,14 @@ class BaseViewController : UIViewController, IAddOn {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        onViewAppear()
+        
+        if (!isViewControllerReady) {
+            isViewControllerReady = true
+            mViewControllerModel?.viewDidLoad()
+        }
+        
         mViewControllerModel?.viewDidAppear()
+        onViewAppear()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
