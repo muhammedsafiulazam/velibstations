@@ -26,6 +26,10 @@
 		02D523CE2302EF3800EB1080 /* VelibStationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523CD2302EF3800EB1080 /* VelibStationsTests.swift */; };
 		02D523D92302EF3800EB1080 /* VelibStationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523D82302EF3800EB1080 /* VelibStationsUITests.swift */; };
 		02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D2D2344D65100A105FB /* ViewControllerModel.swift */; };
+		02E76D352344DBAD00A105FB /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D342344DBAD00A105FB /* StationListViewController.swift */; };
+		02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */; };
+		02E76D392344DCCB00A105FB /* StationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D382344DCCB00A105FB /* StationInfoViewController.swift */; };
+		02E76D3B2344DCD800A105FB /* StationInfoViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D3A2344DCD800A105FB /* StationInfoViewControllerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		02D523D82302EF3800EB1080 /* VelibStationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelibStationsUITests.swift; sourceTree = "<group>"; };
 		02D523DA2302EF3800EB1080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02E76D2D2344D65100A105FB /* ViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModel.swift; sourceTree = "<group>"; };
+		02E76D342344DBAD00A105FB /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
+		02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewControllerModel.swift; sourceTree = "<group>"; };
+		02E76D382344DCCB00A105FB /* StationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfoViewController.swift; sourceTree = "<group>"; };
+		02E76D3A2344DCD800A105FB /* StationInfoViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfoViewControllerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +190,7 @@
 		02D523B72302EF3600EB1080 /* VelibStations */ = {
 			isa = PBXGroup;
 			children = (
+				02E76D312344DB8000A105FB /* Feature */,
 				02B8BA972343A8770087D8CF /* Location */,
 				02B8BA86234352620087D8CF /* ViewController */,
 				02B8BA85234352470087D8CF /* AddOn */,
@@ -212,6 +221,33 @@
 				02D523DA2302EF3800EB1080 /* Info.plist */,
 			);
 			path = VelibStationsUITests;
+			sourceTree = "<group>";
+		};
+		02E76D312344DB8000A105FB /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				02E76D332344DB9500A105FB /* StationInfo */,
+				02E76D322344DB8B00A105FB /* StationList */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		02E76D322344DB8B00A105FB /* StationList */ = {
+			isa = PBXGroup;
+			children = (
+				02E76D342344DBAD00A105FB /* StationListViewController.swift */,
+				02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */,
+			);
+			path = StationList;
+			sourceTree = "<group>";
+		};
+		02E76D332344DB9500A105FB /* StationInfo */ = {
+			isa = PBXGroup;
+			children = (
+				02E76D382344DCCB00A105FB /* StationInfoViewController.swift */,
+				02E76D3A2344DCD800A105FB /* StationInfoViewControllerModel.swift */,
+			);
+			path = StationInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,9 +410,13 @@
 				02B8BA88234352E90087D8CF /* AddOnTypeNative.swift in Sources */,
 				02B8BA90234380410087D8CF /* ViewControllerManager.swift in Sources */,
 				02B8BA9C2343A93F0087D8CF /* LocationEventType.swift in Sources */,
+				02E76D392344DCCB00A105FB /* StationInfoViewController.swift in Sources */,
 				02B8BA96234399300087D8CF /* ViewControllerID.swift in Sources */,
 				02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */,
+				02E76D352344DBAD00A105FB /* StationListViewController.swift in Sources */,
 				02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */,
+				02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */,
+				02E76D3B2344DCD800A105FB /* StationInfoViewControllerModel.swift in Sources */,
 				02B8BA992343A88E0087D8CF /* ILocationManager.swift in Sources */,
 				02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */,
 			);
