@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		02A1D6162316BB79004E5C52 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A1D6152316BB79004E5C52 /* CommonKit.framework */; };
 		02A1D6172316BB79004E5C52 /* CommonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02A1D6152316BB79004E5C52 /* CommonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		02B8BA88234352E90087D8CF /* AddOnTypeNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA87234352E90087D8CF /* AddOnTypeNative.swift */; };
+		02B8BA8A2343543E0087D8CF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA892343543E0087D8CF /* BaseViewController.swift */; };
+		02B8BA8C2343562D0087D8CF /* BaseViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA8B2343562D0087D8CF /* BaseViewControllerModel.swift */; };
+		02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA8D23437F520087D8CF /* IViewControllerManager.swift */; };
+		02B8BA90234380410087D8CF /* ViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA8F234380410087D8CF /* ViewControllerManager.swift */; };
+		02B8BA96234399300087D8CF /* ViewControllerID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA95234399300087D8CF /* ViewControllerID.swift */; };
+		02B8BA992343A88E0087D8CF /* ILocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA982343A88E0087D8CF /* ILocationManager.swift */; };
+		02B8BA9C2343A93F0087D8CF /* LocationEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA9B2343A93F0087D8CF /* LocationEventType.swift */; };
+		02B8BA9E2343A98F0087D8CF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA9D2343A98F0087D8CF /* LocationManager.swift */; };
 		02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523B82302EF3600EB1080 /* AppDelegate.swift */; };
 		02D523BB2302EF3600EB1080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523BA2302EF3600EB1080 /* ViewController.swift */; };
 		02D523BE2302EF3600EB1080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D523BC2302EF3600EB1080 /* Main.storyboard */; };
@@ -51,6 +60,15 @@
 
 /* Begin PBXFileReference section */
 		02A1D6152316BB79004E5C52 /* CommonKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonKit.framework; path = "../VelibStations_Android/common/build/xcode-frameworks/CommonKit.framework"; sourceTree = "<group>"; };
+		02B8BA87234352E90087D8CF /* AddOnTypeNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnTypeNative.swift; sourceTree = "<group>"; };
+		02B8BA892343543E0087D8CF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		02B8BA8B2343562D0087D8CF /* BaseViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerModel.swift; sourceTree = "<group>"; };
+		02B8BA8D23437F520087D8CF /* IViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewControllerManager.swift; sourceTree = "<group>"; };
+		02B8BA8F234380410087D8CF /* ViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerManager.swift; sourceTree = "<group>"; };
+		02B8BA95234399300087D8CF /* ViewControllerID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerID.swift; sourceTree = "<group>"; };
+		02B8BA982343A88E0087D8CF /* ILocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocationManager.swift; sourceTree = "<group>"; };
+		02B8BA9B2343A93F0087D8CF /* LocationEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEventType.swift; sourceTree = "<group>"; };
+		02B8BA9D2343A98F0087D8CF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		02D523B52302EF3600EB1080 /* VelibStations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelibStations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D523B82302EF3600EB1080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D523BA2302EF3600EB1080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +117,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		02B8BA85234352470087D8CF /* AddOn */ = {
+			isa = PBXGroup;
+			children = (
+				02B8BA87234352E90087D8CF /* AddOnTypeNative.swift */,
+			);
+			path = AddOn;
+			sourceTree = "<group>";
+		};
+		02B8BA86234352620087D8CF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02B8BA892343543E0087D8CF /* BaseViewController.swift */,
+				02B8BA8B2343562D0087D8CF /* BaseViewControllerModel.swift */,
+				02B8BA8D23437F520087D8CF /* IViewControllerManager.swift */,
+				02B8BA95234399300087D8CF /* ViewControllerID.swift */,
+				02B8BA8F234380410087D8CF /* ViewControllerManager.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		02B8BA972343A8770087D8CF /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				02B8BA9A2343A9220087D8CF /* Event */,
+				02B8BA982343A88E0087D8CF /* ILocationManager.swift */,
+				02B8BA9D2343A98F0087D8CF /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		02B8BA9A2343A9220087D8CF /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				02B8BA9B2343A93F0087D8CF /* LocationEventType.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		02D523AC2302EF3600EB1080 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +180,9 @@
 		02D523B72302EF3600EB1080 /* VelibStations */ = {
 			isa = PBXGroup;
 			children = (
+				02B8BA972343A8770087D8CF /* Location */,
+				02B8BA86234352620087D8CF /* ViewController */,
+				02B8BA85234352470087D8CF /* AddOn */,
 				02D523B82302EF3600EB1080 /* AppDelegate.swift */,
 				02D523BA2302EF3600EB1080 /* ViewController.swift */,
 				02D523BC2302EF3600EB1080 /* Main.storyboard */,
@@ -305,7 +364,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B8BA8C2343562D0087D8CF /* BaseViewControllerModel.swift in Sources */,
 				02D523BB2302EF3600EB1080 /* ViewController.swift in Sources */,
+				02B8BA8A2343543E0087D8CF /* BaseViewController.swift in Sources */,
+				02B8BA9E2343A98F0087D8CF /* LocationManager.swift in Sources */,
+				02B8BA88234352E90087D8CF /* AddOnTypeNative.swift in Sources */,
+				02B8BA90234380410087D8CF /* ViewControllerManager.swift in Sources */,
+				02B8BA9C2343A93F0087D8CF /* LocationEventType.swift in Sources */,
+				02B8BA96234399300087D8CF /* ViewControllerID.swift in Sources */,
+				02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */,
+				02B8BA992343A88E0087D8CF /* ILocationManager.swift in Sources */,
 				02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
