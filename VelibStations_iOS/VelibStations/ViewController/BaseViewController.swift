@@ -20,7 +20,7 @@ class BaseViewController : UIViewController, IAddOn {
         
         addAddOn(type: AddOnType().EVENT_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER)!)
         addAddOn(type: AddOnTypeNative.VIEW_CONTROLLER_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnTypeNative.VIEW_CONTROLLER_MANAGER)!)
-        addAddOn(type: AddOnTypeNative.LOCATION_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnTypeNative.LOCATION_MANAGER)!)
+        addAddOn(type: AddOnType().LOCATION_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().LOCATION_MANAGER)!)
         
         isViewControllerReady = false
     }

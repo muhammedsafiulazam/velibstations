@@ -15,6 +15,7 @@ import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
+import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Record
 import com.muhammedsafiulazam.velibstations.R
@@ -109,7 +110,7 @@ class StationInfoActivity : BaseActivity(), OnMapReadyCallback {
         val name: String = fields.name!!
         val latitude: Double = fields.geolocation!!.get(0)
         val longitude: Double = fields.geolocation!!.get(1)
-        val location = LatLng(latitude, longitude)
+        val location = Location(latitude, longitude)
         MapUtils.zoomOnLocation(mMap!!, location)
 
         val markerOptions = MarkerOptions()

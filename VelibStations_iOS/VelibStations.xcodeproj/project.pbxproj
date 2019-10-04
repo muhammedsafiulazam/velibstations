@@ -15,9 +15,6 @@
 		02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA8D23437F520087D8CF /* IViewControllerManager.swift */; };
 		02B8BA90234380410087D8CF /* ViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA8F234380410087D8CF /* ViewControllerManager.swift */; };
 		02B8BA96234399300087D8CF /* ViewControllerID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA95234399300087D8CF /* ViewControllerID.swift */; };
-		02B8BA992343A88E0087D8CF /* ILocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA982343A88E0087D8CF /* ILocationManager.swift */; };
-		02B8BA9C2343A93F0087D8CF /* LocationEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA9B2343A93F0087D8CF /* LocationEventType.swift */; };
-		02B8BA9E2343A98F0087D8CF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA9D2343A98F0087D8CF /* LocationManager.swift */; };
 		02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523B82302EF3600EB1080 /* AppDelegate.swift */; };
 		02D523BB2302EF3600EB1080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523BA2302EF3600EB1080 /* ViewController.swift */; };
 		02D523BE2302EF3600EB1080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D523BC2302EF3600EB1080 /* Main.storyboard */; };
@@ -71,9 +68,6 @@
 		02B8BA8D23437F520087D8CF /* IViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewControllerManager.swift; sourceTree = "<group>"; };
 		02B8BA8F234380410087D8CF /* ViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerManager.swift; sourceTree = "<group>"; };
 		02B8BA95234399300087D8CF /* ViewControllerID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerID.swift; sourceTree = "<group>"; };
-		02B8BA982343A88E0087D8CF /* ILocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocationManager.swift; sourceTree = "<group>"; };
-		02B8BA9B2343A93F0087D8CF /* LocationEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEventType.swift; sourceTree = "<group>"; };
-		02B8BA9D2343A98F0087D8CF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		02D523B52302EF3600EB1080 /* VelibStations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelibStations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D523B82302EF3600EB1080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D523BA2302EF3600EB1080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,24 +141,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		02B8BA972343A8770087D8CF /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				02B8BA9A2343A9220087D8CF /* Event */,
-				02B8BA982343A88E0087D8CF /* ILocationManager.swift */,
-				02B8BA9D2343A98F0087D8CF /* LocationManager.swift */,
-			);
-			path = Location;
-			sourceTree = "<group>";
-		};
-		02B8BA9A2343A9220087D8CF /* Event */ = {
-			isa = PBXGroup;
-			children = (
-				02B8BA9B2343A93F0087D8CF /* LocationEventType.swift */,
-			);
-			path = Event;
-			sourceTree = "<group>";
-		};
 		02D523AC2302EF3600EB1080 = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				02E76D312344DB8000A105FB /* Feature */,
-				02B8BA972343A8770087D8CF /* Location */,
 				02B8BA86234352620087D8CF /* ViewController */,
 				02B8BA85234352470087D8CF /* AddOn */,
 				02D523B82302EF3600EB1080 /* AppDelegate.swift */,
@@ -406,10 +381,8 @@
 				02B8BA8C2343562D0087D8CF /* BaseViewControllerModel.swift in Sources */,
 				02D523BB2302EF3600EB1080 /* ViewController.swift in Sources */,
 				02B8BA8A2343543E0087D8CF /* BaseViewController.swift in Sources */,
-				02B8BA9E2343A98F0087D8CF /* LocationManager.swift in Sources */,
 				02B8BA88234352E90087D8CF /* AddOnTypeNative.swift in Sources */,
 				02B8BA90234380410087D8CF /* ViewControllerManager.swift in Sources */,
-				02B8BA9C2343A93F0087D8CF /* LocationEventType.swift in Sources */,
 				02E76D392344DCCB00A105FB /* StationInfoViewController.swift in Sources */,
 				02B8BA96234399300087D8CF /* ViewControllerID.swift in Sources */,
 				02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */,
@@ -417,7 +390,6 @@
 				02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */,
 				02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */,
 				02E76D3B2344DCD800A105FB /* StationInfoViewControllerModel.swift in Sources */,
-				02B8BA992343A88E0087D8CF /* ILocationManager.swift in Sources */,
 				02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

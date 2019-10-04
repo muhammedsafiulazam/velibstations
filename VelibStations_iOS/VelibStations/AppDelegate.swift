@@ -19,11 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let viewControllerManager: IViewControllerManager = ViewControllerManager()
-        let locationManager: ILocationManager = LocationManager()
-        let eventManager: IEventManager = AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER) as! IEventManager
-        locationManager.addAddOn(type: AddOnType().EVENT_MANAGER, addOn: eventManager)
         AddOnManager().addAddOn(type: AddOnTypeNative.VIEW_CONTROLLER_MANAGER, addOn: viewControllerManager)
-        AddOnManager().addAddOn(type: AddOnTypeNative.LOCATION_MANAGER, addOn: locationManager)
         
         return true
     }

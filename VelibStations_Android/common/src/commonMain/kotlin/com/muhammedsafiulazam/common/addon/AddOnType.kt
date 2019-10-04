@@ -12,4 +12,5 @@ object AddOnType {
     const val SERVICE_MANAGER: String = TAG + "SERVICE_MANAGER"
     const val EVENT_MANAGER: String = TAG + "EVENT_MANAGER"
     const val DATABASE_MANAGER: String = TAG + "DATABASE_MANAGER"
+    const val LOCATION_MANAGER: String = TAG + "LOCATION_MANAGER"
 }

@@ -28,7 +28,7 @@ class MainApplication : Application() {
         locationManager.addAddOn(AddOnType.EVENT_MANAGER, eventManager)
         locationManager.addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, activityManager)
         AddOnManager.addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, activityManager)
-        AddOnManager.addAddOn(AddOnTypeNative.LOCATION_MANAGER, locationManager)
+        AddOnManager.addAddOn(AddOnType.LOCATION_MANAGER, locationManager)
     }
 
     override fun onTerminate() {

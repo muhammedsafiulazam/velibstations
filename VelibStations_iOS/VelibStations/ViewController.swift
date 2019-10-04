@@ -9,8 +9,6 @@
 import UIKit
 import CommonKit
 
-
-
 class ViewController: BaseViewController {
     private var mEventManager: IEventManager? = nil
     private var mServiceManager: IServiceManager? = nil
@@ -26,7 +24,7 @@ class ViewController: BaseViewController {
         mEventManager = AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         mServiceManager = AddOnManager().getAddOn(type: AddOnType().SERVICE_MANAGER) as? IServiceManager
         mDatabaseManager = AddOnManager().getAddOn(type: AddOnType().DATABASE_MANAGER) as? IDatabaseManager
-        mLocationManager = getAddOn(type: AddOnTypeNative.LOCATION_MANAGER) as? ILocationManager
+        mLocationManager = getAddOn(type: AddOnType().LOCATION_MANAGER) as? ILocationManager
     
         mEventSubscriber = mEventManager?.subscribe(callback: { event in
             self.onReceiveEvents(event: event)
@@ -54,11 +52,11 @@ class ViewController: BaseViewController {
             print("END: LOCAL_DATA")
         }*/
         
-        if (LocationEventType.REQUEST_UPDATES == event.type) {
+        if (LocationEventType().REQUEST_UPDATES == event.type) {
             print("BEGIN: REQUEST_UPDATES")
             print("...")
             print("END: REQUEST_UPDATES")
-        } else if (LocationEventType.UPDATE_LOCATION == event.type) {
+        } else if (LocationEventType().UPDATE_LOCATION == event.type) {
             print("BEGIN: UPDATE_LOCATION")
             print("\(event.data!)")
             print("END: UPDATE_LOCATION")

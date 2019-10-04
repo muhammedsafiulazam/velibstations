@@ -40,6 +40,9 @@ kotlin {
         implementation ("io.ktor:ktor-client-serialization-jvm:$ktor_version")
 
         implementation ("com.squareup.sqldelight:android-driver:$sqldelight_version")
+
+        // Only used by platform.
+        implementation ("com.google.android.gms:play-services-location:17.0.0")
     }
 
     sourceSets["iosMain"].dependencies {

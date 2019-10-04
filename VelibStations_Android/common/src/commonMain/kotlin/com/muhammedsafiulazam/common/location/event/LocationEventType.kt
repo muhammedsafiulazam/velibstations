@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.velibstations.location.event
+package com.muhammedsafiulazam.common.location.event
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.

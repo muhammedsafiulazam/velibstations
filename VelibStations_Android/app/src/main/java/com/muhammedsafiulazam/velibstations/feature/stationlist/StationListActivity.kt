@@ -1,19 +1,11 @@
 package com.muhammedsafiulazam.velibstations.feature.stationlist
 
-import android.app.SearchManager
-import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.PorterDuff
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.SearchView
-import androidx.core.content.ContextCompat
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -25,13 +17,13 @@ import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.snackbar.Snackbar
-import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
-import com.muhammedsafiulazam.common.database.IDatabaseManager
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
-import com.muhammedsafiulazam.common.service.IServiceManager
+import com.muhammedsafiulazam.common.location.ILocationManager
+import com.muhammedsafiulazam.common.location.event.LocationEventType
+import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.velib.model.Dataset
 import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Record
@@ -41,8 +33,6 @@ import com.muhammedsafiulazam.velibstations.activity.IActivityManager
 import com.muhammedsafiulazam.velibstations.addon.AddOnTypeNative
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.StationInfoActivity
 import com.muhammedsafiulazam.velibstations.feature.stationlist.event.StationListEventType
-import com.muhammedsafiulazam.velibstations.location.ILocationManager
-import com.muhammedsafiulazam.velibstations.location.event.LocationEventType
 import com.muhammedsafiulazam.velibstations.utils.MapUtils
 import kotlinx.android.synthetic.main.activity_stationlist.*
 import kotlinx.coroutines.Dispatchers
@@ -61,8 +51,8 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     private var mMap: GoogleMap? = null
     private lateinit var mMapFragment: SupportMapFragment
-    private var mUserLocation: LatLng? = null
-    private var mCameraLocation: LatLng? = null
+    private var mUserLocation: Location? = null
+    private var mCameraLocation: Location? = null
     private var mDataset: Dataset? = null
 
     private lateinit var mContent: View
@@ -82,7 +72,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         updateView(null)
 
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
-        mLocationManager = getAddOn(AddOnTypeNative.LOCATION_MANAGER) as ILocationManager
+        mLocationManager = getAddOn(AddOnType.LOCATION_MANAGER) as ILocationManager
 
         Places.initialize(getApplicationContext(), getString(R.string.google_api_key), Locale.getDefault());
         mMapFragment = supportFragmentManager.findFragmentById(R.id.stationlist_mpv_map) as SupportMapFragment
@@ -135,7 +125,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
             }
         } else if (TextUtils.equals(LocationEventType.UPDATE_LOCATION, event.type)) {
             if (mUserLocation == null) {
-                mUserLocation = event.data as LatLng
+                mUserLocation = event.data as Location
                 MapUtils.zoomOnLocation(mMap!!, mUserLocation!!)
             }
         } else if (TextUtils.equals(StationListEventType.LOAD_DATA_BUSY, event.type)) {
@@ -241,7 +231,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     }
 
     private fun onChangeCameraLocation(location: LatLng) {
-        mCameraLocation = location
+        mCameraLocation = Location(location.latitude, location.longitude)
         loadDataRequest(mCameraLocation?.latitude!!, mCameraLocation?.longitude!!)
     }
 
@@ -258,8 +248,8 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
         if(requestCode == AUTOCOMPLETE_REQUEST_CODE) {
             if (resultCode == AutocompleteActivity.RESULT_OK) {
-                val place: Place = Autocomplete.getPlaceFromIntent(data!!)
-                MapUtils.zoomOnLocation(mMap!!, place.latLng!!)
+                val location: LatLng = Autocomplete.getPlaceFromIntent(data!!).latLng!!
+                MapUtils.zoomOnLocation(mMap!!, Location(location.latitude, location.longitude))
             } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
                 Snackbar.make(mContent, getString(R.string.stationlist_error_address_location), Snackbar.LENGTH_LONG)
             }

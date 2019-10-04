@@ -5,6 +5,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.MapStyleOptions
+import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.velibstations.R
 
 
@@ -42,7 +43,7 @@ object MapUtils {
         map.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.google_map_style))
     }
 
-    fun zoomOnLocation(map: GoogleMap, location: LatLng, zoom: Float = ZOOM_DEFAULT) {
+    fun zoomOnLocation(map: GoogleMap, location: Location, zoom: Float = ZOOM_DEFAULT) {
         map.animateCamera(
             CameraUpdateFactory.newLatLngZoom(LatLng(location.latitude, location.longitude), zoom)
         )

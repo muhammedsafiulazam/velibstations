@@ -9,11 +9,13 @@ import com.muhammedsafiulazam.common.addon.AddOn
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
+import com.muhammedsafiulazam.common.location.ILocationManager
+import com.muhammedsafiulazam.common.location.event.LocationEventType
+import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.model.Error
 import com.muhammedsafiulazam.velibstations.activity.BaseActivity
 import com.muhammedsafiulazam.velibstations.activity.IActivityManager
 import com.muhammedsafiulazam.velibstations.addon.AddOnTypeNative
-import com.muhammedsafiulazam.velibstations.location.event.LocationEventType
 
 
 
@@ -21,7 +23,7 @@ class LocationManager : AddOn(), ILocationManager {
 
     private val REQUEST_PERMISSION_ACCESS_FINE_LOCATION = 12345
     private var mFusedLocationProviderClient: FusedLocationProviderClient? = null
-    private var mLocation: LatLng? = null
+    private var mLocation: Location? = null
 
     private val mLocationRequest = LocationRequest.create()
         .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -93,14 +95,14 @@ class LocationManager : AddOn(), ILocationManager {
 
     private fun onLocationUpdate(latitude: Double, longitude: Double) {
         if (mLocation == null || mLocation?.latitude != latitude || mLocation?.longitude != longitude) {
-            mLocation = LatLng(latitude, longitude)
+            mLocation = Location(latitude, longitude)
             val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
             val event = Event(LocationEventType.UPDATE_LOCATION, mLocation, null)
             eventManager?.send(event)
         }
     }
 
-    override fun getLocation(): LatLng? {
+    override fun getLocation(): Location? {
         return mLocation
     }
 }

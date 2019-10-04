@@ -30,7 +30,7 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
         // Essential addons for activity.
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
         addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, AddOnManager.getAddOn(AddOnTypeNative.ACTIVITY_MANAGER)!!)
-        addAddOn(AddOnTypeNative.LOCATION_MANAGER, AddOnManager.getAddOn(AddOnTypeNative.LOCATION_MANAGER)!!)
+        addAddOn(AddOnType.LOCATION_MANAGER, AddOnManager.getAddOn(AddOnType.LOCATION_MANAGER)!!)
 
         // Load data.
         val dataID: String? = intent.getStringExtra(KEY_DATA_ID)
@@ -104,7 +104,7 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
     // Permission related methods.
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        val locationManager: LocationManager? = getAddOn(AddOnTypeNative.LOCATION_MANAGER) as LocationManager?
+        val locationManager: LocationManager? = getAddOn(AddOnType.LOCATION_MANAGER) as LocationManager?
         locationManager?.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 

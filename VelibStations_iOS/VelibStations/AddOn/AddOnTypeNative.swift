@@ -11,5 +11,4 @@ class AddOnTypeNative {
     
     // Types.
     static let VIEW_CONTROLLER_MANAGER: String = TAG + "VIEW_CONTROLLER_MANAGER"
-    static let LOCATION_MANAGER: String = TAG + "LOCATION_MANAGER"
 }
