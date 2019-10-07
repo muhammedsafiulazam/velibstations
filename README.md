@@ -26,5 +26,18 @@ Run command << ./gradlew :common:build >> on Terminal.
 Add / delete Serializable model in common library:
 Please update << ServiceSerializer >> class accordingly.
 
+Google API Keys:
+
+Create a resource file with following contents
+<resources>
+    <string name="google_api_key">GOOGLE API KEY</string>
+</resources>
+
+Create a plist file ( Keys.plist ) with following contents
+<dict>
+	<key>GoogleAPIKey</key>
+	<string>GOOGLE API KEY</string>
+</dict>
+
 Thank you.
 
