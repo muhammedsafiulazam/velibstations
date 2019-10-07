@@ -8,6 +8,8 @@
 
 import UIKit
 import CommonKit
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var dictionary: NSDictionary?
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+           dictionary = NSDictionary(contentsOfFile: path)
+        }
+        
+        let googleAPIKey: String? = dictionary?.value(forKey: "GoogleAPIKey") as? String
+        if (googleAPIKey != nil) {
+            GMSServices.provideAPIKey(googleAPIKey!)
+            GMSPlacesClient.provideAPIKey(googleAPIKey!)
+        }
         
         let viewControllerManager: IViewControllerManager = ViewControllerManager()
         AddOnManager().addAddOn(type: AddOnTypeNative.VIEW_CONTROLLER_MANAGER, addOn: viewControllerManager)

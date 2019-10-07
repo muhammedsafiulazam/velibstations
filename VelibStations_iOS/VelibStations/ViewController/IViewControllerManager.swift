@@ -11,6 +11,6 @@ protocol IViewControllerManager : IAddOn {
     func getCurrentViewController() -> BaseViewController?
     func onAppearViewController(viewController: BaseViewController)
     func onDisappearViewController(viewController: BaseViewController)
-    func loadViewController(storyboard: String, identifier: String)
-    func loadViewController(storyboard: String, identifier: String, data: AnyObject?)
+    func loadViewController(storyboard: String, identifier: String, root: Bool)
+    func loadViewController(storyboard: String, identifier: String, root: Bool, data: AnyObject?)
 }

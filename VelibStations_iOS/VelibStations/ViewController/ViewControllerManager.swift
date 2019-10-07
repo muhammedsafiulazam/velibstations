@@ -26,16 +26,22 @@ class ViewControllerManager: AddOn, IViewControllerManager {
         }
     }
     
-    func loadViewController(storyboard: String, identifier: String) {
-        loadViewController(storyboard: storyboard, identifier: identifier, data: nil)
+    func loadViewController(storyboard: String, identifier: String, root: Bool) {
+        loadViewController(storyboard: storyboard, identifier: identifier, root: root, data: nil)
     }
     
-    func loadViewController(storyboard: String, identifier: String, data: AnyObject?) {
+    func loadViewController(storyboard: String, identifier: String, root: Bool, data: AnyObject?) {
         if (mCurrentViewController != nil) {
             let viewController = UIStoryboard(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: identifier) as? BaseViewController
             viewController?.setData(data: data)
             if (viewController != nil) {
-                mCurrentViewController?.present(viewController!, animated: true, completion: nil)
+                if (!root) {
+                    mCurrentViewController?.present(viewController!, animated: true, completion: nil)
+                } else {
+                    UIApplication.shared.delegate?.window??.rootViewController = viewController
+                    UIApplication.shared.delegate?.window??.makeKeyAndVisible()
+                }
+                
             }
         }
     }

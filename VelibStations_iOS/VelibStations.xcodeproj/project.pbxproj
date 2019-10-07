@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,11 +22,17 @@
 		02D523C32302EF3800EB1080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D523C12302EF3800EB1080 /* LaunchScreen.storyboard */; };
 		02D523CE2302EF3800EB1080 /* VelibStationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523CD2302EF3800EB1080 /* VelibStationsTests.swift */; };
 		02D523D92302EF3800EB1080 /* VelibStationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523D82302EF3800EB1080 /* VelibStationsUITests.swift */; };
+		02D9B17F234B6CBF0065339C /* StationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D9B17E234B6CBF0065339C /* StationList.storyboard */; };
+		02D9B181234B729C0065339C /* StationInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D9B180234B729C0065339C /* StationInfo.storyboard */; };
+		02D9B183234B78400065339C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D9B182234B78400065339C /* Keys.plist */; };
 		02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D2D2344D65100A105FB /* ViewControllerModel.swift */; };
 		02E76D352344DBAD00A105FB /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D342344DBAD00A105FB /* StationListViewController.swift */; };
 		02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */; };
 		02E76D392344DCCB00A105FB /* StationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D382344DCCB00A105FB /* StationInfoViewController.swift */; };
 		02E76D3B2344DCD800A105FB /* StationInfoViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D3A2344DCD800A105FB /* StationInfoViewControllerModel.swift */; };
+		5545E9500882EEF37CC26951 /* Pods_VelibStationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CB2720366A2418CC320F93 /* Pods_VelibStationsTests.framework */; };
+		80A75F522CA48EC6E037487F /* Pods_VelibStations_VelibStationsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445559B7307F5A0525AEA183 /* Pods_VelibStations_VelibStationsUITests.framework */; };
+		F7B66D116ECAE12594C8BE0B /* Pods_VelibStations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3E423A3897A0DB5E1BE9AB /* Pods_VelibStations.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,11 +87,23 @@
 		02D523D42302EF3800EB1080 /* VelibStationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelibStationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D523D82302EF3800EB1080 /* VelibStationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelibStationsUITests.swift; sourceTree = "<group>"; };
 		02D523DA2302EF3800EB1080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02D9B17E234B6CBF0065339C /* StationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationList.storyboard; sourceTree = "<group>"; };
+		02D9B180234B729C0065339C /* StationInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationInfo.storyboard; sourceTree = "<group>"; };
+		02D9B182234B78400065339C /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		02E76D2D2344D65100A105FB /* ViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModel.swift; sourceTree = "<group>"; };
 		02E76D342344DBAD00A105FB /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
 		02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewControllerModel.swift; sourceTree = "<group>"; };
 		02E76D382344DCCB00A105FB /* StationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfoViewController.swift; sourceTree = "<group>"; };
 		02E76D3A2344DCD800A105FB /* StationInfoViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfoViewControllerModel.swift; sourceTree = "<group>"; };
+		183D72D9975354ABAE5B5F6A /* Pods-VelibStations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelibStations.debug.xcconfig"; path = "Target Support Files/Pods-VelibStations/Pods-VelibStations.debug.xcconfig"; sourceTree = "<group>"; };
+		3CF4A3DCA49693A9044C45B8 /* Pods-VelibStations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelibStations.release.xcconfig"; path = "Target Support Files/Pods-VelibStations/Pods-VelibStations.release.xcconfig"; sourceTree = "<group>"; };
+		445559B7307F5A0525AEA183 /* Pods_VelibStations_VelibStationsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelibStations_VelibStationsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47AB73AE23FBD03834B9D4BC /* Pods-VelibStations-VelibStationsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelibStations-VelibStationsUITests.release.xcconfig"; path = "Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4A2F31064B3E08DA43E4DAB5 /* Pods-VelibStationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelibStationsTests.release.xcconfig"; path = "Target Support Files/Pods-VelibStationsTests/Pods-VelibStationsTests.release.xcconfig"; sourceTree = "<group>"; };
+		90CB2720366A2418CC320F93 /* Pods_VelibStationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelibStationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF3E423A3897A0DB5E1BE9AB /* Pods_VelibStations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelibStations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F4CEECDEE24D22FEC38328 /* Pods-VelibStations-VelibStationsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelibStations-VelibStationsUITests.debug.xcconfig"; path = "Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB44300CAAD789283002901D /* Pods-VelibStationsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelibStationsTests.debug.xcconfig"; path = "Target Support Files/Pods-VelibStationsTests/Pods-VelibStationsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02A1D6162316BB79004E5C52 /* CommonKit.framework in Frameworks */,
+				F7B66D116ECAE12594C8BE0B /* Pods_VelibStations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5545E9500882EEF37CC26951 /* Pods_VelibStationsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A75F522CA48EC6E037487F /* Pods_VelibStations_VelibStationsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +138,9 @@
 		02A1D6092316B973004E5C52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF3E423A3897A0DB5E1BE9AB /* Pods_VelibStations.framework */,
+				445559B7307F5A0525AEA183 /* Pods_VelibStations_VelibStationsUITests.framework */,
+				90CB2720366A2418CC320F93 /* Pods_VelibStationsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,6 +174,7 @@
 				02D523D72302EF3800EB1080 /* VelibStationsUITests */,
 				02D523B62302EF3600EB1080 /* Products */,
 				02A1D6092316B973004E5C52 /* Frameworks */,
+				EB699FF399FB650EAFFA165D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,10 +197,13 @@
 				02D523B82302EF3600EB1080 /* AppDelegate.swift */,
 				02D523BA2302EF3600EB1080 /* ViewController.swift */,
 				02D523BC2302EF3600EB1080 /* Main.storyboard */,
+				02D9B17E234B6CBF0065339C /* StationList.storyboard */,
 				02D523BF2302EF3800EB1080 /* Assets.xcassets */,
 				02D523C12302EF3800EB1080 /* LaunchScreen.storyboard */,
 				02D523C42302EF3800EB1080 /* Info.plist */,
 				02E76D2D2344D65100A105FB /* ViewControllerModel.swift */,
+				02D9B180234B729C0065339C /* StationInfo.storyboard */,
+				02D9B182234B78400065339C /* Keys.plist */,
 			);
 			path = VelibStations;
 			sourceTree = "<group>";
@@ -225,6 +253,19 @@
 			path = StationInfo;
 			sourceTree = "<group>";
 		};
+		EB699FF399FB650EAFFA165D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				183D72D9975354ABAE5B5F6A /* Pods-VelibStations.debug.xcconfig */,
+				3CF4A3DCA49693A9044C45B8 /* Pods-VelibStations.release.xcconfig */,
+				F3F4CEECDEE24D22FEC38328 /* Pods-VelibStations-VelibStationsUITests.debug.xcconfig */,
+				47AB73AE23FBD03834B9D4BC /* Pods-VelibStations-VelibStationsUITests.release.xcconfig */,
+				FB44300CAAD789283002901D /* Pods-VelibStationsTests.debug.xcconfig */,
+				4A2F31064B3E08DA43E4DAB5 /* Pods-VelibStationsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,11 +273,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02D523DD2302EF3800EB1080 /* Build configuration list for PBXNativeTarget "VelibStations" */;
 			buildPhases = (
+				CCFF3EBD1E9C6ED3A9C662FE /* [CP] Check Pods Manifest.lock */,
 				02D523EA2302F3CE00EB1080 /* ShellScript */,
 				02D523B12302EF3600EB1080 /* Sources */,
 				02D523B22302EF3600EB1080 /* Frameworks */,
 				02D523B32302EF3600EB1080 /* Resources */,
 				02A1D6182316BB79004E5C52 /* Embed Frameworks */,
+				08E3AE0FD036422332E43B22 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,6 +294,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02D523E02302EF3800EB1080 /* Build configuration list for PBXNativeTarget "VelibStationsTests" */;
 			buildPhases = (
+				BB79E6BF0A8F9F7F11C5CCBB /* [CP] Check Pods Manifest.lock */,
 				02D523C52302EF3800EB1080 /* Sources */,
 				02D523C62302EF3800EB1080 /* Frameworks */,
 				02D523C72302EF3800EB1080 /* Resources */,
@@ -269,9 +313,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02D523E32302EF3800EB1080 /* Build configuration list for PBXNativeTarget "VelibStationsUITests" */;
 			buildPhases = (
+				95334A9D7CD01B0C660984A7 /* [CP] Check Pods Manifest.lock */,
 				02D523D02302EF3800EB1080 /* Sources */,
 				02D523D12302EF3800EB1080 /* Frameworks */,
 				02D523D22302EF3800EB1080 /* Resources */,
+				5E52C9E278CC4CE0A4AD8E1C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,9 +377,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D9B183234B78400065339C /* Keys.plist in Resources */,
 				02D523C32302EF3800EB1080 /* LaunchScreen.storyboard in Resources */,
+				02D9B181234B729C0065339C /* StationInfo.storyboard in Resources */,
 				02D523C02302EF3800EB1080 /* Assets.xcassets in Resources */,
 				02D523BE2302EF3600EB1080 /* Main.storyboard in Resources */,
+				02D9B17F234B6CBF0065339C /* StationList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +419,106 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd \"../VelibStations_Android/common/build/xcode-frameworks\"\n./gradlew :common:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+		};
+		08E3AE0FD036422332E43B22 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VelibStations/Pods-VelibStations-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VelibStations/Pods-VelibStations-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VelibStations/Pods-VelibStations-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E52C9E278CC4CE0A4AD8E1C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95334A9D7CD01B0C660984A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VelibStations-VelibStationsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB79E6BF0A8F9F7F11C5CCBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VelibStationsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCFF3EBD1E9C6ED3A9C662FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VelibStations-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -563,10 +712,14 @@
 		};
 		02D523DE2302EF3800EB1080 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 183D72D9975354ABAE5B5F6A /* Pods-VelibStations.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "\"../VelibStations_Android/common/build/xcode-frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"../VelibStations_Android/common/build/xcode-frameworks\"",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = VelibStations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,10 +734,14 @@
 		};
 		02D523DF2302EF3800EB1080 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CF4A3DCA49693A9044C45B8 /* Pods-VelibStations.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "\"../VelibStations_Android/common/build/xcode-frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"../VelibStations_Android/common/build/xcode-frameworks\"",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = VelibStations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -599,6 +756,7 @@
 		};
 		02D523E12302EF3800EB1080 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB44300CAAD789283002901D /* Pods-VelibStationsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -619,6 +777,7 @@
 		};
 		02D523E22302EF3800EB1080 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A2F31064B3E08DA43E4DAB5 /* Pods-VelibStationsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -639,6 +798,7 @@
 		};
 		02D523E42302EF3800EB1080 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3F4CEECDEE24D22FEC38328 /* Pods-VelibStations-VelibStationsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -658,6 +818,7 @@
 		};
 		02D523E52302EF3800EB1080 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47AB73AE23FBD03834B9D4BC /* Pods-VelibStations-VelibStationsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

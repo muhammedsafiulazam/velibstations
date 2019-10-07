@@ -8,7 +8,6 @@
 import Foundation
 
 class StationInfoViewControllerModel : BaseViewControllerModel {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
