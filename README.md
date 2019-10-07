@@ -30,7 +30,7 @@ Google API Keys:
 
 Create a resource file with following contents
 <resources>
-    <string name="google_api_key">GOOGLE API KEY</string>
+	<string name="google_api_key">GOOGLE API KEY</string>
 </resources>
 
 Create a plist file ( Keys.plist ) with following contents
