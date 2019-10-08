@@ -29,31 +29,227 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		122ACEC7F2231F7489D1C921761FE2FF /* Pods-VelibStationsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42FDF016502176A64CD94D232BA3E9AE /* Pods-VelibStationsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E357105B9EFC691081613F3769BB432 /* Pods-VelibStations-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B34166CB202ABA0745B9A8FCA178F8 /* Pods-VelibStations-dummy.m */; };
-		3C970ED8D1E30B022470784180B8E08C /* Pods-VelibStations-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B2635893649B09BF6F73D5F071EE72 /* Pods-VelibStations-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C35541888D06EDE9D79541DBE6558C7 /* Pods-VelibStations-VelibStationsUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B606FEB3E6FA68100D4422FEE04D10 /* Pods-VelibStations-VelibStationsUITests-dummy.m */; };
-		5616959C58BA6411FFAC896E4072309F /* Pods-VelibStationsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C0DE34AF08D872E088D8385FC220EC /* Pods-VelibStationsTests-dummy.m */; };
-		64A1695A9D4024535D1DE1C9A0691C57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		72E6A63A684137CE97282139A3844D01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		844B434E8A517C456650BFCFCC3A38E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		C9E8F0EAADE80BB5643FAE6D02133F04 /* Pods-VelibStations-VelibStationsUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F2270E065E6E39C25A717D7A01A95D /* Pods-VelibStations-VelibStationsUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04C9B0F0ADE31BED27C357C44B769649 /* UIView+MaterialElevationResponding.h in Headers */ = {isa = PBXBuildFile; fileRef = 806D968184EDAED0D8B5342EB817E2FF /* UIView+MaterialElevationResponding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B1D94D26C8B37F58032BE6B1D37AEE6 /* MDCLegacyInkLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F188FA934BD433132E0466F4E3E25C /* MDCLegacyInkLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0BD4D3E014FFD03D6D31EC5642B4D97B /* MDFTextAccessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9334C99991AE62193995104E139F61D4 /* MDFTextAccessibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CC31A19A25F3597FEE8FDAF537811A9 /* MDCEdgeTreatment.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B74EE6F2CA6CF88CACF78AAF91001F /* MDCEdgeTreatment.m */; };
+		0CFB1BC7C6D6100FDBE055E593CABA05 /* MaterialElevation.h in Headers */ = {isa = PBXBuildFile; fileRef = D16C8628D8FFD3B2D58642DD098B9FEB /* MaterialElevation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D6AF98C7FA5E30A7211C5A8737FF70A /* UIFont+MaterialTypography.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F64F30EA0C2870E3A9DE854549B2E0A /* UIFont+MaterialTypography.m */; };
+		0D764B31B6AEAF117D02334831AB2577 /* MDCSnackbarOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = AB46DAF39FCDDF94458E3B25A751C871 /* MDCSnackbarOverlayView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		101E5E114BFB38807FAD188DCA630849 /* MDCButton+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 18938D96FE3F2B2CA147D451EC1CEE4C /* MDCButton+Subclassing.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		120AE8F7BB64846582192484B3BFD3B9 /* MDCOverlayObserverTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A262BBD37DE76664202DABDF1CEEC00 /* MDCOverlayObserverTransition.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		122ACEC7F2231F7489D1C921761FE2FF /* Pods-VelibStationsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC58239F80A82B365E79156D82B7C78F /* Pods-VelibStationsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12FE1614E070A4C8042C58F3F4634503 /* MDCKeyboardWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4276ABD8D88EA0263F996AF30E3805 /* MDCKeyboardWatcher.m */; };
+		14D3B3F64FFB774605124FDA5995C886 /* MDCTypographyUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 876B02742ABFBA95850D1171C36EB343 /* MDCTypographyUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		152591B1B6EC1018F1998437BAA7155F /* MDCOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DD76EC5AB13545804EC7F419EB6358A5 /* MDCOverlayWindow.m */; };
+		157F2A8F34942019B7A8A2E9B53290D8 /* MaterialInk.h in Headers */ = {isa = PBXBuildFile; fileRef = C071B216EC12090FD0C8F2EDA9A636C7 /* MaterialInk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		164BD02020E42371397BE76DFBFAD956 /* MDCEdgeTreatment.h in Headers */ = {isa = PBXBuildFile; fileRef = E0CBE6AD6923F658D033CBF7352AC1DF /* MDCEdgeTreatment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1679CF9DCCAC8B5FBF59ED4A41262DAF /* MaterialComponents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80DEE077DB87D05EEC4C36864640B2C8 /* MaterialComponents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1780D1D7852DB27AB8C6DDA08BCB6548 /* MDCMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D86EEABB793E7DF8003ACD71FC8B3F /* MDCMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1804D52CFF42C7E6DAE8DAB377D871F4 /* MDCRectangleShapeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A370FD20F5C515D9A9F455150DCD6A65 /* MDCRectangleShapeGenerator.m */; };
+		18342602DDEF46CE06402D027EBA27BB /* MDCCornerTreatment.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BED1D44AC904EB8DA05E8A963B0069 /* MDCCornerTreatment.m */; };
+		1A3FDD0590795C79217A6D587EC9EC24 /* UIFont+MaterialTypographyPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC09DB6B46073ED4C6111290E3DDA33 /* UIFont+MaterialTypographyPrivate.m */; };
+		1D3ACD00C2DA96CDD045B63B19AE2742 /* MDCShapedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1603BA05E75D2EF072CCBBF8ACCDEC63 /* MDCShapedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DECCC3FE60F9B1D9E2A5F58523CACDF /* MDCFontTraits.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FFFDEB08A861343004E99BDC85050D /* MDCFontTraits.m */; };
+		21D369FBA4708EB3E1EE125D9A573AA9 /* UIView+MaterialRTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 524F1553CA9EB03B2C8B3E2CE67CB4FE /* UIView+MaterialRTL.m */; };
+		2233E93E984B412EA4711ED277B31591 /* MaterialRipple.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D38BFAF4271E8C5BCAF993A6BFD8544 /* MaterialRipple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24DBFFF11EE473956D3AAF420830B870 /* UIColor+MaterialElevation.m in Sources */ = {isa = PBXBuildFile; fileRef = 10904EFA94B5248B35171CBA2DBD7C34 /* UIColor+MaterialElevation.m */; };
+		263BAD6001AB7C9242E814792EA35A67 /* MDCOverlayObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C241A03EA0B78ECC5EF9BB04125F3B51 /* MDCOverlayObserver.m */; };
+		27594AFD09158BFFE12A96CB3E946801 /* UIFont+MaterialSimpleEquality.h in Headers */ = {isa = PBXBuildFile; fileRef = A67DF8BA17C983D558DB95523CE70D4B /* UIFont+MaterialSimpleEquality.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29C4D482C8BD093688FB0CBD6F659843 /* MDCOverlayImplementor.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB76DC33BE360D11FC34FC9EFE9E3AB /* MDCOverlayImplementor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A4A6BAF6B70965F2DA775DE3AA11BD5 /* MaterialSnackbarStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = 103027B32F7696E6B7A35B6263086939 /* MaterialSnackbarStrings.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2B9743BAFC5325634310C23C060DA2FB /* MaterialShadowElevations.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E14E13C9AF3B2C025C21A932BB15ED0 /* MaterialShadowElevations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C3794A838C183D210EEB55B91B41C54 /* UIColor+MaterialBlending.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FA3C4B6090B0A628C9E8753B23E33E1 /* UIColor+MaterialBlending.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E615076220AF8B155BB1EC37B97B1BA /* MDCSnackbarMessageViewInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = B6070838F2C19653F6D67E33C884A761 /* MDCSnackbarMessageViewInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2E8E6766468DC3F93759EFE29349B4B2 /* MDCOverlayAnimationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED10A77C0523D6BD71AE4A6FA5C973D /* MDCOverlayAnimationObserver.m */; };
+		2EFC9E2AE0AC27BF88923CF5B541B684 /* MDFRTL.h in Headers */ = {isa = PBXBuildFile; fileRef = EE7C1DAB4EFBD0DD003AAB5E7C0E3E85 /* MDFRTL.h */; };
+		31243CE514DA77925E2380321EF1BDAD /* MDCRippleTouchController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA4330463AE48A3C0B7C1B1EC3A410A /* MDCRippleTouchController.m */; };
+		32FFAB016BC105EAFA2C7C333A2CC64A /* UIFontDescriptor+MaterialTypography.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D023DADD6237F9D0DC05BB8F7110BC /* UIFontDescriptor+MaterialTypography.m */; };
+		34EA572DDB112F0D461551C20A95D6A7 /* MDCRaisedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9313853C8B11CD4BE0D5EC3F27849C9F /* MDCRaisedButton.m */; };
+		359999078EB59F3F751415F5888E515B /* MDCOverlayTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB13114A871F9D775EF7FFD874BFA21 /* MDCOverlayTransitioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39001C11334FEAF508FCAB4F3B18490C /* MDFTextAccessibility-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D859F4C696DD9707103896FC841478 /* MDFTextAccessibility-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4426A5A80D7769A06409765A3E99F618 /* UIImage+MaterialRTL.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB546E1810729BB50DE1EF34B941AC7 /* UIImage+MaterialRTL.m */; };
+		4452C1D0E85ED1CBF3DDCAFC07F2CB6C /* MDFTextAccessibility-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = D3B5254DBD85CCB0CB5B980D8DDD264E /* MDFTextAccessibility-Bridging-Header.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		454730B312D4F40525705F7AF82EE928 /* Pods-VelibStations-VelibStationsUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F12220AD025700642EEA0F6C8636268C /* Pods-VelibStations-VelibStationsUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		462EE5C0478DAAE6158DF185CA28317E /* Pods-VelibStations-VelibStationsUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E36535FAB79CBF6D4A20DD5498003E9 /* Pods-VelibStations-VelibStationsUITests-dummy.m */; };
+		48E6DE760FFDBAB478BDE7AED7E8DF9D /* UIView+MDCTimingFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D920DCA50D8F0D585AB03133F907D2F /* UIView+MDCTimingFunction.m */; };
+		490FF2B723D0698D067B1C9DCA736E87 /* MDCShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA912C3F9CE47A167289A083591EC9A /* MDCShadowLayer.m */; };
+		4DA49B4EAF322C31C8007AAAEA439625 /* MDFRTL.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = EE7C1DAB4EFBD0DD003AAB5E7C0E3E85 /* MDFRTL.h */; };
+		4F3618BF7DBC29676CB9CFC3BFA6F8AD /* MDCTypographyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCA9F7497FACA950CED43EC2D0214D0 /* MDCTypographyUtilities.m */; };
+		4F63908C303347E2EDC75552969A1920 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
+		4F9B03C53ADD2C4719BE155187C60330 /* UIFont+MaterialTypographyPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6443A8BC94142D3FFAC9FF95D58A230A /* UIFont+MaterialTypographyPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		500805A473B1641BFF5F4C202616D3B3 /* MDCOverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = D8B778303741DEA62D6A8BB4665F764A /* MDCOverlayWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50B2764DA33FC7DBDF0CD6B76EC1E12E /* MDCSnackbarMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 59605C04C1D6469088FED1837334528B /* MDCSnackbarMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51E4D92FDC11510275B765564F01A9C6 /* MDFInternationalization-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6E9059E4DD6A32A2F6FED0D4B535F /* MDFInternationalization-dummy.m */; };
+		5616959C58BA6411FFAC896E4072309F /* Pods-VelibStationsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB04FEB1BF35743E38CA168E93B15AD /* Pods-VelibStationsTests-dummy.m */; };
+		5A0CE9E1169EA9832F287F31DBE88AE0 /* UIColor+MaterialBlending.m in Sources */ = {isa = PBXBuildFile; fileRef = F97941CD75C21187988FB0D4688D5EF6 /* UIColor+MaterialBlending.m */; };
+		5C8C0504616C126A58C6249B3D5B4E5A /* UIColor+MaterialDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B80442C75FE449915D46882B3A6B500 /* UIColor+MaterialDynamic.m */; };
+		5D61F24B9CC0658A17F5A3A4B38DA8DF /* MDCOverlayObserverTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF52F3C9D84EC95EF27F98A03398BCD /* MDCOverlayObserverTransition.m */; };
+		61102ECA9EF39123535F9E39132BCF18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
+		61F01132D9F510FD1FD6FA32936AFF89 /* UIFont+MaterialTypography.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C2A23639D91E46D6121E6C5989F3C8 /* UIFont+MaterialTypography.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63CD8D062A570772EB26F6AAE93D1079 /* MDCLegacyInkLayer+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 68E3B255D05D00FA437163855EE57923 /* MDCLegacyInkLayer+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		64A1695A9D4024535D1DE1C9A0691C57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
+		6538CEF961ADD9942C3B28A44AD76400 /* MDCRippleView.m in Sources */ = {isa = PBXBuildFile; fileRef = D00ECD1F8B305ABBBE6F144A3C2905FF /* MDCRippleView.m */; };
+		65DA0998EBF8D465B5F7BB2F71B35BD1 /* MDFInternationalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F54376B740D7F7F7DB13D0FF8BBC535 /* MDFInternationalization.h */; };
+		671C5F689C7E7EF264CEE65261638F1B /* MaterialShadowLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A3273B9E7B0942D74DEA4158647E57F /* MaterialShadowLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6766EA0DBDED0F6133F918D969410AC6 /* MDCPathGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 33C0B8B193F1F075841A71AA4433560A /* MDCPathGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6832DB288551E08DE904D24F22707FFD /* MDCSnackbarMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4989F7BAF542C2257A5428DAA446006C /* MDCSnackbarMessageView.m */; };
+		6A6BCA0651D67F8EEC38DEEABE069BA0 /* NSLocale+MaterialRTL.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 3812D152175A785BF0E62EBA2ECB88A4 /* NSLocale+MaterialRTL.h */; };
+		6BD3A82E014F50F1A1ABDBFAD7ACC1C1 /* MDCFloatingButton+Animation.h in Headers */ = {isa = PBXBuildFile; fileRef = C089230B4418BB5126804022AFD9DB97 /* MDCFloatingButton+Animation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DC7C328B7337F90267E59D33FB7C838 /* Pods-VelibStations-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BC17BE74B1A29C9EE638DFF633683A /* Pods-VelibStations-dummy.m */; };
+		6F597E97592CF4B9BFC192CB8177EE81 /* CAMediaTimingFunction+MDCAnimationTiming.h in Headers */ = {isa = PBXBuildFile; fileRef = 9628C3FA24D8C8E9F710D23439644A36 /* CAMediaTimingFunction+MDCAnimationTiming.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		729584BB447F9760581C192A207C7207 /* MDCInkGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A47F48C42AB23497EF32DDEC8FF59 /* MDCInkGestureRecognizer.m */; };
+		72E0E6EB75E95E3DE2BAC3E61E38FF55 /* MaterialKeyboardWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 481ABAEE589FC18A744F8A9E17BDE80E /* MaterialKeyboardWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7426C6FD9F3B6978608415E672A74526 /* NSArray+MDFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AE71043B54B23CE3A80185FDB03BB5 /* NSArray+MDFUtils.m */; };
+		76FAF6456D59FA9F3D65C65510DE3616 /* UIColor+MaterialElevation.h in Headers */ = {isa = PBXBuildFile; fileRef = A3EF04E16E2FB67E572BB5AFC62309A3 /* UIColor+MaterialElevation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		773A52CFC8025C1A9FDBBBFEB4B95CBD /* MDFColorCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = E9234D157159BF2330EF00D0DBBCB8E3 /* MDFColorCalculations.m */; };
+		798F0688BB5880A52E25E2F47E09C93A /* CAMediaTimingFunction+MDCAnimationTiming.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4BCE5A0793601A2AE9EFDEA81B1684 /* CAMediaTimingFunction+MDCAnimationTiming.m */; };
+		7ADD7014806ACC7CDA1316ECE0878CC3 /* UIView+MDCTimingFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = AED440A3A7F296F6CE676B139FBFF964 /* UIView+MDCTimingFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F49B8CFEA94CB7B3248875DA25620C7 /* MDCRippleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4471707D49F394BA29FCE65B7F9FF /* MDCRippleLayer.m */; };
+		80DBCCBC5D8A34B6808E5E83BEE04603 /* MDCShadowLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = CE810C002B82D78500E0AA5E6D53FEAF /* MDCShadowLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8379AC7AF867B3D99614DEA2BD3639CD /* MDCTypography.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A1D2E59EE61A813EE1BD2DADA02B50 /* MDCTypography.m */; };
+		83E881A3BF2213E79DAAF549C36C3E4B /* MDCRaisedButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F21F7E8BAF630FD9185CDFB21C3FB68 /* MDCRaisedButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8528E1DD4E3D4C18A482614D529A6CBD /* MDCShapeGenerating.h in Headers */ = {isa = PBXBuildFile; fileRef = 520C56D7FBEBC296DAF9B4B9E7922D4E /* MDCShapeGenerating.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		880DFBB44DE2592DAEB815BE771A68AB /* MaterialMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D44AC77E8E9BC39C53EEA7690A76A57 /* MaterialMath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88AC44B2779599CF8A24FECB945F6D2C /* UIView+MaterialElevationResponding.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B583AB57A88DB7D2BF4F2F5D32AE7 /* UIView+MaterialElevationResponding.m */; };
+		88FC0E2BFC81D8EBBD729E8B48904025 /* MDCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D61E67AFC45FDE709056181A124D668 /* MDCButton.m */; };
+		8EE7CC6D02C9E36A3E8FC4C55871172E /* MDCOverlayAnimationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 25E9F969CCBE2713A795CD74789BB480 /* MDCOverlayAnimationObserver.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8F9632FB032FA59E496E11970E47AA0B /* MaterialApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = DB7EB7AEC356D0697ACEA5DD983B80E9 /* MaterialApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		905121932639CFDF3F6A26878F49208F /* MaterialTypography.h in Headers */ = {isa = PBXBuildFile; fileRef = 059DFFC603B4E7698645E095E51E4A42 /* MaterialTypography.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96BA518D4FA81993298E79989EC14159 /* MDFTextAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557FC5E0490CF1ED82E12AE0E2C6D948 /* MDFTextAccessibility.framework */; };
+		99680F3C8F37A158DEC1C9F5CE7AC984 /* NSString+MaterialBidi.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FE252DB026C035078DF25CB0106486 /* NSString+MaterialBidi.m */; };
+		99FB66CE74549D8BC8F8A99ED9A17F9C /* UIApplication+AppExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AC619FEB37D36CD82A1D4EA85A3CEF /* UIApplication+AppExtensions.m */; };
+		99FB7D89FEF0A4EAA5BA1D1421002A5B /* MDCSnackbarMessageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 34B03C426930E2B1FAC0ADAB26B5D8F7 /* MDCSnackbarMessageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A54D7BFC9AC7027DD29E2F38033FE2F /* MDFInternationalization-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 67141EF58B0A80A6A8C18DAE5149BC8B /* MDFInternationalization-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F84DDCB5D274E74FE3AA409A5B0E888 /* MDCFlatButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F69482EC99F563F81C2C8ABF9F80944E /* MDCFlatButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0D6851838894CCD40296040DDBD7A9D /* UIView+MaterialRTL.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E663D0DCD680085208BF59A8287C925 /* UIView+MaterialRTL.h */; };
+		A1E094E8FFC3D57A634213E31ADE1B57 /* MDCOverlayUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EB02BE93EEBDDE5DD133EDD7ACCC3454 /* MDCOverlayUtilities.m */; };
+		A306FFD78A6B8EC7E92BA8925DDD2BE7 /* MDFImageCalculations.h in Headers */ = {isa = PBXBuildFile; fileRef = C95D630BCD3C1E9285FAB58E9A4D4C04 /* MDFImageCalculations.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A417378359B9BC8DCA43314FC99CE6A8 /* MaterialOverlayWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = FDA4D40839C5F181AFC1625C7528E5BA /* MaterialOverlayWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4726933841A011381683A1E08E6E697 /* UIFont+MaterialScalable.m in Sources */ = {isa = PBXBuildFile; fileRef = 05102D7C7F646AE56ADA53E8C69355F0 /* UIFont+MaterialScalable.m */; };
+		A660E8D86609AAB7D2AD028994AFC7CE /* MDCFontScaler.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DF3EDE49CE9CB8449E4DE39C7B39A17 /* MDCFontScaler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7ACE520DAC25D18025DF235241D86FF /* MDCElevatable.h in Headers */ = {isa = PBXBuildFile; fileRef = 512B2662E6ED2B97A6C25F072587B37E /* MDCElevatable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A82284A825F11602968CF385F9EDF3F0 /* MDFRTL.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E40BB31E0BA1908AFA10A09CFD7F29 /* MDFRTL.m */; };
+		A90C154136E806206FC446E793E967C4 /* MDCInkTouchController.h in Headers */ = {isa = PBXBuildFile; fileRef = C2C7D07AE0EF021C99CE31F3005A4998 /* MDCInkTouchController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93561CBFA311717AEE75BF8985F3F5C /* MDCPathGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 412FA46D26D18B207431109F9D2B4F6E /* MDCPathGenerator.m */; };
+		ACDC9E61869B33AF616C54900E263BDF /* MDCInkView.m in Sources */ = {isa = PBXBuildFile; fileRef = C234A8F78B13C42E06B7C12B72FAB8BA /* MDCInkView.m */; };
+		ADBE7923AE1C068FAA8B6EEC8096CEB1 /* MDFTextAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 55654FFC7DAE0E400F806E5C48FC9ABD /* MDFTextAccessibility.m */; };
+		B199F9FC87E4F890E2A3FFF3DCB1146C /* MDCRippleLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B646F7076CF4F09E9C62DE03653A7610 /* MDCRippleLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B5F52EFCCEF9E8537F68BB6DBAEFDAD3 /* UIFont+MaterialScalable.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E55085814583551393F8F84027CE02A /* UIFont+MaterialScalable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B78D23B323752BD9A3FCFA925D3D7C7D /* MDCShapedShadowLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B2FA7A7666B57905C562BACD0F5B4A89 /* MDCShapedShadowLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B807CD829A6404915272518780ED5CBF /* UIImage+MaterialRTL.h in Headers */ = {isa = PBXBuildFile; fileRef = 14EB69FB0A50C1FFA4D5F9E2DDAAF862 /* UIImage+MaterialRTL.h */; };
+		B89E94C638326F5A7EC44B9513D175D4 /* NSLocale+MaterialRTL.h in Headers */ = {isa = PBXBuildFile; fileRef = 3812D152175A785BF0E62EBA2ECB88A4 /* NSLocale+MaterialRTL.h */; };
+		BAAE3463283C6A7576C7E4CE7AC1FF44 /* MDCFontTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 76BEAA74485D8A0FBB0BD17A1A592204 /* MDCFontTextStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD058B48522BE83CD2CDEAC73367C9AC /* MDCStatefulRippleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9098FC9C5B19B2ABC03EDE965B6CB1 /* MDCStatefulRippleView.m */; };
+		C423F6E6E7337027C1C5901D38720511 /* MDFInternationalization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE87FB003224BBCF5A9D5589EE325AA /* MDFInternationalization.framework */; };
+		C526432AFFC48A4754C9A413B2D59A3D /* MDCOverlayObserverOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FA9C55D54B76219CCFCCC813E8041A8 /* MDCOverlayObserverOverlay.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C53052CFE81112BFA5EAABF6F0059F9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
+		C85AF22448BFF731B5D29137FC2A0F28 /* MaterialColor.h in Headers */ = {isa = PBXBuildFile; fileRef = BF91433B28856D1B4BB2C22157E3FF7F /* MaterialColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C87B7D2DC38402458F33412981074B35 /* MDCRectangleShapeGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 296BB74B73A4D419896B7CE0EF603B25 /* MDCRectangleShapeGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA07C595DB2D5FBCFA70AD20DE4ECF40 /* MDCShadowElevations.h in Headers */ = {isa = PBXBuildFile; fileRef = 192A15FDFF5D8FDA1DEFFB1EEB229C46 /* MDCShadowElevations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA61405778098A921BD3FC5A1B937A55 /* MaterialButtons.h in Headers */ = {isa = PBXBuildFile; fileRef = 087F65611F58F43CE7FD0A32E7F96251 /* MaterialButtons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC06333B58F7A80D14BA09997F7CDA6B /* MDCFloatingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D3B61B5EF2DCD2879B27EA77D8BDA5 /* MDCFloatingButton.m */; };
+		CCB316355C9F9AC74CB99E1B313A051C /* MDCInkView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8180492651CD45252959F09B8F20FA0C /* MDCInkView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCB491E7C956E9F03446E77D752F07F3 /* MDCSnackbarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A66C8F1843517C87CD01B53DD1409B4B /* MDCSnackbarManager.m */; };
+		CD4F45A0A03ED8CCEC0D5A656DE1FBE3 /* MDCKeyboardWatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = D50236BEF44115B65A0DA306D8B1CF9A /* MDCKeyboardWatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE3EB0BBD2926EF6C16C40A0B2FAF232 /* MaterialShadowElevationsDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC6E163DDD50407E8E36E48C41081C6 /* MaterialShadowElevationsDummy.m */; };
+		CF0505E8AE64383C680677DF851D37D8 /* MaterialSnackbarStrings_table.h in Headers */ = {isa = PBXBuildFile; fileRef = 27FADC30A410E6BBEF849EE97E6CBB82 /* MaterialSnackbarStrings_table.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D00A69C9DE61232E9E871C3A3906A570 /* UIApplication+AppExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = FD0D5D26E4EAFC1C80AAFFFAD7BC8C91 /* UIApplication+AppExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D00E5D4E8E5476024748EB1021F0CFD1 /* MDCTypography.h in Headers */ = {isa = PBXBuildFile; fileRef = 010866D2C9ADC90A607F25970C639E11 /* MDCTypography.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D08609D0181D8BDA65EB5B6871613EE5 /* MDCButton.h in Headers */ = {isa = PBXBuildFile; fileRef = ABBF9D4E11DA6B213BBA1CF65A33E816 /* MDCButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0988ED08B2C792478181407294F9C58 /* MDFImageCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF72C0E187626851666E56E2A8F089F /* MDFImageCalculations.m */; };
+		D1A04DDDEC2F702C3767F00BB402E7A3 /* NSArray+MDFUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C55D9E1A3A4006ACBD900B88FA9DD6F /* NSArray+MDFUtils.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		D21E7A32CE2DF12327050F8008DB41FB /* MDCFontTraits.h in Headers */ = {isa = PBXBuildFile; fileRef = D9DFA5631C2303B55B4963B058D515E2 /* MDCFontTraits.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D286878E93F08862147DB0D60A685C7C /* UIView+MaterialRTL.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 4E663D0DCD680085208BF59A8287C925 /* UIView+MaterialRTL.h */; };
+		D39D238792FE9BC057A46302C824923E /* MaterialAnimationTiming.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F3D16471F86FE579AC1E726963635AA /* MaterialAnimationTiming.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3D8889B5612A8942BD85A13D129AE20 /* UIColor+MaterialDynamic.h in Headers */ = {isa = PBXBuildFile; fileRef = 696026C2114667E0DD7EF80B22E01D3C /* UIColor+MaterialDynamic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4273165D658218223778B66D8787D11 /* UIFontDescriptor+MaterialTypography.h in Headers */ = {isa = PBXBuildFile; fileRef = ECE8912DA94255B5F014F61BDB940DD3 /* UIFontDescriptor+MaterialTypography.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D46CF97CD304CEB104FC3CCD2AB5F599 /* MaterialOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 6387B29F86E8D4E3BC84048E3518E609 /* MaterialOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D47A3D0A64A8995EC293B3E765EE3C1A /* MDCRippleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9992074C2BD57C33CB359E9B411210E4 /* MDCRippleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D820EE131F4BB19BB19BCA07BEEFAC6E /* MaterialSnackbar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F10FD01BB1A86B5E1279D9A47C944F6 /* MaterialSnackbar.bundle */; };
+		D95B54796E150750195E0DC6190F4DC8 /* MDCOverlayUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AB29D2B20224185B5BF38796F3BA22D0 /* MDCOverlayUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D9FCEB942A1842EA1C4F44698C66F0D0 /* UIFont+MaterialSimpleEquality.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B6B1E062174424AFC5CC438A2BB22D /* UIFont+MaterialSimpleEquality.m */; };
+		DA67B8D1B0C776051652738A52D85AD6 /* MDCSnackbarOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A055BE76DDF83C3659ADC5C5A71D2E81 /* MDCSnackbarOverlayView.m */; };
+		DC40A0A82F7C5D83AA6F7807B3A523BE /* NSLocale+MaterialRTL.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A39C1F65754DA0A3A3A3BC0D59CE7C /* NSLocale+MaterialRTL.m */; };
+		DC97ABA5505EDEDFDF0AF9E49A3278F2 /* MDCStatefulRippleView.h in Headers */ = {isa = PBXBuildFile; fileRef = C29E5D49A1EEE948E10F416861BB1A68 /* MDCStatefulRippleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD078D45EDD8A4724C410032520EC5C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
+		DDE7B635A07DFA327B6FA16A4884481C /* MDCSnackbarAlignment.h in Headers */ = {isa = PBXBuildFile; fileRef = 12D5EC8213D61E4063D193604A4BB294 /* MDCSnackbarAlignment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE9F0945E7F28EB569B2383EA5EF31CF /* MaterialShapes.h in Headers */ = {isa = PBXBuildFile; fileRef = AEFCCEB98E73FAB12D6396796A1BF1BA /* MaterialShapes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1005C3AF3110B01A63D1316287C8AC5 /* MDCSnackbarMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 334F5319076F4C5E282D90C781A2A082 /* MDCSnackbarMessage.m */; };
+		E1C20C7DCE59B43B4C86B69DBA1C70BF /* MaterialComponents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1FACD7351CD0735F35E8F6F532BCCB /* MaterialComponents-dummy.m */; };
+		E2354FA89458EA9053AAA1484042941A /* MDCShapedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2330A0C98DC226B4B7EB6DF496B03B /* MDCShapedView.m */; };
+		E28B7FDBC37587344D4D077306BA4904 /* MDCShapedShadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B814BC3B8A7CA578C6803AF3EC4D8DA7 /* MDCShapedShadowLayer.m */; };
+		E29F998B4C15803C51528E242BFBD133 /* MDFColorCalculations.h in Headers */ = {isa = PBXBuildFile; fileRef = F44342DCF8A9185C25E2C6B2EB8A5FDB /* MDFColorCalculations.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E40F52FDE88AE18EBD8F59D43436BB31 /* MDCInkTouchController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03E333BF5BBCE4F78F4CB8A88996751 /* MDCInkTouchController.m */; };
+		E6C6D929A1D0F42D27B0930DF349D1D4 /* MDCOverlayObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = EFAC34163F22FA02C0A3C41009D63EB2 /* MDCOverlayObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E75960719013CE6A25C65B9B1500C8A7 /* NSString+MaterialBidi.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = CFA5DF86D0B38E8314BF3DB9C5A365A2 /* NSString+MaterialBidi.h */; };
+		E7A7C14ADE4E986B772CC4545512F46B /* MaterialSnackbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 88922353CE5652B93942B2911396873E /* MaterialSnackbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7BBFA3029A26549076C3A8465FEFB0A /* MDCLegacyInkLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A27D9500A3E98223D9D2EA5A8243B1E /* MDCLegacyInkLayer.m */; };
+		E8FB73FC5426482747BA1C80860E7201 /* MDCInkLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = D3F965B94EECD3D6B9761DA9C5DA8F83 /* MDCInkLayer.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E9EDF7C392CF640681BD97DAC945D067 /* MDCRippleTouchController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DB8722531F12AE2C64252CAF12E9567 /* MDCRippleTouchController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF54258A816CDAC1107041F77F513599 /* MDCElevationOverriding.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A99F949296D58E7946A4ECC5AC72F71 /* MDCElevationOverriding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1F5B1CF78C3D593B98DCE6514D19C25 /* MDFInternationalization.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 9F54376B740D7F7F7DB13D0FF8BBC535 /* MDFInternationalization.h */; };
+		F23C16E2564827110A5CB9B846AD29AF /* MDCSnackbarMessageInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = D722A35C4389030A9215657C9D4CBC6C /* MDCSnackbarMessageInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F3BCAF6D0EE1D51B9AC4074403FDB4D5 /* MDCFontScaler.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA7888284B287B9EC082245CA024934 /* MDCFontScaler.m */; };
+		F46243E2966EE943B781E73EF64C4A19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B837DD985F89146657DD1A11935356E /* Foundation.framework */; };
+		F47A1DB3993ABD7E27282BA8CD5874ED /* MDCInkGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 81A9922AC4613A9B275345F8FC747B5C /* MDCInkGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4AD70358C279C5D7DA2E4ECB59BC596 /* MDCFloatingButton+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 409F6D68C3666DB93C95849E8243E188 /* MDCFloatingButton+Animation.m */; };
+		F4F7EECC75DFDA316CE65A18E21B2158 /* MaterialMathDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D0D1889D4050BE4E37D9501B8AD6C1 /* MaterialMathDummy.m */; };
+		F631FDD7551B7D8B6F043D1607429F31 /* NSString+MaterialBidi.h in Headers */ = {isa = PBXBuildFile; fileRef = CFA5DF86D0B38E8314BF3DB9C5A365A2 /* NSString+MaterialBidi.h */; };
+		F665C9E8AE8370486B58880C1C6219CA /* MDCCornerTreatment.h in Headers */ = {isa = PBXBuildFile; fileRef = 35DFBF58BB7CA24632D379366095389E /* MDCCornerTreatment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F77F5C331570DA7A06C4DEF1450D65B6 /* MDCSnackbarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B77CF6E943F0C69B54CD3DBE424C22F /* MDCSnackbarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F836F2E7363D3BD5A666BBDAD11E3282 /* MDFTextAccessibility-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F51CFF14F7DE6CEA1ACA0700F5A61E47 /* MDFTextAccessibility-dummy.m */; };
+		F927B7F3C3C2C9173BF6FEE5DA7F79A5 /* Pods-VelibStations-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7C80D7766E3059F601E88F440EE0142 /* Pods-VelibStations-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA308FE2AE93C2D636605F8D408FC257 /* MDCInkLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A18448114883D4475FE89E1CCD0AFC0 /* MDCInkLayer.m */; };
+		FBC76457B702909E38A0B127EC8E0184 /* UIImage+MaterialRTL.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 14EB69FB0A50C1FFA4D5F9E2DDAAF862 /* UIImage+MaterialRTL.h */; };
+		FD1C1B900B2C20626D7F640C5DB61873 /* MDCOverlayObserverOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FB68AC9EFA5502DEB7E277F5EBFD62 /* MDCOverlayObserverOverlay.m */; };
+		FD1E0879EFA757BC6FE5BDE9DB2D22FD /* MDCFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 749E1FC6E256E4471E39FB0047D0519F /* MDCFlatButton.m */; };
+		FDAE66AA89278990291E4905560BD412 /* MDCFloatingButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AD21685FE8BFAF7BB357D4E4D7097B6 /* MDCFloatingButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFAC822A404B6BC38E32E3E7D6D7A184 /* MDCSnackbarManagerInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F4195A0A49BF18B45AF39F5C32D3726 /* MDCSnackbarManagerInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2C0DEBA93BD1F65E078ED3154BE305B6 /* PBXContainerItemProxy */ = {
+		11C3CCB7F2238E172C37340601CEA87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55A01F8E987A6E2F7F0ED141A1ECA406;
+			remoteInfo = MDFInternationalization;
+		};
+		18EBA071BB244FD66DF111E0D42BCE7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8E4C927B2E899954BC2FD3314BCA9DA;
+			remoteInfo = MDFTextAccessibility;
+		};
+		2361774B41935C410197381D4573788C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4723B5744013DF08BE3A5FEAA286944;
+			remoteInfo = MaterialComponents;
+		};
+		4548C1A08A386CB85237946F290CA841 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
 			remoteInfo = GoogleMaps;
 		};
-		4AFBF1C561B1EF9302495B2F5E3B819B /* PBXContainerItemProxy */ = {
+		4700641F9CD10C175D74C06E203945B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
-			remoteInfo = GoogleMaps;
+			remoteGlobalIDString = A8E4C927B2E899954BC2FD3314BCA9DA;
+			remoteInfo = MDFTextAccessibility;
+		};
+		6A5E2D2B098C05DE2C9E5AF9722E887D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
+			remoteInfo = GooglePlaces;
 		};
 		6EB1C2DD30E6564FC3135C9E8002D8F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -62,19 +258,19 @@
 			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
 			remoteInfo = GoogleMaps;
 		};
-		8EBFF5B8EFE518B4683C9F42BFC41F65 /* PBXContainerItemProxy */ = {
+		71F507832EE30193FFB06418B37F29F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
-			remoteInfo = GooglePlaces;
+			remoteGlobalIDString = A8E4C927B2E899954BC2FD3314BCA9DA;
+			remoteInfo = MDFTextAccessibility;
 		};
-		9009CAB55B2D7EE1C1C4772531A5F45F /* PBXContainerItemProxy */ = {
+		751B3876DEC10415E197D6FB09172F12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
-			remoteInfo = GooglePlaces;
+			remoteGlobalIDString = 55A01F8E987A6E2F7F0ED141A1ECA406;
+			remoteInfo = MDFInternationalization;
 		};
 		962AE60A420A593C351BF84BFD24FD42 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -83,48 +279,271 @@
 			remoteGlobalIDString = 50D52F27B00117978DBF487C527FD7D6;
 			remoteInfo = "Pods-VelibStations";
 		};
+		9D716745E5412DCC65CF084F20410FC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C1885900810601510E0C632060FAF26;
+			remoteInfo = GooglePlaces;
+		};
+		A2AFDC19FC9F7B38153DDE542C1C3EAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B4BBC6DD552AC8943C7E22772FC1D3;
+			remoteInfo = GoogleMaps;
+		};
+		BA38AEC8C94737D7A0FC9873506E9902 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4723B5744013DF08BE3A5FEAA286944;
+			remoteInfo = MaterialComponents;
+		};
+		FDB7B6A7A5043CBB35BD8913757F392E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55A01F8E987A6E2F7F0ED141A1ECA406;
+			remoteInfo = MDFInternationalization;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D5D5494DD3420D7FA7918DBD35D9D087 /* Copy . Public Headers */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(PUBLIC_HEADERS_FOLDER_PATH)/.";
+			dstSubfolderSpec = 16;
+			files = (
+				F1F5B1CF78C3D593B98DCE6514D19C25 /* MDFInternationalization.h in Copy . Public Headers */,
+				4DA49B4EAF322C31C8007AAAEA439625 /* MDFRTL.h in Copy . Public Headers */,
+				6A6BCA0651D67F8EEC38DEEABE069BA0 /* NSLocale+MaterialRTL.h in Copy . Public Headers */,
+				E75960719013CE6A25C65B9B1500C8A7 /* NSString+MaterialBidi.h in Copy . Public Headers */,
+				FBC76457B702909E38A0B127EC8E0184 /* UIImage+MaterialRTL.h in Copy . Public Headers */,
+				D286878E93F08862147DB0D60A685C7C /* UIView+MaterialRTL.h in Copy . Public Headers */,
+			);
+			name = "Copy . Public Headers";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0187A57EC0B30C35F63E079D0DDDC7FC /* Pods-VelibStations-VelibStationsUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStations-VelibStationsUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		022114E46CBAB8E021DD596BFB121CFE /* Pods-VelibStationsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VelibStationsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0BAF57FDD8E86B44E7BF9322389DF86A /* Pods-VelibStations-VelibStationsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStations-VelibStationsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		0F1CA41DDABE06BB53306EE348F5BC28 /* Pods-VelibStations-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStations-acknowledgements.plist"; sourceTree = "<group>"; };
-		10B2635893649B09BF6F73D5F071EE72 /* Pods-VelibStations-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VelibStations-umbrella.h"; sourceTree = "<group>"; };
-		1CFD9E3C55040DD83CB8D2EC01275C2A /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
-		235784A54E6FF3AAE8F4E559CAC2A246 /* Pods-VelibStations-VelibStationsUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VelibStations-VelibStationsUITests.modulemap"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		330E03ACD6A426EBF92B33BCD1364AF6 /* Pods-VelibStations-VelibStationsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStations-VelibStationsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		356AC4A4A543C37FDF021A503432DF7B /* Pods-VelibStations.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VelibStations.modulemap"; sourceTree = "<group>"; };
-		37D27FBDF1F4980CC24312E43DDB9B3A /* Pods-VelibStations-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VelibStations-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3D2883CF319318FFA8D1ACD0B5A1D20B /* Pods-VelibStationsTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStationsTests-Info.plist"; sourceTree = "<group>"; };
-		42FDF016502176A64CD94D232BA3E9AE /* Pods-VelibStationsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VelibStationsTests-umbrella.h"; sourceTree = "<group>"; };
+		010866D2C9ADC90A607F25970C639E11 /* MDCTypography.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTypography.h; path = components/Typography/src/MDCTypography.h; sourceTree = "<group>"; };
+		05102D7C7F646AE56ADA53E8C69355F0 /* UIFont+MaterialScalable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MaterialScalable.m"; path = "components/Typography/src/UIFont+MaterialScalable.m"; sourceTree = "<group>"; };
+		059DFFC603B4E7698645E095E51E4A42 /* MaterialTypography.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialTypography.h; path = components/Typography/src/MaterialTypography.h; sourceTree = "<group>"; };
+		087F65611F58F43CE7FD0A32E7F96251 /* MaterialButtons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialButtons.h; path = components/Buttons/src/MaterialButtons.h; sourceTree = "<group>"; };
+		09FFFDEB08A861343004E99BDC85050D /* MDCFontTraits.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCFontTraits.m; path = components/Typography/src/private/MDCFontTraits.m; sourceTree = "<group>"; };
+		0AC8BD00C954B96C2828F4B75F2D2915 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		0F10FD01BB1A86B5E1279D9A47C944F6 /* MaterialSnackbar.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MaterialSnackbar.bundle; path = components/Snackbar/src/MaterialSnackbar.bundle; sourceTree = "<group>"; };
+		0F4195A0A49BF18B45AF39F5C32D3726 /* MDCSnackbarManagerInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSnackbarManagerInternal.h; path = components/Snackbar/src/private/MDCSnackbarManagerInternal.h; sourceTree = "<group>"; };
+		0FA3C4B6090B0A628C9E8753B23E33E1 /* UIColor+MaterialBlending.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MaterialBlending.h"; path = "components/private/Color/src/UIColor+MaterialBlending.h"; sourceTree = "<group>"; };
+		103027B32F7696E6B7A35B6263086939 /* MaterialSnackbarStrings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialSnackbarStrings.h; path = components/Snackbar/src/private/MaterialSnackbarStrings.h; sourceTree = "<group>"; };
+		10904EFA94B5248B35171CBA2DBD7C34 /* UIColor+MaterialElevation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialElevation.m"; path = "components/Elevation/src/UIColor+MaterialElevation.m"; sourceTree = "<group>"; };
+		12D5EC8213D61E4063D193604A4BB294 /* MDCSnackbarAlignment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSnackbarAlignment.h; path = components/Snackbar/src/MDCSnackbarAlignment.h; sourceTree = "<group>"; };
+		14EB69FB0A50C1FFA4D5F9E2DDAAF862 /* UIImage+MaterialRTL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MaterialRTL.h"; path = "Sources/UIImage+MaterialRTL.h"; sourceTree = "<group>"; };
+		1603BA05E75D2EF072CCBBF8ACCDEC63 /* MDCShapedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShapedView.h; path = components/Shapes/src/MDCShapedView.h; sourceTree = "<group>"; };
+		18938D96FE3F2B2CA147D451EC1CEE4C /* MDCButton+Subclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MDCButton+Subclassing.h"; path = "components/Buttons/src/private/MDCButton+Subclassing.h"; sourceTree = "<group>"; };
+		192A15FDFF5D8FDA1DEFFB1EEB229C46 /* MDCShadowElevations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShadowElevations.h; path = components/ShadowElevations/src/MDCShadowElevations.h; sourceTree = "<group>"; };
+		1A262BBD37DE76664202DABDF1CEEC00 /* MDCOverlayObserverTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCOverlayObserverTransition.h; path = components/private/Overlay/src/private/MDCOverlayObserverTransition.h; sourceTree = "<group>"; };
+		1A3273B9E7B0942D74DEA4158647E57F /* MaterialShadowLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShadowLayer.h; path = components/ShadowLayer/src/MaterialShadowLayer.h; sourceTree = "<group>"; };
+		1D806D22D73377E6F9CA30E26C7E0E91 /* Pods-VelibStations-VelibStationsUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStations-VelibStationsUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1E5A47F48C42AB23497EF32DDEC8FF59 /* MDCInkGestureRecognizer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCInkGestureRecognizer.m; path = components/Ink/src/MDCInkGestureRecognizer.m; sourceTree = "<group>"; };
+		1E683BF2C5FF4715E650C37274F6E073 /* GoogleMaps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.xcconfig; sourceTree = "<group>"; };
+		1F64F30EA0C2870E3A9DE854549B2E0A /* UIFont+MaterialTypography.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MaterialTypography.m"; path = "components/Typography/src/UIFont+MaterialTypography.m"; sourceTree = "<group>"; };
+		1FDA3330AB7FA4EA017A8B5FD8BC93A8 /* Pods-VelibStations-VelibStationsUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelibStations-VelibStationsUITests-resources.sh"; sourceTree = "<group>"; };
+		25E9F969CCBE2713A795CD74789BB480 /* MDCOverlayAnimationObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCOverlayAnimationObserver.h; path = components/private/Overlay/src/private/MDCOverlayAnimationObserver.h; sourceTree = "<group>"; };
+		25FE252DB026C035078DF25CB0106486 /* NSString+MaterialBidi.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MaterialBidi.m"; path = "Sources/NSString+MaterialBidi.m"; sourceTree = "<group>"; };
+		27FADC30A410E6BBEF849EE97E6CBB82 /* MaterialSnackbarStrings_table.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialSnackbarStrings_table.h; path = components/Snackbar/src/private/MaterialSnackbarStrings_table.h; sourceTree = "<group>"; };
+		28B74EE6F2CA6CF88CACF78AAF91001F /* MDCEdgeTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCEdgeTreatment.m; path = components/Shapes/src/MDCEdgeTreatment.m; sourceTree = "<group>"; };
+		296BB74B73A4D419896B7CE0EF603B25 /* MDCRectangleShapeGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRectangleShapeGenerator.h; path = components/Shapes/src/MDCRectangleShapeGenerator.h; sourceTree = "<group>"; };
+		2AD21685FE8BFAF7BB357D4E4D7097B6 /* MDCFloatingButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFloatingButton.h; path = components/Buttons/src/MDCFloatingButton.h; sourceTree = "<group>"; };
+		2BF52F3C9D84EC95EF27F98A03398BCD /* MDCOverlayObserverTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCOverlayObserverTransition.m; path = components/private/Overlay/src/private/MDCOverlayObserverTransition.m; sourceTree = "<group>"; };
+		2DB8722531F12AE2C64252CAF12E9567 /* MDCRippleTouchController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRippleTouchController.h; path = components/Ripple/src/MDCRippleTouchController.h; sourceTree = "<group>"; };
+		2EDA7C94AC50CD4F734CA61FA4379EDC /* MDFInternationalization.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MDFInternationalization.modulemap; sourceTree = "<group>"; };
+		30C2A23639D91E46D6121E6C5989F3C8 /* UIFont+MaterialTypography.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+MaterialTypography.h"; path = "components/Typography/src/UIFont+MaterialTypography.h"; sourceTree = "<group>"; };
+		334F5319076F4C5E282D90C781A2A082 /* MDCSnackbarMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSnackbarMessage.m; path = components/Snackbar/src/MDCSnackbarMessage.m; sourceTree = "<group>"; };
+		33C0B8B193F1F075841A71AA4433560A /* MDCPathGenerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCPathGenerator.h; path = components/Shapes/src/MDCPathGenerator.h; sourceTree = "<group>"; };
+		34B03C426930E2B1FAC0ADAB26B5D8F7 /* MDCSnackbarMessageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSnackbarMessageView.h; path = components/Snackbar/src/MDCSnackbarMessageView.h; sourceTree = "<group>"; };
+		35DFBF58BB7CA24632D379366095389E /* MDCCornerTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCCornerTreatment.h; path = components/Shapes/src/MDCCornerTreatment.h; sourceTree = "<group>"; };
+		371070264452645934365F1947388E51 /* Pods-VelibStationsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStationsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3812D152175A785BF0E62EBA2ECB88A4 /* NSLocale+MaterialRTL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLocale+MaterialRTL.h"; path = "Sources/NSLocale+MaterialRTL.h"; sourceTree = "<group>"; };
+		393E1E839C97E7F513F264F8229AABE6 /* MDFInternationalization-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDFInternationalization-prefix.pch"; sourceTree = "<group>"; };
+		39A9001C8A1126C4CED718EA911F9593 /* Pods-VelibStations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStations.release.xcconfig"; sourceTree = "<group>"; };
+		3B80442C75FE449915D46882B3A6B500 /* UIColor+MaterialDynamic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialDynamic.m"; path = "components/private/Color/src/UIColor+MaterialDynamic.m"; sourceTree = "<group>"; };
+		3CB6E9059E4DD6A32A2F6FED0D4B535F /* MDFInternationalization-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MDFInternationalization-dummy.m"; sourceTree = "<group>"; };
+		3D38BFAF4271E8C5BCAF993A6BFD8544 /* MaterialRipple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialRipple.h; path = components/Ripple/src/MaterialRipple.h; sourceTree = "<group>"; };
+		3FA912C3F9CE47A167289A083591EC9A /* MDCShadowLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCShadowLayer.m; path = components/ShadowLayer/src/MDCShadowLayer.m; sourceTree = "<group>"; };
+		409F6D68C3666DB93C95849E8243E188 /* MDCFloatingButton+Animation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MDCFloatingButton+Animation.m"; path = "components/Buttons/src/MDCFloatingButton+Animation.m"; sourceTree = "<group>"; };
+		412FA46D26D18B207431109F9D2B4F6E /* MDCPathGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCPathGenerator.m; path = components/Shapes/src/MDCPathGenerator.m; sourceTree = "<group>"; };
+		481ABAEE589FC18A744F8A9E17BDE80E /* MaterialKeyboardWatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialKeyboardWatcher.h; path = components/private/KeyboardWatcher/src/MaterialKeyboardWatcher.h; sourceTree = "<group>"; };
 		48ACEEC5D8FFF0407B89E6D5E4BD6B22 /* Pods_VelibStationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VelibStationsTests.framework; path = "Pods-VelibStationsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4989F7BAF542C2257A5428DAA446006C /* MDCSnackbarMessageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSnackbarMessageView.m; path = components/Snackbar/src/MDCSnackbarMessageView.m; sourceTree = "<group>"; };
+		4A27D9500A3E98223D9D2EA5A8243B1E /* MDCLegacyInkLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCLegacyInkLayer.m; path = components/Ink/src/private/MDCLegacyInkLayer.m; sourceTree = "<group>"; };
+		4B77CF6E943F0C69B54CD3DBE424C22F /* MDCSnackbarManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSnackbarManager.h; path = components/Snackbar/src/MDCSnackbarManager.h; sourceTree = "<group>"; };
+		4BB04FEB1BF35743E38CA168E93B15AD /* Pods-VelibStationsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelibStationsTests-dummy.m"; sourceTree = "<group>"; };
+		4C6B3E2778B97F4556A91516967CD0F0 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		4D7831E6EF2F5D21181C8019AF551BBB /* Pods-VelibStations-VelibStationsUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VelibStations-VelibStationsUITests.modulemap"; sourceTree = "<group>"; };
+		4E14E13C9AF3B2C025C21A932BB15ED0 /* MaterialShadowElevations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShadowElevations.h; path = components/ShadowElevations/src/MaterialShadowElevations.h; sourceTree = "<group>"; };
+		4E36535FAB79CBF6D4A20DD5498003E9 /* Pods-VelibStations-VelibStationsUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelibStations-VelibStationsUITests-dummy.m"; sourceTree = "<group>"; };
+		4E4BCE5A0793601A2AE9EFDEA81B1684 /* CAMediaTimingFunction+MDCAnimationTiming.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CAMediaTimingFunction+MDCAnimationTiming.m"; path = "components/AnimationTiming/src/CAMediaTimingFunction+MDCAnimationTiming.m"; sourceTree = "<group>"; };
+		4E663D0DCD680085208BF59A8287C925 /* UIView+MaterialRTL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MaterialRTL.h"; path = "Sources/UIView+MaterialRTL.h"; sourceTree = "<group>"; };
+		4FCF8A3DC00C9814DEBD2B26EB4C6EDB /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
 		501FFC7856975F012637137CE5D90B9F /* Pods_VelibStations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VelibStations.framework; path = "Pods-VelibStations.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50B34166CB202ABA0745B9A8FCA178F8 /* Pods-VelibStations-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelibStations-dummy.m"; sourceTree = "<group>"; };
+		512B2662E6ED2B97A6C25F072587B37E /* MDCElevatable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCElevatable.h; path = components/Elevation/src/MDCElevatable.h; sourceTree = "<group>"; };
+		520C56D7FBEBC296DAF9B4B9E7922D4E /* MDCShapeGenerating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShapeGenerating.h; path = components/Shapes/src/MDCShapeGenerating.h; sourceTree = "<group>"; };
+		524F1553CA9EB03B2C8B3E2CE67CB4FE /* UIView+MaterialRTL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MaterialRTL.m"; path = "Sources/UIView+MaterialRTL.m"; sourceTree = "<group>"; };
+		52646CB49375CD38C35B218E971B85EB /* MDFTextAccessibility.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MDFTextAccessibility.modulemap; sourceTree = "<group>"; };
+		53B6B1E062174424AFC5CC438A2BB22D /* UIFont+MaterialSimpleEquality.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MaterialSimpleEquality.m"; path = "components/Typography/src/UIFont+MaterialSimpleEquality.m"; sourceTree = "<group>"; };
 		555E27CF5D3B2A81CA5F556D50C6F87E /* Pods_VelibStations_VelibStationsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VelibStations_VelibStationsUITests.framework; path = "Pods-VelibStations-VelibStationsUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EEC59E59EFD0B55F87CB50F28C4A15E /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
-		7198F1A190CE02CCAA1ADF544823CF1B /* GoogleMaps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.xcconfig; sourceTree = "<group>"; };
-		74C0DE34AF08D872E088D8385FC220EC /* Pods-VelibStationsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelibStationsTests-dummy.m"; sourceTree = "<group>"; };
-		7F0BE7B26B0FB3BAFDE9F0CF75365F75 /* Pods-VelibStations-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStations-Info.plist"; sourceTree = "<group>"; };
-		903F1E21810C299E7A39196B3ED2BA8B /* Pods-VelibStations-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelibStations-resources.sh"; sourceTree = "<group>"; };
-		93B606FEB3E6FA68100D4422FEE04D10 /* Pods-VelibStations-VelibStationsUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelibStations-VelibStationsUITests-dummy.m"; sourceTree = "<group>"; };
+		55654FFC7DAE0E400F806E5C48FC9ABD /* MDFTextAccessibility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDFTextAccessibility.m; path = src/MDFTextAccessibility.m; sourceTree = "<group>"; };
+		557FC5E0490CF1ED82E12AE0E2C6D948 /* MDFTextAccessibility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDFTextAccessibility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56B4EFF6459B1B274C518DA848DBA356 /* MDFTextAccessibility-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDFTextAccessibility-prefix.pch"; sourceTree = "<group>"; };
+		59605C04C1D6469088FED1837334528B /* MDCSnackbarMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSnackbarMessage.h; path = components/Snackbar/src/MDCSnackbarMessage.h; sourceTree = "<group>"; };
+		5A18448114883D4475FE89E1CCD0AFC0 /* MDCInkLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCInkLayer.m; path = components/Ink/src/private/MDCInkLayer.m; sourceTree = "<group>"; };
+		5A2330A0C98DC226B4B7EB6DF496B03B /* MDCShapedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCShapedView.m; path = components/Shapes/src/MDCShapedView.m; sourceTree = "<group>"; };
+		5A99F949296D58E7946A4ECC5AC72F71 /* MDCElevationOverriding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCElevationOverriding.h; path = components/Elevation/src/MDCElevationOverriding.h; sourceTree = "<group>"; };
+		5C0717E21DECC547498380DEBDEFC492 /* Pods-VelibStationsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStationsTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5C55D9E1A3A4006ACBD900B88FA9DD6F /* NSArray+MDFUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MDFUtils.h"; path = "src/private/NSArray+MDFUtils.h"; sourceTree = "<group>"; };
+		5CDC0CAF46568C7705915475251C3588 /* MDFTextAccessibility-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MDFTextAccessibility-Info.plist"; sourceTree = "<group>"; };
+		5F18C9765189C83FDE8DC70CFB7838A6 /* Pods-VelibStations-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VelibStations-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5F21F7E8BAF630FD9185CDFB21C3FB68 /* MDCRaisedButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRaisedButton.h; path = components/Buttons/src/MDCRaisedButton.h; sourceTree = "<group>"; };
+		5FA9C55D54B76219CCFCCC813E8041A8 /* MDCOverlayObserverOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCOverlayObserverOverlay.h; path = components/private/Overlay/src/private/MDCOverlayObserverOverlay.h; sourceTree = "<group>"; };
+		5FD319B816A0E0A19195BD2E8682F92A /* Pods-VelibStationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStationsTests.release.xcconfig"; sourceTree = "<group>"; };
+		6387B29F86E8D4E3BC84048E3518E609 /* MaterialOverlay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialOverlay.h; path = components/private/Overlay/src/MaterialOverlay.h; sourceTree = "<group>"; };
+		6443A8BC94142D3FFAC9FF95D58A230A /* UIFont+MaterialTypographyPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+MaterialTypographyPrivate.h"; path = "components/Typography/src/private/UIFont+MaterialTypographyPrivate.h"; sourceTree = "<group>"; };
+		6452B409405F93160D4B2CF87B4DA6C1 /* Pods-VelibStations.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VelibStations.modulemap"; sourceTree = "<group>"; };
+		67141EF58B0A80A6A8C18DAE5149BC8B /* MDFInternationalization-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDFInternationalization-umbrella.h"; sourceTree = "<group>"; };
+		679D79D88C944AE49D14977BD014DD53 /* MaterialComponents.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MaterialComponents.xcconfig; sourceTree = "<group>"; };
+		68E3B255D05D00FA437163855EE57923 /* MDCLegacyInkLayer+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MDCLegacyInkLayer+Private.h"; path = "components/Ink/src/private/MDCLegacyInkLayer+Private.h"; sourceTree = "<group>"; };
+		696026C2114667E0DD7EF80B22E01D3C /* UIColor+MaterialDynamic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MaterialDynamic.h"; path = "components/private/Color/src/UIColor+MaterialDynamic.h"; sourceTree = "<group>"; };
+		6B837DD985F89146657DD1A11935356E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6EF4471707D49F394BA29FCE65B7F9FF /* MDCRippleLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCRippleLayer.m; path = components/Ripple/src/private/MDCRippleLayer.m; sourceTree = "<group>"; };
+		749E1FC6E256E4471E39FB0047D0519F /* MDCFlatButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCFlatButton.m; path = components/Buttons/src/MDCFlatButton.m; sourceTree = "<group>"; };
+		75689412368A4A8E4A9B0233F51DD501 /* Pods-VelibStations-VelibStationsUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelibStations-VelibStationsUITests-frameworks.sh"; sourceTree = "<group>"; };
+		76BEAA74485D8A0FBB0BD17A1A592204 /* MDCFontTextStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFontTextStyle.h; path = components/Typography/src/MDCFontTextStyle.h; sourceTree = "<group>"; };
+		78B3B713FEFF3E99D5CB7762708EF009 /* MDFTextAccessibility.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDFTextAccessibility.xcconfig; sourceTree = "<group>"; };
+		7D44AC77E8E9BC39C53EEA7690A76A57 /* MaterialMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialMath.h; path = components/private/Math/src/MaterialMath.h; sourceTree = "<group>"; };
+		7D61E67AFC45FDE709056181A124D668 /* MDCButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCButton.m; path = components/Buttons/src/MDCButton.m; sourceTree = "<group>"; };
+		7DF3EDE49CE9CB8449E4DE39C7B39A17 /* MDCFontScaler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFontScaler.h; path = components/Typography/src/MDCFontScaler.h; sourceTree = "<group>"; };
+		7ED10A77C0523D6BD71AE4A6FA5C973D /* MDCOverlayAnimationObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCOverlayAnimationObserver.m; path = components/private/Overlay/src/private/MDCOverlayAnimationObserver.m; sourceTree = "<group>"; };
+		7FC6E163DDD50407E8E36E48C41081C6 /* MaterialShadowElevationsDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MaterialShadowElevationsDummy.m; path = components/ShadowElevations/src/MaterialShadowElevationsDummy.m; sourceTree = "<group>"; };
+		806D968184EDAED0D8B5342EB817E2FF /* UIView+MaterialElevationResponding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MaterialElevationResponding.h"; path = "components/Elevation/src/UIView+MaterialElevationResponding.h"; sourceTree = "<group>"; };
+		80DEE077DB87D05EEC4C36864640B2C8 /* MaterialComponents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialComponents-umbrella.h"; sourceTree = "<group>"; };
+		8180492651CD45252959F09B8F20FA0C /* MDCInkView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCInkView.h; path = components/Ink/src/MDCInkView.h; sourceTree = "<group>"; };
+		81A9922AC4613A9B275345F8FC747B5C /* MDCInkGestureRecognizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCInkGestureRecognizer.h; path = components/Ink/src/MDCInkGestureRecognizer.h; sourceTree = "<group>"; };
+		84D86EEABB793E7DF8003ACD71FC8B3F /* MDCMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCMath.h; path = components/private/Math/src/MDCMath.h; sourceTree = "<group>"; };
+		876B02742ABFBA95850D1171C36EB343 /* MDCTypographyUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCTypographyUtilities.h; path = components/Typography/src/private/MDCTypographyUtilities.h; sourceTree = "<group>"; };
+		88922353CE5652B93942B2911396873E /* MaterialSnackbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialSnackbar.h; path = components/Snackbar/src/MaterialSnackbar.h; sourceTree = "<group>"; };
+		88FB68AC9EFA5502DEB7E277F5EBFD62 /* MDCOverlayObserverOverlay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCOverlayObserverOverlay.m; path = components/private/Overlay/src/private/MDCOverlayObserverOverlay.m; sourceTree = "<group>"; };
+		8D920DCA50D8F0D585AB03133F907D2F /* UIView+MDCTimingFunction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MDCTimingFunction.m"; path = "components/AnimationTiming/src/UIView+MDCTimingFunction.m"; sourceTree = "<group>"; };
+		8E55085814583551393F8F84027CE02A /* UIFont+MaterialScalable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+MaterialScalable.h"; path = "components/Typography/src/UIFont+MaterialScalable.h"; sourceTree = "<group>"; };
+		8F3D16471F86FE579AC1E726963635AA /* MaterialAnimationTiming.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialAnimationTiming.h; path = components/AnimationTiming/src/MaterialAnimationTiming.h; sourceTree = "<group>"; };
+		8F9B583AB57A88DB7D2BF4F2F5D32AE7 /* UIView+MaterialElevationResponding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MaterialElevationResponding.m"; path = "components/Elevation/src/UIView+MaterialElevationResponding.m"; sourceTree = "<group>"; };
+		90D3B61B5EF2DCD2879B27EA77D8BDA5 /* MDCFloatingButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCFloatingButton.m; path = components/Buttons/src/MDCFloatingButton.m; sourceTree = "<group>"; };
+		92BC17BE74B1A29C9EE638DFF633683A /* Pods-VelibStations-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelibStations-dummy.m"; sourceTree = "<group>"; };
+		9313853C8B11CD4BE0D5EC3F27849C9F /* MDCRaisedButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCRaisedButton.m; path = components/Buttons/src/MDCRaisedButton.m; sourceTree = "<group>"; };
+		9325E1CC9A89B12C6C30DF947F5BED49 /* Pods-VelibStations-VelibStationsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStations-VelibStationsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9334C99991AE62193995104E139F61D4 /* MDFTextAccessibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDFTextAccessibility.h; path = src/MDFTextAccessibility.h; sourceTree = "<group>"; };
+		95D0D1889D4050BE4E37D9501B8AD6C1 /* MaterialMathDummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MaterialMathDummy.m; path = components/private/Math/src/MaterialMathDummy.m; sourceTree = "<group>"; };
+		9628C3FA24D8C8E9F710D23439644A36 /* CAMediaTimingFunction+MDCAnimationTiming.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CAMediaTimingFunction+MDCAnimationTiming.h"; path = "components/AnimationTiming/src/CAMediaTimingFunction+MDCAnimationTiming.h"; sourceTree = "<group>"; };
+		98A39C1F65754DA0A3A3A3BC0D59CE7C /* NSLocale+MaterialRTL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLocale+MaterialRTL.m"; path = "Sources/NSLocale+MaterialRTL.m"; sourceTree = "<group>"; };
+		9992074C2BD57C33CB359E9B411210E4 /* MDCRippleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRippleView.h; path = components/Ripple/src/MDCRippleView.h; sourceTree = "<group>"; };
+		9A2AC0B8BAC6EF061EBC28825653DF99 /* MDFInternationalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MDFInternationalization.framework; path = MDFInternationalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9FB81730383A360A62F740A3AE571282 /* Pods-VelibStations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStations.debug.xcconfig"; sourceTree = "<group>"; };
-		A3A26CF754F7C991708BF29CEFA82B25 /* Pods-VelibStations-VelibStationsUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStations-VelibStationsUITests-Info.plist"; sourceTree = "<group>"; };
-		A5F6CA91917C6B13D3961B5404D7A545 /* Pods-VelibStationsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStationsTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		ABAD2513D5DCA9686B7CAAA7AFA75D76 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
-		B28E0182736DF511AA5627362CC3678A /* Pods-VelibStationsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VelibStationsTests.modulemap"; sourceTree = "<group>"; };
-		B3B6AA503139F528C89939BC8B4D2807 /* Pods-VelibStations-VelibStationsUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VelibStations-VelibStationsUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B744250252B368F1334BD3104B43B6AF /* Pods-VelibStations-VelibStationsUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelibStations-VelibStationsUITests-resources.sh"; sourceTree = "<group>"; };
-		C3E17A9E0E1E6F62F0BB8580910403B8 /* Pods-VelibStationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStationsTests.release.xcconfig"; sourceTree = "<group>"; };
-		CBE7AA2537D4E15609F3D3BFA6CD18A8 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		D785E47D67794FFF108EC145E25C409C /* Pods-VelibStationsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStationsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EA0FE92EFFEBC25EBA12C2E1FF2788B3 /* Pods-VelibStations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStations.release.xcconfig"; sourceTree = "<group>"; };
-		F0F2270E065E6E39C25A717D7A01A95D /* Pods-VelibStations-VelibStationsUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VelibStations-VelibStationsUITests-umbrella.h"; sourceTree = "<group>"; };
-		FB201F021729C94B0CE6B9B8DDC1113D /* GooglePlaces.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.xcconfig; sourceTree = "<group>"; };
-		FDA5901BDB8400E78197B05C3F1033C5 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
-		FF2EEEA923DDD3763A1E577CB11A28D0 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		9F54376B740D7F7F7DB13D0FF8BBC535 /* MDFInternationalization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDFInternationalization.h; path = Sources/MDFInternationalization.h; sourceTree = "<group>"; };
+		9FC09DB6B46073ED4C6111290E3DDA33 /* UIFont+MaterialTypographyPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MaterialTypographyPrivate.m"; path = "components/Typography/src/private/UIFont+MaterialTypographyPrivate.m"; sourceTree = "<group>"; };
+		A055BE76DDF83C3659ADC5C5A71D2E81 /* MDCSnackbarOverlayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSnackbarOverlayView.m; path = components/Snackbar/src/private/MDCSnackbarOverlayView.m; sourceTree = "<group>"; };
+		A210E1139377D904E582BCC8A3BB660E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		A300F774157EC93B5BA0A38EA740932A /* Pods-VelibStations-VelibStationsUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VelibStations-VelibStationsUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A34157B3708EDB7D17422B3D92F591D2 /* MaterialComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MaterialComponents.framework; path = MaterialComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A370FD20F5C515D9A9F455150DCD6A65 /* MDCRectangleShapeGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCRectangleShapeGenerator.m; path = components/Shapes/src/MDCRectangleShapeGenerator.m; sourceTree = "<group>"; };
+		A3EF04E16E2FB67E572BB5AFC62309A3 /* UIColor+MaterialElevation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MaterialElevation.h"; path = "components/Elevation/src/UIColor+MaterialElevation.h"; sourceTree = "<group>"; };
+		A4270814577F89A325186DB8E8E36652 /* MaterialComponents-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MaterialComponents-Info.plist"; sourceTree = "<group>"; };
+		A519E37E73237B7866C27C07F4BBF905 /* Pods-VelibStations-VelibStationsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStations-VelibStationsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A66C8F1843517C87CD01B53DD1409B4B /* MDCSnackbarManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSnackbarManager.m; path = components/Snackbar/src/MDCSnackbarManager.m; sourceTree = "<group>"; };
+		A67DF8BA17C983D558DB95523CE70D4B /* UIFont+MaterialSimpleEquality.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFont+MaterialSimpleEquality.h"; path = "components/Typography/src/UIFont+MaterialSimpleEquality.h"; sourceTree = "<group>"; };
+		A815D07A44034A6875EDEBDC5AEF3033 /* Pods-VelibStationsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VelibStationsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AB29D2B20224185B5BF38796F3BA22D0 /* MDCOverlayUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCOverlayUtilities.h; path = components/private/Overlay/src/private/MDCOverlayUtilities.h; sourceTree = "<group>"; };
+		AB46DAF39FCDDF94458E3B25A751C871 /* MDCSnackbarOverlayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSnackbarOverlayView.h; path = components/Snackbar/src/private/MDCSnackbarOverlayView.h; sourceTree = "<group>"; };
+		ABBF9D4E11DA6B213BBA1CF65A33E816 /* MDCButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCButton.h; path = components/Buttons/src/MDCButton.h; sourceTree = "<group>"; };
+		ABF72C0E187626851666E56E2A8F089F /* MDFImageCalculations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDFImageCalculations.m; path = src/private/MDFImageCalculations.m; sourceTree = "<group>"; };
+		ADFF4743BAB199AC11D97C71F9022D0E /* Pods-VelibStations-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelibStations-resources.sh"; sourceTree = "<group>"; };
+		AEA7888284B287B9EC082245CA024934 /* MDCFontScaler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCFontScaler.m; path = components/Typography/src/MDCFontScaler.m; sourceTree = "<group>"; };
+		AED440A3A7F296F6CE676B139FBFF964 /* UIView+MDCTimingFunction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MDCTimingFunction.h"; path = "components/AnimationTiming/src/UIView+MDCTimingFunction.h"; sourceTree = "<group>"; };
+		AEFCCEB98E73FAB12D6396796A1BF1BA /* MaterialShapes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShapes.h; path = components/Shapes/src/MaterialShapes.h; sourceTree = "<group>"; };
+		AFA4330463AE48A3C0B7C1B1EC3A410A /* MDCRippleTouchController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCRippleTouchController.m; path = components/Ripple/src/MDCRippleTouchController.m; sourceTree = "<group>"; };
+		AFDC1A55CE31FF426896CEE5995813CA /* MaterialComponents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MaterialComponents.modulemap; sourceTree = "<group>"; };
+		B2724BBEAD76DCCBB64FF0B5E3B76D40 /* Pods-VelibStations-VelibStationsUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStations-VelibStationsUITests-Info.plist"; sourceTree = "<group>"; };
+		B2FA7A7666B57905C562BACD0F5B4A89 /* MDCShapedShadowLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShapedShadowLayer.h; path = components/Shapes/src/MDCShapedShadowLayer.h; sourceTree = "<group>"; };
+		B3144AC3DAFFFDA0B09A4F0E14534969 /* Pods-VelibStationsTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStationsTests-Info.plist"; sourceTree = "<group>"; };
+		B3F188FA934BD433132E0466F4E3E25C /* MDCLegacyInkLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCLegacyInkLayer.h; path = components/Ink/src/private/MDCLegacyInkLayer.h; sourceTree = "<group>"; };
+		B5504E6342E11D20B6CCC25B293D9F28 /* MDFInternationalization-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MDFInternationalization-Info.plist"; sourceTree = "<group>"; };
+		B6070838F2C19653F6D67E33C884A761 /* MDCSnackbarMessageViewInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSnackbarMessageViewInternal.h; path = components/Snackbar/src/private/MDCSnackbarMessageViewInternal.h; sourceTree = "<group>"; };
+		B646F7076CF4F09E9C62DE03653A7610 /* MDCRippleLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCRippleLayer.h; path = components/Ripple/src/private/MDCRippleLayer.h; sourceTree = "<group>"; };
+		B814BC3B8A7CA578C6803AF3EC4D8DA7 /* MDCShapedShadowLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCShapedShadowLayer.m; path = components/Shapes/src/MDCShapedShadowLayer.m; sourceTree = "<group>"; };
+		B8329EB403FD64732D219BAB3FE74A07 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		B8CA417EC7AE455330E53BED6E1E67F1 /* Pods-VelibStations-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelibStations-frameworks.sh"; sourceTree = "<group>"; };
+		BAB13114A871F9D775EF7FFD874BFA21 /* MDCOverlayTransitioning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCOverlayTransitioning.h; path = components/private/Overlay/src/MDCOverlayTransitioning.h; sourceTree = "<group>"; };
+		BB9098FC9C5B19B2ABC03EDE965B6CB1 /* MDCStatefulRippleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCStatefulRippleView.m; path = components/Ripple/src/MDCStatefulRippleView.m; sourceTree = "<group>"; };
+		BD4276ABD8D88EA0263F996AF30E3805 /* MDCKeyboardWatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCKeyboardWatcher.m; path = components/private/KeyboardWatcher/src/MDCKeyboardWatcher.m; sourceTree = "<group>"; };
+		BEB76DC33BE360D11FC34FC9EFE9E3AB /* MDCOverlayImplementor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCOverlayImplementor.h; path = components/private/Overlay/src/MDCOverlayImplementor.h; sourceTree = "<group>"; };
+		BF91433B28856D1B4BB2C22157E3FF7F /* MaterialColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialColor.h; path = components/private/Color/src/MaterialColor.h; sourceTree = "<group>"; };
+		C071B216EC12090FD0C8F2EDA9A636C7 /* MaterialInk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialInk.h; path = components/Ink/src/MaterialInk.h; sourceTree = "<group>"; };
+		C089230B4418BB5126804022AFD9DB97 /* MDCFloatingButton+Animation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MDCFloatingButton+Animation.h"; path = "components/Buttons/src/MDCFloatingButton+Animation.h"; sourceTree = "<group>"; };
+		C22885088211E0AC1DDBAE66585652E6 /* Pods-VelibStations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VelibStations.debug.xcconfig"; sourceTree = "<group>"; };
+		C234A8F78B13C42E06B7C12B72FAB8BA /* MDCInkView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCInkView.m; path = components/Ink/src/MDCInkView.m; sourceTree = "<group>"; };
+		C241A03EA0B78ECC5EF9BB04125F3B51 /* MDCOverlayObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCOverlayObserver.m; path = components/private/Overlay/src/MDCOverlayObserver.m; sourceTree = "<group>"; };
+		C29E5D49A1EEE948E10F416861BB1A68 /* MDCStatefulRippleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCStatefulRippleView.h; path = components/Ripple/src/MDCStatefulRippleView.h; sourceTree = "<group>"; };
+		C2C7D07AE0EF021C99CE31F3005A4998 /* MDCInkTouchController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCInkTouchController.h; path = components/Ink/src/MDCInkTouchController.h; sourceTree = "<group>"; };
+		C5490A34469F0B8C3EF42F7299F8AD7D /* Pods-VelibStationsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VelibStationsTests.modulemap"; sourceTree = "<group>"; };
+		C5AE71043B54B23CE3A80185FDB03BB5 /* NSArray+MDFUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MDFUtils.m"; path = "src/private/NSArray+MDFUtils.m"; sourceTree = "<group>"; };
+		C95D630BCD3C1E9285FAB58E9A4D4C04 /* MDFImageCalculations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDFImageCalculations.h; path = src/private/MDFImageCalculations.h; sourceTree = "<group>"; };
+		CE810C002B82D78500E0AA5E6D53FEAF /* MDCShadowLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCShadowLayer.h; path = components/ShadowLayer/src/MDCShadowLayer.h; sourceTree = "<group>"; };
+		CEE87FB003224BBCF5A9D5589EE325AA /* MDFInternationalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDFInternationalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFA5DF86D0B38E8314BF3DB9C5A365A2 /* NSString+MaterialBidi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MaterialBidi.h"; path = "Sources/NSString+MaterialBidi.h"; sourceTree = "<group>"; };
+		D00AE2B5BC1FFAB8944BB1E92F654614 /* MDFInternationalization.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDFInternationalization.xcconfig; sourceTree = "<group>"; };
+		D00ECD1F8B305ABBBE6F144A3C2905FF /* MDCRippleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCRippleView.m; path = components/Ripple/src/MDCRippleView.m; sourceTree = "<group>"; };
+		D16C8628D8FFD3B2D58642DD098B9FEB /* MaterialElevation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialElevation.h; path = components/Elevation/src/MaterialElevation.h; sourceTree = "<group>"; };
+		D3B5254DBD85CCB0CB5B980D8DDD264E /* MDFTextAccessibility-Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MDFTextAccessibility-Bridging-Header.h"; path = "src/MDFTextAccessibility-Bridging-Header.h"; sourceTree = "<group>"; };
+		D3F965B94EECD3D6B9761DA9C5DA8F83 /* MDCInkLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCInkLayer.h; path = components/Ink/src/private/MDCInkLayer.h; sourceTree = "<group>"; };
+		D50236BEF44115B65A0DA306D8B1CF9A /* MDCKeyboardWatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCKeyboardWatcher.h; path = components/private/KeyboardWatcher/src/MDCKeyboardWatcher.h; sourceTree = "<group>"; };
+		D722A35C4389030A9215657C9D4CBC6C /* MDCSnackbarMessageInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSnackbarMessageInternal.h; path = components/Snackbar/src/private/MDCSnackbarMessageInternal.h; sourceTree = "<group>"; };
+		D7BED1D44AC904EB8DA05E8A963B0069 /* MDCCornerTreatment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCCornerTreatment.m; path = components/Shapes/src/MDCCornerTreatment.m; sourceTree = "<group>"; };
+		D8B778303741DEA62D6A8BB4665F764A /* MDCOverlayWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCOverlayWindow.h; path = components/OverlayWindow/src/MDCOverlayWindow.h; sourceTree = "<group>"; };
+		D9978ECDA631B144947DD8E350FAF187 /* GooglePlaces.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GooglePlaces.xcconfig; sourceTree = "<group>"; };
+		D9DFA5631C2303B55B4963B058D515E2 /* MDCFontTraits.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFontTraits.h; path = components/Typography/src/private/MDCFontTraits.h; sourceTree = "<group>"; };
+		DB7EB7AEC356D0697ACEA5DD983B80E9 /* MaterialApplication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialApplication.h; path = components/private/Application/src/MaterialApplication.h; sourceTree = "<group>"; };
+		DD76EC5AB13545804EC7F419EB6358A5 /* MDCOverlayWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCOverlayWindow.m; path = components/OverlayWindow/src/MDCOverlayWindow.m; sourceTree = "<group>"; };
+		DFCA9F7497FACA950CED43EC2D0214D0 /* MDCTypographyUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTypographyUtilities.m; path = components/Typography/src/private/MDCTypographyUtilities.m; sourceTree = "<group>"; };
+		E0CBE6AD6923F658D033CBF7352AC1DF /* MDCEdgeTreatment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCEdgeTreatment.h; path = components/Shapes/src/MDCEdgeTreatment.h; sourceTree = "<group>"; };
+		E1D023DADD6237F9D0DC05BB8F7110BC /* UIFontDescriptor+MaterialTypography.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFontDescriptor+MaterialTypography.m"; path = "components/Typography/src/UIFontDescriptor+MaterialTypography.m"; sourceTree = "<group>"; };
+		E1D859F4C696DD9707103896FC841478 /* MDFTextAccessibility-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDFTextAccessibility-umbrella.h"; sourceTree = "<group>"; };
+		E7C80D7766E3059F601E88F440EE0142 /* Pods-VelibStations-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VelibStations-umbrella.h"; sourceTree = "<group>"; };
+		E9234D157159BF2330EF00D0DBBCB8E3 /* MDFColorCalculations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDFColorCalculations.m; path = src/private/MDFColorCalculations.m; sourceTree = "<group>"; };
+		E9A1D2E59EE61A813EE1BD2DADA02B50 /* MDCTypography.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCTypography.m; path = components/Typography/src/MDCTypography.m; sourceTree = "<group>"; };
+		EA0E6C6159A31F97DCA19CE67BF2E5FD /* Pods-VelibStations-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStations-Info.plist"; sourceTree = "<group>"; };
+		EB02BE93EEBDDE5DD133EDD7ACCC3454 /* MDCOverlayUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCOverlayUtilities.m; path = components/private/Overlay/src/private/MDCOverlayUtilities.m; sourceTree = "<group>"; };
+		EC58239F80A82B365E79156D82B7C78F /* Pods-VelibStationsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VelibStationsTests-umbrella.h"; sourceTree = "<group>"; };
+		ECB546E1810729BB50DE1EF34B941AC7 /* UIImage+MaterialRTL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MaterialRTL.m"; path = "Sources/UIImage+MaterialRTL.m"; sourceTree = "<group>"; };
+		ECE8912DA94255B5F014F61BDB940DD3 /* UIFontDescriptor+MaterialTypography.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIFontDescriptor+MaterialTypography.h"; path = "components/Typography/src/UIFontDescriptor+MaterialTypography.h"; sourceTree = "<group>"; };
+		EE7C1DAB4EFBD0DD003AAB5E7C0E3E85 /* MDFRTL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDFRTL.h; path = Sources/MDFRTL.h; sourceTree = "<group>"; };
+		EEC0C3B2DE4EADB6B6B70C47379143BD /* Pods-VelibStations-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VelibStations-acknowledgements.plist"; sourceTree = "<group>"; };
+		EFAC34163F22FA02C0A3C41009D63EB2 /* MDCOverlayObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCOverlayObserver.h; path = components/private/Overlay/src/MDCOverlayObserver.h; sourceTree = "<group>"; };
+		F03E333BF5BBCE4F78F4CB8A88996751 /* MDCInkTouchController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCInkTouchController.m; path = components/Ink/src/MDCInkTouchController.m; sourceTree = "<group>"; };
+		F12220AD025700642EEA0F6C8636268C /* Pods-VelibStations-VelibStationsUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VelibStations-VelibStationsUITests-umbrella.h"; sourceTree = "<group>"; };
+		F3AC619FEB37D36CD82A1D4EA85A3CEF /* UIApplication+AppExtensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+AppExtensions.m"; path = "components/private/Application/src/UIApplication+AppExtensions.m"; sourceTree = "<group>"; };
+		F3E40BB31E0BA1908AFA10A09CFD7F29 /* MDFRTL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDFRTL.m; path = Sources/MDFRTL.m; sourceTree = "<group>"; };
+		F44342DCF8A9185C25E2C6B2EB8A5FDB /* MDFColorCalculations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDFColorCalculations.h; path = src/private/MDFColorCalculations.h; sourceTree = "<group>"; };
+		F51CFF14F7DE6CEA1ACA0700F5A61E47 /* MDFTextAccessibility-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MDFTextAccessibility-dummy.m"; sourceTree = "<group>"; };
+		F58E3790F82D8539A66C8A25EB0AFC3C /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		F60D95739535C93967E5FF4EF2C4814E /* MaterialComponents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialComponents-prefix.pch"; sourceTree = "<group>"; };
+		F69482EC99F563F81C2C8ABF9F80944E /* MDCFlatButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFlatButton.h; path = components/Buttons/src/MDCFlatButton.h; sourceTree = "<group>"; };
+		F97941CD75C21187988FB0D4688D5EF6 /* UIColor+MaterialBlending.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialBlending.m"; path = "components/private/Color/src/UIColor+MaterialBlending.m"; sourceTree = "<group>"; };
+		FB8220FA4D9117310AEFC629A6EE4A08 /* MDFTextAccessibility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MDFTextAccessibility.framework; path = MDFTextAccessibility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD0D5D26E4EAFC1C80AAFFFAD7BC8C91 /* UIApplication+AppExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+AppExtensions.h"; path = "components/private/Application/src/UIApplication+AppExtensions.h"; sourceTree = "<group>"; };
+		FDA4D40839C5F181AFC1625C7528E5BA /* MaterialOverlayWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialOverlayWindow.h; path = components/OverlayWindow/src/MaterialOverlayWindow.h; sourceTree = "<group>"; };
+		FE1FACD7351CD0735F35E8F6F532BCCB /* MaterialComponents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MaterialComponents-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,122 +555,413 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA15ABF0D864CDA0121167418030F3A3 /* Frameworks */ = {
+		27B30CEDA280F91D737DE79C1747FEC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E6A63A684137CE97282139A3844D01 /* Foundation.framework in Frameworks */,
+				F46243E2966EE943B781E73EF64C4A19 /* Foundation.framework in Frameworks */,
+				C423F6E6E7337027C1C5901D38720511 /* MDFInternationalization.framework in Frameworks */,
+				96BA518D4FA81993298E79989EC14159 /* MDFTextAccessibility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB6C3D25237BBFE426B41C2121E49D41 /* Frameworks */ = {
+		5846503A3E828E69E9A2ECA67E0E470A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				844B434E8A517C456650BFCFCC3A38E0 /* Foundation.framework in Frameworks */,
+				61102ECA9EF39123535F9E39132BCF18 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74F3ECB2B55C77ED2EDECABA45B6B50F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD078D45EDD8A4724C410032520EC5C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A01B931E8EF1F55768CEFB69C45FF54E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F63908C303347E2EDC75552969A1920 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A18266AA06762D3C7D4D6C3EAFA613ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C53052CFE81112BFA5EAABF6F0059F9E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08E10B0AD752EB91E6B993C2F078737A /* Frameworks */ = {
+		03004AC6F395157CFC23B0F53F8879F4 /* OverlayWindow */ = {
 			isa = PBXGroup;
 			children = (
-				5EEC59E59EFD0B55F87CB50F28C4A15E /* GooglePlaces.framework */,
+				FDA4D40839C5F181AFC1625C7528E5BA /* MaterialOverlayWindow.h */,
+				D8B778303741DEA62D6A8BB4665F764A /* MDCOverlayWindow.h */,
+				DD76EC5AB13545804EC7F419EB6358A5 /* MDCOverlayWindow.m */,
+			);
+			name = OverlayWindow;
+			sourceTree = "<group>";
+		};
+		24262F46D3B63814F08B24B70DD006C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FCF8A3DC00C9814DEBD2B26EB4C6EDB /* GooglePlaces.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		153AAF7F80E262315923FD64E14A648F /* Support Files */ = {
+		2F5185AAE9B647FFDCA2079BD32878B7 /* Color */ = {
 			isa = PBXGroup;
 			children = (
-				7198F1A190CE02CCAA1ADF544823CF1B /* GoogleMaps.xcconfig */,
+				BF91433B28856D1B4BB2C22157E3FF7F /* MaterialColor.h */,
+				0FA3C4B6090B0A628C9E8753B23E33E1 /* UIColor+MaterialBlending.h */,
+				F97941CD75C21187988FB0D4688D5EF6 /* UIColor+MaterialBlending.m */,
+				696026C2114667E0DD7EF80B22E01D3C /* UIColor+MaterialDynamic.h */,
+				3B80442C75FE449915D46882B3A6B500 /* UIColor+MaterialDynamic.m */,
+			);
+			name = Color;
+			sourceTree = "<group>";
+		};
+		308D7F502DC0056428B61D8181D8481A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DB7EB7AEC356D0697ACEA5DD983B80E9 /* MaterialApplication.h */,
+				FD0D5D26E4EAFC1C80AAFFFAD7BC8C91 /* UIApplication+AppExtensions.h */,
+				F3AC619FEB37D36CD82A1D4EA85A3CEF /* UIApplication+AppExtensions.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		36B8839A6EE29F143258BA3DF71EC66F /* ShadowLayer */ = {
+			isa = PBXGroup;
+			children = (
+				1A3273B9E7B0942D74DEA4158647E57F /* MaterialShadowLayer.h */,
+				CE810C002B82D78500E0AA5E6D53FEAF /* MDCShadowLayer.h */,
+				3FA912C3F9CE47A167289A083591EC9A /* MDCShadowLayer.m */,
+			);
+			name = ShadowLayer;
+			sourceTree = "<group>";
+		};
+		37166255FBF22ED0B4654F43DD476FA5 /* MDFTextAccessibility */ = {
+			isa = PBXGroup;
+			children = (
+				F44342DCF8A9185C25E2C6B2EB8A5FDB /* MDFColorCalculations.h */,
+				E9234D157159BF2330EF00D0DBBCB8E3 /* MDFColorCalculations.m */,
+				C95D630BCD3C1E9285FAB58E9A4D4C04 /* MDFImageCalculations.h */,
+				ABF72C0E187626851666E56E2A8F089F /* MDFImageCalculations.m */,
+				9334C99991AE62193995104E139F61D4 /* MDFTextAccessibility.h */,
+				55654FFC7DAE0E400F806E5C48FC9ABD /* MDFTextAccessibility.m */,
+				D3B5254DBD85CCB0CB5B980D8DDD264E /* MDFTextAccessibility-Bridging-Header.h */,
+				5C55D9E1A3A4006ACBD900B88FA9DD6F /* NSArray+MDFUtils.h */,
+				C5AE71043B54B23CE3A80185FDB03BB5 /* NSArray+MDFUtils.m */,
+				E7D129BD20EE8C15E6597040E0A52401 /* Support Files */,
+			);
+			name = MDFTextAccessibility;
+			path = MDFTextAccessibility;
+			sourceTree = "<group>";
+		};
+		3F54474074508F22A560FCBCA2A71161 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E683BF2C5FF4715E650C37274F6E073 /* GoogleMaps.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/GoogleMaps";
 			sourceTree = "<group>";
 		};
-		2F0296605AEC6EE5182AD103727124D0 /* Base */ = {
+		432BAA2EA32CCFB977B0022DB35B657E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3BFFE27793B3A822BA7567A52FE19ABE /* Frameworks */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
-		3BFFE27793B3A822BA7567A52FE19ABE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FDA5901BDB8400E78197B05C3F1033C5 /* GoogleMapsBase.framework */,
+				CEE87FB003224BBCF5A9D5589EE325AA /* MDFInternationalization.framework */,
+				557FC5E0490CF1ED82E12AE0E2C6D948 /* MDFTextAccessibility.framework */,
+				E812F3A2D26429D22F6A56DDD678DBF7 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		44EAA530E4B51E7B3DDA26299E11ABD3 /* Pods-VelibStations */ = {
+		4A1DC54036FFCD68C06D4CE77CBD0301 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				356AC4A4A543C37FDF021A503432DF7B /* Pods-VelibStations.modulemap */,
-				37D27FBDF1F4980CC24312E43DDB9B3A /* Pods-VelibStations-acknowledgements.markdown */,
-				0F1CA41DDABE06BB53306EE348F5BC28 /* Pods-VelibStations-acknowledgements.plist */,
-				50B34166CB202ABA0745B9A8FCA178F8 /* Pods-VelibStations-dummy.m */,
-				7F0BE7B26B0FB3BAFDE9F0CF75365F75 /* Pods-VelibStations-Info.plist */,
-				903F1E21810C299E7A39196B3ED2BA8B /* Pods-VelibStations-resources.sh */,
-				10B2635893649B09BF6F73D5F071EE72 /* Pods-VelibStations-umbrella.h */,
-				9FB81730383A360A62F740A3AE571282 /* Pods-VelibStations.debug.xcconfig */,
-				EA0FE92EFFEBC25EBA12C2E1FF2788B3 /* Pods-VelibStations.release.xcconfig */,
+				7145741D7E6DCCAB38B2C78202F04BA7 /* Pods-VelibStations */,
+				796C3A7EAB29E9CBBD86289E10989539 /* Pods-VelibStations-VelibStationsUITests */,
+				BDE3DAFC5F582126E84CFF84686F2166 /* Pods-VelibStationsTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		4C015B3DA89C17D9ECEC1001511303AA /* Snackbar */ = {
+			isa = PBXGroup;
+			children = (
+				88922353CE5652B93942B2911396873E /* MaterialSnackbar.h */,
+				103027B32F7696E6B7A35B6263086939 /* MaterialSnackbarStrings.h */,
+				27FADC30A410E6BBEF849EE97E6CBB82 /* MaterialSnackbarStrings_table.h */,
+				12D5EC8213D61E4063D193604A4BB294 /* MDCSnackbarAlignment.h */,
+				4B77CF6E943F0C69B54CD3DBE424C22F /* MDCSnackbarManager.h */,
+				A66C8F1843517C87CD01B53DD1409B4B /* MDCSnackbarManager.m */,
+				0F4195A0A49BF18B45AF39F5C32D3726 /* MDCSnackbarManagerInternal.h */,
+				59605C04C1D6469088FED1837334528B /* MDCSnackbarMessage.h */,
+				334F5319076F4C5E282D90C781A2A082 /* MDCSnackbarMessage.m */,
+				D722A35C4389030A9215657C9D4CBC6C /* MDCSnackbarMessageInternal.h */,
+				34B03C426930E2B1FAC0ADAB26B5D8F7 /* MDCSnackbarMessageView.h */,
+				4989F7BAF542C2257A5428DAA446006C /* MDCSnackbarMessageView.m */,
+				B6070838F2C19653F6D67E33C884A761 /* MDCSnackbarMessageViewInternal.h */,
+				AB46DAF39FCDDF94458E3B25A751C871 /* MDCSnackbarOverlayView.h */,
+				A055BE76DDF83C3659ADC5C5A71D2E81 /* MDCSnackbarOverlayView.m */,
+				5110E674647B478B173F9951F9D8250A /* Resources */,
+			);
+			name = Snackbar;
+			sourceTree = "<group>";
+		};
+		4DC7EE23A041FB9964A0616D304A22DF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EDA7C94AC50CD4F734CA61FA4379EDC /* MDFInternationalization.modulemap */,
+				D00AE2B5BC1FFAB8944BB1E92F654614 /* MDFInternationalization.xcconfig */,
+				3CB6E9059E4DD6A32A2F6FED0D4B535F /* MDFInternationalization-dummy.m */,
+				B5504E6342E11D20B6CCC25B293D9F28 /* MDFInternationalization-Info.plist */,
+				393E1E839C97E7F513F264F8229AABE6 /* MDFInternationalization-prefix.pch */,
+				67141EF58B0A80A6A8C18DAE5149BC8B /* MDFInternationalization-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MDFInternationalization";
+			sourceTree = "<group>";
+		};
+		4E4F1C52039E96FB4AD91E364507F062 /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				24262F46D3B63814F08B24B70DD006C8 /* Frameworks */,
+				6EAC44B7345FBB9A21CBC1DBAC93FB43 /* Resources */,
+				EBEA208F631071A93D0925D5D3755DD7 /* Support Files */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		5110E674647B478B173F9951F9D8250A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F10FD01BB1A86B5E1279D9A47C944F6 /* MaterialSnackbar.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		57F711B1C368E71D6989589F950CDA88 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				B6885F7832BE5E48C73A5F8230C9258B /* Base */,
+				E3F29E19C6CDE769F2E0DB7BD1396A09 /* Maps */,
+				3F54474074508F22A560FCBCA2A71161 /* Support Files */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		5A8C4E4E954FFD6B92AF1FCD75B4944B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A210E1139377D904E582BCC8A3BB660E /* GoogleMaps.framework */,
+				B8329EB403FD64732D219BAB3FE74A07 /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65A56AF80E3051E940ED8EFD1EFBB763 /* ShadowElevations */ = {
+			isa = PBXGroup;
+			children = (
+				4E14E13C9AF3B2C025C21A932BB15ED0 /* MaterialShadowElevations.h */,
+				7FC6E163DDD50407E8E36E48C41081C6 /* MaterialShadowElevationsDummy.m */,
+				192A15FDFF5D8FDA1DEFFB1EEB229C46 /* MDCShadowElevations.h */,
+			);
+			name = ShadowElevations;
+			sourceTree = "<group>";
+		};
+		6660019632BE243B353DFF83D4F0A94A /* private */ = {
+			isa = PBXGroup;
+			children = (
+				308D7F502DC0056428B61D8181D8481A /* Application */,
+				2F5185AAE9B647FFDCA2079BD32878B7 /* Color */,
+				7922006590E1FCDB8A0F0502FDE83070 /* KeyboardWatcher */,
+				78D159E5EDAE8F7B49CC10C74A87BF01 /* Math */,
+				BAD0F7F267483F797A889273FE899DB0 /* Overlay */,
+			);
+			name = private;
+			sourceTree = "<group>";
+		};
+		66A26F0394D126736C31459CD0C0C62B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFDC1A55CE31FF426896CEE5995813CA /* MaterialComponents.modulemap */,
+				679D79D88C944AE49D14977BD014DD53 /* MaterialComponents.xcconfig */,
+				FE1FACD7351CD0735F35E8F6F532BCCB /* MaterialComponents-dummy.m */,
+				A4270814577F89A325186DB8E8E36652 /* MaterialComponents-Info.plist */,
+				F60D95739535C93967E5FF4EF2C4814E /* MaterialComponents-prefix.pch */,
+				80DEE077DB87D05EEC4C36864640B2C8 /* MaterialComponents-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MaterialComponents";
+			sourceTree = "<group>";
+		};
+		6EAC44B7345FBB9A21CBC1DBAC93FB43 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F58E3790F82D8539A66C8A25EB0AFC3C /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7145741D7E6DCCAB38B2C78202F04BA7 /* Pods-VelibStations */ = {
+			isa = PBXGroup;
+			children = (
+				6452B409405F93160D4B2CF87B4DA6C1 /* Pods-VelibStations.modulemap */,
+				5F18C9765189C83FDE8DC70CFB7838A6 /* Pods-VelibStations-acknowledgements.markdown */,
+				EEC0C3B2DE4EADB6B6B70C47379143BD /* Pods-VelibStations-acknowledgements.plist */,
+				92BC17BE74B1A29C9EE638DFF633683A /* Pods-VelibStations-dummy.m */,
+				B8CA417EC7AE455330E53BED6E1E67F1 /* Pods-VelibStations-frameworks.sh */,
+				EA0E6C6159A31F97DCA19CE67BF2E5FD /* Pods-VelibStations-Info.plist */,
+				ADFF4743BAB199AC11D97C71F9022D0E /* Pods-VelibStations-resources.sh */,
+				E7C80D7766E3059F601E88F440EE0142 /* Pods-VelibStations-umbrella.h */,
+				C22885088211E0AC1DDBAE66585652E6 /* Pods-VelibStations.debug.xcconfig */,
+				39A9001C8A1126C4CED718EA911F9593 /* Pods-VelibStations.release.xcconfig */,
 			);
 			name = "Pods-VelibStations";
 			path = "Target Support Files/Pods-VelibStations";
 			sourceTree = "<group>";
 		};
-		7E673FF3E759FD1A95E19C02018112A3 /* Pods-VelibStations-VelibStationsUITests */ = {
+		73405FFD7F59673286CEE6E4EB3CF5EC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				235784A54E6FF3AAE8F4E559CAC2A246 /* Pods-VelibStations-VelibStationsUITests.modulemap */,
-				B3B6AA503139F528C89939BC8B4D2807 /* Pods-VelibStations-VelibStationsUITests-acknowledgements.markdown */,
-				0187A57EC0B30C35F63E079D0DDDC7FC /* Pods-VelibStations-VelibStationsUITests-acknowledgements.plist */,
-				93B606FEB3E6FA68100D4422FEE04D10 /* Pods-VelibStations-VelibStationsUITests-dummy.m */,
-				A3A26CF754F7C991708BF29CEFA82B25 /* Pods-VelibStations-VelibStationsUITests-Info.plist */,
-				B744250252B368F1334BD3104B43B6AF /* Pods-VelibStations-VelibStationsUITests-resources.sh */,
-				F0F2270E065E6E39C25A717D7A01A95D /* Pods-VelibStations-VelibStationsUITests-umbrella.h */,
-				330E03ACD6A426EBF92B33BCD1364AF6 /* Pods-VelibStations-VelibStationsUITests.debug.xcconfig */,
-				0BAF57FDD8E86B44E7BF9322389DF86A /* Pods-VelibStations-VelibStationsUITests.release.xcconfig */,
+				57F711B1C368E71D6989589F950CDA88 /* GoogleMaps */,
+				4E4F1C52039E96FB4AD91E364507F062 /* GooglePlaces */,
+				FCE90650106AD618C6F97CA3110D7D86 /* MaterialComponents */,
+				8DCCE4ADFFA44289B1C077E0A15F8197 /* MDFInternationalization */,
+				37166255FBF22ED0B4654F43DD476FA5 /* MDFTextAccessibility */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		767B0ECA966636DC58804C2D91EF2468 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AC8BD00C954B96C2828F4B75F2D2915 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78D159E5EDAE8F7B49CC10C74A87BF01 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				7D44AC77E8E9BC39C53EEA7690A76A57 /* MaterialMath.h */,
+				95D0D1889D4050BE4E37D9501B8AD6C1 /* MaterialMathDummy.m */,
+				84D86EEABB793E7DF8003ACD71FC8B3F /* MDCMath.h */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
+		7922006590E1FCDB8A0F0502FDE83070 /* KeyboardWatcher */ = {
+			isa = PBXGroup;
+			children = (
+				481ABAEE589FC18A744F8A9E17BDE80E /* MaterialKeyboardWatcher.h */,
+				D50236BEF44115B65A0DA306D8B1CF9A /* MDCKeyboardWatcher.h */,
+				BD4276ABD8D88EA0263F996AF30E3805 /* MDCKeyboardWatcher.m */,
+			);
+			name = KeyboardWatcher;
+			sourceTree = "<group>";
+		};
+		796C3A7EAB29E9CBBD86289E10989539 /* Pods-VelibStations-VelibStationsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4D7831E6EF2F5D21181C8019AF551BBB /* Pods-VelibStations-VelibStationsUITests.modulemap */,
+				A300F774157EC93B5BA0A38EA740932A /* Pods-VelibStations-VelibStationsUITests-acknowledgements.markdown */,
+				1D806D22D73377E6F9CA30E26C7E0E91 /* Pods-VelibStations-VelibStationsUITests-acknowledgements.plist */,
+				4E36535FAB79CBF6D4A20DD5498003E9 /* Pods-VelibStations-VelibStationsUITests-dummy.m */,
+				75689412368A4A8E4A9B0233F51DD501 /* Pods-VelibStations-VelibStationsUITests-frameworks.sh */,
+				B2724BBEAD76DCCBB64FF0B5E3B76D40 /* Pods-VelibStations-VelibStationsUITests-Info.plist */,
+				1FDA3330AB7FA4EA017A8B5FD8BC93A8 /* Pods-VelibStations-VelibStationsUITests-resources.sh */,
+				F12220AD025700642EEA0F6C8636268C /* Pods-VelibStations-VelibStationsUITests-umbrella.h */,
+				9325E1CC9A89B12C6C30DF947F5BED49 /* Pods-VelibStations-VelibStationsUITests.debug.xcconfig */,
+				A519E37E73237B7866C27C07F4BBF905 /* Pods-VelibStations-VelibStationsUITests.release.xcconfig */,
 			);
 			name = "Pods-VelibStations-VelibStationsUITests";
 			path = "Target Support Files/Pods-VelibStations-VelibStationsUITests";
 			sourceTree = "<group>";
 		};
-		8CDA57B31B4FD68CE0585801635EBE42 /* Maps */ = {
+		87A6BC4FF73617A8E510BA91499D00AF /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
-				A86B24995D42E9A8C1D48CE9813C5728 /* Frameworks */,
-				C72B51FEFBC8710975FBD1AEFD855DDE /* Resources */,
+				AEFCCEB98E73FAB12D6396796A1BF1BA /* MaterialShapes.h */,
+				35DFBF58BB7CA24632D379366095389E /* MDCCornerTreatment.h */,
+				D7BED1D44AC904EB8DA05E8A963B0069 /* MDCCornerTreatment.m */,
+				E0CBE6AD6923F658D033CBF7352AC1DF /* MDCEdgeTreatment.h */,
+				28B74EE6F2CA6CF88CACF78AAF91001F /* MDCEdgeTreatment.m */,
+				33C0B8B193F1F075841A71AA4433560A /* MDCPathGenerator.h */,
+				412FA46D26D18B207431109F9D2B4F6E /* MDCPathGenerator.m */,
+				296BB74B73A4D419896B7CE0EF603B25 /* MDCRectangleShapeGenerator.h */,
+				A370FD20F5C515D9A9F455150DCD6A65 /* MDCRectangleShapeGenerator.m */,
+				B2FA7A7666B57905C562BACD0F5B4A89 /* MDCShapedShadowLayer.h */,
+				B814BC3B8A7CA578C6803AF3EC4D8DA7 /* MDCShapedShadowLayer.m */,
+				1603BA05E75D2EF072CCBBF8ACCDEC63 /* MDCShapedView.h */,
+				5A2330A0C98DC226B4B7EB6DF496B03B /* MDCShapedView.m */,
+				520C56D7FBEBC296DAF9B4B9E7922D4E /* MDCShapeGenerating.h */,
 			);
-			name = Maps;
+			name = Shapes;
 			sourceTree = "<group>";
 		};
-		9E01F0E67DD69D261BC584514BA97576 /* Support Files */ = {
+		88F55EB9DF53B46134E675D8A89563CA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FB201F021729C94B0CE6B9B8DDC1113D /* GooglePlaces.xcconfig */,
+				4C6B3E2778B97F4556A91516967CD0F0 /* GoogleMaps.bundle */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GooglePlaces";
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		A86B24995D42E9A8C1D48CE9813C5728 /* Frameworks */ = {
+		8DCCE4ADFFA44289B1C077E0A15F8197 /* MDFInternationalization */ = {
 			isa = PBXGroup;
 			children = (
-				ABAD2513D5DCA9686B7CAAA7AFA75D76 /* GoogleMaps.framework */,
-				1CFD9E3C55040DD83CB8D2EC01275C2A /* GoogleMapsCore.framework */,
+				9F54376B740D7F7F7DB13D0FF8BBC535 /* MDFInternationalization.h */,
+				EE7C1DAB4EFBD0DD003AAB5E7C0E3E85 /* MDFRTL.h */,
+				F3E40BB31E0BA1908AFA10A09CFD7F29 /* MDFRTL.m */,
+				3812D152175A785BF0E62EBA2ECB88A4 /* NSLocale+MaterialRTL.h */,
+				98A39C1F65754DA0A3A3A3BC0D59CE7C /* NSLocale+MaterialRTL.m */,
+				CFA5DF86D0B38E8314BF3DB9C5A365A2 /* NSString+MaterialBidi.h */,
+				25FE252DB026C035078DF25CB0106486 /* NSString+MaterialBidi.m */,
+				14EB69FB0A50C1FFA4D5F9E2DDAAF862 /* UIImage+MaterialRTL.h */,
+				ECB546E1810729BB50DE1EF34B941AC7 /* UIImage+MaterialRTL.m */,
+				4E663D0DCD680085208BF59A8287C925 /* UIView+MaterialRTL.h */,
+				524F1553CA9EB03B2C8B3E2CE67CB4FE /* UIView+MaterialRTL.m */,
+				4DC7EE23A041FB9964A0616D304A22DF /* Support Files */,
 			);
-			name = Frameworks;
+			name = MDFInternationalization;
+			path = MDFInternationalization;
 			sourceTree = "<group>";
 		};
-		ABD35E29213405CD527F80068E998B59 /* Products */ = {
+		9398C9976DCB94E3CA0093EECFECFFA7 /* Elevation */ = {
 			isa = PBXGroup;
 			children = (
+				D16C8628D8FFD3B2D58642DD098B9FEB /* MaterialElevation.h */,
+				512B2662E6ED2B97A6C25F072587B37E /* MDCElevatable.h */,
+				5A99F949296D58E7946A4ECC5AC72F71 /* MDCElevationOverriding.h */,
+				A3EF04E16E2FB67E572BB5AFC62309A3 /* UIColor+MaterialElevation.h */,
+				10904EFA94B5248B35171CBA2DBD7C34 /* UIColor+MaterialElevation.m */,
+				806D968184EDAED0D8B5342EB817E2FF /* UIView+MaterialElevationResponding.h */,
+				8F9B583AB57A88DB7D2BF4F2F5D32AE7 /* UIView+MaterialElevationResponding.m */,
+			);
+			name = Elevation;
+			sourceTree = "<group>";
+		};
+		9A8A621D0A0BA577BACDA583A455203C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A34157B3708EDB7D17422B3D92F591D2 /* MaterialComponents.framework */,
+				9A2AC0B8BAC6EF061EBC28825653DF99 /* MDFInternationalization.framework */,
+				FB8220FA4D9117310AEFC629A6EE4A08 /* MDFTextAccessibility.framework */,
 				501FFC7856975F012637137CE5D90B9F /* Pods_VelibStations.framework */,
 				555E27CF5D3B2A81CA5F556D50C6F87E /* Pods_VelibStations_VelibStationsUITests.framework */,
 				48ACEEC5D8FFF0407B89E6D5E4BD6B22 /* Pods_VelibStationsTests.framework */,
@@ -259,104 +969,213 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B120AFFD710CCFC934F0D0621DCEC785 /* Targets Support Files */ = {
+		A4717CD8596E1859FE9D9219DDBDACDA /* Typography */ = {
 			isa = PBXGroup;
 			children = (
-				44EAA530E4B51E7B3DDA26299E11ABD3 /* Pods-VelibStations */,
-				7E673FF3E759FD1A95E19C02018112A3 /* Pods-VelibStations-VelibStationsUITests */,
-				E3C7D40933AA45B32DE3D02FCB1B49D9 /* Pods-VelibStationsTests */,
+				059DFFC603B4E7698645E095E51E4A42 /* MaterialTypography.h */,
+				7DF3EDE49CE9CB8449E4DE39C7B39A17 /* MDCFontScaler.h */,
+				AEA7888284B287B9EC082245CA024934 /* MDCFontScaler.m */,
+				76BEAA74485D8A0FBB0BD17A1A592204 /* MDCFontTextStyle.h */,
+				D9DFA5631C2303B55B4963B058D515E2 /* MDCFontTraits.h */,
+				09FFFDEB08A861343004E99BDC85050D /* MDCFontTraits.m */,
+				010866D2C9ADC90A607F25970C639E11 /* MDCTypography.h */,
+				E9A1D2E59EE61A813EE1BD2DADA02B50 /* MDCTypography.m */,
+				876B02742ABFBA95850D1171C36EB343 /* MDCTypographyUtilities.h */,
+				DFCA9F7497FACA950CED43EC2D0214D0 /* MDCTypographyUtilities.m */,
+				8E55085814583551393F8F84027CE02A /* UIFont+MaterialScalable.h */,
+				05102D7C7F646AE56ADA53E8C69355F0 /* UIFont+MaterialScalable.m */,
+				A67DF8BA17C983D558DB95523CE70D4B /* UIFont+MaterialSimpleEquality.h */,
+				53B6B1E062174424AFC5CC438A2BB22D /* UIFont+MaterialSimpleEquality.m */,
+				30C2A23639D91E46D6121E6C5989F3C8 /* UIFont+MaterialTypography.h */,
+				1F64F30EA0C2870E3A9DE854549B2E0A /* UIFont+MaterialTypography.m */,
+				6443A8BC94142D3FFAC9FF95D58A230A /* UIFont+MaterialTypographyPrivate.h */,
+				9FC09DB6B46073ED4C6111290E3DDA33 /* UIFont+MaterialTypographyPrivate.m */,
+				ECE8912DA94255B5F014F61BDB940DD3 /* UIFontDescriptor+MaterialTypography.h */,
+				E1D023DADD6237F9D0DC05BB8F7110BC /* UIFontDescriptor+MaterialTypography.m */,
 			);
-			name = "Targets Support Files";
+			name = Typography;
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		B6885F7832BE5E48C73A5F8230C9258B /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				767B0ECA966636DC58804C2D91EF2468 /* Frameworks */,
 			);
-			name = iOS;
+			name = Base;
 			sourceTree = "<group>";
 		};
-		C72B51FEFBC8710975FBD1AEFD855DDE /* Resources */ = {
+		B76C53085A2D7AEA924884757FF5633E /* AnimationTiming */ = {
 			isa = PBXGroup;
 			children = (
-				CBE7AA2537D4E15609F3D3BFA6CD18A8 /* GoogleMaps.bundle */,
+				9628C3FA24D8C8E9F710D23439644A36 /* CAMediaTimingFunction+MDCAnimationTiming.h */,
+				4E4BCE5A0793601A2AE9EFDEA81B1684 /* CAMediaTimingFunction+MDCAnimationTiming.m */,
+				8F3D16471F86FE579AC1E726963635AA /* MaterialAnimationTiming.h */,
+				AED440A3A7F296F6CE676B139FBFF964 /* UIView+MDCTimingFunction.h */,
+				8D920DCA50D8F0D585AB03133F907D2F /* UIView+MDCTimingFunction.m */,
 			);
-			name = Resources;
+			name = AnimationTiming;
 			sourceTree = "<group>";
 		};
-		C7C7277588F4F4FC060D1ABC20608C53 /* GoogleMaps */ = {
+		BAD0F7F267483F797A889273FE899DB0 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
-				2F0296605AEC6EE5182AD103727124D0 /* Base */,
-				8CDA57B31B4FD68CE0585801635EBE42 /* Maps */,
-				153AAF7F80E262315923FD64E14A648F /* Support Files */,
+				6387B29F86E8D4E3BC84048E3518E609 /* MaterialOverlay.h */,
+				25E9F969CCBE2713A795CD74789BB480 /* MDCOverlayAnimationObserver.h */,
+				7ED10A77C0523D6BD71AE4A6FA5C973D /* MDCOverlayAnimationObserver.m */,
+				BEB76DC33BE360D11FC34FC9EFE9E3AB /* MDCOverlayImplementor.h */,
+				EFAC34163F22FA02C0A3C41009D63EB2 /* MDCOverlayObserver.h */,
+				C241A03EA0B78ECC5EF9BB04125F3B51 /* MDCOverlayObserver.m */,
+				5FA9C55D54B76219CCFCCC813E8041A8 /* MDCOverlayObserverOverlay.h */,
+				88FB68AC9EFA5502DEB7E277F5EBFD62 /* MDCOverlayObserverOverlay.m */,
+				1A262BBD37DE76664202DABDF1CEEC00 /* MDCOverlayObserverTransition.h */,
+				2BF52F3C9D84EC95EF27F98A03398BCD /* MDCOverlayObserverTransition.m */,
+				BAB13114A871F9D775EF7FFD874BFA21 /* MDCOverlayTransitioning.h */,
+				AB29D2B20224185B5BF38796F3BA22D0 /* MDCOverlayUtilities.h */,
+				EB02BE93EEBDDE5DD133EDD7ACCC3454 /* MDCOverlayUtilities.m */,
 			);
-			name = GoogleMaps;
-			path = GoogleMaps;
+			name = Overlay;
+			sourceTree = "<group>";
+		};
+		BDE3DAFC5F582126E84CFF84686F2166 /* Pods-VelibStationsTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5490A34469F0B8C3EF42F7299F8AD7D /* Pods-VelibStationsTests.modulemap */,
+				A815D07A44034A6875EDEBDC5AEF3033 /* Pods-VelibStationsTests-acknowledgements.markdown */,
+				5C0717E21DECC547498380DEBDEFC492 /* Pods-VelibStationsTests-acknowledgements.plist */,
+				4BB04FEB1BF35743E38CA168E93B15AD /* Pods-VelibStationsTests-dummy.m */,
+				B3144AC3DAFFFDA0B09A4F0E14534969 /* Pods-VelibStationsTests-Info.plist */,
+				EC58239F80A82B365E79156D82B7C78F /* Pods-VelibStationsTests-umbrella.h */,
+				371070264452645934365F1947388E51 /* Pods-VelibStationsTests.debug.xcconfig */,
+				5FD319B816A0E0A19195BD2E8682F92A /* Pods-VelibStationsTests.release.xcconfig */,
+			);
+			name = "Pods-VelibStationsTests";
+			path = "Target Support Files/Pods-VelibStationsTests";
+			sourceTree = "<group>";
+		};
+		C4FF42D9D97BEB401C653CB060A633B5 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				087F65611F58F43CE7FD0A32E7F96251 /* MaterialButtons.h */,
+				ABBF9D4E11DA6B213BBA1CF65A33E816 /* MDCButton.h */,
+				7D61E67AFC45FDE709056181A124D668 /* MDCButton.m */,
+				18938D96FE3F2B2CA147D451EC1CEE4C /* MDCButton+Subclassing.h */,
+				F69482EC99F563F81C2C8ABF9F80944E /* MDCFlatButton.h */,
+				749E1FC6E256E4471E39FB0047D0519F /* MDCFlatButton.m */,
+				2AD21685FE8BFAF7BB357D4E4D7097B6 /* MDCFloatingButton.h */,
+				90D3B61B5EF2DCD2879B27EA77D8BDA5 /* MDCFloatingButton.m */,
+				C089230B4418BB5126804022AFD9DB97 /* MDCFloatingButton+Animation.h */,
+				409F6D68C3666DB93C95849E8243E188 /* MDCFloatingButton+Animation.m */,
+				5F21F7E8BAF630FD9185CDFB21C3FB68 /* MDCRaisedButton.h */,
+				9313853C8B11CD4BE0D5EC3F27849C9F /* MDCRaisedButton.m */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		CD7D2B4422FFCD63450DF3EED3D3E8B4 /* Ink */ = {
+			isa = PBXGroup;
+			children = (
+				C071B216EC12090FD0C8F2EDA9A636C7 /* MaterialInk.h */,
+				81A9922AC4613A9B275345F8FC747B5C /* MDCInkGestureRecognizer.h */,
+				1E5A47F48C42AB23497EF32DDEC8FF59 /* MDCInkGestureRecognizer.m */,
+				D3F965B94EECD3D6B9761DA9C5DA8F83 /* MDCInkLayer.h */,
+				5A18448114883D4475FE89E1CCD0AFC0 /* MDCInkLayer.m */,
+				C2C7D07AE0EF021C99CE31F3005A4998 /* MDCInkTouchController.h */,
+				F03E333BF5BBCE4F78F4CB8A88996751 /* MDCInkTouchController.m */,
+				8180492651CD45252959F09B8F20FA0C /* MDCInkView.h */,
+				C234A8F78B13C42E06B7C12B72FAB8BA /* MDCInkView.m */,
+				B3F188FA934BD433132E0466F4E3E25C /* MDCLegacyInkLayer.h */,
+				4A27D9500A3E98223D9D2EA5A8243B1E /* MDCLegacyInkLayer.m */,
+				68E3B255D05D00FA437163855EE57923 /* MDCLegacyInkLayer+Private.h */,
+			);
+			name = Ink;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				E858A99A3564099E88E4CF05F26A517D /* Pods */,
-				ABD35E29213405CD527F80068E998B59 /* Products */,
-				B120AFFD710CCFC934F0D0621DCEC785 /* Targets Support Files */,
+				432BAA2EA32CCFB977B0022DB35B657E /* Frameworks */,
+				73405FFD7F59673286CEE6E4EB3CF5EC /* Pods */,
+				9A8A621D0A0BA577BACDA583A455203C /* Products */,
+				4A1DC54036FFCD68C06D4CE77CBD0301 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		E3F29E19C6CDE769F2E0DB7BD1396A09 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				5A8C4E4E954FFD6B92AF1FCD75B4944B /* Frameworks */,
+				88F55EB9DF53B46134E675D8A89563CA /* Resources */,
 			);
-			name = Frameworks;
+			name = Maps;
 			sourceTree = "<group>";
 		};
-		E3C7D40933AA45B32DE3D02FCB1B49D9 /* Pods-VelibStationsTests */ = {
+		E63B52F09450BAF60AF925B3BFE7ECA5 /* Ripple */ = {
 			isa = PBXGroup;
 			children = (
-				B28E0182736DF511AA5627362CC3678A /* Pods-VelibStationsTests.modulemap */,
-				022114E46CBAB8E021DD596BFB121CFE /* Pods-VelibStationsTests-acknowledgements.markdown */,
-				A5F6CA91917C6B13D3961B5404D7A545 /* Pods-VelibStationsTests-acknowledgements.plist */,
-				74C0DE34AF08D872E088D8385FC220EC /* Pods-VelibStationsTests-dummy.m */,
-				3D2883CF319318FFA8D1ACD0B5A1D20B /* Pods-VelibStationsTests-Info.plist */,
-				42FDF016502176A64CD94D232BA3E9AE /* Pods-VelibStationsTests-umbrella.h */,
-				D785E47D67794FFF108EC145E25C409C /* Pods-VelibStationsTests.debug.xcconfig */,
-				C3E17A9E0E1E6F62F0BB8580910403B8 /* Pods-VelibStationsTests.release.xcconfig */,
+				3D38BFAF4271E8C5BCAF993A6BFD8544 /* MaterialRipple.h */,
+				B646F7076CF4F09E9C62DE03653A7610 /* MDCRippleLayer.h */,
+				6EF4471707D49F394BA29FCE65B7F9FF /* MDCRippleLayer.m */,
+				2DB8722531F12AE2C64252CAF12E9567 /* MDCRippleTouchController.h */,
+				AFA4330463AE48A3C0B7C1B1EC3A410A /* MDCRippleTouchController.m */,
+				9992074C2BD57C33CB359E9B411210E4 /* MDCRippleView.h */,
+				D00ECD1F8B305ABBBE6F144A3C2905FF /* MDCRippleView.m */,
+				C29E5D49A1EEE948E10F416861BB1A68 /* MDCStatefulRippleView.h */,
+				BB9098FC9C5B19B2ABC03EDE965B6CB1 /* MDCStatefulRippleView.m */,
 			);
-			name = "Pods-VelibStationsTests";
-			path = "Target Support Files/Pods-VelibStationsTests";
+			name = Ripple;
 			sourceTree = "<group>";
 		};
-		E858A99A3564099E88E4CF05F26A517D /* Pods */ = {
+		E7D129BD20EE8C15E6597040E0A52401 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C7C7277588F4F4FC060D1ABC20608C53 /* GoogleMaps */,
-				FA674A0D9FA4A139D2D7EB815D46E49C /* GooglePlaces */,
+				52646CB49375CD38C35B218E971B85EB /* MDFTextAccessibility.modulemap */,
+				78B3B713FEFF3E99D5CB7762708EF009 /* MDFTextAccessibility.xcconfig */,
+				F51CFF14F7DE6CEA1ACA0700F5A61E47 /* MDFTextAccessibility-dummy.m */,
+				5CDC0CAF46568C7705915475251C3588 /* MDFTextAccessibility-Info.plist */,
+				56B4EFF6459B1B274C518DA848DBA356 /* MDFTextAccessibility-prefix.pch */,
+				E1D859F4C696DD9707103896FC841478 /* MDFTextAccessibility-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/MDFTextAccessibility";
 			sourceTree = "<group>";
 		};
-		EE4A1F110A736C2021602185D48C1D37 /* Resources */ = {
+		E812F3A2D26429D22F6A56DDD678DBF7 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				FF2EEEA923DDD3763A1E577CB11A28D0 /* GooglePlaces.bundle */,
+				6B837DD985F89146657DD1A11935356E /* Foundation.framework */,
 			);
-			name = Resources;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		FA674A0D9FA4A139D2D7EB815D46E49C /* GooglePlaces */ = {
+		EBEA208F631071A93D0925D5D3755DD7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				08E10B0AD752EB91E6B993C2F078737A /* Frameworks */,
-				EE4A1F110A736C2021602185D48C1D37 /* Resources */,
-				9E01F0E67DD69D261BC584514BA97576 /* Support Files */,
+				D9978ECDA631B144947DD8E350FAF187 /* GooglePlaces.xcconfig */,
 			);
-			name = GooglePlaces;
-			path = GooglePlaces;
+			name = "Support Files";
+			path = "../Target Support Files/GooglePlaces";
+			sourceTree = "<group>";
+		};
+		FCE90650106AD618C6F97CA3110D7D86 /* MaterialComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B76C53085A2D7AEA924884757FF5633E /* AnimationTiming */,
+				C4FF42D9D97BEB401C653CB060A633B5 /* Buttons */,
+				9398C9976DCB94E3CA0093EECFECFFA7 /* Elevation */,
+				CD7D2B4422FFCD63450DF3EED3D3E8B4 /* Ink */,
+				03004AC6F395157CFC23B0F53F8879F4 /* OverlayWindow */,
+				6660019632BE243B353DFF83D4F0A94A /* private */,
+				E63B52F09450BAF60AF925B3BFE7ECA5 /* Ripple */,
+				65A56AF80E3051E940ED8EFD1EFBB763 /* ShadowElevations */,
+				36B8839A6EE29F143258BA3DF71EC66F /* ShadowLayer */,
+				87A6BC4FF73617A8E510BA91499D00AF /* Shapes */,
+				4C015B3DA89C17D9ECEC1001511303AA /* Snackbar */,
+				66A26F0394D126736C31459CD0C0C62B /* Support Files */,
+				A4717CD8596E1859FE9D9219DDBDACDA /* Typography */,
+			);
+			name = MaterialComponents;
+			path = MaterialComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,19 +1189,134 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8E05C3A7F0B497E7325B9566C959B8F /* Headers */ = {
+		3638563D574E4B852CBB04AEC1F2DE91 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9E8F0EAADE80BB5643FAE6D02133F04 /* Pods-VelibStations-VelibStationsUITests-umbrella.h in Headers */,
+				454730B312D4F40525705F7AF82EE928 /* Pods-VelibStations-VelibStationsUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C64E5807E9F60BD040F155D7A9AD1787 /* Headers */ = {
+		5479FCDC0AA9EB855728336DB34ABF39 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C970ED8D1E30B022470784180B8E08C /* Pods-VelibStations-umbrella.h in Headers */,
+				E29F998B4C15803C51528E242BFBD133 /* MDFColorCalculations.h in Headers */,
+				A306FFD78A6B8EC7E92BA8925DDD2BE7 /* MDFImageCalculations.h in Headers */,
+				4452C1D0E85ED1CBF3DDCAFC07F2CB6C /* MDFTextAccessibility-Bridging-Header.h in Headers */,
+				39001C11334FEAF508FCAB4F3B18490C /* MDFTextAccessibility-umbrella.h in Headers */,
+				0BD4D3E014FFD03D6D31EC5642B4D97B /* MDFTextAccessibility.h in Headers */,
+				D1A04DDDEC2F702C3767F00BB402E7A3 /* NSArray+MDFUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		837BF565FE007C05844B22173B1E3693 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F927B7F3C3C2C9173BF6FEE5DA7F79A5 /* Pods-VelibStations-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AD6ED1455A4FC1522AC7D10CA40885C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A54D7BFC9AC7027DD29E2F38033FE2F /* MDFInternationalization-umbrella.h in Headers */,
+				65DA0998EBF8D465B5F7BB2F71B35BD1 /* MDFInternationalization.h in Headers */,
+				2EFC9E2AE0AC27BF88923CF5B541B684 /* MDFRTL.h in Headers */,
+				B89E94C638326F5A7EC44B9513D175D4 /* NSLocale+MaterialRTL.h in Headers */,
+				F631FDD7551B7D8B6F043D1607429F31 /* NSString+MaterialBidi.h in Headers */,
+				B807CD829A6404915272518780ED5CBF /* UIImage+MaterialRTL.h in Headers */,
+				A0D6851838894CCD40296040DDBD7A9D /* UIView+MaterialRTL.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C75213996968C5BE2E4AC9148E431698 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F597E97592CF4B9BFC192CB8177EE81 /* CAMediaTimingFunction+MDCAnimationTiming.h in Headers */,
+				D39D238792FE9BC057A46302C824923E /* MaterialAnimationTiming.h in Headers */,
+				8F9632FB032FA59E496E11970E47AA0B /* MaterialApplication.h in Headers */,
+				CA61405778098A921BD3FC5A1B937A55 /* MaterialButtons.h in Headers */,
+				C85AF22448BFF731B5D29137FC2A0F28 /* MaterialColor.h in Headers */,
+				1679CF9DCCAC8B5FBF59ED4A41262DAF /* MaterialComponents-umbrella.h in Headers */,
+				0CFB1BC7C6D6100FDBE055E593CABA05 /* MaterialElevation.h in Headers */,
+				157F2A8F34942019B7A8A2E9B53290D8 /* MaterialInk.h in Headers */,
+				72E0E6EB75E95E3DE2BAC3E61E38FF55 /* MaterialKeyboardWatcher.h in Headers */,
+				880DFBB44DE2592DAEB815BE771A68AB /* MaterialMath.h in Headers */,
+				D46CF97CD304CEB104FC3CCD2AB5F599 /* MaterialOverlay.h in Headers */,
+				A417378359B9BC8DCA43314FC99CE6A8 /* MaterialOverlayWindow.h in Headers */,
+				2233E93E984B412EA4711ED277B31591 /* MaterialRipple.h in Headers */,
+				2B9743BAFC5325634310C23C060DA2FB /* MaterialShadowElevations.h in Headers */,
+				671C5F689C7E7EF264CEE65261638F1B /* MaterialShadowLayer.h in Headers */,
+				DE9F0945E7F28EB569B2383EA5EF31CF /* MaterialShapes.h in Headers */,
+				E7A7C14ADE4E986B772CC4545512F46B /* MaterialSnackbar.h in Headers */,
+				2A4A6BAF6B70965F2DA775DE3AA11BD5 /* MaterialSnackbarStrings.h in Headers */,
+				CF0505E8AE64383C680677DF851D37D8 /* MaterialSnackbarStrings_table.h in Headers */,
+				905121932639CFDF3F6A26878F49208F /* MaterialTypography.h in Headers */,
+				101E5E114BFB38807FAD188DCA630849 /* MDCButton+Subclassing.h in Headers */,
+				D08609D0181D8BDA65EB5B6871613EE5 /* MDCButton.h in Headers */,
+				F665C9E8AE8370486B58880C1C6219CA /* MDCCornerTreatment.h in Headers */,
+				164BD02020E42371397BE76DFBFAD956 /* MDCEdgeTreatment.h in Headers */,
+				A7ACE520DAC25D18025DF235241D86FF /* MDCElevatable.h in Headers */,
+				EF54258A816CDAC1107041F77F513599 /* MDCElevationOverriding.h in Headers */,
+				9F84DDCB5D274E74FE3AA409A5B0E888 /* MDCFlatButton.h in Headers */,
+				6BD3A82E014F50F1A1ABDBFAD7ACC1C1 /* MDCFloatingButton+Animation.h in Headers */,
+				FDAE66AA89278990291E4905560BD412 /* MDCFloatingButton.h in Headers */,
+				A660E8D86609AAB7D2AD028994AFC7CE /* MDCFontScaler.h in Headers */,
+				BAAE3463283C6A7576C7E4CE7AC1FF44 /* MDCFontTextStyle.h in Headers */,
+				D21E7A32CE2DF12327050F8008DB41FB /* MDCFontTraits.h in Headers */,
+				F47A1DB3993ABD7E27282BA8CD5874ED /* MDCInkGestureRecognizer.h in Headers */,
+				E8FB73FC5426482747BA1C80860E7201 /* MDCInkLayer.h in Headers */,
+				A90C154136E806206FC446E793E967C4 /* MDCInkTouchController.h in Headers */,
+				CCB316355C9F9AC74CB99E1B313A051C /* MDCInkView.h in Headers */,
+				CD4F45A0A03ED8CCEC0D5A656DE1FBE3 /* MDCKeyboardWatcher.h in Headers */,
+				63CD8D062A570772EB26F6AAE93D1079 /* MDCLegacyInkLayer+Private.h in Headers */,
+				0B1D94D26C8B37F58032BE6B1D37AEE6 /* MDCLegacyInkLayer.h in Headers */,
+				1780D1D7852DB27AB8C6DDA08BCB6548 /* MDCMath.h in Headers */,
+				8EE7CC6D02C9E36A3E8FC4C55871172E /* MDCOverlayAnimationObserver.h in Headers */,
+				29C4D482C8BD093688FB0CBD6F659843 /* MDCOverlayImplementor.h in Headers */,
+				E6C6D929A1D0F42D27B0930DF349D1D4 /* MDCOverlayObserver.h in Headers */,
+				C526432AFFC48A4754C9A413B2D59A3D /* MDCOverlayObserverOverlay.h in Headers */,
+				120AE8F7BB64846582192484B3BFD3B9 /* MDCOverlayObserverTransition.h in Headers */,
+				359999078EB59F3F751415F5888E515B /* MDCOverlayTransitioning.h in Headers */,
+				D95B54796E150750195E0DC6190F4DC8 /* MDCOverlayUtilities.h in Headers */,
+				500805A473B1641BFF5F4C202616D3B3 /* MDCOverlayWindow.h in Headers */,
+				6766EA0DBDED0F6133F918D969410AC6 /* MDCPathGenerator.h in Headers */,
+				83E881A3BF2213E79DAAF549C36C3E4B /* MDCRaisedButton.h in Headers */,
+				C87B7D2DC38402458F33412981074B35 /* MDCRectangleShapeGenerator.h in Headers */,
+				B199F9FC87E4F890E2A3FFF3DCB1146C /* MDCRippleLayer.h in Headers */,
+				E9EDF7C392CF640681BD97DAC945D067 /* MDCRippleTouchController.h in Headers */,
+				D47A3D0A64A8995EC293B3E765EE3C1A /* MDCRippleView.h in Headers */,
+				CA07C595DB2D5FBCFA70AD20DE4ECF40 /* MDCShadowElevations.h in Headers */,
+				80DBCCBC5D8A34B6808E5E83BEE04603 /* MDCShadowLayer.h in Headers */,
+				B78D23B323752BD9A3FCFA925D3D7C7D /* MDCShapedShadowLayer.h in Headers */,
+				1D3ACD00C2DA96CDD045B63B19AE2742 /* MDCShapedView.h in Headers */,
+				8528E1DD4E3D4C18A482614D529A6CBD /* MDCShapeGenerating.h in Headers */,
+				DDE7B635A07DFA327B6FA16A4884481C /* MDCSnackbarAlignment.h in Headers */,
+				F77F5C331570DA7A06C4DEF1450D65B6 /* MDCSnackbarManager.h in Headers */,
+				FFAC822A404B6BC38E32E3E7D6D7A184 /* MDCSnackbarManagerInternal.h in Headers */,
+				50B2764DA33FC7DBDF0CD6B76EC1E12E /* MDCSnackbarMessage.h in Headers */,
+				F23C16E2564827110A5CB9B846AD29AF /* MDCSnackbarMessageInternal.h in Headers */,
+				99FB7D89FEF0A4EAA5BA1D1421002A5B /* MDCSnackbarMessageView.h in Headers */,
+				2E615076220AF8B155BB1EC37B97B1BA /* MDCSnackbarMessageViewInternal.h in Headers */,
+				0D764B31B6AEAF117D02334831AB2577 /* MDCSnackbarOverlayView.h in Headers */,
+				DC97ABA5505EDEDFDF0AF9E49A3278F2 /* MDCStatefulRippleView.h in Headers */,
+				D00E5D4E8E5476024748EB1021F0CFD1 /* MDCTypography.h in Headers */,
+				14D3B3F64FFB774605124FDA5995C886 /* MDCTypographyUtilities.h in Headers */,
+				D00A69C9DE61232E9E871C3A3906A570 /* UIApplication+AppExtensions.h in Headers */,
+				2C3794A838C183D210EEB55B91B41C54 /* UIColor+MaterialBlending.h in Headers */,
+				D3D8889B5612A8942BD85A13D129AE20 /* UIColor+MaterialDynamic.h in Headers */,
+				76FAF6456D59FA9F3D65C65510DE3616 /* UIColor+MaterialElevation.h in Headers */,
+				B5F52EFCCEF9E8537F68BB6DBAEFDAD3 /* UIFont+MaterialScalable.h in Headers */,
+				27594AFD09158BFFE12A96CB3E946801 /* UIFont+MaterialSimpleEquality.h in Headers */,
+				61F01132D9F510FD1FD6FA32936AFF89 /* UIFont+MaterialTypography.h in Headers */,
+				4F9B03C53ADD2C4719BE155187C60330 /* UIFont+MaterialTypographyPrivate.h in Headers */,
+				D4273165D658218223778B66D8787D11 /* UIFontDescriptor+MaterialTypography.h in Headers */,
+				04C9B0F0ADE31BED27C357C44B769649 /* UIView+MaterialElevationResponding.h in Headers */,
+				7ADD7014806ACC7CDA1316ECE0878CC3 /* UIView+MDCTimingFunction.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,22 +1325,44 @@
 /* Begin PBXNativeTarget section */
 		50D52F27B00117978DBF487C527FD7D6 /* Pods-VelibStations */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 938753CAFD288BF80D12C43AAA3CECED /* Build configuration list for PBXNativeTarget "Pods-VelibStations" */;
+			buildConfigurationList = 979D9E2078D4E72BC8EAC32486385FCD /* Build configuration list for PBXNativeTarget "Pods-VelibStations" */;
 			buildPhases = (
-				C64E5807E9F60BD040F155D7A9AD1787 /* Headers */,
-				CF5067EFCADD21301C5428A1DCD4D97F /* Sources */,
-				FB6C3D25237BBFE426B41C2121E49D41 /* Frameworks */,
-				722A710D8C0870176E04C1EB5549ACB5 /* Resources */,
+				837BF565FE007C05844B22173B1E3693 /* Headers */,
+				7AAF61AFF64793DEF7F958330DC7950D /* Sources */,
+				A01B931E8EF1F55768CEFB69C45FF54E /* Frameworks */,
+				D467B67167249E15B704349F47F55E82 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3F8C47BF98B86BD8D9980817178DD010 /* PBXTargetDependency */,
-				3F787D3CC371B74FD4E0A84E453D8C01 /* PBXTargetDependency */,
+				0713D2D75AB3664110C6C434B6F156AE /* PBXTargetDependency */,
+				9BC7C4DC1A61F0CDF48BF685CDDE8A3F /* PBXTargetDependency */,
+				8EDE0DAD6DFC0FCA33CB64F73B44A6A8 /* PBXTargetDependency */,
+				9843E666890820D4133A9BFAA623D400 /* PBXTargetDependency */,
+				5FCCE38A521CC1B2616C91FF92ABFE3E /* PBXTargetDependency */,
 			);
 			name = "Pods-VelibStations";
 			productName = "Pods-VelibStations";
 			productReference = 501FFC7856975F012637137CE5D90B9F /* Pods_VelibStations.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		55A01F8E987A6E2F7F0ED141A1ECA406 /* MDFInternationalization */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88102DAD725FA9348556364EA13346DD /* Build configuration list for PBXNativeTarget "MDFInternationalization" */;
+			buildPhases = (
+				9AD6ED1455A4FC1522AC7D10CA40885C /* Headers */,
+				2882DC2F625186608E4441A237705B33 /* Sources */,
+				5846503A3E828E69E9A2ECA67E0E470A /* Frameworks */,
+				B9FF163D3296C00AE70B1045D3FF4ED9 /* Resources */,
+				D5D5494DD3420D7FA7918DBD35D9D087 /* Copy . Public Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MDFInternationalization;
+			productName = MDFInternationalization;
+			productReference = 9A2AC0B8BAC6EF061EBC28825653DF99 /* MDFInternationalization.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7FAE7DF2C17168493D7CD2FBCC6F1B2B /* Pods-VelibStationsTests */ = {
@@ -428,20 +1384,61 @@
 			productReference = 48ACEEC5D8FFF0407B89E6D5E4BD6B22 /* Pods_VelibStationsTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E9C1BDAF6C31D5A25FCCA7606E28B6FB /* Pods-VelibStations-VelibStationsUITests */ = {
+		A8E4C927B2E899954BC2FD3314BCA9DA /* MDFTextAccessibility */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 76B853A6D27465666C5813298FA06E9A /* Build configuration list for PBXNativeTarget "Pods-VelibStations-VelibStationsUITests" */;
+			buildConfigurationList = EC9EE90623117B3DE91F2107404D0FDA /* Build configuration list for PBXNativeTarget "MDFTextAccessibility" */;
 			buildPhases = (
-				A8E05C3A7F0B497E7325B9566C959B8F /* Headers */,
-				86E6D67A47E509D20B1BF73D3D2CC9FC /* Sources */,
-				FA15ABF0D864CDA0121167418030F3A3 /* Frameworks */,
-				F2A7BC9E371E5A3E7F8C2062551EB47D /* Resources */,
+				5479FCDC0AA9EB855728336DB34ABF39 /* Headers */,
+				6FD51041BB743519FC2F3CA223381012 /* Sources */,
+				74F3ECB2B55C77ED2EDECABA45B6B50F /* Frameworks */,
+				6FB28E4F80E2847206E2181828418A1F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B723DAE6321A7D1D3FE77940065C721C /* PBXTargetDependency */,
-				7F3E1021A47F59C805EA627850244035 /* PBXTargetDependency */,
+			);
+			name = MDFTextAccessibility;
+			productName = MDFTextAccessibility;
+			productReference = FB8220FA4D9117310AEFC629A6EE4A08 /* MDFTextAccessibility.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B4723B5744013DF08BE3A5FEAA286944 /* MaterialComponents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F28589A9E7A653C8E26B0FCD6AA9EDBA /* Build configuration list for PBXNativeTarget "MaterialComponents" */;
+			buildPhases = (
+				C75213996968C5BE2E4AC9148E431698 /* Headers */,
+				9CCFA01824BFC212A523B7CC7FFF7C07 /* Sources */,
+				27B30CEDA280F91D737DE79C1747FEC3 /* Frameworks */,
+				44552BC9E37B81E08E85CB4CBEF98D2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8527820BB5704581F8ED7F7F5D3890E6 /* PBXTargetDependency */,
+				5B6B4345A28429E6C120EA87293AF889 /* PBXTargetDependency */,
+			);
+			name = MaterialComponents;
+			productName = MaterialComponents;
+			productReference = A34157B3708EDB7D17422B3D92F591D2 /* MaterialComponents.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E9C1BDAF6C31D5A25FCCA7606E28B6FB /* Pods-VelibStations-VelibStationsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACD07627EAE6358A247B318401EF2367 /* Build configuration list for PBXNativeTarget "Pods-VelibStations-VelibStationsUITests" */;
+			buildPhases = (
+				3638563D574E4B852CBB04AEC1F2DE91 /* Headers */,
+				4D3EAFFFDB7CE4DA6FD7AADEC7F8618E /* Sources */,
+				A18266AA06762D3C7D4D6C3EAFA613ED /* Frameworks */,
+				AEA3401F98A4439B4ADEB3E235F9A1BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00B81BA1A08B1071B5F4900850E816BF /* PBXTargetDependency */,
+				80BEC08F516DAAFA665581C5B3A000D2 /* PBXTargetDependency */,
+				2EC0678306639B0154F7F03BA82E3125 /* PBXTargetDependency */,
+				301D753136B77514E285324BB1EBE5E0 /* PBXTargetDependency */,
+				61F75585A257ABAB379D1F4708D2C232 /* PBXTargetDependency */,
 			);
 			name = "Pods-VelibStations-VelibStationsUITests";
 			productName = "Pods-VelibStations-VelibStationsUITests";
@@ -465,12 +1462,15 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = ABD35E29213405CD527F80068E998B59 /* Products */;
+			productRefGroup = 9A8A621D0A0BA577BACDA583A455203C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */,
 				0C1885900810601510E0C632060FAF26 /* GooglePlaces */,
+				B4723B5744013DF08BE3A5FEAA286944 /* MaterialComponents */,
+				55A01F8E987A6E2F7F0ED141A1ECA406 /* MDFInternationalization */,
+				A8E4C927B2E899954BC2FD3314BCA9DA /* MDFTextAccessibility */,
 				50D52F27B00117978DBF487C527FD7D6 /* Pods-VelibStations */,
 				E9C1BDAF6C31D5A25FCCA7606E28B6FB /* Pods-VelibStations-VelibStationsUITests */,
 				7FAE7DF2C17168493D7CD2FBCC6F1B2B /* Pods-VelibStationsTests */,
@@ -479,6 +1479,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		44552BC9E37B81E08E85CB4CBEF98D2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D820EE131F4BB19BB19BCA07BEEFAC6E /* MaterialSnackbar.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6AFAEC5D040292D2B60FA19580F9F6E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,14 +1494,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		722A710D8C0870176E04C1EB5549ACB5 /* Resources */ = {
+		6FB28E4F80E2847206E2181828418A1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2A7BC9E371E5A3E7F8C2062551EB47D /* Resources */ = {
+		AEA3401F98A4439B4ADEB3E235F9A1BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9FF163D3296C00AE70B1045D3FF4ED9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D467B67167249E15B704349F47F55E82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -503,6 +1525,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2882DC2F625186608E4441A237705B33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51E4D92FDC11510275B765564F01A9C6 /* MDFInternationalization-dummy.m in Sources */,
+				A82284A825F11602968CF385F9EDF3F0 /* MDFRTL.m in Sources */,
+				DC40A0A82F7C5D83AA6F7807B3A523BE /* NSLocale+MaterialRTL.m in Sources */,
+				99680F3C8F37A158DEC1C9F5CE7AC984 /* NSString+MaterialBidi.m in Sources */,
+				4426A5A80D7769A06409765A3E99F618 /* UIImage+MaterialRTL.m in Sources */,
+				21D369FBA4708EB3E1EE125D9A573AA9 /* UIView+MaterialRTL.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D3EAFFFDB7CE4DA6FD7AADEC7F8618E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462EE5C0478DAAE6158DF185CA28317E /* Pods-VelibStations-VelibStationsUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D98B8A7FB9E217E640818E00794F3A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -511,36 +1554,110 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		86E6D67A47E509D20B1BF73D3D2CC9FC /* Sources */ = {
+		6FD51041BB743519FC2F3CA223381012 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C35541888D06EDE9D79541DBE6558C7 /* Pods-VelibStations-VelibStationsUITests-dummy.m in Sources */,
+				773A52CFC8025C1A9FDBBBFEB4B95CBD /* MDFColorCalculations.m in Sources */,
+				D0988ED08B2C792478181407294F9C58 /* MDFImageCalculations.m in Sources */,
+				F836F2E7363D3BD5A666BBDAD11E3282 /* MDFTextAccessibility-dummy.m in Sources */,
+				ADBE7923AE1C068FAA8B6EEC8096CEB1 /* MDFTextAccessibility.m in Sources */,
+				7426C6FD9F3B6978608415E672A74526 /* NSArray+MDFUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF5067EFCADD21301C5428A1DCD4D97F /* Sources */ = {
+		7AAF61AFF64793DEF7F958330DC7950D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E357105B9EFC691081613F3769BB432 /* Pods-VelibStations-dummy.m in Sources */,
+				6DC7C328B7337F90267E59D33FB7C838 /* Pods-VelibStations-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CCFA01824BFC212A523B7CC7FFF7C07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				798F0688BB5880A52E25E2F47E09C93A /* CAMediaTimingFunction+MDCAnimationTiming.m in Sources */,
+				E1C20C7DCE59B43B4C86B69DBA1C70BF /* MaterialComponents-dummy.m in Sources */,
+				F4F7EECC75DFDA316CE65A18E21B2158 /* MaterialMathDummy.m in Sources */,
+				CE3EB0BBD2926EF6C16C40A0B2FAF232 /* MaterialShadowElevationsDummy.m in Sources */,
+				88FC0E2BFC81D8EBBD729E8B48904025 /* MDCButton.m in Sources */,
+				18342602DDEF46CE06402D027EBA27BB /* MDCCornerTreatment.m in Sources */,
+				0CC31A19A25F3597FEE8FDAF537811A9 /* MDCEdgeTreatment.m in Sources */,
+				FD1E0879EFA757BC6FE5BDE9DB2D22FD /* MDCFlatButton.m in Sources */,
+				F4AD70358C279C5D7DA2E4ECB59BC596 /* MDCFloatingButton+Animation.m in Sources */,
+				CC06333B58F7A80D14BA09997F7CDA6B /* MDCFloatingButton.m in Sources */,
+				F3BCAF6D0EE1D51B9AC4074403FDB4D5 /* MDCFontScaler.m in Sources */,
+				1DECCC3FE60F9B1D9E2A5F58523CACDF /* MDCFontTraits.m in Sources */,
+				729584BB447F9760581C192A207C7207 /* MDCInkGestureRecognizer.m in Sources */,
+				FA308FE2AE93C2D636605F8D408FC257 /* MDCInkLayer.m in Sources */,
+				E40F52FDE88AE18EBD8F59D43436BB31 /* MDCInkTouchController.m in Sources */,
+				ACDC9E61869B33AF616C54900E263BDF /* MDCInkView.m in Sources */,
+				12FE1614E070A4C8042C58F3F4634503 /* MDCKeyboardWatcher.m in Sources */,
+				E7BBFA3029A26549076C3A8465FEFB0A /* MDCLegacyInkLayer.m in Sources */,
+				2E8E6766468DC3F93759EFE29349B4B2 /* MDCOverlayAnimationObserver.m in Sources */,
+				263BAD6001AB7C9242E814792EA35A67 /* MDCOverlayObserver.m in Sources */,
+				FD1C1B900B2C20626D7F640C5DB61873 /* MDCOverlayObserverOverlay.m in Sources */,
+				5D61F24B9CC0658A17F5A3A4B38DA8DF /* MDCOverlayObserverTransition.m in Sources */,
+				A1E094E8FFC3D57A634213E31ADE1B57 /* MDCOverlayUtilities.m in Sources */,
+				152591B1B6EC1018F1998437BAA7155F /* MDCOverlayWindow.m in Sources */,
+				A93561CBFA311717AEE75BF8985F3F5C /* MDCPathGenerator.m in Sources */,
+				34EA572DDB112F0D461551C20A95D6A7 /* MDCRaisedButton.m in Sources */,
+				1804D52CFF42C7E6DAE8DAB377D871F4 /* MDCRectangleShapeGenerator.m in Sources */,
+				7F49B8CFEA94CB7B3248875DA25620C7 /* MDCRippleLayer.m in Sources */,
+				31243CE514DA77925E2380321EF1BDAD /* MDCRippleTouchController.m in Sources */,
+				6538CEF961ADD9942C3B28A44AD76400 /* MDCRippleView.m in Sources */,
+				490FF2B723D0698D067B1C9DCA736E87 /* MDCShadowLayer.m in Sources */,
+				E28B7FDBC37587344D4D077306BA4904 /* MDCShapedShadowLayer.m in Sources */,
+				E2354FA89458EA9053AAA1484042941A /* MDCShapedView.m in Sources */,
+				CCB491E7C956E9F03446E77D752F07F3 /* MDCSnackbarManager.m in Sources */,
+				E1005C3AF3110B01A63D1316287C8AC5 /* MDCSnackbarMessage.m in Sources */,
+				6832DB288551E08DE904D24F22707FFD /* MDCSnackbarMessageView.m in Sources */,
+				DA67B8D1B0C776051652738A52D85AD6 /* MDCSnackbarOverlayView.m in Sources */,
+				BD058B48522BE83CD2CDEAC73367C9AC /* MDCStatefulRippleView.m in Sources */,
+				8379AC7AF867B3D99614DEA2BD3639CD /* MDCTypography.m in Sources */,
+				4F3618BF7DBC29676CB9CFC3BFA6F8AD /* MDCTypographyUtilities.m in Sources */,
+				99FB66CE74549D8BC8F8A99ED9A17F9C /* UIApplication+AppExtensions.m in Sources */,
+				5A0CE9E1169EA9832F287F31DBE88AE0 /* UIColor+MaterialBlending.m in Sources */,
+				5C8C0504616C126A58C6249B3D5B4E5A /* UIColor+MaterialDynamic.m in Sources */,
+				24DBFFF11EE473956D3AAF420830B870 /* UIColor+MaterialElevation.m in Sources */,
+				A4726933841A011381683A1E08E6E697 /* UIFont+MaterialScalable.m in Sources */,
+				D9FCEB942A1842EA1C4F44698C66F0D0 /* UIFont+MaterialSimpleEquality.m in Sources */,
+				0D6AF98C7FA5E30A7211C5A8737FF70A /* UIFont+MaterialTypography.m in Sources */,
+				1A3FDD0590795C79217A6D587EC9EC24 /* UIFont+MaterialTypographyPrivate.m in Sources */,
+				32FFAB016BC105EAFA2C7C333A2CC64A /* UIFontDescriptor+MaterialTypography.m in Sources */,
+				88AC44B2779599CF8A24FECB945F6D2C /* UIView+MaterialElevationResponding.m in Sources */,
+				48E6DE760FFDBAB478BDE7AED7E8DF9D /* UIView+MDCTimingFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3F787D3CC371B74FD4E0A84E453D8C01 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GooglePlaces;
-			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
-			targetProxy = 9009CAB55B2D7EE1C1C4772531A5F45F /* PBXContainerItemProxy */;
-		};
-		3F8C47BF98B86BD8D9980817178DD010 /* PBXTargetDependency */ = {
+		00B81BA1A08B1071B5F4900850E816BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GoogleMaps;
 			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
-			targetProxy = 4AFBF1C561B1EF9302495B2F5E3B819B /* PBXContainerItemProxy */;
+			targetProxy = 4548C1A08A386CB85237946F290CA841 /* PBXContainerItemProxy */;
+		};
+		0713D2D75AB3664110C6C434B6F156AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleMaps;
+			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
+			targetProxy = A2AFDC19FC9F7B38153DDE542C1C3EAF /* PBXContainerItemProxy */;
+		};
+		2EC0678306639B0154F7F03BA82E3125 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MDFInternationalization;
+			target = 55A01F8E987A6E2F7F0ED141A1ECA406 /* MDFInternationalization */;
+			targetProxy = FDB7B6A7A5043CBB35BD8913757F392E /* PBXContainerItemProxy */;
+		};
+		301D753136B77514E285324BB1EBE5E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MDFTextAccessibility;
+			target = A8E4C927B2E899954BC2FD3314BCA9DA /* MDFTextAccessibility */;
+			targetProxy = 4700641F9CD10C175D74C06E203945B6 /* PBXContainerItemProxy */;
 		};
 		456D0BE3CCB7E5A20917D181A77B3CFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -548,17 +1665,53 @@
 			target = 50D52F27B00117978DBF487C527FD7D6 /* Pods-VelibStations */;
 			targetProxy = 962AE60A420A593C351BF84BFD24FD42 /* PBXContainerItemProxy */;
 		};
-		7F3E1021A47F59C805EA627850244035 /* PBXTargetDependency */ = {
+		5B6B4345A28429E6C120EA87293AF889 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MDFTextAccessibility;
+			target = A8E4C927B2E899954BC2FD3314BCA9DA /* MDFTextAccessibility */;
+			targetProxy = 71F507832EE30193FFB06418B37F29F9 /* PBXContainerItemProxy */;
+		};
+		5FCCE38A521CC1B2616C91FF92ABFE3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MaterialComponents;
+			target = B4723B5744013DF08BE3A5FEAA286944 /* MaterialComponents */;
+			targetProxy = 2361774B41935C410197381D4573788C /* PBXContainerItemProxy */;
+		};
+		61F75585A257ABAB379D1F4708D2C232 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MaterialComponents;
+			target = B4723B5744013DF08BE3A5FEAA286944 /* MaterialComponents */;
+			targetProxy = BA38AEC8C94737D7A0FC9873506E9902 /* PBXContainerItemProxy */;
+		};
+		80BEC08F516DAAFA665581C5B3A000D2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GooglePlaces;
 			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
-			targetProxy = 8EBFF5B8EFE518B4683C9F42BFC41F65 /* PBXContainerItemProxy */;
+			targetProxy = 6A5E2D2B098C05DE2C9E5AF9722E887D /* PBXContainerItemProxy */;
 		};
-		B723DAE6321A7D1D3FE77940065C721C /* PBXTargetDependency */ = {
+		8527820BB5704581F8ED7F7F5D3890E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = GoogleMaps;
-			target = E5B4BBC6DD552AC8943C7E22772FC1D3 /* GoogleMaps */;
-			targetProxy = 2C0DEBA93BD1F65E078ED3154BE305B6 /* PBXContainerItemProxy */;
+			name = MDFInternationalization;
+			target = 55A01F8E987A6E2F7F0ED141A1ECA406 /* MDFInternationalization */;
+			targetProxy = 11C3CCB7F2238E172C37340601CEA87E /* PBXContainerItemProxy */;
+		};
+		8EDE0DAD6DFC0FCA33CB64F73B44A6A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MDFInternationalization;
+			target = 55A01F8E987A6E2F7F0ED141A1ECA406 /* MDFInternationalization */;
+			targetProxy = 751B3876DEC10415E197D6FB09172F12 /* PBXContainerItemProxy */;
+		};
+		9843E666890820D4133A9BFAA623D400 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MDFTextAccessibility;
+			target = A8E4C927B2E899954BC2FD3314BCA9DA /* MDFTextAccessibility */;
+			targetProxy = 18EBA071BB244FD66DF111E0D42BCE7F /* PBXContainerItemProxy */;
+		};
+		9BC7C4DC1A61F0CDF48BF685CDDE8A3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GooglePlaces;
+			target = 0C1885900810601510E0C632060FAF26 /* GooglePlaces */;
+			targetProxy = 9D716745E5412DCC65CF084F20410FC0 /* PBXContainerItemProxy */;
 		};
 		D42315111F400C0605ACCD6B5CAF2178 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -571,7 +1724,7 @@
 /* Begin XCBuildConfiguration section */
 		0C5DA16E3DF77A2E0C4890C85F94BB48 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB201F021729C94B0CE6B9B8DDC1113D /* GooglePlaces.xcconfig */;
+			baseConfigurationReference = D9978ECDA631B144947DD8E350FAF187 /* GooglePlaces.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -585,28 +1738,10 @@
 			};
 			name = Debug;
 		};
-		1CAEAE8920726EE70A79F48C4B03CB30 /* Release */ = {
+		128C49ADC414EF6457E01D4514340883 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB201F021729C94B0CE6B9B8DDC1113D /* GooglePlaces.xcconfig */;
+			baseConfigurationReference = D00AE2B5BC1FFAB8944BB1E92F654614 /* MDFInternationalization.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		22FF7BABC7E59A12413D553FC76CFCCA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D785E47D67794FFF108EC145E25C409C /* Pods-VelibStationsTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -616,32 +1751,32 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-VelibStationsTests/Pods-VelibStationsTests-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/MDFInternationalization/MDFInternationalization-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-VelibStationsTests/Pods-VelibStationsTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization.modulemap";
+				PRODUCT_MODULE_NAME = MDFInternationalization;
+				PRODUCT_NAME = MDFInternationalization;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		422D46A65CC42CE395FB4866B0569C12 /* Release */ = {
+		172B60CD2FA12A78A864892A892C929D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA0FE92EFFEBC25EBA12C2E1FF2788B3 /* Pods-VelibStations.release.xcconfig */;
+			baseConfigurationReference = 39A9001C8A1126C4CED718EA911F9593 /* Pods-VelibStations.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -677,46 +1812,9 @@
 			};
 			name = Release;
 		};
-		61AF660B6557CA864FB75F948B6262F3 /* Debug */ = {
+		1CAEAE8920726EE70A79F48C4B03CB30 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 330E03ACD6A426EBF92B33BCD1364AF6 /* Pods-VelibStations-VelibStationsUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6F1C07C1B602964D8C325E1F202C57B3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7198F1A190CE02CCAA1ADF544823CF1B /* GoogleMaps.xcconfig */;
+			baseConfigurationReference = D9978ECDA631B144947DD8E350FAF187 /* GooglePlaces.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -731,9 +1829,9 @@
 			};
 			name = Release;
 		};
-		784800C096DDCDEC1A657BB2C3DA33B2 /* Release */ = {
+		22FF7BABC7E59A12413D553FC76CFCCA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3E17A9E0E1E6F62F0BB8580910403B8 /* Pods-VelibStationsTests.release.xcconfig */;
+			baseConfigurationReference = 371070264452645934365F1947388E51 /* Pods-VelibStationsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -763,15 +1861,49 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		8476A22244A57E064011AFF5887D72E6 /* Release */ = {
+		269321A3D668427FB93E5B7AC2CEFCEE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BAF57FDD8E86B44E7BF9322389DF86A /* Pods-VelibStations-VelibStationsUITests.release.xcconfig */;
+			baseConfigurationReference = 679D79D88C944AE49D14977BD014DD53 /* MaterialComponents.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MaterialComponents/MaterialComponents-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MaterialComponents/MaterialComponents-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MaterialComponents/MaterialComponents.modulemap";
+				PRODUCT_MODULE_NAME = MaterialComponents;
+				PRODUCT_NAME = MaterialComponents;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		45B3C5F3186B052F599462EEA8AC21B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A519E37E73237B7866C27C07F4BBF905 /* Pods-VelibStations-VelibStationsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -793,6 +1925,96 @@
 				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6F1C07C1B602964D8C325E1F202C57B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E683BF2C5FF4715E650C37274F6E073 /* GoogleMaps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		768AF3C02243594756583FF1E117095C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D00AE2B5BC1FFAB8944BB1E92F654614 /* MDFInternationalization.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDFInternationalization/MDFInternationalization-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDFInternationalization/MDFInternationalization.modulemap";
+				PRODUCT_MODULE_NAME = MDFInternationalization;
+				PRODUCT_NAME = MDFInternationalization;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		784800C096DDCDEC1A657BB2C3DA33B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FD319B816A0E0A19195BD2E8682F92A /* Pods-VelibStationsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VelibStationsTests/Pods-VelibStationsTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VelibStationsTests/Pods-VelibStationsTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -931,25 +2153,46 @@
 			};
 			name = Debug;
 		};
-		9F8631DD3EE2C3D874754E791BD3C7EF /* Debug */ = {
+		957DCAB7E107923D5C3C2270BBF69220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7198F1A190CE02CCAA1ADF544823CF1B /* GoogleMaps.xcconfig */;
+			baseConfigurationReference = 9325E1CC9A89B12C6C30DF947F5BED49 /* Pods-VelibStations-VelibStationsUITests.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		C9BC7FA55BA33D223DF5AC409E02064D /* Debug */ = {
+		9EF4247AE4ECA7FF70DC91683E436370 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FB81730383A360A62F740A3AE571282 /* Pods-VelibStations.debug.xcconfig */;
+			baseConfigurationReference = C22885088211E0AC1DDBAE66585652E6 /* Pods-VelibStations.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -978,6 +2221,129 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9F8631DD3EE2C3D874754E791BD3C7EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E683BF2C5FF4715E650C37274F6E073 /* GoogleMaps.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3432DC537D6E5DC4F2FC2C7F399E0A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78B3B713FEFF3E99D5CB7762708EF009 /* MDFTextAccessibility.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility.modulemap";
+				PRODUCT_MODULE_NAME = MDFTextAccessibility;
+				PRODUCT_NAME = MDFTextAccessibility;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F67BE1A244985BBD5A2925A8D271EF76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 679D79D88C944AE49D14977BD014DD53 /* MaterialComponents.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MaterialComponents/MaterialComponents-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MaterialComponents/MaterialComponents-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MaterialComponents/MaterialComponents.modulemap";
+				PRODUCT_MODULE_NAME = MaterialComponents;
+				PRODUCT_NAME = MaterialComponents;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F920E1D3F3867F7C3ADB56D0243E4908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78B3B713FEFF3E99D5CB7762708EF009 /* MDFTextAccessibility.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDFTextAccessibility/MDFTextAccessibility.modulemap";
+				PRODUCT_MODULE_NAME = MDFTextAccessibility;
+				PRODUCT_NAME = MDFTextAccessibility;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1023,20 +2389,47 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		76B853A6D27465666C5813298FA06E9A /* Build configuration list for PBXNativeTarget "Pods-VelibStations-VelibStationsUITests" */ = {
+		88102DAD725FA9348556364EA13346DD /* Build configuration list for PBXNativeTarget "MDFInternationalization" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				61AF660B6557CA864FB75F948B6262F3 /* Debug */,
-				8476A22244A57E064011AFF5887D72E6 /* Release */,
+				768AF3C02243594756583FF1E117095C /* Debug */,
+				128C49ADC414EF6457E01D4514340883 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		938753CAFD288BF80D12C43AAA3CECED /* Build configuration list for PBXNativeTarget "Pods-VelibStations" */ = {
+		979D9E2078D4E72BC8EAC32486385FCD /* Build configuration list for PBXNativeTarget "Pods-VelibStations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9BC7FA55BA33D223DF5AC409E02064D /* Debug */,
-				422D46A65CC42CE395FB4866B0569C12 /* Release */,
+				9EF4247AE4ECA7FF70DC91683E436370 /* Debug */,
+				172B60CD2FA12A78A864892A892C929D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACD07627EAE6358A247B318401EF2367 /* Build configuration list for PBXNativeTarget "Pods-VelibStations-VelibStationsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				957DCAB7E107923D5C3C2270BBF69220 /* Debug */,
+				45B3C5F3186B052F599462EEA8AC21B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9EE90623117B3DE91F2107404D0FDA /* Build configuration list for PBXNativeTarget "MDFTextAccessibility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F920E1D3F3867F7C3ADB56D0243E4908 /* Debug */,
+				F3432DC537D6E5DC4F2FC2C7F399E0A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F28589A9E7A653C8E26B0FCD6AA9EDBA /* Build configuration list for PBXNativeTarget "MaterialComponents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				269321A3D668427FB93E5B7AC2CEFCEE /* Debug */,
+				F67BE1A244985BBD5A2925A8D271EF76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

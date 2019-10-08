@@ -1,0 +1,16 @@
+CREATE TABLE RecordTable (
+    id TEXT PRIMARY KEY NOT NULL,
+    timestamp TEXT);
+
+
+selectAll:
+SELECT * FROM RecordTable;
+
+insert:
+INSERT OR REPLACE INTO RecordTable (id, timestamp) VALUES (?, ?);
+
+delete:
+DELETE FROM RecordTable WHERE id = ?;
+
+deleteAll:
+DELETE FROM RecordTable;

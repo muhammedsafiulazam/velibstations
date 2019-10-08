@@ -113,8 +113,8 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         mEventManager.unsubscribe(mEventSubscriber)
     }
 
-    private fun loadDataRequest(latitude: Double, longitude: Double) {
-        val event = Event(StationListEventType.LOAD_DATA_REQUEST, listOf(latitude, longitude), null)
+    private fun loadDataRequest(location: Location) {
+        val event = Event(StationListEventType.LOAD_DATA_REQUEST, location, null)
         mEventManager.send(event)
     }
 
@@ -154,7 +154,9 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
             onClickInfoWindow(marker)
         }
         mMap?.setOnCameraIdleListener(GoogleMap.OnCameraIdleListener {
-            onChangeCameraLocation(mMap?.cameraPosition?.target!!)
+            var latLng = mMap?.cameraPosition?.target!!
+            var location = Location(latLng.latitude, latLng.longitude)
+            onChangeCameraLocation(location)
         })
         mLocationManager.requestUpdates()
     }
@@ -230,9 +232,9 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         activityManager?.loadActivity(StationInfoActivity::class.java, record)
     }
 
-    private fun onChangeCameraLocation(location: LatLng) {
+    private fun onChangeCameraLocation(location: Location) {
         mCameraLocation = Location(location.latitude, location.longitude)
-        loadDataRequest(mCameraLocation?.latitude!!, mCameraLocation?.longitude!!)
+        loadDataRequest(mCameraLocation!!)
     }
 
     private fun showAutocompletePlaces() {

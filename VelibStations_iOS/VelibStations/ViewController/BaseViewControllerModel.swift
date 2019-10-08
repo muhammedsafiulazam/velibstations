@@ -26,6 +26,10 @@ class BaseViewControllerModel : IAddOn {
     }
     
     func viewDidLoad() {
+        // Essential addons for activity model.
+        addAddOn(type: AddOnType().SERVICE_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().SERVICE_MANAGER)!)
+        addAddOn(type: AddOnType().EVENT_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER)!)
+        addAddOn(type: AddOnType().DATABASE_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().DATABASE_MANAGER)!)
     }
     
     func viewDidAppear() {

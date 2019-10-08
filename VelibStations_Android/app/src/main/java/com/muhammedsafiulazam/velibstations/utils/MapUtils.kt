@@ -21,7 +21,6 @@ object MapUtils {
         map.uiSettings.isZoomControlsEnabled = true
         map.uiSettings.isScrollGesturesEnabled = true
         map.uiSettings.isRotateGesturesEnabled = false
-        map.uiSettings.isZoomControlsEnabled = true
         map.uiSettings.isMyLocationButtonEnabled = true
         map.uiSettings.isCompassEnabled = true
         map.setMinZoomPreference(ZOOM_MIN)

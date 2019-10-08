@@ -51,8 +51,8 @@ class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
 
     override fun cleanData() {
         GlobalScope.launch(CouroutineUtils.DISPATCHER) {
-            db.recordQueries.deleteAll()
-            db.fieldsQueries.deleteAll()
+            db.recordTableQueries.deleteAll()
+            db.fieldsTableQueries.deleteAll()
 
             val event = Event(VelibDatabaseEventType.CLEAN_DATA, null, null)
             val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
@@ -63,11 +63,11 @@ class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
     private fun getRecords() : ArrayList<Record>? {
         val recordList: ArrayList<Record> = arrayListOf()
 
-        val recordQueries: Query<com.muhammedsafiulazam.common.database.velib.schema.Record> = db.recordQueries.selectAll()
-        recordQueries.executeAsList().forEach { recordQuery ->
+        val recordTableQueries: Query<com.muhammedsafiulazam.common.database.velib.schema.RecordTable> = db.recordTableQueries.selectAll()
+        recordTableQueries.executeAsList().forEach { recordQuery ->
 
-            val fieldsQueries: Query<com.muhammedsafiulazam.common.database.velib.schema.Fields> = db.fieldsQueries.selectByRecord(recordQuery.id)
-            fieldsQueries.executeAsList().forEach { fieldQuery ->
+            val fieldsTableQueries: Query<com.muhammedsafiulazam.common.database.velib.schema.FieldsTable> = db.fieldsTableQueries.selectByRecord(recordQuery.id)
+            fieldsTableQueries.executeAsList().forEach { fieldQuery ->
 
                 val fields: Fields = Fields(
                     fieldQuery.name,
@@ -103,7 +103,7 @@ class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
         val id = record?.id!!
         val fields = record?.fields!!
 
-        db.fieldsQueries.insert(id,
+        db.fieldsTableQueries.insert(id,
             fields.name,
             fields.code!!,
             fields.state,
@@ -126,6 +126,6 @@ class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
             fields.overflow,
             fields.densityLevel)
 
-        db.recordQueries.insert(id, record?.timestamp)
+        db.recordTableQueries.insert(id, record?.timestamp)
     }
 }

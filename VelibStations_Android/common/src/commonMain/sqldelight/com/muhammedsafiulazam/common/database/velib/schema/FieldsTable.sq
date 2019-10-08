@@ -2,7 +2,7 @@ import java.lang.Double;
 import java.lang.Float;
 import java.lang.Integer;
 
-CREATE TABLE Fields (
+CREATE TABLE FieldsTable (
     recordId TEXT NOT NULL,
 
     name TEXT,
@@ -29,20 +29,20 @@ CREATE TABLE Fields (
 
 
 selectAll:
-SELECT * FROM Fields;
+SELECT * FROM FieldsTable;
 
 selectByRecord:
-SELECT * FROM Fields WHERE recordId = ?;
+SELECT * FROM FieldsTable WHERE recordId = ?;
 
 insert:
-INSERT OR REPLACE INTO Fields (recordId, name, code, state, type, dueDate, latitude, longitude, kioskState, creditCard, overflowActivation, maxBikeOverflow, nbEDock, nbFreeEDock, nbDock, nbFreeDock, nbEBike, nbBike, nbBikeOverflow, nbEBikeOverflow, overflow, densityLevel)
+INSERT OR REPLACE INTO FieldsTable (recordId, name, code, state, type, dueDate, latitude, longitude, kioskState, creditCard, overflowActivation, maxBikeOverflow, nbEDock, nbFreeEDock, nbDock, nbFreeDock, nbEBike, nbBike, nbBikeOverflow, nbEBikeOverflow, overflow, densityLevel)
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 delete:
-DELETE FROM Fields WHERE code = ?;
+DELETE FROM FieldsTable WHERE code = ?;
 
 deleteAll:
-DELETE FROM Fields;
+DELETE FROM FieldsTable;
 
 deleteByRecord:
-DELETE FROM Fields WHERE recordId = ?;
+DELETE FROM FieldsTable WHERE recordId = ?;

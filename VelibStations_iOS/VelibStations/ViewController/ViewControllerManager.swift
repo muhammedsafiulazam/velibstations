@@ -17,7 +17,9 @@ class ViewControllerManager: AddOn, IViewControllerManager {
     }
     
     func onAppearViewController(viewController: BaseViewController) {
-        mCurrentViewController = viewController
+        if (!viewController.isBeingPresented) {
+            mCurrentViewController = viewController
+        }
     }
     
     func onDisappearViewController(viewController: BaseViewController) {

@@ -11,21 +11,20 @@ interface IEventManager : IAddOn {
     /**
      * Send com.muhammedsafiulazam.common.event.
      * @param event sent com.muhammedsafiulazam.common.event
-     * @param context use context
      */
     fun send(event: Event)
 
     /**
-     * Subscribe to receiving mChannel.
+     * Subscribe to events.
      * @param callback com.muhammedsafiulazam.common.event callback
      * @param context use context
-     * @return receiving mChannel
+     * @return subscriber
      */
     fun subscribe(callback: (event: Event) -> Unit) : IEventSubscriber
 
     /**
-     * Unsubscribe from receiving mChannel.
-     * @param receiveChannel receiving mChannel
+     * Unsubscribe from events.
+     * @param eventSubscriber subscriber
      */
-    fun unsubscribe(receiveChannel: IEventSubscriber?)
+    fun unsubscribe(eventSubscriber: IEventSubscriber?)
 }

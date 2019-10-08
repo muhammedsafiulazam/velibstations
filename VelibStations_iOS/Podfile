@@ -8,7 +8,7 @@ target 'VelibStations' do
   # Pods for VelibStations
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-
+  pod 'MaterialComponents/Snackbar'
 
   target 'VelibStationsTests' do
     inherit! :search_paths

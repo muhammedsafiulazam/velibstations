@@ -25,6 +25,8 @@
 		02D9B17F234B6CBF0065339C /* StationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D9B17E234B6CBF0065339C /* StationList.storyboard */; };
 		02D9B181234B729C0065339C /* StationInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D9B180234B729C0065339C /* StationInfo.storyboard */; };
 		02D9B183234B78400065339C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D9B182234B78400065339C /* Keys.plist */; };
+		02D9B186234B93680065339C /* StationListEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9B185234B93680065339C /* StationListEventType.swift */; };
+		02D9B189234B94550065339C /* MapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9B188234B94550065339C /* MapUtils.swift */; };
 		02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D2D2344D65100A105FB /* ViewControllerModel.swift */; };
 		02E76D352344DBAD00A105FB /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D342344DBAD00A105FB /* StationListViewController.swift */; };
 		02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */; };
@@ -90,6 +92,8 @@
 		02D9B17E234B6CBF0065339C /* StationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationList.storyboard; sourceTree = "<group>"; };
 		02D9B180234B729C0065339C /* StationInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationInfo.storyboard; sourceTree = "<group>"; };
 		02D9B182234B78400065339C /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		02D9B185234B93680065339C /* StationListEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListEventType.swift; sourceTree = "<group>"; };
+		02D9B188234B94550065339C /* MapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
 		02E76D2D2344D65100A105FB /* ViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModel.swift; sourceTree = "<group>"; };
 		02E76D342344DBAD00A105FB /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
 		02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewControllerModel.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 		02D523B72302EF3600EB1080 /* VelibStations */ = {
 			isa = PBXGroup;
 			children = (
+				02D9B187234B94470065339C /* Utils */,
 				02E76D312344DB8000A105FB /* Feature */,
 				02B8BA86234352620087D8CF /* ViewController */,
 				02B8BA85234352470087D8CF /* AddOn */,
@@ -226,6 +231,22 @@
 			path = VelibStationsUITests;
 			sourceTree = "<group>";
 		};
+		02D9B184234B93520065339C /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				02D9B185234B93680065339C /* StationListEventType.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		02D9B187234B94470065339C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				02D9B188234B94550065339C /* MapUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		02E76D312344DB8000A105FB /* Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +259,7 @@
 		02E76D322344DB8B00A105FB /* StationList */ = {
 			isa = PBXGroup;
 			children = (
+				02D9B184234B93520065339C /* Event */,
 				02E76D342344DBAD00A105FB /* StationListViewController.swift */,
 				02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */,
 			);
@@ -280,6 +302,7 @@
 				02D523B32302EF3600EB1080 /* Resources */,
 				02A1D6182316BB79004E5C52 /* Embed Frameworks */,
 				08E3AE0FD036422332E43B22 /* [CP] Copy Pods Resources */,
+				44454268D6082D201521D22D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +341,7 @@
 				02D523D12302EF3800EB1080 /* Frameworks */,
 				02D523D22302EF3800EB1080 /* Resources */,
 				5E52C9E278CC4CE0A4AD8E1C /* [CP] Copy Pods Resources */,
+				48DFF46C8AD9B8D55C2BD720 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -437,6 +461,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VelibStations/Pods-VelibStations-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		44454268D6082D201521D22D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VelibStations/Pods-VelibStations-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VelibStations/Pods-VelibStations-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VelibStations/Pods-VelibStations-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48DFF46C8AD9B8D55C2BD720 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VelibStations-VelibStationsUITests/Pods-VelibStations-VelibStationsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5E52C9E278CC4CE0A4AD8E1C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -530,12 +588,14 @@
 				02B8BA8C2343562D0087D8CF /* BaseViewControllerModel.swift in Sources */,
 				02D523BB2302EF3600EB1080 /* ViewController.swift in Sources */,
 				02B8BA8A2343543E0087D8CF /* BaseViewController.swift in Sources */,
+				02D9B189234B94550065339C /* MapUtils.swift in Sources */,
 				02B8BA88234352E90087D8CF /* AddOnTypeNative.swift in Sources */,
 				02B8BA90234380410087D8CF /* ViewControllerManager.swift in Sources */,
 				02E76D392344DCCB00A105FB /* StationInfoViewController.swift in Sources */,
 				02B8BA96234399300087D8CF /* ViewControllerID.swift in Sources */,
 				02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */,
 				02E76D352344DBAD00A105FB /* StationListViewController.swift in Sources */,
+				02D9B186234B93680065339C /* StationListEventType.swift in Sources */,
 				02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */,
 				02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */,
 				02E76D3B2344DCD800A105FB /* StationInfoViewControllerModel.swift in Sources */,

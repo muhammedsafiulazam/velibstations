@@ -9,6 +9,7 @@ import com.muhammedsafiulazam.common.database.velib.event.VelibDatabaseEventType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
+import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.IServiceManager
 import com.muhammedsafiulazam.common.service.velib.event.VelibServiceEventType
 import com.muhammedsafiulazam.common.utils.ConstantUtils
@@ -22,14 +23,14 @@ class StationListActivityModel : BaseActivityModel() {
     private lateinit var mServiceManager: IServiceManager
     private lateinit var mDatabaseManager: IDatabaseManager
     private lateinit var mEventSubscriber: IEventSubscriber
-    private var mLocation: List<Double>? = null
+    private var mLocation: Location? = null
 
     override fun onCreateActivity() {
         super.onCreateActivity()
 
-        mServiceManager = AddOnManager.getAddOn(AddOnType.SERVICE_MANAGER) as IServiceManager
-        mDatabaseManager = AddOnManager.getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager
-        mEventManager = AddOnManager.getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
+        mServiceManager = getAddOn(AddOnType.SERVICE_MANAGER) as IServiceManager
+        mDatabaseManager = getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager
+        mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
 
         subscribeToEvents()
     }
@@ -77,10 +78,10 @@ class StationListActivityModel : BaseActivityModel() {
             // Show loader.
             loadDataBusy(true)
 
-            mLocation = event.data as List<Double>
+            mLocation = event.data as Location
 
             // Call service.
-            mServiceManager.getVelibService().getData(mLocation?.get(0)!!, mLocation?.get(1)!!)
+            mServiceManager.getVelibService().getData(mLocation!!.latitude, mLocation!!.longitude)
 
         } else if (TextUtils.equals(VelibServiceEventType.GET_DATA, event.type)) {
             if (event.error != null) {
@@ -88,7 +89,7 @@ class StationListActivityModel : BaseActivityModel() {
                 loadDataBusy(true)
 
                 // Call database.
-                mDatabaseManager.getVelibDatabase().getData(mLocation?.get(0)!!, mLocation?.get(1)!!)
+                mDatabaseManager.getVelibDatabase().getData(mLocation!!.latitude, mLocation!!.longitude)
             } else {
 
                 // Hide loader.
