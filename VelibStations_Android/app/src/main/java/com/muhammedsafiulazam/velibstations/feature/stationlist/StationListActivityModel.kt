@@ -57,20 +57,17 @@ class StationListActivityModel : BaseActivityModel() {
 
     private fun loadDataBusy(busy: Boolean) {
         val event = Event(StationListEventType.LOAD_DATA_BUSY, busy, null)
-        val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
-        eventManager?.send(event)
+        mEventManager.send(event)
     }
 
     private fun loadDataError(error: String?) {
         val event = Event(StationListEventType.LOAD_DATA_ERROR, error, null)
-        val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
-        eventManager?.send(event)
+        mEventManager.send(event)
     }
 
     private fun loadDataResponse(response: Any?) {
         val event = Event(StationListEventType.LOAD_DATA_RESPONSE, response, null)
-        val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
-        eventManager?.send(event)
+        mEventManager.send(event)
     }
 
     fun onReceiveEvents(event: Event) {

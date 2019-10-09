@@ -48,6 +48,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     private lateinit var mEventManager: IEventManager
     private lateinit var mEventSubscriber: IEventSubscriber
     private lateinit var mLocationManager: ILocationManager
+    private lateinit var mActivityManager: IActivityManager
 
     private var mMap: GoogleMap? = null
     private lateinit var mMapFragment: SupportMapFragment
@@ -73,6 +74,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
         mLocationManager = getAddOn(AddOnType.LOCATION_MANAGER) as ILocationManager
+        mActivityManager = getAddOn(AddOnTypeNative.ACTIVITY_MANAGER) as IActivityManager
 
         Places.initialize(getApplicationContext(), getString(R.string.google_api_key), Locale.getDefault());
         mMapFragment = supportFragmentManager.findFragmentById(R.id.stationlist_mpv_map) as SupportMapFragment
@@ -228,8 +230,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     private fun onClickInfoWindow(marker: Marker) {
         val record: Record = marker.tag as Record
-        val activityManager: IActivityManager? = getAddOn(AddOnTypeNative.ACTIVITY_MANAGER) as IActivityManager?
-        activityManager?.loadActivity(StationInfoActivity::class.java, record)
+        mActivityManager.loadActivity(StationInfoActivity::class.java, record)
     }
 
     private fun onChangeCameraLocation(location: Location) {

@@ -41,20 +41,17 @@ class StationInfoViewControllerModel : BaseViewControllerModel {
     
     private func loadDataBusy(busy: Bool) {
         let event = Event(type: StationInfoEventType.LOAD_DATA_BUSY, data: busy, error: nil)
-        let eventManager: IEventManager? = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
-        eventManager?.send(event: event)
+        mEventManager?.send(event: event)
     }
     
     private func loadDataError(error: String?) {
         let event = Event(type: StationInfoEventType.LOAD_DATA_ERROR, data: error, error: nil)
-        let eventManager: IEventManager? = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
-        eventManager?.send(event: event)
+        mEventManager?.send(event: event)
     }
     
     private func loadDataResponse(response: Any?) {
         let event = Event(type: StationInfoEventType.LOAD_DATA_RESPONSE, data: response, error: nil)
-        let eventManager: IEventManager? = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
-        eventManager?.send(event: event)
+        mEventManager?.send(event: event)
     }
     
     private func onReceiveEvents(event: Event) {
