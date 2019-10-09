@@ -124,6 +124,8 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         if (TextUtils.equals(LocationEventType.REQUEST_UPDATES, event.type)) {
             if (event.error != null) {
                 updateMessage(getString(R.string.stationlist_error_location))
+            } else {
+                mMap?.isMyLocationEnabled = true
             }
         } else if (TextUtils.equals(LocationEventType.UPDATE_LOCATION, event.type)) {
             if (mUserLocation == null) {

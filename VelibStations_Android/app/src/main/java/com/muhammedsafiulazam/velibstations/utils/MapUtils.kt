@@ -7,6 +7,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.MapStyleOptions
 import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.velibstations.R
+import java.lang.Exception
 
 
 object MapUtils {
@@ -16,7 +17,10 @@ object MapUtils {
     private val ZOOM_DEFAULT: Float = 16.0f
 
     fun initializeDynamicMap(context: Context, map: GoogleMap) {
-        map.isMyLocationEnabled = true
+        try {
+            map.isMyLocationEnabled = true
+        } catch (e: Exception) {
+        }
         map.mapType = GoogleMap.MAP_TYPE_NORMAL
         map.uiSettings.isZoomControlsEnabled = true
         map.uiSettings.isScrollGesturesEnabled = true
@@ -29,7 +33,10 @@ object MapUtils {
     }
 
     fun initializeStaticMap(context: Context, map: GoogleMap) {
-        map.isMyLocationEnabled = true
+        try {
+            map.isMyLocationEnabled = true
+        } catch (e: Exception) {
+        }
         map.mapType = GoogleMap.MAP_TYPE_NORMAL
         map.uiSettings.isZoomControlsEnabled = false
         map.uiSettings.isScrollGesturesEnabled = false
