@@ -30,8 +30,8 @@
                         <viewLayoutGuide key="safeArea" id="fde-tl-qqi"/>
                     </view>
                     <connections>
-                        <outlet property="mActivityIndicator" destination="dvy-Wz-yhP" id="3ms-Az-inC"/>
-                        <outlet property="mMap" destination="Aq7-Ou-lwa" id="QO0-rZ-4ca"/>
+                        <outlet property="mActivityIndicatorView" destination="dvy-Wz-yhP" id="3ms-Az-inC"/>
+                        <outlet property="mMapView" destination="Aq7-Ou-lwa" id="QO0-rZ-4ca"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smm-Xd-bfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

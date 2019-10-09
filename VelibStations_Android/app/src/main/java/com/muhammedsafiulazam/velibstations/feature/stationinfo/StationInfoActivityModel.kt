@@ -26,7 +26,7 @@ class StationInfoActivityModel : BaseActivityModel() {
         mContext = getActivity()!!
         mRecord = getActivity()?.getData() as Record
 
-        mEventManager = AddOnManager.getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
+        mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
         subscribeToEvents()
     }
 

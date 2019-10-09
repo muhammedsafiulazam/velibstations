@@ -18,14 +18,14 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
     private var mEventSubscriber: IEventSubscriber? = nil
     private var mLocationManager: ILocationManager? = nil
     
-    @IBOutlet var mMap: GMSMapView? = nil
+    @IBOutlet weak var mMapView: GMSMapView!
     private var mUserLocation: Location? = nil
     private var mCameraLocation: Location? = nil
     private var mDataset: Dataset? = nil
     
     private var mSnackbar: MDCSnackbarMessage? = nil
     
-    @IBOutlet var mActivityIndicator: UIActivityIndicatorView? = nil
+    @IBOutlet weak var mActivityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +35,8 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
         updateLoader(show: false)
         updateView(dataset: nil)
         
-        mMap?.delegate = self
-        MapUtils.initializeDynamicMap(map: mMap!)
+        mMapView.delegate = self
+        MapUtils.initializeDynamicMap(map: mMapView)
         
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         mLocationManager = getAddOn(type: AddOnType().LOCATION_MANAGER) as? ILocationManager
@@ -70,7 +70,7 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
-        let latLng = mMap!.camera.target
+        let latLng = mMapView.camera.target
         let location = Location(latitude: latLng.latitude, longitude: latLng.longitude)
         onChangeCameraLocation(location: location)
     }
@@ -88,13 +88,13 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
         } else if (LocationEventType().UPDATE_LOCATION == event.type) {
             if (mUserLocation == nil) {
                 mUserLocation = event.data as? Location
-                MapUtils.zoomOnLocation(map: mMap!, location: mUserLocation!)
+                MapUtils.zoomOnLocation(map: mMapView, location: mUserLocation!)
             }
         } else if (StationListEventType.LOAD_DATA_BUSY == event.type) {
             updateLoader(show: event.data as! Bool)
         } else if (StationListEventType.LOAD_DATA_ERROR == event.type) {
             updateMessage(message: "StationList.Error.Data".localized())
-        } else {
+        } else if (StationListEventType.LOAD_DATA_RESPONSE == event.type) {
             mDataset = event.data as? Dataset
             updateView(dataset: mDataset)
         }
@@ -102,9 +102,9 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
     
     private func updateLoader(show: Bool) {
         if (show) {
-            mActivityIndicator?.startAnimating()
+            mActivityIndicatorView.startAnimating()
         } else {
-            mActivityIndicator?.stopAnimating()
+            mActivityIndicatorView.stopAnimating()
         }
     }
     
@@ -133,24 +133,28 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
         }
     }
     
+    private func addMarker(record: Record) {
+        let fields: Fields = record.fields!
+        let name: String = fields.name!
+        let latitude: Double = fields.geolocation![0] as! Double
+        let longitude: Double = fields.geolocation![1] as! Double
+
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let marker = GMSMarker(position: location)
+        marker.title = name
+        marker.isFlat = true
+        marker.userData = record
+        marker.map = self.mMapView
+    }
+    
     private func updateView(dataset: Dataset?) {
         DispatchQueue.main.async {
-            self.mMap?.clear()
+            self.mMapView.clear()
             if (dataset != nil) {
                 let records = dataset!.records!
                 for object in records {
                     let record: Record = object as! Record
-                    let fields: Fields = record.fields!
-                    let name: String = fields.name!
-                    let latitude: Double = fields.geolocation![0] as! Double
-                    let longitude: Double = fields.geolocation![1] as! Double
-
-                    let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                    let marker = GMSMarker(position: location)
-                    marker.title = name
-                    marker.isFlat = true
-                    marker.userData = record
-                    marker.map = self.mMap
+                    self.addMarker(record: record)
                 }
             }
             
@@ -164,7 +168,7 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
     }
     
     private func onClickMarker(marker: GMSMarker) {
-        mMap?.selectedMarker = marker
+        mMapView.selectedMarker = marker
     }
     
     private func onClickInfoWindow(marker: GMSMarker) {
