@@ -21,8 +21,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuQ-c8-3sn">
+                                <rect key="frame" x="10" y="54" width="394" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dvy-Wz-yhP">
-                                <rect key="frame" x="8" y="52" width="20" height="20"/>
+                                <rect key="frame" x="197" y="98" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
@@ -32,6 +37,7 @@
                     <connections>
                         <outlet property="mActivityIndicatorView" destination="dvy-Wz-yhP" id="3ms-Az-inC"/>
                         <outlet property="mMapView" destination="Aq7-Ou-lwa" id="QO0-rZ-4ca"/>
+                        <outlet property="mSearchBar" destination="LuQ-c8-3sn" id="NkM-yU-TWB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smm-Xd-bfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

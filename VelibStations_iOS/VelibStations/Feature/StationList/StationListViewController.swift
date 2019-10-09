@@ -5,17 +5,20 @@
 //  Created by Muhammed Safiul Azam on 02/10/2019.
 //
 
+import UIKit
 import Foundation
 import CommonKit
 import GoogleMaps
+import GooglePlaces
 import MaterialComponents.MaterialSnackbar
 
-class StationListViewController : BaseViewController, GMSMapViewDelegate {
-  
+class StationListViewController : BaseViewController, GMSMapViewDelegate, UISearchBarDelegate, GMSAutocompleteViewControllerDelegate {
+    
     private let KEY_MARKER: String = "KEY_MARKER"
     
     @IBOutlet weak var mMapView: GMSMapView!
     @IBOutlet weak var mActivityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var mSearchBar: UISearchBar!
     
     private var mEventManager: IEventManager? = nil
     private var mEventSubscriber: IEventSubscriber? = nil
@@ -37,6 +40,9 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
         
         mMapView.delegate = self
         MapUtils.initializeDynamicMap(map: mMapView)
+        
+        mSearchBar.delegate = self
+        mSearchBar.placeholder = "StationList.Search".localized()
         
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         mLocationManager = getAddOn(type: AddOnType().LOCATION_MANAGER) as? ILocationManager
@@ -180,6 +186,40 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
     private func onChangeCameraLocation(location: Location) {
         mCameraLocation = Location(latitude: location.latitude, longitude: location.longitude)
         loadDataRequest(location: location)
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        onClickSearchBar()
+        return false
+    }
+    
+    private func onClickSearchBar() {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        
+        let filter = GMSAutocompleteFilter()
+        filter.type = .address
+        autocompleteController.autocompleteFilter = filter
+        
+        present(autocompleteController, animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        let location = Location(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        MapUtils.zoomOnLocation(map: mMapView, location: location)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Swift.Error) {
+        let snackbar = MDCSnackbarMessage()
+        snackbar.text = "StationList.Error.Address.Location".localized()
+        MDCSnackbarManager.show(snackbar)
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
