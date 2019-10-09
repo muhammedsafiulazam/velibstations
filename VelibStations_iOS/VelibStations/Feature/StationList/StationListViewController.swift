@@ -14,18 +14,18 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
   
     private let KEY_MARKER: String = "KEY_MARKER"
     
+    @IBOutlet weak var mMapView: GMSMapView!
+    @IBOutlet weak var mActivityIndicatorView: UIActivityIndicatorView!
+    
     private var mEventManager: IEventManager? = nil
     private var mEventSubscriber: IEventSubscriber? = nil
     private var mLocationManager: ILocationManager? = nil
     
-    @IBOutlet weak var mMapView: GMSMapView!
     private var mUserLocation: Location? = nil
     private var mCameraLocation: Location? = nil
     private var mDataset: Dataset? = nil
     
     private var mSnackbar: MDCSnackbarMessage? = nil
-    
-    @IBOutlet weak var mActivityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
