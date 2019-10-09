@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		02A1D6162316BB79004E5C52 /* CommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A1D6152316BB79004E5C52 /* CommonKit.framework */; };
 		02A1D6172316BB79004E5C52 /* CommonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02A1D6152316BB79004E5C52 /* CommonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		02B1E4E9234DDBEB00CC3050 /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02B1E4EB234DDBEB00CC3050 /* English.strings */; };
+		02B1E4F4234DE19D00CC3050 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1E4F3234DE19D00CC3050 /* String.swift */; };
 		02B8BA88234352E90087D8CF /* AddOnTypeNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA87234352E90087D8CF /* AddOnTypeNative.swift */; };
 		02B8BA8A2343543E0087D8CF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA892343543E0087D8CF /* BaseViewController.swift */; };
 		02B8BA8C2343562D0087D8CF /* BaseViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA8B2343562D0087D8CF /* BaseViewControllerModel.swift */; };
@@ -70,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		02A1D6152316BB79004E5C52 /* CommonKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonKit.framework; path = "../VelibStations_Android/common/build/xcode-frameworks/CommonKit.framework"; sourceTree = "<group>"; };
+		02B1E4EA234DDBEB00CC3050 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/English.strings; sourceTree = "<group>"; };
+		02B1E4F3234DE19D00CC3050 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		02B8BA87234352E90087D8CF /* AddOnTypeNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnTypeNative.swift; sourceTree = "<group>"; };
 		02B8BA892343543E0087D8CF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		02B8BA8B2343562D0087D8CF /* BaseViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerModel.swift; sourceTree = "<group>"; };
@@ -149,6 +153,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		02B1E4EE234DDEBE00CC3050 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				02B1E4EB234DDBEB00CC3050 /* English.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		02B1E4F2234DE18C00CC3050 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				02B1E4F3234DE19D00CC3050 /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		02B8BA85234352470087D8CF /* AddOn */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +215,8 @@
 		02D523B72302EF3600EB1080 /* VelibStations */ = {
 			isa = PBXGroup;
 			children = (
+				02B1E4F2234DE18C00CC3050 /* Extension */,
+				02B1E4EE234DDEBE00CC3050 /* Strings */,
 				02D9B187234B94470065339C /* Utils */,
 				02E76D312344DB8000A105FB /* Feature */,
 				02B8BA86234352620087D8CF /* ViewController */,
@@ -404,6 +426,7 @@
 				02D9B183234B78400065339C /* Keys.plist in Resources */,
 				02D523C32302EF3800EB1080 /* LaunchScreen.storyboard in Resources */,
 				02D9B181234B729C0065339C /* StationInfo.storyboard in Resources */,
+				02B1E4E9234DDBEB00CC3050 /* English.strings in Resources */,
 				02D523C02302EF3800EB1080 /* Assets.xcassets in Resources */,
 				02D523BE2302EF3600EB1080 /* Main.storyboard in Resources */,
 				02D9B17F234B6CBF0065339C /* StationList.storyboard in Resources */,
@@ -599,6 +622,7 @@
 				02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */,
 				02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */,
 				02E76D3B2344DCD800A105FB /* StationInfoViewControllerModel.swift in Sources */,
+				02B1E4F4234DE19D00CC3050 /* String.swift in Sources */,
 				02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +659,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		02B1E4EB234DDBEB00CC3050 /* English.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02B1E4EA234DDBEB00CC3050 /* en */,
+			);
+			name = English.strings;
+			sourceTree = "<group>";
+		};
 		02D523BC2302EF3600EB1080 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

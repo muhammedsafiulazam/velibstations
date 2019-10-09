@@ -85,7 +85,7 @@ class StationListViewControllerModel : BaseViewControllerModel {
                 // Hide loader.
                 loadDataBusy(busy: true)
                 
-                loadDataError(error: "Sorry! Failed to load data.")
+                loadDataError(error: "StationList.Error.Data".localized())
             } else {
                 // Hide loader.
                 loadDataBusy(busy: false)

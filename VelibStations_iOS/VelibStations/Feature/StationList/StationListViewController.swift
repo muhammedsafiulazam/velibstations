@@ -83,7 +83,7 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
     private func onReceiveEvents(event: Event) {
         if(LocationEventType().REQUEST_UPDATES == event.type) {
             if (event.error != nil) {
-                updateMessage(message: "Sorry! Failed to load location.")
+                updateMessage(message: "StationList.Error.Location".localized())
             }
         } else if (LocationEventType().UPDATE_LOCATION == event.type) {
             if (mUserLocation == nil) {
@@ -93,7 +93,7 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
         } else if (StationListEventType.LOAD_DATA_BUSY == event.type) {
             updateLoader(show: event.data as! Bool)
         } else if (StationListEventType.LOAD_DATA_ERROR == event.type) {
-            updateMessage(message: "Sorry! Failed load data.")
+            updateMessage(message: "StationList.Error.Data".localized())
         } else {
             mDataset = event.data as? Dataset
             updateView(dataset: mDataset)
@@ -120,7 +120,7 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
                 self.onClickRetry()
             }
             action.handler = actionHandler
-            action.title = "Retry"
+            action.title = "StationList.Button.Retry".localized()
             mSnackbar?.action = action
             
             MDCSnackbarManager.show(mSnackbar)
@@ -134,27 +134,29 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate {
     }
     
     private func updateView(dataset: Dataset?) {
-        mMap?.clear()
-        if (dataset != nil) {
-            let records = dataset!.records!
-            for object in records {
-                let record: Record = object as! Record
-                let fields: Fields = record.fields!
-                let name: String = fields.name!
-                let latitude: Double = fields.geolocation![0] as! Double
-                let longitude: Double = fields.geolocation![1] as! Double
+        DispatchQueue.main.async {
+            self.mMap?.clear()
+            if (dataset != nil) {
+                let records = dataset!.records!
+                for object in records {
+                    let record: Record = object as! Record
+                    let fields: Fields = record.fields!
+                    let name: String = fields.name!
+                    let latitude: Double = fields.geolocation![0] as! Double
+                    let longitude: Double = fields.geolocation![1] as! Double
 
-                let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                let marker = GMSMarker(position: location)
-                marker.title = name
-                marker.isFlat = true
-                marker.userData = record
-                marker.map = mMap
+                    let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                    let marker = GMSMarker(position: location)
+                    marker.title = name
+                    marker.isFlat = true
+                    marker.userData = record
+                    marker.map = self.mMap
+                }
             }
+            
+            self.updateMessage(message: nil)
+            self.updateLoader(show: false)
         }
-        
-        updateMessage(message: nil)
-        updateLoader(show: false)
     }
     
     private func onClickRetry() {

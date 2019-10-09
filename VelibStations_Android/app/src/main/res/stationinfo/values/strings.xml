@@ -6,7 +6,7 @@
     <string name="stationinfo_property_name">Name:</string>
     <string name="stationinfo_property_code">Code:</string>
     <string name="stationinfo_property_state">State:</string>
-    <string name="stationinfo_property_duedate">Due date:</string>
+    <string name="stationinfo_property_duedate">Due Date:</string>
     <string name="stationinfo_property_latitude">Latitude:</string>
     <string name="stationinfo_property_longitude">Longitude:</string>
     <string name="stationinfo_property_kioskstate">Kiosk State:</string>
