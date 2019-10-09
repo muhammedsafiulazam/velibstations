@@ -18,7 +18,8 @@ Sources:
    3. Events + Callbacks ( BroadcastChannel + ReceiveChannel ).
    4. Kotlinx: Coroutine + Serializer + SQLDelight + KTor + Etc.
 
-Note: WIP! I'll write more about it soon in details.
+Google API Keys:
+Please add keys in Keys.xml ( Android ) and Keys.plist ( iOS ) files.
 
 Generate / update CommonKit framework for iOS:
 Run command << ./gradlew :common:build >> on Terminal.
