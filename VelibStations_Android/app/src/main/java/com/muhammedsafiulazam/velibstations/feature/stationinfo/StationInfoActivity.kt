@@ -31,7 +31,6 @@ class StationInfoActivity : BaseActivity(), OnMapReadyCallback {
     private lateinit var mRecord: Record
 
     private lateinit var mEventManager: IEventManager
-    private lateinit var mEventSubscriber: IEventSubscriber
 
     private var mMap: GoogleMap? = null
     private lateinit var mMapFragment: SupportMapFragment
@@ -67,30 +66,20 @@ class StationInfoActivity : BaseActivity(), OnMapReadyCallback {
         stationinfo_ryv_fields.setLayoutManager(LinearLayoutManager(this))
         stationinfo_ryv_fields.adapter = mPropertyListAdapter
 
-        subscribeToEvents()
+        receiveEvents(true)
     }
 
     override fun onStart() {
         super.onStart()
-        subscribeToEvents()
     }
 
     override fun onStop() {
-        unsubscribeFromEvents()
         super.onStop()
     }
 
-    private fun subscribeToEvents() {
-        mEventSubscriber = mEventManager.subscribe( callback = { event : Event -> Unit
-            onReceiveEvents(event)
-        })
-    }
+    override fun onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event)
 
-    private fun unsubscribeFromEvents() {
-        mEventManager.unsubscribe(mEventSubscriber)
-    }
-
-    fun onReceiveEvents(event: Event) {
         if (TextUtils.equals(StationInfoEventType.LOAD_DATA_BUSY, event.type)) {
             updateLoader(event.data as Boolean)
         }
@@ -174,7 +163,7 @@ class StationInfoActivity : BaseActivity(), OnMapReadyCallback {
 
 
     override fun onDestroy() {
-        unsubscribeFromEvents()
+        receiveEvents(false)
         super.onDestroy()
     }
 }

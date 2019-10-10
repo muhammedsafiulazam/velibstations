@@ -7,6 +7,10 @@ import com.muhammedsafiulazam.common.addon.AddOn
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.addon.IAddOn
+import com.muhammedsafiulazam.common.event.Event
+import com.muhammedsafiulazam.common.event.EventSubscriber
+import com.muhammedsafiulazam.common.event.IEventManager
+import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.velibstations.addon.AddOnTypeNative
 import com.muhammedsafiulazam.velibstations.location.LocationManager
 
@@ -22,6 +26,9 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
     private var mData: Any? = null
     private var mActivityModel: BaseActivityModel? = null
 
+    private lateinit var mEventManager: IEventManager
+    private var mEventSubscriber: IEventSubscriber? = null
+
     private var isViewReady: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +38,8 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
         addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, AddOnManager.getAddOn(AddOnTypeNative.ACTIVITY_MANAGER)!!)
         addAddOn(AddOnType.LOCATION_MANAGER, AddOnManager.getAddOn(AddOnType.LOCATION_MANAGER)!!)
+
+        mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
 
         // Load data.
         val dataID: String? = intent.getStringExtra(KEY_DATA_ID)
@@ -95,8 +104,25 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
         activityManager?.onStopActivity(this)
     }
 
+    fun receiveEvents(receive: Boolean) {
+        if (receive) {
+            mEventSubscriber = mEventManager.subscribe(callback = { event: Event ->
+                onReceiveEvents(event)
+            })
+        } else {
+            if (mEventSubscriber != null) {
+                mEventManager.unsubscribe(mEventSubscriber)
+            }
+            mEventSubscriber = null
+        }
+    }
+
+    open fun onReceiveEvents(event: Event) {
+    }
+
     override fun onDestroy() {
         clearAddOns()
+        receiveEvents(false)
         mActivityModel?.onDestroyActivity()
         super.onDestroy()
     }

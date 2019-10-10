@@ -27,27 +27,16 @@ class StationInfoActivityModel : BaseActivityModel() {
         mRecord = getActivity()?.getData() as Record
 
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
-        subscribeToEvents()
+
+        receiveEvents(true)
     }
 
     override fun onStartActivity() {
         super.onStartActivity()
-        subscribeToEvents()
     }
 
     override fun onStopActivity() {
-        unsubscribeFromEvents()
         super.onStopActivity()
-    }
-
-    private fun subscribeToEvents() {
-        mEventSubscriber = mEventManager.subscribe( callback = { event : Event -> Unit
-            onReceiveEvents(event)
-        })
-    }
-
-    private fun unsubscribeFromEvents() {
-        mEventManager.unsubscribe(mEventSubscriber)
     }
 
     private fun loadDataBusy(busy: Boolean) {
@@ -65,7 +54,9 @@ class StationInfoActivityModel : BaseActivityModel() {
         mEventManager.send(event)
     }
 
-    fun onReceiveEvents(event: Event) {
+    override fun onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event)
+
         if (TextUtils.equals(StationInfoEventType.LOAD_DATA_REQUEST, event.type)) {
             // Show loader.
             loadDataBusy(true)
@@ -215,7 +206,7 @@ class StationInfoActivityModel : BaseActivityModel() {
     }
 
     override fun onDestroyActivity() {
-        unsubscribeFromEvents()
+        receiveEvents(false)
         super.onDestroyActivity()
     }
 }

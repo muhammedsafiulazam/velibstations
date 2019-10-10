@@ -21,7 +21,6 @@ class StationListActivityModel : BaseActivityModel() {
     private lateinit var mEventManager: IEventManager
     private lateinit var mServiceManager: IServiceManager
     private lateinit var mDatabaseManager: IDatabaseManager
-    private lateinit var mEventSubscriber: IEventSubscriber
     private var mLocation: Location? = null
 
     override fun onCreateActivity() {
@@ -31,29 +30,16 @@ class StationListActivityModel : BaseActivityModel() {
         mDatabaseManager = getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
 
-        subscribeToEvents()
+        receiveEvents(true)
     }
 
     override fun onStartActivity() {
         super.onStartActivity()
-        subscribeToEvents()
     }
 
     override fun onStopActivity() {
-        unsubscribeFromEvents()
         super.onStopActivity()
     }
-
-    private fun subscribeToEvents() {
-        mEventSubscriber = mEventManager.subscribe( callback = { event : Event -> Unit
-            onReceiveEvents(event)
-        })
-    }
-
-    private fun unsubscribeFromEvents() {
-        mEventManager?.unsubscribe(mEventSubscriber)
-    }
-
     private fun loadDataBusy(busy: Boolean) {
         val event = Event(StationListEventType.LOAD_DATA_BUSY, busy, null)
         mEventManager.send(event)
@@ -69,7 +55,9 @@ class StationListActivityModel : BaseActivityModel() {
         mEventManager.send(event)
     }
 
-    fun onReceiveEvents(event: Event) {
+    override fun onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event)
+
         if (TextUtils.equals(StationListEventType.LOAD_DATA_REQUEST, event.type)) {
             // Show loader.
             loadDataBusy(true)
@@ -112,7 +100,7 @@ class StationListActivityModel : BaseActivityModel() {
     }
 
     override fun onDestroyActivity() {
-        unsubscribeFromEvents()
+        receiveEvents(false)
         super.onDestroyActivity()
     }
 }

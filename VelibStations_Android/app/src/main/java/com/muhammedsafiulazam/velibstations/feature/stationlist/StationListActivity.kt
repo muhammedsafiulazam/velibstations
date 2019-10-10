@@ -47,7 +47,6 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     private val AUTOCOMPLETE_REQUEST_CODE = 1598
 
     private lateinit var mEventManager: IEventManager
-    private lateinit var mEventSubscriber: IEventSubscriber
     private lateinit var mLocationManager: ILocationManager
     private lateinit var mActivityManager: IActivityManager
 
@@ -81,7 +80,8 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         mMapFragment = supportFragmentManager.findFragmentById(R.id.stationlist_mpv_map) as SupportMapFragment
         mMapFragment.getMapAsync(this)
 
-        subscribeToEvents()
+        // Receive events.
+        receiveEvents(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -98,22 +98,10 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     override fun onStart() {
         super.onStart()
-        subscribeToEvents()
     }
 
     override fun onStop() {
-        unsubscribeFromEvents()
         super.onStop()
-    }
-
-    private fun subscribeToEvents() {
-        mEventSubscriber = mEventManager.subscribe( callback = { event : Event -> Unit
-            onReceiveEvents(event)
-        })
-    }
-
-    private fun unsubscribeFromEvents() {
-        mEventManager.unsubscribe(mEventSubscriber)
     }
 
     private fun loadDataRequest(location: Location) {
@@ -121,7 +109,9 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         mEventManager.send(event)
     }
 
-    fun onReceiveEvents(event: Event) {
+    override fun onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event)
+
         if (TextUtils.equals(LocationEventType.REQUEST_UPDATES, event.type)) {
             if (event.error != null) {
                 updateMessage(getString(R.string.stationlist_error_location))
@@ -263,7 +253,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     override fun onDestroy() {
         mLocationManager.cancelUpdates()
-        unsubscribeFromEvents()
+        receiveEvents(false)
         super.onDestroy()
     }
 }

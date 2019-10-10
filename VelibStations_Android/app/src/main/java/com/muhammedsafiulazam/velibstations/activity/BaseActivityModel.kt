@@ -6,6 +6,9 @@ import com.muhammedsafiulazam.common.addon.AddOn
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.addon.IAddOn
+import com.muhammedsafiulazam.common.event.Event
+import com.muhammedsafiulazam.common.event.IEventManager
+import com.muhammedsafiulazam.common.event.IEventSubscriber
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.
@@ -14,6 +17,9 @@ import com.muhammedsafiulazam.common.addon.IAddOn
 open class BaseActivityModel : ViewModel(), IAddOn {
 
     private var mActivity: BaseActivity? = null
+
+    private lateinit var mEventManager: IEventManager
+    private var mEventSubscriber: IEventSubscriber? = null
 
     fun getActivity() : BaseActivity? {
         return mActivity
@@ -28,24 +34,41 @@ open class BaseActivityModel : ViewModel(), IAddOn {
         addAddOn(AddOnType.SERVICE_MANAGER, AddOnManager.getAddOn(AddOnType.SERVICE_MANAGER)!!)
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
         addAddOn(AddOnType.DATABASE_MANAGER, AddOnManager.getAddOn(AddOnType.DATABASE_MANAGER)!!)
+
+        mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
     }
 
     open fun onStartActivity() {
     }
 
     open fun onResumeActivity() {
-
     }
 
     open fun onPauseActivity() {
-
     }
 
     open fun onStopActivity() {
     }
 
+    fun receiveEvents(receive: Boolean) {
+        if (receive) {
+            mEventSubscriber = mEventManager.subscribe(callback = { event: Event ->
+                onReceiveEvents(event)
+            })
+        } else {
+            if (mEventSubscriber != null) {
+                mEventManager.unsubscribe(mEventSubscriber)
+            }
+            mEventSubscriber = null
+        }
+    }
+
+    open fun onReceiveEvents(event: Event) {
+    }
+
     open fun onDestroyActivity() {
         clearAddOns()
+        receiveEvents(false)
     }
 
     // Addons related methods.
