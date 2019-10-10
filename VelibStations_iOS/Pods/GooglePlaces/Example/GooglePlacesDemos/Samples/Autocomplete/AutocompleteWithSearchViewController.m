@@ -13,15 +13,12 @@
  * permissions and limitations under the License.
  */
 
-#if !defined(__has_feature) || !__has_feature(objc_arc)
-#error "This file requires ARC support."
-#endif
-
 #import "GooglePlacesDemos/Samples/Autocomplete/AutocompleteWithSearchViewController.h"
 
 #import <GooglePlaces/GooglePlaces.h>
 
-@interface AutocompleteWithSearchViewController ()<GMSAutocompleteResultsViewControllerDelegate>
+@interface AutocompleteWithSearchViewController () <GMSAutocompleteResultsViewControllerDelegate,
+                                                    UISearchBarDelegate>
 @end
 
 @implementation AutocompleteWithSearchViewController {
@@ -41,6 +38,12 @@
   [super viewDidLoad];
 
   _acViewController = [[GMSAutocompleteResultsViewController alloc] init];
+  [_acViewController
+      setAutocompleteBoundsUsingNorthEastCorner:self.autocompleteBoundsNorthEastCorner
+                                SouthWestCorner:self.autocompleteBoundsSouthWestCorner];
+  _acViewController.autocompleteBoundsMode = self.autocompleteBoundsMode;
+  _acViewController.autocompleteFilter = self.autocompleteFilter;
+  _acViewController.placeFields = self.placeFields;
   _acViewController.delegate = self;
 
   _searchController =
@@ -50,6 +53,7 @@
 
   _searchController.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
   _searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+  _searchController.searchBar.delegate = self;
 
   [_searchController.searchBar sizeToFit];
   self.navigationItem.titleView = _searchController.searchBar;
@@ -66,21 +70,21 @@
   } else {
     _searchController.modalPresentationStyle = UIModalPresentationFullScreen;
   }
+}
 
-  if (NSFoundationVersionNumber < NSFoundationVersionNumber_iOS_8_0) {
-    NSString *message = NSLocalizedString(
-        @"Demo.Content.iOSVersionNotSupported",
-        @"Error message to display when a demo is not available on the current version of iOS");
-    [super showCustomMessageInResultPane:message];
-  }
+#pragma mark - UISearcBarDelegate
 
-  [self addResultViewBelow:nil];
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+  // Inform user that the autocomplete query has been cancelled and dismiss the search bar.
+  [_searchController setActive:NO];
+  [_searchController.searchBar setHidden:YES];
+  [self autocompleteDidCancel];
 }
 
 #pragma mark - GMSAutocompleteResultsViewControllerDelegate
 
 - (void)resultsController:(GMSAutocompleteResultsViewController *)resultsController
- didAutocompleteWithPlace:(GMSPlace *)place {
+    didAutocompleteWithPlace:(GMSPlace *)place {
   // Display the results and dismiss the search controller.
   [_searchController setActive:NO];
   [self autocompleteDidSelectPlace:place];
@@ -98,6 +102,9 @@
 - (void)didRequestAutocompletePredictionsForResultsController:
     (GMSAutocompleteResultsViewController *)resultsController {
   [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
+  // Reset the text and photos view when we are requesting for predictions.
+  [self resetViews];
 }
 
 - (void)didUpdateAutocompletePredictionsForResultsController:

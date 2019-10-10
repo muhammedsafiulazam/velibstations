@@ -6,8 +6,9 @@ target 'VelibStations' do
   use_frameworks!
 
   # Pods for VelibStations
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
+  pod 'GooglePlaces', '= 3.5.0.0'
+  pod 'GoogleMaps', '= 3.5.0.0'
+  
   pod 'MaterialComponents/Snackbar'
 
   target 'VelibStationsTests' do

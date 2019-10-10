@@ -214,8 +214,6 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
         let snackbar = MDCSnackbarMessage()
         snackbar.text = "StationList.Error.Address.Location".localized()
         MDCSnackbarManager.show(snackbar)
-        
-        dismiss(animated: true, completion: nil)
     }
     
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {

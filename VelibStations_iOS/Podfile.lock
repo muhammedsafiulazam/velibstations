@@ -1,11 +1,11 @@
 PODS:
-  - GoogleMaps (2.2.0):
-    - GoogleMaps/Maps (= 2.2.0)
-  - GoogleMaps/Base (2.2.0)
-  - GoogleMaps/Maps (2.2.0):
+  - GoogleMaps (3.5.0):
+    - GoogleMaps/Maps (= 3.5.0)
+  - GoogleMaps/Base (3.5.0)
+  - GoogleMaps/Maps (3.5.0):
     - GoogleMaps/Base
-  - GooglePlaces (2.2.0):
-    - GoogleMaps/Base (= 2.2.0)
+  - GooglePlaces (3.5.0):
+    - GoogleMaps/Base (= 3.5.0)
   - MaterialComponents/AnimationTiming (92.1.0)
   - MaterialComponents/Buttons (92.1.0):
     - MaterialComponents/Elevation
@@ -62,26 +62,25 @@ PODS:
   - MDFTextAccessibility (2.0.0)
 
 DEPENDENCIES:
-  - GoogleMaps
-  - GooglePlaces
+  - GoogleMaps (= 3.5.0.0)
+  - GooglePlaces (= 3.5.0.0)
   - MaterialComponents/Snackbar
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - GoogleMaps
     - GooglePlaces
-  trunk:
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
 
 SPEC CHECKSUMS:
-  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
-  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
+  GoogleMaps: 32ca02de09de357a10ac773f2c70f1986751392d
+  GooglePlaces: be6f19fe8aa6ff0b5bcccfa1b8805cc977ea1450
   MaterialComponents: 6aaf2be26ffa19d33c8c463ca6d6204443d8f974
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
 
-PODFILE CHECKSUM: 3c61b7a191414db67c7e26227a4d61178f2a200e
+PODFILE CHECKSUM: 0bf89305e136aeafa33bcfbec68821302a3e68d8
 
 COCOAPODS: 1.8.3

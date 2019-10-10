@@ -352,6 +352,7 @@
 		1E683BF2C5FF4715E650C37274F6E073 /* GoogleMaps.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleMaps.xcconfig; sourceTree = "<group>"; };
 		1F64F30EA0C2870E3A9DE854549B2E0A /* UIFont+MaterialTypography.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+MaterialTypography.m"; path = "components/Typography/src/UIFont+MaterialTypography.m"; sourceTree = "<group>"; };
 		1FDA3330AB7FA4EA017A8B5FD8BC93A8 /* Pods-VelibStations-VelibStationsUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelibStations-VelibStationsUITests-resources.sh"; sourceTree = "<group>"; };
+		21E4930B2FD65D220F24993FF67F4571 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		25E9F969CCBE2713A795CD74789BB480 /* MDCOverlayAnimationObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCOverlayAnimationObserver.h; path = components/private/Overlay/src/private/MDCOverlayAnimationObserver.h; sourceTree = "<group>"; };
 		25FE252DB026C035078DF25CB0106486 /* NSString+MaterialBidi.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MaterialBidi.m"; path = "Sources/NSString+MaterialBidi.m"; sourceTree = "<group>"; };
 		27FADC30A410E6BBEF849EE97E6CBB82 /* MaterialSnackbarStrings_table.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialSnackbarStrings_table.h; path = components/Snackbar/src/private/MaterialSnackbarStrings_table.h; sourceTree = "<group>"; };
@@ -382,7 +383,6 @@
 		4A27D9500A3E98223D9D2EA5A8243B1E /* MDCLegacyInkLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCLegacyInkLayer.m; path = components/Ink/src/private/MDCLegacyInkLayer.m; sourceTree = "<group>"; };
 		4B77CF6E943F0C69B54CD3DBE424C22F /* MDCSnackbarManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSnackbarManager.h; path = components/Snackbar/src/MDCSnackbarManager.h; sourceTree = "<group>"; };
 		4BB04FEB1BF35743E38CA168E93B15AD /* Pods-VelibStationsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelibStationsTests-dummy.m"; sourceTree = "<group>"; };
-		4C6B3E2778B97F4556A91516967CD0F0 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		4D7831E6EF2F5D21181C8019AF551BBB /* Pods-VelibStations-VelibStationsUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VelibStations-VelibStationsUITests.modulemap"; sourceTree = "<group>"; };
 		4E14E13C9AF3B2C025C21A932BB15ED0 /* MaterialShadowElevations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MaterialShadowElevations.h; path = components/ShadowElevations/src/MaterialShadowElevations.h; sourceTree = "<group>"; };
 		4E36535FAB79CBF6D4A20DD5498003E9 /* Pods-VelibStations-VelibStationsUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VelibStations-VelibStationsUITests-dummy.m"; sourceTree = "<group>"; };
@@ -419,6 +419,7 @@
 		696026C2114667E0DD7EF80B22E01D3C /* UIColor+MaterialDynamic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MaterialDynamic.h"; path = "components/private/Color/src/UIColor+MaterialDynamic.h"; sourceTree = "<group>"; };
 		6B837DD985F89146657DD1A11935356E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6EF4471707D49F394BA29FCE65B7F9FF /* MDCRippleLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCRippleLayer.m; path = components/Ripple/src/private/MDCRippleLayer.m; sourceTree = "<group>"; };
+		71F06EC95BC23E4B40639E23743C54EA /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
 		749E1FC6E256E4471E39FB0047D0519F /* MDCFlatButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCFlatButton.m; path = components/Buttons/src/MDCFlatButton.m; sourceTree = "<group>"; };
 		75689412368A4A8E4A9B0233F51DD501 /* Pods-VelibStations-VelibStationsUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VelibStations-VelibStationsUITests-frameworks.sh"; sourceTree = "<group>"; };
 		76BEAA74485D8A0FBB0BD17A1A592204 /* MDCFontTextStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFontTextStyle.h; path = components/Typography/src/MDCFontTextStyle.h; sourceTree = "<group>"; };
@@ -536,7 +537,6 @@
 		F3E40BB31E0BA1908AFA10A09CFD7F29 /* MDFRTL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDFRTL.m; path = Sources/MDFRTL.m; sourceTree = "<group>"; };
 		F44342DCF8A9185C25E2C6B2EB8A5FDB /* MDFColorCalculations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDFColorCalculations.h; path = src/private/MDFColorCalculations.h; sourceTree = "<group>"; };
 		F51CFF14F7DE6CEA1ACA0700F5A61E47 /* MDFTextAccessibility-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MDFTextAccessibility-dummy.m"; sourceTree = "<group>"; };
-		F58E3790F82D8539A66C8A25EB0AFC3C /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
 		F60D95739535C93967E5FF4EF2C4814E /* MaterialComponents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MaterialComponents-prefix.pch"; sourceTree = "<group>"; };
 		F69482EC99F563F81C2C8ABF9F80944E /* MDCFlatButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCFlatButton.h; path = components/Buttons/src/MDCFlatButton.h; sourceTree = "<group>"; };
 		F97941CD75C21187988FB0D4688D5EF6 /* UIColor+MaterialBlending.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MaterialBlending.m"; path = "components/private/Color/src/UIColor+MaterialBlending.m"; sourceTree = "<group>"; };
@@ -738,7 +738,7 @@
 			isa = PBXGroup;
 			children = (
 				24262F46D3B63814F08B24B70DD006C8 /* Frameworks */,
-				6EAC44B7345FBB9A21CBC1DBAC93FB43 /* Resources */,
+				D8685479563F69377EB539507BCF1B32 /* Resources */,
 				EBEA208F631071A93D0925D5D3755DD7 /* Support Files */,
 			);
 			name = GooglePlaces;
@@ -807,14 +807,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MaterialComponents";
-			sourceTree = "<group>";
-		};
-		6EAC44B7345FBB9A21CBC1DBAC93FB43 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F58E3790F82D8539A66C8A25EB0AFC3C /* GooglePlaces.bundle */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		7145741D7E6DCCAB38B2C78202F04BA7 /* Pods-VelibStations */ = {
@@ -912,14 +904,6 @@
 				520C56D7FBEBC296DAF9B4B9E7922D4E /* MDCShapeGenerating.h */,
 			);
 			name = Shapes;
-			sourceTree = "<group>";
-		};
-		88F55EB9DF53B46134E675D8A89563CA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				4C6B3E2778B97F4556A91516967CD0F0 /* GoogleMaps.bundle */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		8DCCE4ADFFA44289B1C077E0A15F8197 /* MDFInternationalization */ = {
@@ -1071,6 +1055,14 @@
 			name = Buttons;
 			sourceTree = "<group>";
 		};
+		CD2BD41F8CD5509471C6DA9BE1C3C3C1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21E4930B2FD65D220F24993FF67F4571 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CD7D2B4422FFCD63450DF3EED3D3E8B4 /* Ink */ = {
 			isa = PBXGroup;
 			children = (
@@ -1101,11 +1093,19 @@
 			);
 			sourceTree = "<group>";
 		};
+		D8685479563F69377EB539507BCF1B32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				71F06EC95BC23E4B40639E23743C54EA /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		E3F29E19C6CDE769F2E0DB7BD1396A09 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
 				5A8C4E4E954FFD6B92AF1FCD75B4944B /* Frameworks */,
-				88F55EB9DF53B46134E675D8A89563CA /* Resources */,
+				CD2BD41F8CD5509471C6DA9BE1C3C3C1 /* Resources */,
 			);
 			name = Maps;
 			sourceTree = "<group>";
@@ -1722,22 +1722,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0C5DA16E3DF77A2E0C4890C85F94BB48 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9978ECDA631B144947DD8E350FAF187 /* GooglePlaces.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		128C49ADC414EF6457E01D4514340883 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D00AE2B5BC1FFAB8944BB1E92F654614 /* MDFInternationalization.xcconfig */;
@@ -1809,23 +1793,6 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1CAEAE8920726EE70A79F48C4B03CB30 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9978ECDA631B144947DD8E350FAF187 /* GooglePlaces.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1939,22 +1906,21 @@
 			};
 			name = Release;
 		};
-		6F1C07C1B602964D8C325E1F202C57B3 /* Release */ = {
+		4AA46832D8A16AA4E4811383B204D2A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1E683BF2C5FF4715E650C37274F6E073 /* GoogleMaps.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		768AF3C02243594756583FF1E117095C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2088,6 +2054,22 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
+		};
+		907050E8ED96EF2CF04EC3D293E73BD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9978ECDA631B144947DD8E350FAF187 /* GooglePlaces.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 		916E0404255105F480DC4950B7625F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2227,21 +2209,39 @@
 			};
 			name = Debug;
 		};
-		9F8631DD3EE2C3D874754E791BD3C7EF /* Debug */ = {
+		C7565AEA7FCD8F66CAF546DC5AF1404F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1E683BF2C5FF4715E650C37274F6E073 /* GoogleMaps.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
+		};
+		DC85D7712D8EE6E340F053BC38E1FB63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9978ECDA631B144947DD8E350FAF187 /* GooglePlaces.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		F3432DC537D6E5DC4F2FC2C7F399E0A6 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2356,8 +2356,8 @@
 		2FC2AC47FDB0310285CE777F18CD1532 /* Build configuration list for PBXAggregateTarget "GooglePlaces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C5DA16E3DF77A2E0C4890C85F94BB48 /* Debug */,
-				1CAEAE8920726EE70A79F48C4B03CB30 /* Release */,
+				907050E8ED96EF2CF04EC3D293E73BD9 /* Debug */,
+				DC85D7712D8EE6E340F053BC38E1FB63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2365,8 +2365,8 @@
 		46921981F609C5BA3CB72EC4EA41299D /* Build configuration list for PBXAggregateTarget "GoogleMaps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F8631DD3EE2C3D874754E791BD3C7EF /* Debug */,
-				6F1C07C1B602964D8C325E1F202C57B3 /* Release */,
+				4AA46832D8A16AA4E4811383B204D2A4 /* Debug */,
+				C7565AEA7FCD8F66CAF546DC5AF1404F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

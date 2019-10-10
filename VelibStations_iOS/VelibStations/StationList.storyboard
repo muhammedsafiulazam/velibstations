@@ -27,7 +27,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dvy-Wz-yhP">
-                                <rect key="frame" x="197" y="98" width="20" height="20"/>
+                                <rect key="frame" x="20" y="106" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>

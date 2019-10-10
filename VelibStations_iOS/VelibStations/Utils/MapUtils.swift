@@ -24,6 +24,7 @@ class MapUtils {
         map.settings.myLocationButton = true
         map.settings.compassButton = false
         map.setMinZoom(ZOOM_MIN, maxZoom: ZOOM_MAX)
+        applyMapStyle(map: map)
     }
     
     static func initializeStaticMap(map: GMSMapView) {
@@ -35,6 +36,20 @@ class MapUtils {
         map.settings.myLocationButton = false
         map.settings.compassButton = false
         map.setMinZoom(ZOOM_MIN, maxZoom: ZOOM_MAX)
+        applyMapStyle(map: map)
+    }
+    
+    private static func applyMapStyle(map: GMSMapView) {
+        do {
+            // Set the map style by passing the URL of the local file.
+            if let styleURL = Bundle.main.url(forResource: "google_map_style", withExtension: "json") {
+                map.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+            } else {
+                NSLog("Unable to find style json.")
+            }
+        } catch {
+            NSLog("\(error)")
+        }
     }
     
     static func zoomOnLocation(map: GMSMapView, location: Location, zoom: Float = ZOOM_DEFAULT) {

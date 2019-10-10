@@ -1,6 +1,6 @@
 // NOTE: This is the english localization and has been copied to all languages. The reason for doing
 // this is it signals to iOS that the app "supports" all of these languages. This is helpful for a
-// demo as it allows you to try out the localization features of the Places API. In a shipping app
+// demo as it allows you to try out the localization features of the Places SDK. In a shipping app
 // you should never do this, it is for demonstration purposes only.
 
 
@@ -21,10 +21,16 @@
 "Demo.Title.Autocomplete.Styling"="Custom Autocomplete Styling";
 // Title of the photos demo for display in a list or nav header
 "Demo.Title.Photos"="Photos";
+// Title of the 'select place' button within the photos demo
+"Demo.Title.Photos.SelectPlace"="Select Place";
+// Title of the Place Picker demo for displaying the picker in a popover, navigation controller, or modally.
+"Demo.Title.PlacePicker.ViewController"="Place Picker View Controller";
 // Title of the autocomplete demo section
 "Demo.Section.Title.Autocomplete"="Autocomplete";
 // Title of the 'Programmatic' demo section
 "Demo.Section.Title.Programmatic"="Programmatic APIs";
+// Title of the findPlacesLikelihood demo section
+"Demo.Section.Title.FindPlaceLikelihood"="Likelihoods";
 
 // Button title for 'show autocomplete widget'
 "Demo.Content.Autocomplete.ShowWidgetButton"="Show Autocomplete Widget";
@@ -34,8 +40,6 @@
 "Demo.Content.Autocomplete.FailedErrorMessage"="Autocomplete failed with error: %1$@";
 // String for 'autocomplete canceled message'
 "Demo.Content.Autocomplete.WasCanceledMessage"="Autocomplete was canceled";
-// Error message to display when a demo is not available on the current version of iOS
-"Demo.Content.iOSVersionNotSupported"="UISearchController not supported on this version of iOS";
 // Button title for the 'Yellow and Brown' styled autocomplete widget.
 "Demo.Content.Autocomplete.Styling.Colors.YellowAndBrown"="Yellow and Brown";
 // Button title for the 'White on Black' styled autocomplete widget.
@@ -44,4 +48,10 @@
 "Demo.Content.Autocomplete.Styling.Colors.BlueColors"="Blue Colors";
 // Button title for the 'Hot Dog Stand' styled autocomplete widget.
 "Demo.Content.Autocomplete.Styling.Colors.HotDogStand"="Hot Dog Stand";
+// Button title for the 'Popover' view of the place picker.
+"Demo.Content.PlacePicker.ViewController.Popover"="Popover";
+// Button title for the 'Navigation' view of the place picker.
+"Demo.Content.PlacePicker.ViewController.Navigation"="Navigation";
+// Button title for the 'Modal' view of the place picker.
+"Demo.Content.PlacePicker.ViewController.Modal"="Modal";
 
