@@ -21,7 +21,6 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
     @IBOutlet weak var mSearchBar: UISearchBar!
     
     private var mEventManager: IEventManager? = nil
-    private var mEventSubscriber: IEventSubscriber? = nil
     private var mLocationManager: ILocationManager? = nil
     
     private var mUserLocation: Location? = nil
@@ -47,23 +46,12 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         mLocationManager = getAddOn(type: AddOnType().LOCATION_MANAGER) as? ILocationManager
         
-        subscribeToEvents()
+        receiveEvents(receive: true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        subscribeToEvents()
         mLocationManager?.requestUpdates()
-    }
-    
-    private func subscribeToEvents() {
-        mEventSubscriber = mEventManager?.subscribe(callback: { event in
-            self.onReceiveEvents(event: event)
-        })
-    }
-    
-    private func unsubscribeFromEvents() {
-        mEventManager?.unsubscribe(eventSubscriber: mEventSubscriber)
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -86,7 +74,9 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
         mEventManager?.send(event: event)
     }
     
-    private func onReceiveEvents(event: Event) {
+    override func onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event: event)
+        
         if(LocationEventType().REQUEST_UPDATES == event.type) {
             if (event.error != nil) {
                 updateMessage(message: "StationList.Error.Location".localized())
@@ -222,7 +212,7 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
     
     override func viewWillDisappear(_ animated: Bool) {
         mLocationManager?.cancelUpdates()
-        unsubscribeFromEvents()
+        receiveEvents(receive: false)
         super.viewWillDisappear(animated)
     }
 }

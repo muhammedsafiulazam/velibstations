@@ -14,6 +14,7 @@ class BaseViewController : UIViewController, IAddOn {
     private var mViewControllerModel: BaseViewControllerModel? = nil
     private var mData: AnyObject? = nil
     private var isViewControllerReady: Bool = false
+    private var mEventSubscriber: IEventSubscriber? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +47,12 @@ class BaseViewController : UIViewController, IAddOn {
         onViewAppear()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        onViewDisappear()
-        mViewControllerModel?.viewWillDisappear()
-        super.viewWillDisappear(animated)
+    func getData() -> AnyObject? {
+        return mData
+    }
+    
+    func setData(data: AnyObject?) {
+        mData = data
     }
     
     private func onViewAppear() {
@@ -62,12 +65,29 @@ class BaseViewController : UIViewController, IAddOn {
         viewControllerManager?.onDisappearViewController(viewController: self)
     }
     
-    func getData() -> AnyObject? {
-        return mData
+    override func viewWillDisappear(_ animated: Bool) {
+        onViewDisappear()
+        mViewControllerModel?.viewWillDisappear()
+        super.viewWillDisappear(animated)
     }
     
-    func setData(data: AnyObject?) {
-        mData = data
+    func receiveEvents(receive: Bool) {
+        let eventManager: IEventManager? = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
+        
+        if (receive) {
+            mEventSubscriber = eventManager?.subscribe(callback: { event in
+                self.onReceiveEvents(event: event)
+            })
+        } else {
+            if (mEventSubscriber != nil) {
+                eventManager?.unsubscribe(eventSubscriber: mEventSubscriber)
+            }
+            mEventSubscriber = nil
+        }
+    }
+    
+    func onReceiveEvents(event: Event) {
+        
     }
     
     // Addons related methods.

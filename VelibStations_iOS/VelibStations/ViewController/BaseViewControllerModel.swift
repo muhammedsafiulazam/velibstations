@@ -12,6 +12,7 @@ import CommonKit
 class BaseViewControllerModel : IAddOn {
     
     private var mViewController: BaseViewController? = nil
+    private var mEventSubscriber: IEventSubscriber? = nil
     
     required init() {
         
@@ -35,7 +36,27 @@ class BaseViewControllerModel : IAddOn {
     func viewDidAppear() {
     }
     
+    func receiveEvents(receive: Bool) {
+        let eventManager: IEventManager? = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
+        
+        if (receive) {
+            mEventSubscriber = eventManager?.subscribe(callback: { event in
+                self.onReceiveEvents(event: event)
+            })
+        } else {
+            if (mEventSubscriber != nil) {
+                eventManager?.unsubscribe(eventSubscriber: mEventSubscriber)
+            }
+            mEventSubscriber = nil
+        }
+    }
+    
+    func onReceiveEvents(event: Event) {
+    }
+    
     func viewWillDisappear() {
+        clearAddOns()
+        receiveEvents(receive: false)
     }
     
     // Addons related methods.

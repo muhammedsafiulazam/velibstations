@@ -17,7 +17,6 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
     @IBOutlet weak var mActivityIndicatorView: UIActivityIndicatorView!
     
     private var mEventManager: IEventManager? = nil
-    private var mEventSubscriber: IEventSubscriber? = nil
     
     private var mSnackbar: MDCSnackbarMessage? = nil
     
@@ -43,23 +42,12 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
         
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         
-        subscribeToEvents()
+        receiveEvents(receive: true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        subscribeToEvents()
         loadDataRequest()
-    }
-    
-    private func subscribeToEvents() {
-        mEventSubscriber = mEventManager?.subscribe(callback: { event in
-            self.onReceiveEvents(event: event)
-        })
-    }
-    
-    private func unsubscribeFromEvents() {
-        mEventManager?.unsubscribe(eventSubscriber: mEventSubscriber)
     }
     
     private func zoomOnRecord(record: Record) {
@@ -84,7 +72,9 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
         marker.map = self.mMapView
     }
     
-    private func onReceiveEvents(event: Event) {
+    override func onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event: event)
+        
         if (StationInfoEventType.LOAD_DATA_BUSY == event.type) {
             updateLoader(show: event.data as! Bool)
         } else if (StationInfoEventType.LOAD_DATA_ERROR == event.type) {
@@ -162,7 +152,7 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        unsubscribeFromEvents()
+        receiveEvents(receive: false)
         super.viewWillDisappear(animated)
     }
 }

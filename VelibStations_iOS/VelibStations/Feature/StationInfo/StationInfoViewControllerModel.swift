@@ -11,7 +11,6 @@ import CommonKit
 class StationInfoViewControllerModel : BaseViewControllerModel {
     
     private var mEventManager: IEventManager? = nil
-    private var mEventSubscriber: IEventSubscriber? = nil
     
     private var mRecord: Record? = nil
     
@@ -21,22 +20,11 @@ class StationInfoViewControllerModel : BaseViewControllerModel {
         mRecord = getViewController()?.getData() as? Record
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         
-        subscribeToEvents()
+        receiveEvents(receive: true)
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        subscribeToEvents()
-    }
-    
-    private func subscribeToEvents() {
-        mEventSubscriber = mEventManager?.subscribe(callback: { event in
-            self.onReceiveEvents(event: event)
-        })
-    }
-    
-    private func unsubscribeFromEvents() {
-        mEventManager?.unsubscribe(eventSubscriber: mEventSubscriber)
     }
     
     private func loadDataBusy(busy: Bool) {
@@ -54,7 +42,9 @@ class StationInfoViewControllerModel : BaseViewControllerModel {
         mEventManager?.send(event: event)
     }
     
-    private func onReceiveEvents(event: Event) {
+    override func onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event: event)
+        
         if (StationInfoEventType.LOAD_DATA_REQUEST == event.type) {
             // Show loader.
             loadDataBusy(busy: true)
@@ -95,7 +85,7 @@ class StationInfoViewControllerModel : BaseViewControllerModel {
     }
     
     override func viewWillDisappear() {
-        unsubscribeFromEvents()
+        receiveEvents(receive: false)
         super.viewWillDisappear()
     }
 }

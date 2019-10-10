@@ -13,7 +13,6 @@ class StationListViewControllerModel : BaseViewControllerModel {
     private var mEventManager: IEventManager? = nil
     private var mServiceManager: IServiceManager? = nil
     private var mDatabaseManager: IDatabaseManager? = nil
-    private var mEventSubscriber: IEventSubscriber? = nil
     private var mLocation: Location? = nil
     
     override func viewDidLoad() {
@@ -22,21 +21,12 @@ class StationListViewControllerModel : BaseViewControllerModel {
         mServiceManager = getAddOn(type: AddOnType().SERVICE_MANAGER) as? IServiceManager
         mDatabaseManager = getAddOn(type: AddOnType().DATABASE_MANAGER) as? IDatabaseManager
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
+        
+        receiveEvents(receive: true)
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        subscribeToEvents()
-    }
-    
-    private func subscribeToEvents() {
-        mEventSubscriber = mEventManager?.subscribe(callback: { event in
-            self.onReceiveEvents(event: event)
-        })
-    }
-    
-    private func unsubscribeFromEvents() {
-        mEventManager?.unsubscribe(eventSubscriber: mEventSubscriber)
     }
     
     private func loadDataBusy(busy: Bool) {
@@ -54,7 +44,9 @@ class StationListViewControllerModel : BaseViewControllerModel {
         mEventManager?.send(event: event)
     }
     
-    private func onReceiveEvents(event: Event) {
+    override func onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event: event)
+        
         if (StationListEventType.LOAD_DATA_REQUEST == event.type) {
             // Show loader.
             loadDataBusy(busy: true)
@@ -94,7 +86,7 @@ class StationListViewControllerModel : BaseViewControllerModel {
     }
     
     override func viewWillDisappear() {
-        unsubscribeFromEvents()
+        receiveEvents(receive: false)
         super.viewWillDisappear()
     }
 }
