@@ -25,8 +25,6 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
 
     private var mData: Any? = null
     private var mActivityModel: BaseActivityModel? = null
-
-    private lateinit var mEventManager: IEventManager
     private var mEventSubscriber: IEventSubscriber? = null
 
     private var isViewReady: Boolean = false
@@ -38,8 +36,6 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
         addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, AddOnManager.getAddOn(AddOnTypeNative.ACTIVITY_MANAGER)!!)
         addAddOn(AddOnType.LOCATION_MANAGER, AddOnManager.getAddOn(AddOnType.LOCATION_MANAGER)!!)
-
-        mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
 
         // Load data.
         val dataID: String? = intent.getStringExtra(KEY_DATA_ID)
@@ -105,13 +101,15 @@ open class BaseActivity : AppCompatActivity(), IAddOn {
     }
 
     fun receiveEvents(receive: Boolean) {
+        val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
+
         if (receive) {
-            mEventSubscriber = mEventManager.subscribe(callback = { event: Event ->
+            mEventSubscriber = eventManager?.subscribe(callback = { event: Event ->
                 onReceiveEvents(event)
             })
         } else {
             if (mEventSubscriber != null) {
-                mEventManager.unsubscribe(mEventSubscriber)
+                eventManager?.unsubscribe(mEventSubscriber)
             }
             mEventSubscriber = null
         }

@@ -18,7 +18,6 @@ open class BaseActivityModel : ViewModel(), IAddOn {
 
     private var mActivity: BaseActivity? = null
 
-    private lateinit var mEventManager: IEventManager
     private var mEventSubscriber: IEventSubscriber? = null
 
     fun getActivity() : BaseActivity? {
@@ -34,8 +33,6 @@ open class BaseActivityModel : ViewModel(), IAddOn {
         addAddOn(AddOnType.SERVICE_MANAGER, AddOnManager.getAddOn(AddOnType.SERVICE_MANAGER)!!)
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
         addAddOn(AddOnType.DATABASE_MANAGER, AddOnManager.getAddOn(AddOnType.DATABASE_MANAGER)!!)
-
-        mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
     }
 
     open fun onStartActivity() {
@@ -51,13 +48,15 @@ open class BaseActivityModel : ViewModel(), IAddOn {
     }
 
     fun receiveEvents(receive: Boolean) {
+        val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
+
         if (receive) {
-            mEventSubscriber = mEventManager.subscribe(callback = { event: Event ->
+            mEventSubscriber = eventManager?.subscribe(callback = { event: Event ->
                 onReceiveEvents(event)
             })
         } else {
             if (mEventSubscriber != null) {
-                mEventManager.unsubscribe(mEventSubscriber)
+                eventManager?.unsubscribe(mEventSubscriber)
             }
             mEventSubscriber = null
         }
