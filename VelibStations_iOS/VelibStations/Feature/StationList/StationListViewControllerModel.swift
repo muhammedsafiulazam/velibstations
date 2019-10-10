@@ -62,14 +62,14 @@ class StationListViewControllerModel : BaseViewControllerModel {
             mLocation = event.data as? Location
             
             // Call service.
-            mServiceManager?.getVelibService().getData(latitude: mLocation!.latitude, longitude: mLocation!.longitude, radius: ConstantUtils().DEFAULT_RADIUS, index: ConstantUtils().DEFAULT_INDEX, count: ConstantUtils().DEFAULT_COUNT)
+            mServiceManager?.getVelibService().getData(latitude: mLocation!.latitude, longitude: mLocation!.longitude, radius: Constants().DEFAULT_RADIUS, index: Constants().DEFAULT_INDEX, count: Constants().DEFAULT_COUNT)
         } else if (VelibServiceEventType().GET_DATA == event.type) {
             if (event.error != nil) {
                 // Show loader.
                 loadDataBusy(busy: true)
                 
                 // Call database.
-                mDatabaseManager?.getVelibDatabase().getData(latitude: mLocation!.latitude, longitude: mLocation!.longitude, radius: ConstantUtils().DEFAULT_RADIUS)
+                mDatabaseManager?.getVelibDatabase().getData(latitude: mLocation!.latitude, longitude: mLocation!.longitude, radius: Constants().DEFAULT_RADIUS)
             } else {
                 // Hide loader.
                 loadDataBusy(busy: false)

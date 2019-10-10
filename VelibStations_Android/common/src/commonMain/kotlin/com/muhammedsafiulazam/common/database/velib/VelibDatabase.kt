@@ -9,7 +9,7 @@ import com.muhammedsafiulazam.common.service.velib.model.Dataset
 import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Parameters
 import com.muhammedsafiulazam.common.service.velib.model.Record
-import com.muhammedsafiulazam.common.utils.CouroutineUtils
+import com.muhammedsafiulazam.common.utils.CoroutineUtils
 import com.squareup.sqldelight.Query
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 
 class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
     override fun getData(latitude: Double, longitude: Double, radius: Double)  {
-        GlobalScope.launch(CouroutineUtils.DISPATCHER) {
+        GlobalScope.launch(CoroutineUtils.DISPATCHER_IO) {
 
             var records: ArrayList<Record> = arrayListOf()
 
@@ -38,7 +38,7 @@ class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
     }
 
     override fun addData(dataset: Dataset?) {
-        GlobalScope.launch(CouroutineUtils.DISPATCHER) {
+        GlobalScope.launch(CoroutineUtils.DISPATCHER_IO) {
             dataset?.records?.forEach { record ->
                 addRecord(record)
             }
@@ -50,7 +50,7 @@ class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
     }
 
     override fun cleanData() {
-        GlobalScope.launch(CouroutineUtils.DISPATCHER) {
+        GlobalScope.launch(CoroutineUtils.DISPATCHER_IO) {
             db.recordTableQueries.deleteAll()
             db.fieldsTableQueries.deleteAll()
 

@@ -133,15 +133,17 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
     }
     
     private func updateView(properties: NSArray?) {
-        mProperties.removeAllObjects()
-        if (properties != nil) {
-            mProperties.addObjects(from: properties as! [Any])
-        }
-        
-        mTableView.reloadData()
-        
-        updateMessage(message: nil)
-        updateLoader(show: false)
+        CoroutineUtils().execute(dispatcher: CoroutineUtils().DISPATCHER_MAIN, block: {
+            self.mProperties.removeAllObjects()
+            if (properties != nil) {
+                self.mProperties.addObjects(from: properties as! [Any])
+            }
+            
+            self.mTableView.reloadData()
+            
+            self.updateMessage(message: nil)
+            self.updateLoader(show: false)
+        })
     }
     
     private func onClickRetry() {

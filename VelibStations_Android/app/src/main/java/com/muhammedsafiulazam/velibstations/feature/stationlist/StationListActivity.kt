@@ -27,6 +27,7 @@ import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.velib.model.Dataset
 import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Record
+import com.muhammedsafiulazam.common.utils.CoroutineUtils
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.activity.BaseActivity
 import com.muhammedsafiulazam.velibstations.activity.IActivityManager
@@ -191,9 +192,8 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     }
 
     private fun updateView(dataset: Dataset?) {
-        GlobalScope.launch(Dispatchers.Main) {
+        CoroutineUtils.execute(CoroutineUtils.DISPATCHER_MAIN, block = {
             mMap?.clear()
-
             dataset?.records?.forEach { record ->
                 val fields: Fields = record.fields!!
                 val name: String = fields.name!!
@@ -210,7 +210,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
             updateMessage(null)
             updateLoader(false)
-        }
+        })
     }
 
     private fun onClickRetry() {

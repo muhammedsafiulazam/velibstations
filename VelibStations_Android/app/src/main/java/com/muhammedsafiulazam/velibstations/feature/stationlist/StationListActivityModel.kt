@@ -12,7 +12,6 @@ import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.IServiceManager
 import com.muhammedsafiulazam.common.service.velib.event.VelibServiceEventType
-import com.muhammedsafiulazam.common.utils.ConstantUtils
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.activity.BaseActivityModel
 import com.muhammedsafiulazam.velibstations.feature.stationlist.event.StationListEventType
