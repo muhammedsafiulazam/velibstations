@@ -154,7 +154,7 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
     }
     
     private func updateView(dataset: Dataset?) {
-        DispatchQueue.main.async {
+        CoroutineUtils().execute(dispatcher: CoroutineUtils().DISPATCHER_MAIN, block: {
             self.mMapView.clear()
             if (dataset != nil) {
                 let records = dataset!.records!
@@ -166,7 +166,7 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
             
             self.updateMessage(message: nil)
             self.updateLoader(show: false)
-        }
+        })
     }
     
     private func onClickRetry() {
