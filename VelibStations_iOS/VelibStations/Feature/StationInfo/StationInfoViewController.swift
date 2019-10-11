@@ -37,12 +37,12 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
         mTableView.dataSource = self
         
         MapUtils.initializeStaticMap(map: mMapView)
-        addMarker(record: mRecord!)
-        zoomOnRecord(record: mRecord!)
         
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         
         receiveEvents(receive: true)
+        
+        self.navigationController?.title = "Hi"
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -124,6 +124,10 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
     
     private func updateView(properties: NSArray?) {
         CoroutineUtils().execute(dispatcher: CoroutineUtils().DISPATCHER_MAIN, block: {
+            
+            self.addMarker(record: self.mRecord!)
+            self.zoomOnRecord(record: self.mRecord!)
+            
             self.mProperties.removeAllObjects()
             if (properties != nil) {
                 self.mProperties.addObjects(from: properties as! [Any])
