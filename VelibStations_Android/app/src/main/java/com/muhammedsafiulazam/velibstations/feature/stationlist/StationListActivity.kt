@@ -212,7 +212,7 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
 
     private fun onClickInfoWindow(marker: Marker) {
         val record: Record = marker.tag as Record
-        mViewManager.loadView(StationInfoActivity::class.java.canonicalName, null, null, record)
+        mViewManager.loadView(StationInfoActivity::class.java.canonicalName, record)
     }
 
     private fun onChangeCameraLocation(location: Location) {

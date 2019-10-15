@@ -22,7 +22,7 @@ class LaunchActivity : BaseView() {
 
         // Entry activity.
         val viewManager: IViewManager = getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager
-        viewManager.loadView(StationListActivity::class.java.canonicalName, null, null, null)
+        viewManager.loadView(StationListActivity::class.java.canonicalName, null)
     }
 
     override fun onDestroy() {
