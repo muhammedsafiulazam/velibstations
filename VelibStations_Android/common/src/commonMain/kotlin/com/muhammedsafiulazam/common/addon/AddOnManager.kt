@@ -4,6 +4,7 @@ import com.muhammedsafiulazam.common.database.DatabaseManager
 import com.muhammedsafiulazam.common.event.EventManager
 import com.muhammedsafiulazam.common.location.LocationManager
 import com.muhammedsafiulazam.common.service.ServiceManager
+import com.muhammedsafiulazam.common.view.ViewManager
 import kotlin.native.concurrent.SharedImmutable
 import kotlin.native.concurrent.ThreadLocal
 
@@ -46,6 +47,7 @@ object AddOnManager : IAddOnManager {
     }
 
     private fun addAddOns(addOn: IAddOn) {
+        var viewManager = ViewManager()
         val eventManager = EventManager()
         val serviceManager = ServiceManager()
         val databaseManager = DatabaseManager()
@@ -56,6 +58,7 @@ object AddOnManager : IAddOnManager {
         databaseManager.addAddOn(AddOnType.EVENT_MANAGER, eventManager)
         locationManager.addAddOn(AddOnType.EVENT_MANAGER, eventManager)
 
+        addOn.addAddOn(AddOnType.VIEW_MANAGEER, viewManager)
         addOn.addAddOn(AddOnType.EVENT_MANAGER, eventManager)
         addOn.addAddOn(AddOnType.SERVICE_MANAGER, serviceManager)
         addOn.addAddOn(AddOnType.DATABASE_MANAGER, databaseManager)

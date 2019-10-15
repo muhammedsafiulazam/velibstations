@@ -9,6 +9,7 @@ object AddOnType {
     private const val TAG = "ADD_ON_TYPE_"
 
     // Types.
+    const val VIEW_MANAGEER: String = TAG + "VIEW_MANAGEER"
     const val SERVICE_MANAGER: String = TAG + "SERVICE_MANAGER"
     const val EVENT_MANAGER: String = TAG + "EVENT_MANAGER"
     const val DATABASE_MANAGER: String = TAG + "DATABASE_MANAGER"

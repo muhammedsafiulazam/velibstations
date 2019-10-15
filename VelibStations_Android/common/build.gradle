@@ -1,12 +1,22 @@
-
 plugins {
     id("kotlin-multiplatform")
     id("kotlinx-serialization")
     id("com.squareup.sqldelight")
+    id("com.android.library")
+}
+
+android {
+    compileSdkVersion 28
+    // Access Android libraries in androidMain.
+    // Add an AndroidManifest.xml according as well.
+    sourceSets {
+        main {
+            manifest.srcFile 'src/androidMain/AndroidManifest.xml'
+        }
+    }
 }
 
 kotlin {
-
     targets {
         final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") \
                               ? presets.iosArm64 : presets.iosX64
@@ -17,7 +27,7 @@ kotlin {
             }
         }
 
-        fromPreset(presets.jvm, 'android')
+        fromPreset(presets.android, 'android')
     }
 
     sourceSets["commonMain"].dependencies {
@@ -41,8 +51,9 @@ kotlin {
 
         implementation ("com.squareup.sqldelight:android-driver:$sqldelight_version")
 
-        // Only used by platform.
-        implementation ("com.google.android.gms:play-services-location:17.0.0")
+        // Platform specific libraries.
+        implementation 'com.android.support:appcompat-v7:28.0.0'
+        implementation 'com.google.android.gms:play-services-location:17.0.0'
     }
 
     sourceSets["iosMain"].dependencies {
