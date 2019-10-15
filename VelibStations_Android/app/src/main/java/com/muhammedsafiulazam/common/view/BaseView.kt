@@ -12,6 +12,7 @@ import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.location.LocationManager
+import com.muhammedsafiulazam.common.utils.ViewUtils.KEY_DATA_IDENTIFIER
 import kotlin.reflect.KClass
 
 /**
@@ -19,10 +20,6 @@ import kotlin.reflect.KClass
  */
 
 open class BaseView : AppCompatActivity(), IBaseView {
-    companion object {
-        const val KEY_DATA_IDENTIFIER: String = "KEY_DATA_IDENTIFIER"
-    }
-
     private var mData: Any? = null
     private var mViewModel: IBaseViewModel? = null
     private var mEventSubscriber: IEventSubscriber? = null
@@ -37,6 +34,10 @@ open class BaseView : AppCompatActivity(), IBaseView {
 
     override fun getData() : Any? {
         return mData
+    }
+
+    override fun setData(data: Any?) {
+        mData = data
     }
 
     override fun getViewModel() : IBaseViewModel? {

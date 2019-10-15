@@ -1,6 +1,7 @@
 package com.muhammedsafiulazam.common.view
 
 import com.muhammedsafiulazam.common.addon.AddOn
+import com.muhammedsafiulazam.common.utils.ViewUtils
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.
@@ -9,7 +10,6 @@ import com.muhammedsafiulazam.common.addon.AddOn
 class ViewManager : AddOn(), IViewManager {
     private var mCurrentView: IBaseView? = null
     private var mData: MutableMap<String, Any> = mutableMapOf()
-    private var loadViewMechanism: ((view: String?, story: String?, info: Any?, data: Any?) -> Unit)? = null
 
     // Index.
     private var mIndex: Int = 0
@@ -27,15 +27,7 @@ class ViewManager : AddOn(), IViewManager {
     }
 
     override fun loadView(view: String?, story: String?, info: Any?, data: Any?) {
-        if (loadViewMechanism == null) {
-            error("ViewManager needs load view mechanism.")
-        } else {
-            loadViewMechanism?.let { it(view, story, info, data) }
-        }
-    }
-
-    override fun loadViewMechanism(mechanism: ((view: String?, story: String?, info: Any?, data: Any?) -> Unit)?) {
-        loadViewMechanism = mechanism
+        ViewUtils.loadView(view, story, info, data)
     }
 
     override fun pop(identifier: String?) : Any? {

@@ -12,7 +12,6 @@ interface IViewManager : IAddOn {
 
     fun loadView(view: String?, data: Any?)
     fun loadView(view: String?, story: String?, info: Any?, data: Any?)
-    fun loadViewMechanism(mechanism: ((view: String?, story: String?, info: Any?, data: Any?) -> Unit)?)
 
     // Temporary data management.
     fun pop(identifier: String?) : Any?

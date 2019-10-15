@@ -20,18 +20,6 @@ class MainApplication : Application() {
 
         // Database driver.
         DatabaseUtils.VELIB_DB_DRIVER = AndroidSqliteDriver(DatabaseUtils.VELIB_DB_SCHEMA, this, DatabaseUtils.VELIB_DB_FILENAME)
-
-        // Load view mechanism.
-        val viewManager: IViewManager = AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager
-        viewManager.loadViewMechanism { view: String?, story: String?, info: Any?, data: Any? ->
-            val activity: Activity = viewManager.getCurrentView()!! as Activity
-            val intent = Intent(activity, Class.forName(view))
-            if (data != null) {
-                val identifier = viewManager.push(data)
-                intent.putExtra(BaseView.KEY_DATA_IDENTIFIER, identifier)
-            }
-            activity?.startActivity(intent)
-        }
     }
 
     override fun onTerminate() {
