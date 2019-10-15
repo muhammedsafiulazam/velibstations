@@ -31,11 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let viewManager: IViewManager = AddOnManager().getAddOn(type: AddOnType().VIEW_MANAGEER) as! IViewManager
         viewManager.loadViewMechanism(mechanism: { view, story, info, data in
-            let currentViewController: UIViewController? = viewManager.getCurrentView() as? UIViewController
             let viewController = UIStoryboard(name: story!, bundle: nil).instantiateViewController(withIdentifier: view!) as? BaseView
             viewController?.setData(data: data)
             if (viewController != nil) {
-                
+                let currentViewController: UIViewController? = viewManager.getCurrentView() as? UIViewController
                 if (currentViewController != nil && info != nil && !(info as! Bool)) {
                     currentViewController?.present(viewController!, animated: true, completion: nil)
                 } else {
