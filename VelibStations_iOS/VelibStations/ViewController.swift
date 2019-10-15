@@ -9,17 +9,13 @@
 import UIKit
 import CommonKit
 
-class ViewController: BaseViewController {
+class ViewController: BaseView {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func onViewStart() {
+        super.onViewStart()
         
-        let viewControllerManager: IViewControllerManager? = getAddOn(type: AddOnTypeNative.VIEW_CONTROLLER_MANAGER) as? IViewControllerManager
-        viewControllerManager?.loadViewController(storyboard: ViewControllerID.STORYBOARD_STATION_LIST, identifier: ViewControllerID.VIEW_CONTROLLER_DEFAULT, root: true)
+        let viewManager: IViewManager? = getAddOn(type: AddOnType().VIEW_MANAGEER) as? IViewManager
+        viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_LIST, info: true, data: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

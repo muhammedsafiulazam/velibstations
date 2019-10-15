@@ -3,7 +3,7 @@ package com.muhammedsafiulazam.velibstations
 import android.app.Activity
 import android.app.Application
 import android.content.Intent
-import com.muhammedsafiulazam.common.BaseView
+import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.utils.DatabaseUtils
@@ -23,7 +23,7 @@ class MainApplication : Application() {
 
         // Load view mechanism.
         val viewManager: IViewManager = AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager
-        viewManager.loadViewMechanism { view: String?, info: Any?, data: Any? ->
+        viewManager.loadViewMechanism { view: String?, story: String?, info: Any?, data: Any? ->
             val activity: Activity = viewManager.getCurrentView()!! as Activity
             val intent = Intent(activity, Class.forName(view))
             if (data != null) {

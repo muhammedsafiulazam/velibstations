@@ -9,7 +9,7 @@ import com.muhammedsafiulazam.common.addon.AddOn
 class ViewManager : AddOn(), IViewManager {
     private var mCurrentView: IBaseView? = null
     private var mData: MutableMap<String, Any> = mutableMapOf()
-    private var loadViewMechanism: ((view: String?, info: Any?, data: Any?) -> Unit)? = null
+    private var loadViewMechanism: ((view: String?, story: String?, info: Any?, data: Any?) -> Unit)? = null
 
     // Index.
     private var mIndex: Int = 0
@@ -22,15 +22,19 @@ class ViewManager : AddOn(), IViewManager {
         mCurrentView = view
     }
 
-    override fun loadView(view: String?, info: Any?, data: Any?) {
+    override fun loadView(view: String?, data: Any?) {
+        loadView(view, null, null, data)
+    }
+
+    override fun loadView(view: String?, story: String?, info: Any?, data: Any?) {
         if (loadViewMechanism == null) {
             error("ViewManager needs load view mechanism.")
         } else {
-            loadViewMechanism?.let { it(view, info, data) }
+            loadViewMechanism?.let { it(view, story, info, data) }
         }
     }
 
-    override fun loadViewMechanism(mechanism: ((view: String?, info: Any?, data: Any?) -> Unit)?) {
+    override fun loadViewMechanism(mechanism: ((view: String?, story: String?, info: Any?, data: Any?) -> Unit)?) {
         loadViewMechanism = mechanism
     }
 

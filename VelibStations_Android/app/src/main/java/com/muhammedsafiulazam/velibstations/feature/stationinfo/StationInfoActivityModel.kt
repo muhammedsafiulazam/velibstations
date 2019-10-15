@@ -1,12 +1,8 @@
 package com.muhammedsafiulazam.velibstations.feature.stationinfo
 
-import android.app.Activity
-import android.content.Context
 import android.text.TextUtils
-import androidx.appcompat.app.AppCompatActivity
-import com.muhammedsafiulazam.common.BaseView
-import com.muhammedsafiulazam.common.BaseViewModel
-import com.muhammedsafiulazam.common.addon.AddOnManager
+import com.muhammedsafiulazam.common.view.BaseView
+import com.muhammedsafiulazam.common.view.BaseViewModel
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager

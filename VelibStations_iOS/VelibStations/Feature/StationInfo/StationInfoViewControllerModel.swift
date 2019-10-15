@@ -8,24 +8,21 @@
 import Foundation
 import CommonKit
 
-class StationInfoViewControllerModel : BaseViewControllerModel {
+class StationInfoViewControllerModel : BaseViewModel {
     
     private var mEventManager: IEventManager? = nil
     
     private var mRecord: Record? = nil
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func onViewLoad() {
+        super.onViewLoad()
         
-        mRecord = getViewController()?.getData() as? Record
+        mRecord = getView()?.getData() as? Record
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         
         receiveEvents(receive: true)
     }
     
-    override func viewDidAppear() {
-        super.viewDidAppear()
-    }
     
     private func loadDataBusy(busy: Bool) {
         let event = Event(type: StationInfoEventType.LOAD_DATA_BUSY, data: busy, error: nil)
@@ -84,8 +81,8 @@ class StationInfoViewControllerModel : BaseViewControllerModel {
         loadDataResponse(response: properties)
     }
     
-    override func viewWillDisappear() {
+    override func onViewUnload() {
         receiveEvents(receive: false)
-        super.viewWillDisappear()
+        super.onViewUnload()
     }
 }

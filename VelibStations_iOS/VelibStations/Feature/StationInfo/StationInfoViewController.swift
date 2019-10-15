@@ -10,7 +10,7 @@ import GoogleMaps
 import CommonKit
 import MaterialComponents.MaterialSnackbar
 
-class StationInfoViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var mMapView: GMSMapView!
     @IBOutlet weak var mTableView: UITableView!
@@ -23,9 +23,10 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
     private var mRecord: Record? = nil
     private var mProperties: NSMutableArray = NSMutableArray()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setViewControllerModel(viewControllerModel: StationInfoViewControllerModel.self)
+    override func onViewLoad() {
+        super.onViewLoad()
+        
+        setViewModel(viewModel: NSStringFromClass(StationInfoViewControllerModel.self))
         
         updateMessage(message: nil)
         updateLoader(show: false)
@@ -45,8 +46,8 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
         self.navigationController?.title = "Hi"
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func onViewStart() {
+        super.onViewStart()
         loadDataRequest()
     }
     
@@ -155,8 +156,8 @@ class StationInfoViewController : BaseViewController, UITableViewDelegate, UITab
         return cell
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func onViewUnload() {
         receiveEvents(receive: false)
-        super.viewWillDisappear(animated)
+        super.onViewUnload()
     }
 }

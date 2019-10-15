@@ -8,25 +8,22 @@
 import Foundation
 import CommonKit
 
-class StationListViewControllerModel : BaseViewControllerModel {
-    
+class StationListViewControllerModel : BaseViewModel {
+
+    private var mLocation: Location? = nil
     private var mEventManager: IEventManager? = nil
     private var mServiceManager: IServiceManager? = nil
     private var mDatabaseManager: IDatabaseManager? = nil
-    private var mLocation: Location? = nil
+
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func onViewLoad() {
+        super.onViewLoad()
         
         mServiceManager = getAddOn(type: AddOnType().SERVICE_MANAGER) as? IServiceManager
         mDatabaseManager = getAddOn(type: AddOnType().DATABASE_MANAGER) as? IDatabaseManager
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         
         receiveEvents(receive: true)
-    }
-    
-    override func viewDidAppear() {
-        super.viewDidAppear()
     }
     
     private func loadDataBusy(busy: Bool) {
@@ -85,8 +82,8 @@ class StationListViewControllerModel : BaseViewControllerModel {
         }
     }
     
-    override func viewWillDisappear() {
+    override func onViewUnload() {
         receiveEvents(receive: false)
-        super.viewWillDisappear()
+        super.onViewUnload()
     }
 }

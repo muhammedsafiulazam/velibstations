@@ -10,8 +10,9 @@ interface IViewManager : IAddOn {
     fun getCurrentView() : IBaseView?
     fun onChangeView(view: IBaseView?)
 
-    fun loadView(view: String?, info: Any?, data: Any?)
-    fun loadViewMechanism(mechanism: ((view: String?, info: Any?, data: Any?) -> Unit)?)
+    fun loadView(view: String?, data: Any?)
+    fun loadView(view: String?, story: String?, info: Any?, data: Any?)
+    fun loadViewMechanism(mechanism: ((view: String?, story: String?, info: Any?, data: Any?) -> Unit)?)
 
     // Temporary data management.
     fun pop(identifier: String?) : Any?

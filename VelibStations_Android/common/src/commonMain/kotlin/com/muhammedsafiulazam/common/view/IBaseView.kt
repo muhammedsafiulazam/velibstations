@@ -6,7 +6,7 @@ import kotlin.reflect.KClass
 interface IBaseView : IAddOn {
     fun getData() : Any?
     fun getViewModel() : IBaseViewModel?
-    fun setViewModel(viewModel: KClass<IBaseViewModel>)
+    fun setViewModel(viewModel: String)
 
     fun onViewLoad()
     fun onViewStart()

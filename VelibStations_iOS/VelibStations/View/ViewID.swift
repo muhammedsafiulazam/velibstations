@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ViewControllerID {
+class ViewID {
     // Storyboards.
     static let STORYBOARD_DEFAULT: String = "Main"
     static let STORYBOARD_STATION_LIST: String = "StationList"

@@ -14,13 +14,10 @@
 		02B1E4F6234DE65700CC3050 /* PropertyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1E4F5234DE65700CC3050 /* PropertyTableCell.swift */; };
 		02B1E4F9234DECF300CC3050 /* StationInfoEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1E4F8234DECF300CC3050 /* StationInfoEventType.swift */; };
 		02B1E4FB234DEE3F00CC3050 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1E4FA234DEE3F00CC3050 /* Property.swift */; };
+		02B32D1D2355F76E00BEC137 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B32D1C2355F76E00BEC137 /* BaseView.swift */; };
+		02B32D1F2355FC6800BEC137 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B32D1E2355FC6800BEC137 /* BaseViewModel.swift */; };
 		02B63EA5234F319200E145DA /* google_map_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 02B63EA4234F319200E145DA /* google_map_style.json */; };
-		02B8BA88234352E90087D8CF /* AddOnTypeNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA87234352E90087D8CF /* AddOnTypeNative.swift */; };
-		02B8BA8A2343543E0087D8CF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA892343543E0087D8CF /* BaseViewController.swift */; };
-		02B8BA8C2343562D0087D8CF /* BaseViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA8B2343562D0087D8CF /* BaseViewControllerModel.swift */; };
-		02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA8D23437F520087D8CF /* IViewControllerManager.swift */; };
-		02B8BA90234380410087D8CF /* ViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA8F234380410087D8CF /* ViewControllerManager.swift */; };
-		02B8BA96234399300087D8CF /* ViewControllerID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA95234399300087D8CF /* ViewControllerID.swift */; };
+		02B8BA96234399300087D8CF /* ViewID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA95234399300087D8CF /* ViewID.swift */; };
 		02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523B82302EF3600EB1080 /* AppDelegate.swift */; };
 		02D523BB2302EF3600EB1080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523BA2302EF3600EB1080 /* ViewController.swift */; };
 		02D523BE2302EF3600EB1080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D523BC2302EF3600EB1080 /* Main.storyboard */; };
@@ -33,7 +30,6 @@
 		02D9B183234B78400065339C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D9B182234B78400065339C /* Keys.plist */; };
 		02D9B186234B93680065339C /* StationListEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9B185234B93680065339C /* StationListEventType.swift */; };
 		02D9B189234B94550065339C /* MapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9B188234B94550065339C /* MapUtils.swift */; };
-		02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D2D2344D65100A105FB /* ViewControllerModel.swift */; };
 		02E76D352344DBAD00A105FB /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D342344DBAD00A105FB /* StationListViewController.swift */; };
 		02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */; };
 		02E76D392344DCCB00A105FB /* StationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D382344DCCB00A105FB /* StationInfoViewController.swift */; };
@@ -81,13 +77,10 @@
 		02B1E4F5234DE65700CC3050 /* PropertyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyTableCell.swift; sourceTree = "<group>"; };
 		02B1E4F8234DECF300CC3050 /* StationInfoEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfoEventType.swift; sourceTree = "<group>"; };
 		02B1E4FA234DEE3F00CC3050 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		02B32D1C2355F76E00BEC137 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		02B32D1E2355FC6800BEC137 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		02B63EA4234F319200E145DA /* google_map_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = google_map_style.json; sourceTree = "<group>"; };
-		02B8BA87234352E90087D8CF /* AddOnTypeNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOnTypeNative.swift; sourceTree = "<group>"; };
-		02B8BA892343543E0087D8CF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		02B8BA8B2343562D0087D8CF /* BaseViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerModel.swift; sourceTree = "<group>"; };
-		02B8BA8D23437F520087D8CF /* IViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewControllerManager.swift; sourceTree = "<group>"; };
-		02B8BA8F234380410087D8CF /* ViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerManager.swift; sourceTree = "<group>"; };
-		02B8BA95234399300087D8CF /* ViewControllerID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerID.swift; sourceTree = "<group>"; };
+		02B8BA95234399300087D8CF /* ViewID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewID.swift; sourceTree = "<group>"; };
 		02D523B52302EF3600EB1080 /* VelibStations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelibStations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D523B82302EF3600EB1080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D523BA2302EF3600EB1080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +99,6 @@
 		02D9B182234B78400065339C /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		02D9B185234B93680065339C /* StationListEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListEventType.swift; sourceTree = "<group>"; };
 		02D9B188234B94550065339C /* MapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
-		02E76D2D2344D65100A105FB /* ViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModel.swift; sourceTree = "<group>"; };
 		02E76D342344DBAD00A105FB /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
 		02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewControllerModel.swift; sourceTree = "<group>"; };
 		02E76D382344DCCB00A105FB /* StationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfoViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +177,23 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
+		02B32D1A2355F73800BEC137 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				02B32D1B2355F73F00BEC137 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		02B32D1B2355F73F00BEC137 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02B32D1C2355F76E00BEC137 /* BaseView.swift */,
+				02B32D1E2355FC6800BEC137 /* BaseViewModel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		02B63EA1234F304300E145DA /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,29 +202,18 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
-		02B8BA85234352470087D8CF /* AddOn */ = {
+		02B8BA86234352620087D8CF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				02B8BA87234352E90087D8CF /* AddOnTypeNative.swift */,
+				02B8BA95234399300087D8CF /* ViewID.swift */,
 			);
-			path = AddOn;
-			sourceTree = "<group>";
-		};
-		02B8BA86234352620087D8CF /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				02B8BA892343543E0087D8CF /* BaseViewController.swift */,
-				02B8BA8B2343562D0087D8CF /* BaseViewControllerModel.swift */,
-				02B8BA8D23437F520087D8CF /* IViewControllerManager.swift */,
-				02B8BA95234399300087D8CF /* ViewControllerID.swift */,
-				02B8BA8F234380410087D8CF /* ViewControllerManager.swift */,
-			);
-			path = ViewController;
+			path = View;
 			sourceTree = "<group>";
 		};
 		02D523AC2302EF3600EB1080 = {
 			isa = PBXGroup;
 			children = (
+				02B32D1A2355F73800BEC137 /* Common */,
 				02A1D6152316BB79004E5C52 /* CommonKit.framework */,
 				02D523B72302EF3600EB1080 /* VelibStations */,
 				02D523CC2302EF3800EB1080 /* VelibStationsTests */,
@@ -244,8 +242,7 @@
 				02B1E4EE234DDEBE00CC3050 /* Strings */,
 				02D9B187234B94470065339C /* Utils */,
 				02E76D312344DB8000A105FB /* Feature */,
-				02B8BA86234352620087D8CF /* ViewController */,
-				02B8BA85234352470087D8CF /* AddOn */,
+				02B8BA86234352620087D8CF /* View */,
 				02D523B82302EF3600EB1080 /* AppDelegate.swift */,
 				02D9B17E234B6CBF0065339C /* StationList.storyboard */,
 				02D523BA2302EF3600EB1080 /* ViewController.swift */,
@@ -253,7 +250,6 @@
 				02D523BF2302EF3800EB1080 /* Assets.xcassets */,
 				02D523C12302EF3800EB1080 /* LaunchScreen.storyboard */,
 				02D523C42302EF3800EB1080 /* Info.plist */,
-				02E76D2D2344D65100A105FB /* ViewControllerModel.swift */,
 				02D9B180234B729C0065339C /* StationInfo.storyboard */,
 				02D9B182234B78400065339C /* Keys.plist */,
 			);
@@ -637,22 +633,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B8BA8C2343562D0087D8CF /* BaseViewControllerModel.swift in Sources */,
 				02D523BB2302EF3600EB1080 /* ViewController.swift in Sources */,
 				02B1E4FB234DEE3F00CC3050 /* Property.swift in Sources */,
-				02B8BA8A2343543E0087D8CF /* BaseViewController.swift in Sources */,
 				02B1E4F6234DE65700CC3050 /* PropertyTableCell.swift in Sources */,
 				02D9B189234B94550065339C /* MapUtils.swift in Sources */,
 				02B1E4F9234DECF300CC3050 /* StationInfoEventType.swift in Sources */,
-				02B8BA88234352E90087D8CF /* AddOnTypeNative.swift in Sources */,
-				02B8BA90234380410087D8CF /* ViewControllerManager.swift in Sources */,
+				02B32D1D2355F76E00BEC137 /* BaseView.swift in Sources */,
 				02E76D392344DCCB00A105FB /* StationInfoViewController.swift in Sources */,
-				02B8BA96234399300087D8CF /* ViewControllerID.swift in Sources */,
-				02E76D2E2344D65100A105FB /* ViewControllerModel.swift in Sources */,
+				02B8BA96234399300087D8CF /* ViewID.swift in Sources */,
 				02E76D352344DBAD00A105FB /* StationListViewController.swift in Sources */,
 				02D9B186234B93680065339C /* StationListEventType.swift in Sources */,
-				02B8BA8E23437F520087D8CF /* IViewControllerManager.swift in Sources */,
 				02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */,
+				02B32D1F2355FC6800BEC137 /* BaseViewModel.swift in Sources */,
 				02E76D3B2344DCD800A105FB /* StationInfoViewControllerModel.swift in Sources */,
 				02B1E4F4234DE19D00CC3050 /* String.swift in Sources */,
 				02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */,

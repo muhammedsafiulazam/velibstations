@@ -1,6 +1,6 @@
 package com.muhammedsafiulazam.velibstations.launch
 
-import com.muhammedsafiulazam.common.BaseView
+import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.view.IViewManager
 import com.muhammedsafiulazam.velibstations.R
@@ -22,7 +22,7 @@ class LaunchActivity : BaseView() {
 
         // Entry activity.
         val viewManager: IViewManager = getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager
-        viewManager.loadView(StationListActivity::class.java.canonicalName, null, null)
+        viewManager.loadView(StationListActivity::class.java.canonicalName, null, null, null)
     }
 
     override fun onDestroy() {

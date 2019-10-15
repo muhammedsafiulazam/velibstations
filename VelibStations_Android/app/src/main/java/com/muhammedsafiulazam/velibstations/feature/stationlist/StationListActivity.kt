@@ -18,7 +18,7 @@ import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.snackbar.Snackbar
-import com.muhammedsafiulazam.common.BaseView
+import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
@@ -62,7 +62,7 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
         super.onViewLoad()
 
         setContentView(R.layout.activity_stationlist)
-        setViewModel(StationListActivityModel::class as KClass<IBaseViewModel>)
+        setViewModel(StationListActivityModel::class.java.canonicalName)
 
         mContent = findViewById(android.R.id.content)
 
@@ -212,7 +212,7 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
 
     private fun onClickInfoWindow(marker: Marker) {
         val record: Record = marker.tag as Record
-        mViewManager.loadView(StationInfoActivity::class.java.canonicalName, null, record)
+        mViewManager.loadView(StationInfoActivity::class.java.canonicalName, null, null, record)
     }
 
     private fun onChangeCameraLocation(location: Location) {

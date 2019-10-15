@@ -1,39 +1,57 @@
 //
-//  BaseViewController.swift
+//  BaseViewModel.swift
 //  VelibStations
 //
-//  Created by Muhammed Safiul Azam on 01/10/2019.
+//  Created by Safi on 15/10/2019.
 //
 
 import Foundation
 import UIKit
 import CommonKit
 
-class BaseViewControllerModel : IAddOn {
+class BaseViewModel : IBaseViewModel {
     
-    private var mViewController: BaseViewController? = nil
+    private var mView: IBaseView? = nil
     private var mEventSubscriber: IEventSubscriber? = nil
     
     required init() {
         
     }
     
-    func getViewController() -> BaseViewController? {
-        return mViewController
+    func getView() -> IBaseView? {
+        return mView
     }
     
-    func setViewController(viewController: BaseViewController?) {
-        mViewController = viewController
+    func setView(view: IBaseView?) {
+        mView = view
     }
     
-    func viewDidLoad() {
+    func onViewLoad() {
         // Essential addons for activity model.
         addAddOn(type: AddOnType().SERVICE_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().SERVICE_MANAGER)!)
         addAddOn(type: AddOnType().EVENT_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER)!)
         addAddOn(type: AddOnType().DATABASE_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().DATABASE_MANAGER)!)
     }
     
-    func viewDidAppear() {
+    func onViewStart() {
+        
+    }
+    
+    func onViewResume() {
+        
+    }
+    
+    func onViewPause() {
+        
+    }
+    
+    func onViewStop() {
+        
+    }
+    
+    func onViewUnload() {
+        clearAddOns()
+        receiveEvents(receive: false)
     }
     
     func receiveEvents(receive: Bool) {
@@ -52,11 +70,7 @@ class BaseViewControllerModel : IAddOn {
     }
     
     func onReceiveEvents(event: Event) {
-    }
-    
-    func viewWillDisappear() {
-        clearAddOns()
-        receiveEvents(receive: false)
+        
     }
     
     // Addons related methods.
@@ -90,3 +104,4 @@ class BaseViewControllerModel : IAddOn {
         mAddOn.clearAddOns()
     }
 }
+

@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.common
+package com.muhammedsafiulazam.common.view
 
 import androidx.lifecycle.ViewModel
 import com.muhammedsafiulazam.common.addon.AddOn
@@ -8,8 +8,6 @@ import com.muhammedsafiulazam.common.addon.IAddOn
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
-import com.muhammedsafiulazam.common.view.IBaseView
-import com.muhammedsafiulazam.common.view.IBaseViewModel
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.

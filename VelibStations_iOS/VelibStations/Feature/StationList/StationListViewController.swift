@@ -12,7 +12,7 @@ import GoogleMaps
 import GooglePlaces
 import MaterialComponents.MaterialSnackbar
 
-class StationListViewController : BaseViewController, GMSMapViewDelegate, UISearchBarDelegate, GMSAutocompleteViewControllerDelegate {
+class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDelegate, GMSAutocompleteViewControllerDelegate {
     
     private let KEY_MARKER: String = "KEY_MARKER"
     
@@ -29,9 +29,10 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
     
     private var mSnackbar: MDCSnackbarMessage? = nil
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setViewControllerModel(viewControllerModel: StationListViewControllerModel.self)
+    override func onViewLoad() {
+        super.onViewLoad()
+        
+        setViewModel(viewModel: NSStringFromClass(StationListViewControllerModel.self))
         
         updateMessage(message: nil)
         updateLoader(show: false)
@@ -48,9 +49,9 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
         
         receiveEvents(receive: true)
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    
+    override func onViewStart() {
+        super.onViewStart()
         mLocationManager?.requestUpdates()
     }
     
@@ -169,8 +170,8 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
     
     private func onClickInfoWindow(marker: GMSMarker) {
         let record: Record = marker.userData as! Record
-        let viewControllerManager: IViewControllerManager? = getAddOn(type: AddOnTypeNative.VIEW_CONTROLLER_MANAGER) as? IViewControllerManager
-        viewControllerManager?.loadViewController(storyboard: ViewControllerID.STORYBOARD_STATION_INFO, identifier: ViewControllerID.STORYBOARD_DEFAULT, root: false, data: record)
+        let viewManager: IViewManager? = getAddOn(type: AddOnType().VIEW_MANAGEER) as? IViewManager
+        viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_INFO, info: false, data: record)
     }
     
     private func onChangeCameraLocation(location: Location) {
@@ -210,9 +211,9 @@ class StationListViewController : BaseViewController, GMSMapViewDelegate, UISear
         dismiss(animated: true, completion: nil)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func onViewUnload() {
         mLocationManager?.cancelUpdates()
         receiveEvents(receive: false)
-        super.viewWillDisappear(animated)
+        super.onViewUnload()
     }
 }

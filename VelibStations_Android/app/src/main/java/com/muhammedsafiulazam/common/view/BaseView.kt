@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.common
+package com.muhammedsafiulazam.common.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,9 +12,6 @@ import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.location.LocationManager
-import com.muhammedsafiulazam.common.view.IBaseView
-import com.muhammedsafiulazam.common.view.IBaseViewModel
-import com.muhammedsafiulazam.common.view.IViewManager
 import kotlin.reflect.KClass
 
 /**
@@ -46,8 +43,8 @@ open class BaseView : AppCompatActivity(), IBaseView {
         return mViewModel
     }
 
-    override fun setViewModel(viewModel: KClass<IBaseViewModel>) {
-        mViewModel = ViewModelProviders.of(this).get(viewModel.java as Class<ViewModel>) as? IBaseViewModel
+    override fun setViewModel(viewModel: String) {
+        mViewModel = ViewModelProviders.of(this).get(Class.forName(viewModel) as Class<ViewModel>) as? IBaseViewModel
         mViewModel?.setView(this)
     }
 
