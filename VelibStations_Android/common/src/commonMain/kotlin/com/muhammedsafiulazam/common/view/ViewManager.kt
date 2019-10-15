@@ -1,7 +1,6 @@
 package com.muhammedsafiulazam.common.view
 
 import com.muhammedsafiulazam.common.addon.AddOn
-import kotlin.reflect.KClass
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.
@@ -10,7 +9,10 @@ import kotlin.reflect.KClass
 class ViewManager : AddOn(), IViewManager {
     private var mCurrentView: IBaseView? = null
     private var mData: MutableMap<String, Any> = mutableMapOf()
-    var loadViewMechanism: ((view: String?, info: Any?, data: Any?) -> IBaseViewModel)? = null
+    private var loadViewMechanism: ((view: String?, info: Any?, data: Any?) -> Unit)? = null
+
+    // Index.
+    private var mIndex: Int = 0
 
     override fun getCurrentView() : IBaseView? {
         return mCurrentView
@@ -22,21 +24,32 @@ class ViewManager : AddOn(), IViewManager {
 
     override fun loadView(view: String?, info: Any?, data: Any?) {
         if (loadViewMechanism == null) {
-            error("ViewManager needs loading view mechanism.")
+            error("ViewManager needs load view mechanism.")
         } else {
             loadViewMechanism?.let { it(view, info, data) }
         }
     }
 
-    override fun pop(identifier: String) : Any? {
-        val data: Any? = mData.get(identifier)
-        mData.remove(identifier)
+    override fun loadViewMechanism(mechanism: ((view: String?, info: Any?, data: Any?) -> Unit)?) {
+        loadViewMechanism = mechanism
+    }
+
+    override fun pop(identifier: String?) : Any? {
+        var data: Any? = null
+        if (identifier != null) {
+            data = mData.get(identifier)
+            mData.remove(identifier)
+        }
         return data
     }
 
-    override fun push(identifier: String, data: Any?) {
+    override fun push(data: Any?) : String? {
+        var identifier: String? = null
         if (data != null) {
+            mIndex += 1
+            identifier = "" + mIndex
             mData.put(identifier, data)
         }
+        return identifier
     }
 }

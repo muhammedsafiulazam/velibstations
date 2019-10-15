@@ -1,7 +1,6 @@
 package com.muhammedsafiulazam.common.event
 
 import com.muhammedsafiulazam.common.addon.IAddOn
-import kotlinx.coroutines.channels.ReceiveChannel
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.

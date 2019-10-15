@@ -6,7 +6,6 @@ import kotlinx.coroutines.Runnable
 import kotlinx.coroutines.launch
 import platform.darwin.dispatch_async
 import platform.darwin.dispatch_get_main_queue
-import platform.darwin.dispatch_io_t
 import platform.darwin.dispatch_queue_t
 import kotlin.coroutines.CoroutineContext
 import kotlin.native.concurrent.SharedImmutable

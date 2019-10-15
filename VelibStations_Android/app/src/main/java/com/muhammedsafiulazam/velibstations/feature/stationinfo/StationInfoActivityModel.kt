@@ -1,7 +1,11 @@
 package com.muhammedsafiulazam.velibstations.feature.stationinfo
 
+import android.app.Activity
 import android.content.Context
 import android.text.TextUtils
+import androidx.appcompat.app.AppCompatActivity
+import com.muhammedsafiulazam.common.BaseView
+import com.muhammedsafiulazam.common.BaseViewModel
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
@@ -9,34 +13,28 @@ import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.service.velib.model.Record
 import com.muhammedsafiulazam.velibstations.R
-import com.muhammedsafiulazam.velibstations.activity.BaseActivityModel
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.event.StationInfoEventType
 
-class StationInfoActivityModel : BaseActivityModel() {
-
+class StationInfoActivityModel : BaseViewModel() {
     private lateinit var mRecord: Record
-    private lateinit var mContext: Context
-
     private lateinit var mEventManager: IEventManager
     private lateinit var mEventSubscriber: IEventSubscriber
+    private lateinit var mView: BaseView
 
-    override fun onCreateActivity() {
-        super.onCreateActivity()
+    override fun onViewLoad() {
+        super.onViewLoad()
 
-        mContext = getActivity()!!
-        mRecord = getActivity()?.getData() as Record
+        // Data.
+        mRecord = getView()?.getData() as Record
 
+        // Managers.
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
 
+        // Activity.
+        mView = getView() as BaseView
+
+        // Enable events.
         receiveEvents(true)
-    }
-
-    override fun onStartActivity() {
-        super.onStartActivity()
-    }
-
-    override fun onStopActivity() {
-        super.onStopActivity()
     }
 
     private fun loadDataBusy(busy: Boolean) {
@@ -72,121 +70,121 @@ class StationInfoActivityModel : BaseActivityModel() {
 
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_name),
+                    mView.getString(R.string.stationinfo_property_name),
                     fields.name!!
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_code),
+                    mView.getString(R.string.stationinfo_property_code),
                     fields.code!!
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_state),
+                    mView.getString(R.string.stationinfo_property_state),
                     fields.state!!
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_duedate),
+                    mView.getString(R.string.stationinfo_property_duedate),
                     fields.dueDate!!
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_latitude),
+                    mView.getString(R.string.stationinfo_property_latitude),
                     fields.geolocation!!.get(0).toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_longitude),
+                    mView.getString(R.string.stationinfo_property_longitude),
                     fields.geolocation!!.get(1).toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_kioskstate),
+                    mView.getString(R.string.stationinfo_property_kioskstate),
                     fields.kioskState!!
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_creditcard),
+                    mView.getString(R.string.stationinfo_property_creditcard),
                     fields.creditCard!!
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_overflowactivation),
+                    mView.getString(R.string.stationinfo_property_overflowactivation),
                     fields.overflowActivation!!
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_maxbikeoverflow),
+                    mView.getString(R.string.stationinfo_property_maxbikeoverflow),
                     fields.maxBikeOverflow!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_nbedock),
+                    mView.getString(R.string.stationinfo_property_nbedock),
                     fields.nbEDock!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_nbfreeedock),
+                    mView.getString(R.string.stationinfo_property_nbfreeedock),
                     fields.nbFreeEDock!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_nbdock),
+                    mView.getString(R.string.stationinfo_property_nbdock),
                     fields.nbDock!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_nbfreedock),
+                    mView.getString(R.string.stationinfo_property_nbfreedock),
                     fields.nbFreeDock!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_nbebike),
+                    mView.getString(R.string.stationinfo_property_nbebike),
                     fields.nbEBike!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_nbbike),
+                    mView.getString(R.string.stationinfo_property_nbbike),
                     fields.nbBike!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_nbbikeoverflow),
+                    mView.getString(R.string.stationinfo_property_nbbikeoverflow),
                     fields.nbBikeOverflow!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_nbebikeoverflow),
+                    mView.getString(R.string.stationinfo_property_nbebikeoverflow),
                     fields.nbEBikeOverflow!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_overflow),
+                    mView.getString(R.string.stationinfo_property_overflow),
                     fields.overflow!!.toString()
                 )
             )
             propertyList.add(
                 Property(
-                    mContext.getString(R.string.stationinfo_property_densitylevel),
+                    mView.getString(R.string.stationinfo_property_densitylevel),
                     fields.densityLevel!!.toString()
                 )
             )
@@ -201,12 +199,12 @@ class StationInfoActivityModel : BaseActivityModel() {
             // Hide loader.
             loadDataBusy(false)
 
-            loadDataError(getActivity()?.getString(R.string.stationinfo_error_data))
+            loadDataError(mView?.getString(R.string.stationinfo_error_data))
         }
     }
 
-    override fun onDestroyActivity() {
+    override fun onViewUnload() {
         receiveEvents(false)
-        super.onDestroyActivity()
+        super.onViewUnload()
     }
 }

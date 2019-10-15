@@ -11,10 +11,10 @@ import com.muhammedsafiulazam.common.addon.IAddOn
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
+import com.muhammedsafiulazam.common.location.LocationManager
 import com.muhammedsafiulazam.common.view.IBaseView
 import com.muhammedsafiulazam.common.view.IBaseViewModel
 import com.muhammedsafiulazam.common.view.IViewManager
-import com.muhammedsafiulazam.velibstations.location.LocationManager
 import kotlin.reflect.KClass
 
 /**
@@ -48,6 +48,7 @@ open class BaseView : AppCompatActivity(), IBaseView {
 
     override fun setViewModel(viewModel: KClass<IBaseViewModel>) {
         mViewModel = ViewModelProviders.of(this).get(viewModel.java as Class<ViewModel>) as? IBaseViewModel
+        mViewModel?.setView(this)
     }
 
     override fun onViewLoad() {
@@ -86,20 +87,20 @@ open class BaseView : AppCompatActivity(), IBaseView {
 
     override fun onStart() {
         super.onStart()
-
         if (!isViewReady) {
             isViewReady = true
             mViewModel?.onViewLoad()
         }
-
         onViewStart()
         mViewModel?.onViewStart()
+        onChangeView()
     }
 
     override fun onResume() {
         super.onResume()
         onViewResume()
         mViewModel?.onViewResume()
+        onChangeView()
     }
 
     override fun onPause() {

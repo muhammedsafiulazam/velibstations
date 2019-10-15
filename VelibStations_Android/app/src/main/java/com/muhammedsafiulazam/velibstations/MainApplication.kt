@@ -1,13 +1,13 @@
 package com.muhammedsafiulazam.velibstations
 
+import android.app.Activity
 import android.app.Application
+import android.content.Intent
+import com.muhammedsafiulazam.common.BaseView
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
-import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.utils.DatabaseUtils
-import com.muhammedsafiulazam.velibstations.activity.ActivityManager
-import com.muhammedsafiulazam.velibstations.addon.AddOnTypeNative
-import com.muhammedsafiulazam.velibstations.location.LocationManager
+import com.muhammedsafiulazam.common.view.IViewManager
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 
 /**
@@ -21,14 +21,17 @@ class MainApplication : Application() {
         // Database driver.
         DatabaseUtils.VELIB_DB_DRIVER = AndroidSqliteDriver(DatabaseUtils.VELIB_DB_SCHEMA, this, DatabaseUtils.VELIB_DB_FILENAME)
 
-        // Addons.
-        val activityManager = ActivityManager()
-        val locationManager = LocationManager()
-        val eventManager: IEventManager = AddOnManager.getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
-        locationManager.addAddOn(AddOnType.EVENT_MANAGER, eventManager)
-        locationManager.addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, activityManager)
-        AddOnManager.addAddOn(AddOnTypeNative.ACTIVITY_MANAGER, activityManager)
-        AddOnManager.addAddOn(AddOnType.LOCATION_MANAGER, locationManager)
+        // Load view mechanism.
+        val viewManager: IViewManager = AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager
+        viewManager.loadViewMechanism { view: String?, info: Any?, data: Any? ->
+            val activity: Activity = viewManager.getCurrentView()!! as Activity
+            val intent = Intent(activity, Class.forName(view))
+            if (data != null) {
+                val identifier = viewManager.push(data)
+                intent.putExtra(BaseView.KEY_DATA_IDENTIFIER, identifier)
+            }
+            activity?.startActivity(intent)
+        }
     }
 
     override fun onTerminate() {

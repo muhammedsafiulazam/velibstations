@@ -1,6 +1,9 @@
 package com.muhammedsafiulazam.common.service
 
-import com.muhammedsafiulazam.common.service.velib.model.*
+import com.muhammedsafiulazam.common.service.velib.model.Dataset
+import com.muhammedsafiulazam.common.service.velib.model.Fields
+import com.muhammedsafiulazam.common.service.velib.model.Parameters
+import com.muhammedsafiulazam.common.service.velib.model.Record
 import io.ktor.client.features.json.serializer.KotlinxSerializer
 import kotlinx.serialization.json.Json
 import kotlin.native.concurrent.ThreadLocal

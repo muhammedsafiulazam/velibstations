@@ -7,7 +7,7 @@ import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.location.event.LocationEventType
 import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.model.Error
-import kotlinx.cinterop.*
+import kotlinx.cinterop.useContents
 import platform.CoreLocation.*
 import platform.darwin.NSObject
 

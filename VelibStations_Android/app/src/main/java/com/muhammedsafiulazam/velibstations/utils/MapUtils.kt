@@ -1,13 +1,12 @@
 package com.muhammedsafiulazam.velibstations.utils
 
 import android.content.Context
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.MapStyleOptions
 import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.velibstations.R
-import java.lang.Exception
 
 
 object MapUtils {

@@ -1,6 +1,5 @@
 package com.muhammedsafiulazam.common
 
-import android.text.TextUtils
 import androidx.lifecycle.ViewModel
 import com.muhammedsafiulazam.common.addon.AddOn
 import com.muhammedsafiulazam.common.addon.AddOnManager

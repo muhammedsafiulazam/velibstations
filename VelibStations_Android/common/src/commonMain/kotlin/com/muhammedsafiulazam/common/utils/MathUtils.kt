@@ -1,6 +1,9 @@
 package com.muhammedsafiulazam.common.utils
 
-import kotlin.math.*
+import kotlin.math.PI
+import kotlin.math.acos
+import kotlin.math.cos
+import kotlin.math.sin
 
 object MathUtils {
 

@@ -1,6 +1,5 @@
 package com.muhammedsafiulazam.velibstations.feature.stationinfo
 
-import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,23 +9,21 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
-import com.muhammedsafiulazam.common.addon.AddOnManager
+import com.muhammedsafiulazam.common.BaseView
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
-import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Record
+import com.muhammedsafiulazam.common.view.IBaseViewModel
 import com.muhammedsafiulazam.velibstations.R
-import com.muhammedsafiulazam.velibstations.activity.BaseActivity
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.event.StationInfoEventType
-import com.muhammedsafiulazam.velibstations.feature.stationlist.event.StationListEventType
 import com.muhammedsafiulazam.velibstations.utils.MapUtils
 import kotlinx.android.synthetic.main.activity_stationinfo.*
-import kotlinx.android.synthetic.main.activity_stationlist.*
+import kotlin.reflect.KClass
 
-class StationInfoActivity : BaseActivity(), OnMapReadyCallback {
+class StationInfoActivity : BaseView(), OnMapReadyCallback {
 
     private lateinit var mRecord: Record
 
@@ -43,11 +40,11 @@ class StationInfoActivity : BaseActivity(), OnMapReadyCallback {
         PropertyListAdapter(mPropertyList)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewLoad() {
+        super.onViewLoad()
 
         setContentView(R.layout.activity_stationinfo)
-        setActivityModel(StationInfoActivityModel::class.java)
+        setViewModel(StationInfoActivityModel::class as KClass<IBaseViewModel>)
 
         mContent = findViewById(android.R.id.content)
 
@@ -67,14 +64,6 @@ class StationInfoActivity : BaseActivity(), OnMapReadyCallback {
         stationinfo_ryv_fields.adapter = mPropertyListAdapter
 
         receiveEvents(true)
-    }
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onStop() {
-        super.onStop()
     }
 
     override fun onReceiveEvents(event: Event) {
@@ -162,8 +151,8 @@ class StationInfoActivity : BaseActivity(), OnMapReadyCallback {
     }
 
 
-    override fun onDestroy() {
+    override fun onViewUnload() {
         receiveEvents(false)
-        super.onDestroy()
+        super.onViewUnload()
     }
 }

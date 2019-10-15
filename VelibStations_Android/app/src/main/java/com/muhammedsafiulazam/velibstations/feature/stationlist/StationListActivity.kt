@@ -1,7 +1,6 @@
 package com.muhammedsafiulazam.velibstations.feature.stationlist
 
 import android.content.Intent
-import android.os.Bundle
 import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
@@ -9,7 +8,9 @@ import android.view.View
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.api.model.TypeFilter
@@ -17,10 +18,10 @@ import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.snackbar.Snackbar
+import com.muhammedsafiulazam.common.BaseView
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
-import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.location.ILocationManager
 import com.muhammedsafiulazam.common.location.event.LocationEventType
 import com.muhammedsafiulazam.common.model.Location
@@ -28,27 +29,24 @@ import com.muhammedsafiulazam.common.service.velib.model.Dataset
 import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Record
 import com.muhammedsafiulazam.common.utils.CoroutineUtils
+import com.muhammedsafiulazam.common.view.IBaseViewModel
+import com.muhammedsafiulazam.common.view.IViewManager
 import com.muhammedsafiulazam.velibstations.R
-import com.muhammedsafiulazam.velibstations.activity.BaseActivity
-import com.muhammedsafiulazam.velibstations.activity.IActivityManager
-import com.muhammedsafiulazam.velibstations.addon.AddOnTypeNative
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.StationInfoActivity
 import com.muhammedsafiulazam.velibstations.feature.stationlist.event.StationListEventType
 import com.muhammedsafiulazam.velibstations.utils.MapUtils
 import kotlinx.android.synthetic.main.activity_stationlist.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import java.util.*
+import kotlin.reflect.KClass
 
 
-class StationListActivity : BaseActivity(), OnMapReadyCallback {
+class StationListActivity : BaseView(), OnMapReadyCallback {
 
     private val AUTOCOMPLETE_REQUEST_CODE = 1598
 
     private lateinit var mEventManager: IEventManager
     private lateinit var mLocationManager: ILocationManager
-    private lateinit var mActivityManager: IActivityManager
+    private lateinit var mViewManager: IViewManager
 
     private var mMap: GoogleMap? = null
     private lateinit var mMapFragment: SupportMapFragment
@@ -60,11 +58,11 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
     private var mSnackbar: Snackbar? = null
     private lateinit var mSearchMenuItem: MenuItem
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewLoad() {
+        super.onViewLoad()
 
         setContentView(R.layout.activity_stationlist)
-        setActivityModel(StationListActivityModel::class.java)
+        setViewModel(StationListActivityModel::class as KClass<IBaseViewModel>)
 
         mContent = findViewById(android.R.id.content)
 
@@ -74,7 +72,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
         mLocationManager = getAddOn(AddOnType.LOCATION_MANAGER) as ILocationManager
-        mActivityManager = getAddOn(AddOnTypeNative.ACTIVITY_MANAGER) as IActivityManager
+        mViewManager = getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager
 
         Places.initialize(getApplicationContext(), getString(R.string.google_api_key), Locale.getDefault());
         mMapFragment = supportFragmentManager.findFragmentById(R.id.stationlist_mpv_map) as SupportMapFragment
@@ -94,14 +92,6 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         }
 
         return true
-    }
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onStop() {
-        super.onStop()
     }
 
     private fun loadDataRequest(location: Location) {
@@ -222,7 +212,7 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
 
     private fun onClickInfoWindow(marker: Marker) {
         val record: Record = marker.tag as Record
-        mActivityManager.loadActivity(StationInfoActivity::class.java, record)
+        mViewManager.loadView(StationInfoActivity::class.java.canonicalName, null, record)
     }
 
     private fun onChangeCameraLocation(location: Location) {
@@ -251,9 +241,9 @@ class StationListActivity : BaseActivity(), OnMapReadyCallback {
         }
     }
 
-    override fun onDestroy() {
+    override fun onViewUnload() {
         mLocationManager.cancelUpdates()
         receiveEvents(false)
-        super.onDestroy()
+        super.onViewUnload()
     }
 }

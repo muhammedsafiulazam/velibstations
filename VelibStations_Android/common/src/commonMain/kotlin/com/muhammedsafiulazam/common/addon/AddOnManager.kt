@@ -57,6 +57,7 @@ object AddOnManager : IAddOnManager {
         serviceManager.addAddOn(AddOnType.DATABASE_MANAGER, databaseManager)
         databaseManager.addAddOn(AddOnType.EVENT_MANAGER, eventManager)
         locationManager.addAddOn(AddOnType.EVENT_MANAGER, eventManager)
+        locationManager.addAddOn(AddOnType.VIEW_MANAGEER, viewManager)
 
         addOn.addAddOn(AddOnType.VIEW_MANAGEER, viewManager)
         addOn.addAddOn(AddOnType.EVENT_MANAGER, eventManager)

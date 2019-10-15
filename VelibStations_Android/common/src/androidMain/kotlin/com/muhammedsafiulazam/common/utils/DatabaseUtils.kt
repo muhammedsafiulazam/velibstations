@@ -1,7 +1,6 @@
 package com.muhammedsafiulazam.common.utils
 
 import com.muhammedsafiulazam.common.database.velib.VelibDB
-import com.muhammedsafiulazam.common.database.velib.VelibDatabase
 import com.squareup.sqldelight.db.SqlDriver
 
 /**

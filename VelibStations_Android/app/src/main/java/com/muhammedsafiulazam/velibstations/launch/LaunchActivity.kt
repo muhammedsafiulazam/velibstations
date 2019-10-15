@@ -1,11 +1,9 @@
 package com.muhammedsafiulazam.velibstations.launch
 
-import android.os.Bundle
+import com.muhammedsafiulazam.common.BaseView
+import com.muhammedsafiulazam.common.addon.AddOnType
+import com.muhammedsafiulazam.common.view.IViewManager
 import com.muhammedsafiulazam.velibstations.R
-import com.muhammedsafiulazam.velibstations.activity.BaseActivity
-import com.muhammedsafiulazam.velibstations.activity.IActivityManager
-import com.muhammedsafiulazam.velibstations.addon.AddOnTypeNative
-import com.muhammedsafiulazam.velibstations.feature.stationinfo.StationInfoActivity
 import com.muhammedsafiulazam.velibstations.feature.stationlist.StationListActivity
 
 
@@ -13,9 +11,9 @@ import com.muhammedsafiulazam.velibstations.feature.stationlist.StationListActiv
  * Created by Muhammed Safiul Azam on 24/07/2019.
  */
 
-class LaunchActivity : BaseActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class LaunchActivity : BaseView() {
+    override fun onViewLoad() {
+        super.onViewLoad()
         setContentView(R.layout.activity_launch)
     }
 
@@ -23,8 +21,8 @@ class LaunchActivity : BaseActivity() {
         super.onStart()
 
         // Entry activity.
-        val activityManager: IActivityManager = getAddOn(AddOnTypeNative.ACTIVITY_MANAGER) as IActivityManager
-        activityManager.loadActivity(StationListActivity::class.java)
+        val viewManager: IViewManager = getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager
+        viewManager.loadView(StationListActivity::class.java.canonicalName, null, null)
     }
 
     override fun onDestroy() {
