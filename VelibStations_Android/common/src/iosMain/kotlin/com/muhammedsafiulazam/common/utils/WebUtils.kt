@@ -11,7 +11,7 @@ import kotlin.native.concurrent.ThreadLocal
  * Created by Muhammed Safiul Azam on 26/08/2019.
  */
 @ThreadLocal
-actual object ServiceUtils {
+actual object WebUtils {
 
     // Http client.
     @SharedImmutable

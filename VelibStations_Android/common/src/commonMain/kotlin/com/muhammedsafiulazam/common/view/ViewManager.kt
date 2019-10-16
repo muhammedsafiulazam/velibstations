@@ -26,8 +26,8 @@ class ViewManager : AddOn(), IViewManager {
         loadView(view, null, null, data)
     }
 
-    override fun loadView(view: String?, story: String?, info: Any?, data: Any?) {
-        ViewUtils.loadView(view, story, info, data)
+    override fun loadView(view: String?, story: String?, modal: Boolean?, data: Any?) {
+        ViewUtils.loadView(view, story, modal, data)
     }
 
     override fun pop(identifier: String?) : Any? {

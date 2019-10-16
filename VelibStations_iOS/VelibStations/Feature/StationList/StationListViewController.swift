@@ -171,7 +171,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
     private func onClickInfoWindow(marker: GMSMarker) {
         let record: Record = marker.userData as! Record
         let viewManager: IViewManager? = getAddOn(type: AddOnType().VIEW_MANAGEER) as? IViewManager
-        viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_INFO, info: false, data: record)
+        viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_INFO, modal: false, data: record)
     }
     
     private func onChangeCameraLocation(location: Location) {

@@ -6,7 +6,6 @@ import kotlin.math.cos
 import kotlin.math.sin
 
 object MathUtils {
-
     fun calculateDistance(fromLat: Double, fromLng: Double, toLat: Double, toLng: Double): Double {
         val theta = fromLng - toLng
         var dist = sin(getDegreeToRadian(fromLat)) * sin(getDegreeToRadian(toLat)) + (cos(getDegreeToRadian(fromLat))

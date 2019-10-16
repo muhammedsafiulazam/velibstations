@@ -11,7 +11,7 @@ interface IViewManager : IAddOn {
     fun onChangeView(view: IBaseView?)
 
     fun loadView(view: String?, data: Any?)
-    fun loadView(view: String?, story: String?, info: Any?, data: Any?)
+    fun loadView(view: String?, story: String?, modal: Boolean?, data: Any?)
 
     // Temporary data management.
     fun pop(identifier: String?) : Any?

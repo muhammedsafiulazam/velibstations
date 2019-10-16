@@ -9,13 +9,13 @@ import platform.UIKit.UIStoryboard
 import platform.UIKit.UIViewController
 
 actual object ViewUtils {
-    actual fun loadView(view: String?, story: String?, info: Any?, data: Any?) {
+    actual fun loadView(view: String?, story: String?, modal: Boolean?, data: Any?) {
         val viewController = UIStoryboard.storyboardWithName(story!!, null).instantiateViewControllerWithIdentifier(view!!) as? UIViewController
         if (viewController != null) {
             (viewController as? IBaseView)?.setData(data)
             val viewManager: IViewManager? = AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager
             val currentViewController: UIViewController? = viewManager?.getCurrentView() as? UIViewController
-            if (currentViewController != null && info != null && !(info as Boolean)) {
+            if (currentViewController != null && modal != null && !(modal as Boolean)) {
                 currentViewController.presentModalViewController(viewController, true)
             } else {
                 UIApplication.sharedApplication.delegate?.window?.rootViewController = viewController

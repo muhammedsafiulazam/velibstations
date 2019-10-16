@@ -15,7 +15,7 @@ class ViewController: BaseView {
         super.onViewStart()
         
         let viewManager: IViewManager? = getAddOn(type: AddOnType().VIEW_MANAGEER) as? IViewManager
-        viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_LIST, info: true, data: nil)
+        viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_LIST, modal: true, data: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
