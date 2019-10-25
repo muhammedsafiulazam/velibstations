@@ -13,7 +13,7 @@ expect object CoroutineUtils {
     fun execute(dispatcher: CoroutineDispatcher, block: () -> Unit)
 
     fun runBlocking(block: suspend () -> Unit)
-    suspend fun sleep(milliseconds: Long)
+    suspend fun delay(milliseconds: Long)
 
     fun uiTests()
     fun unitTests()

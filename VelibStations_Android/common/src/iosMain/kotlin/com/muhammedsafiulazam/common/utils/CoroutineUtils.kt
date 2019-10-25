@@ -44,8 +44,8 @@ actual object CoroutineUtils {
         block()
     }
 
-    actual suspend fun sleep(milliseconds: Long) {
-        delay(milliseconds)
+    actual suspend fun delay(milliseconds: Long) {
+        kotlinx.coroutines.delay(milliseconds)
     }
 
     actual fun uiTests() {

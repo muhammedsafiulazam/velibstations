@@ -18,10 +18,11 @@ class EventManagerTest {
         eventManager.subscribe(callback = { event: Event -> Unit
             e = event
         })
+
         val event: Event = Event("", null, null)
         eventManager.send(event)
 
-        CoroutineUtils.sleep(1000)
+        CoroutineUtils.delay(1000)
         asserter.assertTrue("", e != null)
     }
 }
