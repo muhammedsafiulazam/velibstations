@@ -1,9 +1,6 @@
 package com.muhammedsafiulazam.common.utils
 
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.Runnable
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import platform.darwin.dispatch_async
 import platform.darwin.dispatch_get_main_queue
 import platform.darwin.dispatch_queue_t
@@ -19,7 +16,7 @@ actual object CoroutineUtils {
 
     // Dispatcher.
     @SharedImmutable
-    actual val DISPATCHER_MAIN: CoroutineDispatcher = NsQueueDispatcher(
+    actual var DISPATCHER_MAIN: CoroutineDispatcher = NsQueueDispatcher(
         dispatch_get_main_queue()
     )
 
@@ -41,6 +38,24 @@ actual object CoroutineUtils {
         GlobalScope.launch(dispatcher) {
             block()
         }
+    }
+
+    actual fun runBlocking(block: suspend () -> Unit) = kotlinx.coroutines.runBlocking {
+        block()
+    }
+
+    actual suspend fun sleep(milliseconds: Long) {
+        delay(milliseconds)
+    }
+
+    actual fun uiTests() {
+        CoroutineUtils.DISPATCHER_MAIN = NsQueueDispatcher(
+            dispatch_get_main_queue()
+        )
+    }
+
+    actual fun unitTests() {
+        CoroutineUtils.DISPATCHER_MAIN = CoroutineUtils.DISPATCHER_IO
     }
 }
 

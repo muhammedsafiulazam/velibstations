@@ -7,9 +7,15 @@ import kotlinx.coroutines.CoroutineDispatcher
  */
 expect object CoroutineUtils {
     // Dispatcher.
-    val DISPATCHER_MAIN: CoroutineDispatcher
+    var DISPATCHER_MAIN: CoroutineDispatcher
     val DISPATCHER_IO: CoroutineDispatcher
 
     fun execute(dispatcher: CoroutineDispatcher, block: () -> Unit)
+
+    fun runBlocking(block: suspend () -> Unit)
+    suspend fun sleep(milliseconds: Long)
+
+    fun uiTests()
+    fun unitTests()
 }
 
