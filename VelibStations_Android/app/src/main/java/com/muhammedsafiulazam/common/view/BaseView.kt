@@ -29,7 +29,12 @@ open class BaseView : AppCompatActivity(), IBaseView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         isViewReady = false
-        onViewLoad()
+        onViewLoad(savedInstanceState)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        onViewSave(outState)
     }
 
     override fun getData() : Any? {
@@ -49,7 +54,7 @@ open class BaseView : AppCompatActivity(), IBaseView {
         mViewModel?.setView(this)
     }
 
-    override fun onViewLoad() {
+    override fun onViewLoad(state: Bundle?) {
         // Essential addons for view.
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
         addAddOn(AddOnType.VIEW_MANAGEER, AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER)!!)
@@ -58,12 +63,16 @@ open class BaseView : AppCompatActivity(), IBaseView {
         // Load data.
         val dataIdentifier: String? = intent.getStringExtra(KEY_DATA_IDENTIFIER)
         if (dataIdentifier != null) {
-            val viewManager: IViewManager? = getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager?
-            mData = viewManager?.pop(dataIdentifier)
+            val viewManager: ViewManager? = getAddOn(AddOnType.VIEW_MANAGEER) as ViewManager?
+            setData(viewManager?.pop(dataIdentifier))
         }
     }
 
     override fun onViewStart() {
+
+    }
+
+    override fun onViewSave(state: Bundle?) {
 
     }
 
@@ -91,26 +100,27 @@ open class BaseView : AppCompatActivity(), IBaseView {
         }
         onViewStart()
         mViewModel?.onViewStart()
-        onChangeView()
+        onViewActive()
     }
 
     override fun onResume() {
         super.onResume()
         onViewResume()
         mViewModel?.onViewResume()
-        onChangeView()
+        onViewActive()
     }
 
     override fun onPause() {
-        super.onPause()
         onViewPause()
         mViewModel?.onViewPause()
+        onViewDeactive()
         super.onPause()
     }
 
     override fun onStop() {
         onViewStop()
         mViewModel?.onViewStop()
+        onViewDeactive()
         super.onStop()
     }
 
@@ -141,9 +151,14 @@ open class BaseView : AppCompatActivity(), IBaseView {
         super.onDestroy()
     }
 
-    private fun onChangeView() {
-        val viewManager: IViewManager? = getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager?
-        viewManager?.onChangeView(this)
+    private fun onViewActive() {
+        val viewManager: ViewManager? = getAddOn(AddOnType.VIEW_MANAGEER) as ViewManager?
+        viewManager?.onViewActive(this)
+    }
+
+    private fun onViewDeactive() {
+        val viewManager: ViewManager? = getAddOn(AddOnType.VIEW_MANAGEER) as ViewManager?
+        viewManager?.onViewDeactive(this)
     }
 
     // Permission related methods.

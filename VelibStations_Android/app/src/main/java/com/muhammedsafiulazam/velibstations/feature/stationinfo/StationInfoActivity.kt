@@ -1,5 +1,6 @@
 package com.muhammedsafiulazam.velibstations.feature.stationinfo
 
+import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,8 +41,8 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
         PropertyListAdapter(mPropertyList)
     }
 
-    override fun onViewLoad() {
-        super.onViewLoad()
+    override fun onViewLoad(state: Bundle?) {
+        super.onViewLoad(state)
 
         setContentView(R.layout.activity_stationinfo)
         setViewModel(StationInfoActivityModel::class.java.canonicalName)

@@ -45,22 +45,6 @@ class BaseView : UIViewController, IBaseView {
         addAddOn(type: AddOnType().LOCATION_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().LOCATION_MANAGER)!)
     }
     
-    func onViewStart() {
-        
-    }
-    
-    func onViewResume() {
-        // NEVER USED
-    }
-    
-    func onViewPause() {
-        // NEVER USED
-    }
-    
-    func onViewStop() {
-        // NEVER USED
-    }
-    
     func onViewUnload() {
         
     }
@@ -71,9 +55,6 @@ class BaseView : UIViewController, IBaseView {
             isViewReady = true
             mViewModel?.onViewLoad()
         }
-        onViewStart()
-        mViewModel?.onViewStart()
-        onChangeView()
     }
     
     func receiveEvents(receive: Bool) {
@@ -101,12 +82,8 @@ class BaseView : UIViewController, IBaseView {
         
         clearAddOns()
         receiveEvents(receive: false)
+        
         super.viewWillDisappear(animated)
-    }
-    
-    private func onChangeView() {
-        let viewManager: IViewManager? = getAddOn(type: AddOnType().VIEW_MANAGEER) as? IViewManager
-        viewManager?.onChangeView(view: self)
     }
     
     // Addons related methods.

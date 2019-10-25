@@ -11,15 +11,15 @@ import CommonKit
 
 class ViewController: BaseView {
     
-    override func onViewStart() {
-        super.onViewStart()
+    override func onViewLoad() {
+        super.onViewLoad()
         
         let viewManager: IViewManager? = getAddOn(type: AddOnType().VIEW_MANAGEER) as? IViewManager
         viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_LIST, modal: true, data: nil)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func onViewUnload() {
+        super.onViewUnload()
     }
 }
 

@@ -43,11 +43,6 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
         
         receiveEvents(receive: true)
         
-        self.navigationController?.title = "Hi"
-    }
-
-    override func onViewStart() {
-        super.onViewStart()
         loadDataRequest()
     }
     

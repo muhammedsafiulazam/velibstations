@@ -1,6 +1,7 @@
 package com.muhammedsafiulazam.velibstations.feature.stationlist
 
 import android.content.Intent
+import android.os.Bundle
 import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
@@ -58,8 +59,8 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
     private var mSnackbar: Snackbar? = null
     private lateinit var mSearchMenuItem: MenuItem
 
-    override fun onViewLoad() {
-        super.onViewLoad()
+    override fun onViewLoad(state: Bundle?) {
+        super.onViewLoad(state)
 
         setContentView(R.layout.activity_stationlist)
         setViewModel(StationListActivityModel::class.java.canonicalName)

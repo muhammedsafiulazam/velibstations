@@ -41,6 +41,11 @@ kotlin {
         implementation ("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlin_serialization_version")
     }
 
+    sourceSets["commonTest"].dependencies {
+        implementation ('org.jetbrains.kotlin:kotlin-test')
+        implementation ('org.jetbrains.kotlin:kotlin-test-junit')
+    }
+
     sourceSets["androidMain"].dependencies {
         implementation ("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_stdlib_version")
         implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version")
@@ -56,6 +61,11 @@ kotlin {
         implementation 'com.google.android.gms:play-services-location:17.0.0'
     }
 
+    sourceSets["androidTest"].dependencies {
+        implementation ('org.jetbrains.kotlin:kotlin-test')
+        implementation ('org.jetbrains.kotlin:kotlin-test-junit')
+    }
+
     sourceSets["iosMain"].dependencies {
         implementation ("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_stdlib_version")
         implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$kotlinx_coroutines_version")
@@ -67,6 +77,11 @@ kotlin {
         implementation ("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlin_serialization_version")
 
         implementation ("com.squareup.sqldelight:ios-driver:$sqldelight_version")
+    }
+
+    sourceSets["iosTest"].dependencies {
+        implementation ('org.jetbrains.kotlin:kotlin-test')
+        implementation ('org.jetbrains.kotlin:kotlin-test-junit')
     }
 }
 

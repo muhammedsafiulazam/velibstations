@@ -48,10 +48,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
         mLocationManager = getAddOn(type: AddOnType().LOCATION_MANAGER) as? ILocationManager
         
         receiveEvents(receive: true)
-    }
-    
-    override func onViewStart() {
-        super.onViewStart()
+        
         mLocationManager?.requestUpdates()
     }
     
