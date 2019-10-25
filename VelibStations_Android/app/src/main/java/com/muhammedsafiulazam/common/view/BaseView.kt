@@ -12,7 +12,6 @@ import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.location.LocationManager
-import com.muhammedsafiulazam.common.utils.ViewUtils.KEY_DATA_IDENTIFIER
 import kotlin.reflect.KClass
 
 /**
@@ -61,7 +60,7 @@ open class BaseView : AppCompatActivity(), IBaseView {
         addAddOn(AddOnType.LOCATION_MANAGER, AddOnManager.getAddOn(AddOnType.LOCATION_MANAGER)!!)
 
         // Load data.
-        val dataIdentifier: String? = intent.getStringExtra(KEY_DATA_IDENTIFIER)
+        val dataIdentifier: String? = intent.getStringExtra(ViewManager.KEY_DATA_IDENTIFIER)
         if (dataIdentifier != null) {
             val viewManager: ViewManager? = getAddOn(AddOnType.VIEW_MANAGEER) as ViewManager?
             setData(viewManager?.pop(dataIdentifier))

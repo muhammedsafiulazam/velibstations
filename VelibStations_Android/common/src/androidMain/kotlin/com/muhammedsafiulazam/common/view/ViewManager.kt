@@ -1,6 +1,16 @@
 package com.muhammedsafiulazam.common.view
 
-actual class ViewManager : BaseViewManager() {
+import android.app.Activity
+import android.content.Intent
+import com.muhammedsafiulazam.common.addon.AddOnManager
+import com.muhammedsafiulazam.common.addon.AddOnType
+
+actual class ViewManager : BaseViewManager(), IViewManager {
+    companion object {
+        private val TAG: String = "VIEW_MANAGER_"
+        val KEY_DATA_IDENTIFIER: String = TAG + "KEY_DATA_IDENTIFIER"
+    }
+
     private var mIndex: Int = 0
     private var mData: MutableMap<String, Any> = mutableMapOf()
     private var mCurrentView: IBaseView? = null
@@ -16,6 +26,23 @@ actual class ViewManager : BaseViewManager() {
     fun onViewDeactive(view: IBaseView?) {
         if (view == mCurrentView) {
             mCurrentView = null
+        }
+    }
+
+    override fun loadView(view: String?) {
+        loadView(view, null)
+    }
+
+    override fun loadView(view: String?, data: Any?) {
+        val viewManager: ViewManager? = AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER) as? ViewManager
+        val activity: Activity? = viewManager?.getCurrentView() as? Activity
+        if (activity != null) {
+            val intent = Intent(activity, Class.forName(view))
+            if (data != null) {
+                val identifier = viewManager?.push(data)
+                intent.putExtra(KEY_DATA_IDENTIFIER, identifier)
+            }
+            activity?.startActivity(intent)
         }
     }
 

@@ -15,7 +15,7 @@ class ViewController: BaseView {
         super.onViewLoad()
         
         let viewManager: IViewManager? = getAddOn(type: AddOnType().VIEW_MANAGEER) as? IViewManager
-        viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_LIST, modal: true, data: nil)
+        viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_LIST)
     }
     
     override func onViewUnload() {
