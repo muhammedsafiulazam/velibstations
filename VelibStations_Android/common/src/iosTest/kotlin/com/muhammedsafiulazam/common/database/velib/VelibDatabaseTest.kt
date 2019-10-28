@@ -1,6 +1,7 @@
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.database.IDatabaseManager
+import com.muhammedsafiulazam.common.database.velib.event.VelibDatabaseEventType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.service.velib.model.Dataset
@@ -21,7 +22,9 @@ class VelibDatabaseTest {
 
         val eventManager: IEventManager = AddOnManager.getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
         eventManager.subscribe(callback = { event: Event -> Unit
-            e = event
+            if (event.type.equals(VelibDatabaseEventType.ADD_DATA)) {
+                e = event
+            }
         })
 
         val databaseManager: IDatabaseManager = AddOnManager.getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager
