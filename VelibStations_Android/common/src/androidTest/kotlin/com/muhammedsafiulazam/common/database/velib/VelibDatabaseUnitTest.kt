@@ -1,3 +1,4 @@
+import android.content.Context
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.database.IDatabaseManager
@@ -6,14 +7,20 @@ import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.service.velib.model.Dataset
 import com.muhammedsafiulazam.common.utils.CoroutineUtils
+import com.muhammedsafiulazam.common.utils.DatabaseUtils
+import com.squareup.sqldelight.android.AndroidSqliteDriver
+import io.mockk.mockk
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.asserter
 
-class VelibDatabaseTest {
+class VelibDatabaseUnitTest {
     @BeforeTest
     fun beforeTest() {
         CoroutineUtils.unitTests()
+
+        // Database driver.
+        DatabaseUtils.VELIB_DB_DRIVER = AndroidSqliteDriver(DatabaseUtils.VELIB_DB_SCHEMA, mockk<Context>(), DatabaseUtils.VELIB_DB_FILENAME)
     }
 
     @Test

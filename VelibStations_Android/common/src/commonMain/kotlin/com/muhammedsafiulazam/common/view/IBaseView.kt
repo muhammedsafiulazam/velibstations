@@ -1,7 +1,6 @@
 package com.muhammedsafiulazam.common.view
 
 import com.muhammedsafiulazam.common.addon.IAddOn
-import kotlin.reflect.KClass
 
 expect interface IBaseView : IAddOn {
     fun getData() : Any?

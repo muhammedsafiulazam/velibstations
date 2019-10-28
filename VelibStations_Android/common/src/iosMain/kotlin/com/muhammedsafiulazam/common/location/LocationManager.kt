@@ -9,7 +9,6 @@ import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.model.Error
 import kotlinx.cinterop.useContents
 import platform.CoreLocation.*
-import platform.UIKit.UIApplication
 import platform.darwin.NSObject
 
 actual class LocationManager : AddOn(), ILocationManager {

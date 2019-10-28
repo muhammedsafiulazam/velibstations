@@ -1,8 +1,6 @@
 package com.muhammedsafiulazam.velibstations.feature.stationlist
 
 import android.text.TextUtils
-import com.muhammedsafiulazam.common.view.BaseView
-import com.muhammedsafiulazam.common.view.BaseViewModel
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.database.IDatabaseManager
 import com.muhammedsafiulazam.common.database.velib.event.VelibDatabaseEventType
@@ -11,6 +9,8 @@ import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.IServiceManager
 import com.muhammedsafiulazam.common.service.velib.event.VelibServiceEventType
+import com.muhammedsafiulazam.common.view.BaseView
+import com.muhammedsafiulazam.common.view.BaseViewModel
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.feature.stationlist.event.StationListEventType
 

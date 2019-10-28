@@ -1,6 +1,5 @@
 package com.muhammedsafiulazam.common.view
 
-import android.os.Bundle
 import com.muhammedsafiulazam.common.addon.IAddOn
 
 actual interface IBaseViewModel : IAddOn {

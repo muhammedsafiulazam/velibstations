@@ -12,7 +12,6 @@ import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.location.LocationManager
-import kotlin.reflect.KClass
 
 /**
  * Created by Muhammed Safiul Azam on 24/07/2019.

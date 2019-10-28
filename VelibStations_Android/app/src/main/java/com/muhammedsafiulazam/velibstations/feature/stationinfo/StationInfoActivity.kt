@@ -10,19 +10,17 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
-import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.model.Location
 import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Record
-import com.muhammedsafiulazam.common.view.IBaseViewModel
+import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.event.StationInfoEventType
 import com.muhammedsafiulazam.velibstations.utils.MapUtils
 import kotlinx.android.synthetic.main.activity_stationinfo.*
-import kotlin.reflect.KClass
 
 class StationInfoActivity : BaseView(), OnMapReadyCallback {
 

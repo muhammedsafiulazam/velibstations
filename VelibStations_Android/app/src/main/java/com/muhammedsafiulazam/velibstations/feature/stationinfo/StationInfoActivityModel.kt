@@ -1,13 +1,13 @@
 package com.muhammedsafiulazam.velibstations.feature.stationinfo
 
 import android.text.TextUtils
-import com.muhammedsafiulazam.common.view.BaseView
-import com.muhammedsafiulazam.common.view.BaseViewModel
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.event.IEventSubscriber
 import com.muhammedsafiulazam.common.service.velib.model.Record
+import com.muhammedsafiulazam.common.view.BaseView
+import com.muhammedsafiulazam.common.view.BaseViewModel
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.event.StationInfoEventType
 

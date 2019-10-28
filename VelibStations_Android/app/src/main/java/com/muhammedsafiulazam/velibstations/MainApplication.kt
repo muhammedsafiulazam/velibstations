@@ -1,13 +1,8 @@
 package com.muhammedsafiulazam.velibstations
 
-import android.app.Activity
 import android.app.Application
-import android.content.Intent
-import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.common.addon.AddOnManager
-import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.utils.DatabaseUtils
-import com.muhammedsafiulazam.common.view.IViewManager
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 
 /**

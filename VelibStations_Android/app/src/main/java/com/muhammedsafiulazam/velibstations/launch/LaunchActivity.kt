@@ -1,8 +1,8 @@
 package com.muhammedsafiulazam.velibstations.launch
 
 import android.os.Bundle
-import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.common.addon.AddOnType
+import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.common.view.IViewManager
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.feature.stationlist.StationListActivity
