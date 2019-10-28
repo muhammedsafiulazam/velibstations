@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.tests;
+package com.muhammedsafiulazam.test;
 
 import android.view.View;
 

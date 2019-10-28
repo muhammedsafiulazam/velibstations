@@ -1,9 +1,9 @@
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
 import com.muhammedsafiulazam.common.event.Event
-import com.muhammedsafiulazam.tests.BaseUITest
-import com.muhammedsafiulazam.tests.IAfterWait
-import com.muhammedsafiulazam.tests.IBeforeWait
+import com.muhammedsafiulazam.test.BaseUITest
+import com.muhammedsafiulazam.test.IAfterDelay
+import com.muhammedsafiulazam.test.IBeforeDelay
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.StationInfoActivity
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.event.StationInfoEventType
 import org.junit.Rule
@@ -22,11 +22,11 @@ class StationInfoUITest : BaseUITest() {
 
     @Test
     fun loadStationInfo(){
-        wait(StationInfoEventType.LOAD_DATA_RESPONSE, object : IBeforeWait {
+        delay(StationInfoEventType.LOAD_DATA_RESPONSE, object : IBeforeDelay {
             override fun beforeWait() {
             }
 
-        }, object : IAfterWait {
+        }, object : IAfterDelay {
             override fun afterWait(events: List<Event>) {
             }
         })

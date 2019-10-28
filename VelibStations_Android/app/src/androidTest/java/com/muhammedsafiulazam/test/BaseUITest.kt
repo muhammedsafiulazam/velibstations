@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.tests
+package com.muhammedsafiulazam.test
 
 import android.app.Activity
 import android.content.Context
@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit
 open class BaseUITest {
 
     private val MAX_WAIT_TIME_MILLIS: Long = 5000 // 5 secs
-    private val MAX_WAIT_TIME_REACHED: String = "Max wait time reached while waiting for mEvents."
+    private val MAX_WAIT_TIME_REACHED: String = "Max delay time reached while waiting for mEvents."
     private val EXCEPTION_OCCURRED = "Exception occurred, please check log for stacktrace.";
 
     private val mEvents: MutableList<Event> = mutableListOf()
@@ -75,18 +75,18 @@ open class BaseUITest {
         assertTrue(currentActivity != null && currentActivity::class.java.equals(activity::class.java))
     }
 
-    fun wait(eventType: String, beforeWait: IBeforeWait? = null, afterWait: IAfterWait? = null) {
-        wait(Arrays.asList(eventType), beforeWait, afterWait)
+    fun delay(eventType: String, beforeWait: IBeforeDelay? = null, afterWait: IAfterDelay? = null) {
+        delay(Arrays.asList(eventType), beforeWait, afterWait)
     }
 
-    fun wait(eventTypes: List<String>, beforeWait: IBeforeWait? = null, afterWait: IAfterWait? = null) {
+    fun delay(eventTypes: List<String>, beforeWait: IBeforeDelay? = null, afterWait: IAfterDelay? = null) {
         clear()
         this.mEventTypes.addAll(eventTypes)
 
         // Count down latch.
         mCountDownLatch = CountDownLatch(eventTypes.size)
 
-        // Before wait.
+        // Before delay.
         try {
             beforeWait?.beforeWait()
         } catch (e: Exception) {
@@ -94,14 +94,14 @@ open class BaseUITest {
             mCountDownLatch!!.countDown()
         }
 
-        // On wait.
+        // On delay.
         if (mCountDownLatch!!.getCount() > 0) {
             if (!mCountDownLatch!!.await(MAX_WAIT_TIME_MILLIS, TimeUnit.MILLISECONDS)) {
                 Assert.fail(MAX_WAIT_TIME_REACHED)
             }
         }
 
-        // After wait.
+        // After delay.
         if (afterWait != null) {
             afterWait.afterWait(mEvents)
         }
