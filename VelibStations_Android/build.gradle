@@ -8,6 +8,8 @@ buildscript {
     ext.kotlin_serialization_version = "0.11.1"
     ext.sqldelight_version = "1.1.4"
     ext.mockk_version = "1.9.3"
+    ext.mockito_version = "2.19.0"
+    ext.arbitrater_version = "0.0.6"
 
     repositories {
         google()

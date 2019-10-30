@@ -103,9 +103,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-idling-resource:3.1.0'
 
 
-    // Mockito
-    implementation ("io.mockk:mockk:$mockk_version")
-    testImplementation "org.mockito:mockito-core:2.19.0"
+    // Mock.
+    androidTestImplementation ("org.mockito:mockito-core:$mockito_version")
+    androidTestImplementation ("io.mockk:mockk-android:$mockk_version")
+    androidTestImplementation ("com.tyro.oss:arbitrater:$arbitrater_version")
 }
 
 androidExtensions {
