@@ -6,7 +6,7 @@ buildscript {
     ext.ktor_version = '1.2.3'
     ext.kotlinx_coroutines_version = "1.2.2"
     ext.kotlin_serialization_version = "0.11.1"
-    ext.sqldelight_version = "1.1.4"
+    ext.sqldelight_version = '1.2.0'
     ext.mockk_version = "1.9.3"
     ext.mockito_version = "2.19.0"
     ext.arbitrater_version = "0.0.6"
@@ -17,7 +17,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:3.6.0-beta02'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -31,6 +31,13 @@ allprojects {
         google()
         jcenter()
         maven { url "https://kotlin.bintray.com/kotlinx" }
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            // Auto value annotations quick fix.
+            force("com.google.auto.value:auto-value-annotations:1.6.3")
+        }
     }
 }
 
