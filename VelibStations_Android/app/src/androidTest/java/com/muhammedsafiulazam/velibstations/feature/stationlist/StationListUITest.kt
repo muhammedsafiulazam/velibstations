@@ -44,10 +44,16 @@ class StationListUITest : BaseUITest() {
                 val intent = Intent(getContext(), StationListActivity::class.java)
                 mActivityTestRule.launchActivity(intent)
                 allowPermissions()
+
+                // Basic tests.
+                onView(withId(R.id.stationlist_pgb_loader)).check(matches(isDisplayed()))
             }
 
         }, object : IAfterDelay {
             override fun afterWait(events: List<Event>) {
+
+                // Basic tests.
+                onView(withId(R.id.stationlist_pgb_loader)).check(matches(not(isDisplayed())))
             }
         })
     }
