@@ -1,19 +1,31 @@
 version: 2
 
 reference:
+  docker_image: &docker_image
+    circleci/android:api-25-alpha
+  directory_checkout: &directory_checkout
+    ~/velibstations
+  directory_android: &directory_android
+    ~/velibstations/VelibStations_Android
+  #directory_ios: &directory_android
+    #~/velibstations/VelibStations_iOS
   gradle_cache: &gradle_cache
     jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "common/build.gradle" }}
+  emulator_setup: &emulator_setup
+    sdkmanager "system-images;android-25;google_apis;x86" && echo "no" | avdmanager create avd -n test -k "system-images;android-25;google_apis;x86"
+  emulator_launch: &emulator_launch
+    emulator -avd test -no-audio -no-boot-anim -no-window -no-accel -verbose
 
 jobs:
-  tests_android_unit:
-    working_directory: ~/velibstations/VelibStations_Android
+  tests_common_unit:
+    working_directory: *directory_android
     docker:
-      - image: circleci/android:api-25-alpha
+      - image: *docker_image
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
       - checkout:
-          path: ~/velibstations
+          path: *directory_checkout
       - run: yes | sdkmanager --licenses || exit 0
       - run: yes | sdkmanager --update || exit 0
       - restore_cache:
@@ -30,7 +42,7 @@ jobs:
           key: *gradle_cache
       - run:
           name: Run Tests
-          command: ./gradlew lint test
+          command: ./gradlew :common:test
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/reports
           destination: reports
@@ -38,15 +50,15 @@ jobs:
           path: app/build/test-results
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
 
-  tests_android_ui:
-    working_directory: ~/velibstations/VelibStations_Android
+  tests_android_unit:
+    working_directory: *directory_android
     docker:
-      - image: circleci/android:api-25-alpha
+      - image: *docker_image
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
       - checkout:
-          path: ~/velibstations
+          path: *directory_checkout
       - run: yes | sdkmanager --licenses || exit 0
       - run: yes | sdkmanager --update || exit 0
       - restore_cache:
@@ -61,19 +73,57 @@ jobs:
           paths:
             - ~/.gradle
           key: *gradle_cache
+      - run:
+          name: Run Tests
+          command: ./gradlew :app:test
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: app/build/reports
+          destination: reports
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: app/build/test-results
+      # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
 
+  tests_android_ui:
+    working_directory: *directory_android
+    docker:
+      - image: *docker_image
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout:
+          path: *directory_checkout
+      - run: sudo apt-get update
+      - run: sudo apt-get install libx11-dev
+      - run: sudo apt-get install libxcomposite1
+      - run: sudo apt-get install libxcursor-dev
+      - run: sudo apt-get install pulseaudio
+      - run: yes | sdkmanager --licenses || exit 0
+      - run: yes | sdkmanager --update || exit 0
+      - restore_cache:
+          key: *gradle_cache
+      #      - run:
+      #         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
+      #         command: sudo chmod +x ./gradlew
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: *gradle_cache
       - run:
           name: Setup emulator
-          command: sdkmanager "system-images;android-25;google_apis;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-25;google_apis;armeabi-v7a"
+          command: *emulator_setup
       - run:
           name: Launch emulator
-          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel on
+          command: *emulator_launch
           background: true
       - run:
           name: Wait emulator
           command: |
             circle-android wait-for-boot
             adb shell input keyevent 82
+          no_output_timeout: 10m
       - run:
           name: Run Tests
           command: ./gradlew :app:connectedDebugAndroidTest
@@ -88,4 +138,6 @@ workflows:
   version: 2
   tests_android:
     jobs:
-      - tests_android_ui
+      - tests_common_unit
+      - tests_android_unit
+      #- tests_android_ui
