@@ -92,26 +92,25 @@ open class BaseView : AppCompatActivity(), IBaseView {
 
     override fun onStart() {
         super.onStart()
+        onViewActive()
+
         if (!isViewReady) {
             isViewReady = true
             mViewModel?.onViewLoad()
         }
         onViewStart()
         mViewModel?.onViewStart()
-        onViewActive()
     }
 
     override fun onResume() {
         super.onResume()
         onViewResume()
         mViewModel?.onViewResume()
-        onViewActive()
     }
 
     override fun onPause() {
         onViewPause()
         mViewModel?.onViewPause()
-        onViewDeactive()
         super.onPause()
     }
 

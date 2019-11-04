@@ -17,6 +17,15 @@ import org.junit.Assert
 import java.util.*
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
+import java.nio.file.Files.exists
+import android.R.attr.clickable
+import android.R.attr.checkable
+import android.os.Build
+import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
+import androidx.test.uiautomator.UiDevice
+import androidx.test.uiautomator.UiObjectNotFoundException
+import androidx.test.uiautomator.UiSelector
+import java.nio.file.Files.exists
 
 /**
  * Created by Muhammed Safiul Azam on 29/07/2019.
@@ -118,6 +127,21 @@ open class BaseUITest {
         if(mEventTypes.contains(event.type)) {
             mEventTypes.remove(event.type)
             mCountDownLatch?.countDown()
+        }
+    }
+
+    fun allowPermissions() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            val device = UiDevice.getInstance(getInstrumentation())
+            val allowPermissions = device.findObject(UiSelector().text("ALLOW"))
+            if (allowPermissions.exists()) {
+                try {
+                    allowPermissions.click()
+                } catch (e: UiObjectNotFoundException) {
+                    e.printStackTrace()
+                }
+
+            }
         }
     }
 }

@@ -36,19 +36,16 @@ class StationInfoUITest : BaseUITest() {
         delay(StationInfoEventType.LOAD_DATA_RESPONSE, object : IBeforeDelay {
             override fun beforeWait() {
                 val intent = Intent(getContext(), StationInfoActivity::class.java)
-
                 val viewManager: ViewManager = AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER) as ViewManager
                 val record: Record = Record::class.arbitraryInstance()
                 val identifier: String = viewManager.push(record) as String
                 intent.putExtra(ViewManager.KEY_DATA_IDENTIFIER, identifier)
-
                 mActivityTestRule.launchActivity(intent)
+                allowPermissions()
             }
 
         }, object : IAfterDelay {
             override fun afterWait(events: List<Event>) {
-
-                Espresso.onView(ViewMatchers.withId(R.id.stationinfo_ryv_fields)).check(RecyclerViewAssertion.withItemCount(Matchers.greaterThan(0)))
             }
         })
     }
