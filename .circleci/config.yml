@@ -1,6 +1,11 @@
 version: 2
+
+reference:
+  gradle_cache: &gradle_cache
+    jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "common/build.gradle" }}
+
 jobs:
-  build_unit:
+  tests_android_unit:
     working_directory: ~/velibstations/VelibStations_Android
     docker:
       - image: circleci/android:api-25-alpha
@@ -12,7 +17,7 @@ jobs:
       - run: yes | sdkmanager --licenses || exit 0
       - run: yes | sdkmanager --update || exit 0
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "common/build.gradle" }}
+          key: *gradle_cache
       #      - run:
       #         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
       #         command: sudo chmod +x ./gradlew
@@ -22,7 +27,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "common/build.gradle" }}
+          key: *gradle_cache
       - run:
           name: Run Tests
           command: ./gradlew lint test
@@ -33,8 +38,7 @@ jobs:
           path: app/build/test-results
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
 
-
-  build_ui:
+  tests_android_ui:
     working_directory: ~/velibstations/VelibStations_Android
     docker:
       - image: circleci/android:api-25-alpha
@@ -46,7 +50,7 @@ jobs:
       - run: yes | sdkmanager --licenses || exit 0
       - run: yes | sdkmanager --update || exit 0
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "common/build.gradle" }}
+          key: *gradle_cache
       #      - run:
       #         name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
       #         command: sudo chmod +x ./gradlew
@@ -56,7 +60,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}-{{ checksum  "common/build.gradle" }}
+          key: *gradle_cache
 
       - run:
           name: Setup emulator
@@ -66,15 +70,17 @@ jobs:
           command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel on
           background: true
       - run:
-          name: Wait emulator
-          command: |
-      - run:
           name: Run Tests
-          command: ./gradlew connectedAndroidTest
-
+          command: ./gradlew :app:connectedAndroidTest
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/reports
           destination: reports
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: app/build/test-results
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
+
+workflows:
+  version: 2
+  tests_android:
+    jobs:
+      - tests_android_ui
