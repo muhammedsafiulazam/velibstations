@@ -43,7 +43,7 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
         
         receiveEvents(receive: true)
         
-        loadDataRequest()
+        requestLoadData()
     }
     
     private func zoomOnRecord(record: Record) {
@@ -68,20 +68,8 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
         marker.map = self.mMapView
     }
     
-    override func onReceiveEvents(event: Event) {
-        super.onReceiveEvents(event: event)
-        
-        if (StationInfoEventType.LOAD_DATA_BUSY == event.type) {
-            updateLoader(show: event.data as! Bool)
-        } else if (StationInfoEventType.LOAD_DATA_ERROR == event.type) {
-            updateMessage(message: "StationInfo.Error.Data".localized())
-        } else if (StationInfoEventType.LOAD_DATA_RESPONSE == event.type) {
-            updateView(properties: event.data as? NSArray)
-        }
-    }
-    
-    private func loadDataRequest() {
-        let event = Event(type: StationInfoEventType.LOAD_DATA_REQUEST, data: nil, error: nil)
+    private func requestLoadData() {
+        let event = Event(type: StationInfoEventType.REQUEST_LOAD_DATA, data: nil, error: nil)
         mEventManager?.send(event: event)
     }
     
@@ -137,7 +125,7 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
     }
     
     private func onClickRetry() {
-        loadDataRequest()
+        requestLoadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -149,6 +137,18 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
         let property = mProperties.object(at: indexPath.row)
         cell.updateView(property: property as! Property)
         return cell
+    }
+    
+    override func onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event: event)
+        
+        if (StationInfoEventType.UPDATE_LOADER == event.type) {
+            updateLoader(show: event.data as! Bool)
+        } else if (StationInfoEventType.UPDATE_MESSAGE == event.type) {
+            updateMessage(message: "StationInfo.Error.Data".localized())
+        } else if (StationInfoEventType.RESPONSE_LOAD_DATA == event.type) {
+            updateView(properties: event.data as? NSArray)
+        }
     }
     
     override func onViewUnload() {

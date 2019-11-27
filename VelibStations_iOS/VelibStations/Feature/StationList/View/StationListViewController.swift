@@ -67,33 +67,6 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
         onChangeCameraLocation(location: location)
     }
     
-    private func loadDataRequest(location: Location) {
-        let event = Event(type: StationListEventType.LOAD_DATA_REQUEST, data: location, error: nil)
-        mEventManager?.send(event: event)
-    }
-    
-    override func onReceiveEvents(event: Event) {
-        super.onReceiveEvents(event: event)
-        
-        if(LocationEventType().REQUEST_UPDATES == event.type) {
-            if (event.error != nil) {
-                updateMessage(message: "StationList.Error.Location".localized())
-            }
-        } else if (LocationEventType().UPDATE_LOCATION == event.type) {
-            if (mUserLocation == nil) {
-                mUserLocation = event.data as? Location
-                MapUtils.zoomOnLocation(map: mMapView, location: mUserLocation!)
-            }
-        } else if (StationListEventType.LOAD_DATA_BUSY == event.type) {
-            updateLoader(show: event.data as! Bool)
-        } else if (StationListEventType.LOAD_DATA_ERROR == event.type) {
-            updateMessage(message: "StationList.Error.Data".localized())
-        } else if (StationListEventType.LOAD_DATA_RESPONSE == event.type) {
-            mDataset = event.data as? Dataset
-            updateView(dataset: mDataset)
-        }
-    }
-    
     private func updateLoader(show: Bool) {
         if (show) {
             mActivityIndicatorView.startAnimating()
@@ -125,6 +98,11 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
                 mSnackbar = nil
             }
         }
+    }
+    
+    private func requestLoadData(location: Location) {
+        let event = Event(type: StationListEventType.REQUEST_LOAD_DATA, data: location, error: nil)
+        mEventManager?.send(event: event)
     }
     
     private func addMarker(record: Record) {
@@ -173,7 +151,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
     
     private func onChangeCameraLocation(location: Location) {
         mCameraLocation = Location(latitude: location.latitude, longitude: location.longitude)
-        loadDataRequest(location: location)
+        requestLoadData(location: location)
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -206,6 +184,28 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
     
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event: event)
+        
+        if(LocationEventType().REQUEST_UPDATES == event.type) {
+            if (event.error != nil) {
+                updateMessage(message: "StationList.Error.Location".localized())
+            }
+        } else if (LocationEventType().UPDATE_LOCATION == event.type) {
+            if (mUserLocation == nil) {
+                mUserLocation = event.data as? Location
+                MapUtils.zoomOnLocation(map: mMapView, location: mUserLocation!)
+            }
+        } else if (StationListEventType.UPDATE_LOADER == event.type) {
+            updateLoader(show: event.data as! Bool)
+        } else if (StationListEventType.UPDATE_MESSAGE == event.type) {
+            updateMessage(message: "StationList.Error.Data".localized())
+        } else if (StationListEventType.RESPONSE_LOAD_DATA == event.type) {
+            mDataset = event.data as? Dataset
+            updateView(dataset: mDataset)
+        }
     }
     
     override func onViewUnload() {

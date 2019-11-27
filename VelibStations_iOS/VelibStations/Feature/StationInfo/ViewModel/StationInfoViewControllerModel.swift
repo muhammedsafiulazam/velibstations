@@ -24,27 +24,27 @@ class StationInfoViewControllerModel : BaseViewModel {
     }
     
     
-    private func loadDataBusy(busy: Bool) {
-        let event = Event(type: StationInfoEventType.LOAD_DATA_BUSY, data: busy, error: nil)
+    private func updateLoader(show: Bool) {
+        let event = Event(type: StationInfoEventType.UPDATE_LOADER, data: show, error: nil)
         mEventManager?.send(event: event)
     }
     
-    private func loadDataError(error: String?) {
-        let event = Event(type: StationInfoEventType.LOAD_DATA_ERROR, data: error, error: nil)
+    private func updateMessage(message: String?) {
+        let event = Event(type: StationInfoEventType.UPDATE_MESSAGE, data: message, error: nil)
         mEventManager?.send(event: event)
     }
     
-    private func loadDataResponse(response: Any?) {
-        let event = Event(type: StationInfoEventType.LOAD_DATA_RESPONSE, data: response, error: nil)
+    private func responseLoadData(response: Any?) {
+        let event = Event(type: StationInfoEventType.RESPONSE_LOAD_DATA, data: response, error: nil)
         mEventManager?.send(event: event)
     }
     
     override func onReceiveEvents(event: Event) {
         super.onReceiveEvents(event: event)
         
-        if (StationInfoEventType.LOAD_DATA_REQUEST == event.type) {
+        if (StationInfoEventType.REQUEST_LOAD_DATA == event.type) {
             // Show loader.
-            loadDataBusy(busy: true)
+            updateLoader(show: true)
             onCreatePropertyList(record: mRecord)
         }
     }
@@ -78,7 +78,7 @@ class StationInfoViewControllerModel : BaseViewModel {
         properties.add(Property(title: "StationInfo.Property.NB.Overflow".localized(), value: (fields?.overflow)!))
         properties.add(Property(title: "StationInfo.Property.Density.Level".localized(), value: (fields?.densityLevel)!))
         
-        loadDataResponse(response: properties)
+        responseLoadData(response: properties)
     }
     
     override func onViewUnload() {

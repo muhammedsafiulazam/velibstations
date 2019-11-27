@@ -15,7 +15,6 @@ class StationListViewControllerModel : BaseViewModel {
     private var mServiceManager: IServiceManager? = nil
     private var mDatabaseManager: IDatabaseManager? = nil
 
-    
     override func onViewLoad() {
         super.onViewLoad()
         
@@ -26,27 +25,27 @@ class StationListViewControllerModel : BaseViewModel {
         receiveEvents(receive: true)
     }
     
-    private func loadDataBusy(busy: Bool) {
-        let event = Event(type: StationListEventType.LOAD_DATA_BUSY, data: busy, error: nil)
+    private func updateLoader(show: Bool) {
+        let event = Event(type: StationListEventType.UPDATE_LOADER, data: show, error: nil)
         mEventManager?.send(event: event)
     }
     
-    private func loadDataError(error: String?) {
-        let event = Event(type: StationListEventType.LOAD_DATA_ERROR, data: error, error: nil)
+    private func updateMessage(message: String?) {
+        let event = Event(type: StationListEventType.UPDATE_MESSAGE, data: message, error: nil)
         mEventManager?.send(event: event)
     }
     
-    private func loadDataResponse(response: Any?) {
-        let event = Event(type: StationListEventType.LOAD_DATA_RESPONSE, data: response, error: nil)
+    private func responseLoadData(response: Any?) {
+        let event = Event(type: StationListEventType.RESPONSE_LOAD_DATA, data: response, error: nil)
         mEventManager?.send(event: event)
     }
     
     override func onReceiveEvents(event: Event) {
         super.onReceiveEvents(event: event)
         
-        if (StationListEventType.LOAD_DATA_REQUEST == event.type) {
+        if (StationListEventType.REQUEST_LOAD_DATA == event.type) {
             // Show loader.
-            loadDataBusy(busy: true)
+            updateLoader(show: true)
             
             mLocation = event.data as? Location
             
@@ -55,29 +54,29 @@ class StationListViewControllerModel : BaseViewModel {
         } else if (VelibServiceEventType().GET_DATA == event.type) {
             if (event.error != nil) {
                 // Show loader.
-                loadDataBusy(busy: true)
+                updateLoader(show: true)
                 
                 // Call database.
                 mDatabaseManager?.getVelibDatabase().getData(latitude: mLocation!.latitude, longitude: mLocation!.longitude, radius: Constants().DEFAULT_RADIUS)
             } else {
                 // Hide loader.
-                loadDataBusy(busy: false)
+                updateLoader(show: false)
                 
                 // Load data.
-                loadDataResponse(response: event.data)
+                responseLoadData(response: event.data)
             }
         } else if (VelibDatabaseEventType().GET_DATA == event.type) {
             if (event.error != nil) {
                 // Hide loader.
-                loadDataBusy(busy: true)
+                updateLoader(show: true)
                 
-                loadDataError(error: "StationList.Error.Data".localized())
+                updateMessage(message: "StationList.Error.Data".localized())
             } else {
                 // Hide loader.
-                loadDataBusy(busy: false)
+                updateLoader(show: false)
                 
                 // Load data.
-                loadDataResponse(response: event.data)
+                responseLoadData(response: event.data)
             }
         }
     }

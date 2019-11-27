@@ -143,6 +143,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		028591A5238EC86000B95282 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02E76D382344DCCB00A105FB /* StationInfoViewController.swift */,
+				02B1E4F5234DE65700CC3050 /* PropertyTableCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		028591A6238EC87E00B95282 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02B1E4FA234DEE3F00CC3050 /* Property.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		028591A7238EC88B00B95282 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				02E76D3A2344DCD800A105FB /* StationInfoViewControllerModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		028591A8238EC89B00B95282 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02E76D342344DBAD00A105FB /* StationListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		028591A9238EC8A600B95282 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		02A1D6092316B973004E5C52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,9 +343,9 @@
 		02E76D322344DB8B00A105FB /* StationList */ = {
 			isa = PBXGroup;
 			children = (
+				028591A9238EC8A600B95282 /* ViewModel */,
+				028591A8238EC89B00B95282 /* View */,
 				02D9B184234B93520065339C /* Event */,
-				02E76D342344DBAD00A105FB /* StationListViewController.swift */,
-				02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */,
 			);
 			path = StationList;
 			sourceTree = "<group>";
@@ -312,11 +353,10 @@
 		02E76D332344DB9500A105FB /* StationInfo */ = {
 			isa = PBXGroup;
 			children = (
+				028591A7238EC88B00B95282 /* ViewModel */,
+				028591A6238EC87E00B95282 /* Model */,
+				028591A5238EC86000B95282 /* View */,
 				02B1E4F7234DECD500CC3050 /* Event */,
-				02E76D382344DCCB00A105FB /* StationInfoViewController.swift */,
-				02E76D3A2344DCD800A105FB /* StationInfoViewControllerModel.swift */,
-				02B1E4F5234DE65700CC3050 /* PropertyTableCell.swift */,
-				02B1E4FA234DEE3F00CC3050 /* Property.swift */,
 			);
 			path = StationInfo;
 			sourceTree = "<group>";
