@@ -1,11 +1,16 @@
-package com.muhammedsafiulazam.test
+package com.muhammedsafiulazam.velibstations.core
 
 import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
+import android.os.Build
 import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry
 import androidx.test.runner.lifecycle.Stage
+import androidx.test.uiautomator.UiDevice
+import androidx.test.uiautomator.UiObjectNotFoundException
+import androidx.test.uiautomator.UiSelector
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
 import com.muhammedsafiulazam.common.event.Event
@@ -17,15 +22,6 @@ import org.junit.Assert
 import java.util.*
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
-import java.nio.file.Files.exists
-import android.R.attr.clickable
-import android.R.attr.checkable
-import android.os.Build
-import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
-import androidx.test.uiautomator.UiDevice
-import androidx.test.uiautomator.UiObjectNotFoundException
-import androidx.test.uiautomator.UiSelector
-import java.nio.file.Files.exists
 
 /**
  * Created by Muhammed Safiul Azam on 29/07/2019.
@@ -84,11 +80,11 @@ open class BaseUITest {
         assertTrue(currentActivity != null && currentActivity::class.java.equals(activity::class.java))
     }
 
-    fun delay(eventType: String, beforeWait: IBeforeDelay? = null, afterWait: IAfterDelay? = null) {
-        delay(Arrays.asList(eventType), beforeWait, afterWait)
+    fun wait(eventType: String, beforeWait: IBeforeWait? = null, afterWait: IAfterWait? = null) {
+        wait(Arrays.asList(eventType), beforeWait, afterWait)
     }
 
-    fun delay(eventTypes: List<String>, beforeWait: IBeforeDelay? = null, afterWait: IAfterDelay? = null) {
+    fun wait(eventTypes: List<String>, beforeWait: IBeforeWait? = null, afterWait: IAfterWait? = null) {
         clear()
         this.mEventTypes.addAll(eventTypes)
 

@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.test
+package com.muhammedsafiulazam.velibstations.core
 
 import com.muhammedsafiulazam.common.event.Event
 
@@ -6,6 +6,6 @@ import com.muhammedsafiulazam.common.event.Event
  * Created by Muhammed Safiul Azam on 29/07/2019.
  */
 
-interface IAfterDelay {
+interface IAfterWait {
     fun afterWait(events: List<Event>)
 }

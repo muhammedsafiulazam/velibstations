@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.velibstations.feature.stationinfo
+package com.muhammedsafiulazam.velibstations.feature.stationinfo.view
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -19,6 +19,8 @@ import com.muhammedsafiulazam.common.service.velib.model.Record
 import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.event.StationInfoEventType
+import com.muhammedsafiulazam.velibstations.feature.stationinfo.model.Property
+import com.muhammedsafiulazam.velibstations.feature.stationinfo.viewmodel.StationInfoActivityModel
 import com.muhammedsafiulazam.velibstations.utils.MapUtils
 import kotlinx.android.synthetic.main.activity_stationinfo.*
 
@@ -36,7 +38,9 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
 
     private val mPropertyList: MutableList<Property> = mutableListOf()
     private val mPropertyListAdapter: PropertyListAdapter by lazy {
-        PropertyListAdapter(mPropertyList)
+        PropertyListAdapter(
+            mPropertyList
+        )
     }
 
     override fun onViewLoad(state: Bundle?) {
@@ -65,20 +69,6 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
         receiveEvents(true)
     }
 
-    override fun onReceiveEvents(event: Event) {
-        super.onReceiveEvents(event)
-
-        if (TextUtils.equals(StationInfoEventType.LOAD_DATA_BUSY, event.type)) {
-            updateLoader(event.data as Boolean)
-        }
-        else if (TextUtils.equals(StationInfoEventType.LOAD_DATA_ERROR, event.type)) {
-            updateMessage(getString(R.string.stationinfo_error_data))
-        }
-        else if (TextUtils.equals(StationInfoEventType.LOAD_DATA_RESPONSE, event.type)) {
-            updateView(event.data as List<Property>)
-        }
-    }
-
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         MapUtils.initializeStaticMap(this, mMap!!)
@@ -97,11 +87,11 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
         mMap?.addMarker(markerOptions)
 
         // Load data.
-        loadDataRequest()
+        requestLoadData()
     }
 
-    private fun loadDataRequest() {
-        val event = Event(StationInfoEventType.LOAD_DATA_REQUEST, null, null)
+    private fun requestLoadData() {
+        val event = Event(StationInfoEventType.REQUEST_LOAD_DATA, null, null)
         mEventManager.send(event)
     }
 
@@ -113,10 +103,18 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
         }
     }
 
-    private fun updateMessage(message: String?) {
+    private fun updateMessage(message: Any?) {
         if (message != null) {
             updateMessage(null)
-            mSnackbar = Snackbar.make(mContent, message, Snackbar.LENGTH_INDEFINITE)
+
+            var text: String? = ""
+            if (message is Int) {
+                text = getString(message)
+            } else if (message is String) {
+                text = message
+            }
+
+            mSnackbar = Snackbar.make(mContent, text!!, Snackbar.LENGTH_INDEFINITE)
             mSnackbar?.setAction(R.string.stationinfo_button_retry, View.OnClickListener {
                 onClickRetry()
             })
@@ -141,14 +139,27 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
         updateLoader(false)
     }
 
+    override fun onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event)
+
+        if (TextUtils.equals(StationInfoEventType.UPDATE_LOADER, event.type)) {
+            updateLoader(event.data as Boolean)
+        }
+        else if (TextUtils.equals(StationInfoEventType.UPDATE_MESSAGE, event.type)) {
+            updateMessage(getString(R.string.stationinfo_error_data))
+        }
+        else if (TextUtils.equals(StationInfoEventType.RESPONSE_LOAD_DATA, event.type)) {
+            updateView(event.data as List<Property>)
+        }
+    }
+
     private fun onClickRetry() {
         if (mMap == null) {
             mMapFragment.getMapAsync(this)
         } else {
-            loadDataRequest()
+            requestLoadData()
         }
     }
-
 
     override fun onViewUnload() {
         receiveEvents(false)

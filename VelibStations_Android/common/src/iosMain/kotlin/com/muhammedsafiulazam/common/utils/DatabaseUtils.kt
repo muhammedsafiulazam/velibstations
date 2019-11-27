@@ -12,15 +12,7 @@ import kotlin.native.concurrent.ThreadLocal
  */
 @ThreadLocal
 actual object DatabaseUtils {
-    // Schema.
+    // Velib database driver.
     @SharedImmutable
-    actual val VELIB_DB_SCHEMA: SqlDriver.Schema = VelibDB.Schema
-
-    // Filename.
-    @SharedImmutable
-    actual val VELIB_DB_FILENAME: String = "velib.db"
-
-    // Driver.
-    @SharedImmutable
-    actual var VELIB_DB_DRIVER: SqlDriver? = NativeSqliteDriver(VELIB_DB_SCHEMA, VELIB_DB_FILENAME)
+    actual val VELIB_DB_DRIVER: SqlDriver = NativeSqliteDriver(VelibDB.Schema, "Velib.db")
 }

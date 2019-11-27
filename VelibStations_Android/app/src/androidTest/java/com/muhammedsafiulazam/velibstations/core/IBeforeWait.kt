@@ -1,9 +1,9 @@
-package com.muhammedsafiulazam.test
+package com.muhammedsafiulazam.velibstations.core
 
 /**
  * Created by Muhammed Safiul Azam on 29/07/2019.
  */
 
-interface IBeforeDelay {
+interface IBeforeWait {
     fun beforeWait()
 }

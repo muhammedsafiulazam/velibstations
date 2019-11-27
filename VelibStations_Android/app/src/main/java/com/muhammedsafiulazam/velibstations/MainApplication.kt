@@ -12,9 +12,7 @@ import com.squareup.sqldelight.android.AndroidSqliteDriver
 class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-
-        // Database driver.
-        DatabaseUtils.VELIB_DB_DRIVER = AndroidSqliteDriver(DatabaseUtils.VELIB_DB_SCHEMA, this, DatabaseUtils.VELIB_DB_FILENAME)
+        AddOnManager.initialize(this)
     }
 
     override fun onTerminate() {

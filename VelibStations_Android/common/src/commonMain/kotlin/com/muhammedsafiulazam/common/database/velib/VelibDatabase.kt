@@ -37,13 +37,13 @@ class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
         }
     }
 
-    override fun addData(dataset: Dataset?) {
+    override fun saveData(dataset: Dataset?) {
         GlobalScope.launch(CoroutineUtils.DISPATCHER_IO) {
             dataset?.records?.forEach { record ->
-                addRecord(record)
+                saveRecord(record)
             }
 
-            val event = Event(VelibDatabaseEventType.ADD_DATA, dataset, null)
+            val event = Event(VelibDatabaseEventType.SAVE_DATA, dataset, null)
             val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
             eventManager?.send(event)
         }
@@ -99,7 +99,7 @@ class VelibDatabase(val db: VelibDB) : AddOn(), IVelibDatabase {
         return recordList
     }
 
-    private fun addRecord(record: Record?) {
+    private fun saveRecord(record: Record?) {
         val id = record?.id!!
         val fields = record?.fields!!
 

@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.velibstations.feature.stationlist
+package com.muhammedsafiulazam.velibstations.feature.stationlist.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -32,8 +32,9 @@ import com.muhammedsafiulazam.common.utils.CoroutineUtils
 import com.muhammedsafiulazam.common.view.BaseView
 import com.muhammedsafiulazam.common.view.IViewManager
 import com.muhammedsafiulazam.velibstations.R
-import com.muhammedsafiulazam.velibstations.feature.stationinfo.StationInfoActivity
+import com.muhammedsafiulazam.velibstations.feature.stationinfo.view.StationInfoActivity
 import com.muhammedsafiulazam.velibstations.feature.stationlist.event.StationListEventType
+import com.muhammedsafiulazam.velibstations.feature.stationlist.viewmodel.StationListActivityModel
 import com.muhammedsafiulazam.velibstations.utils.MapUtils
 import kotlinx.android.synthetic.main.activity_stationlist.*
 import java.util.*
@@ -93,34 +94,9 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
         return true
     }
 
-    private fun loadDataRequest(location: Location) {
-        val event = Event(StationListEventType.LOAD_DATA_REQUEST, location, null)
+    private fun requestLoadData(location: Location) {
+        val event = Event(StationListEventType.REQUEST_LOAD_DATA, location, null)
         mEventManager.send(event)
-    }
-
-    override fun onReceiveEvents(event: Event) {
-        super.onReceiveEvents(event)
-
-        if (TextUtils.equals(LocationEventType.REQUEST_UPDATES, event.type)) {
-            if (event.error != null) {
-                updateMessage(getString(R.string.stationlist_error_location))
-            } else {
-                mMap?.isMyLocationEnabled = true
-            }
-        } else if (TextUtils.equals(LocationEventType.UPDATE_LOCATION, event.type)) {
-            if (mUserLocation == null) {
-                mUserLocation = event.data as Location
-                MapUtils.zoomOnLocation(mMap!!, mUserLocation!!)
-            }
-        } else if (TextUtils.equals(StationListEventType.LOAD_DATA_BUSY, event.type)) {
-            updateLoader(event.data as Boolean)
-        } else if (TextUtils.equals(StationListEventType.LOAD_DATA_ERROR, event.type)) {
-            updateMessage(getString(R.string.stationlist_error_data))
-        }
-        else if (TextUtils.equals(StationListEventType.LOAD_DATA_RESPONSE, event.type)) {
-            mDataset = event.data as Dataset
-            updateView(mDataset)
-        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -153,10 +129,18 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
         }
     }
 
-    private fun updateMessage(message: String?) {
+    private fun updateMessage(message: Any?) {
         if (message != null) {
             updateMessage(null)
-            mSnackbar = Snackbar.make(mContent, message, Snackbar.LENGTH_INDEFINITE)
+
+            var text: String? = ""
+            if (message is Int) {
+                text = getString(message)
+            } else if (message is String) {
+                text = message
+            }
+
+            mSnackbar = Snackbar.make(mContent, text!!, Snackbar.LENGTH_INDEFINITE)
             mSnackbar?.setAction(R.string.stationlist_button_retry, View.OnClickListener {
                 onClickRetry()
             })
@@ -216,7 +200,7 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
 
     private fun onChangeCameraLocation(location: Location) {
         mCameraLocation = Location(location.latitude, location.longitude)
-        loadDataRequest(mCameraLocation!!)
+        requestLoadData(mCameraLocation!!)
     }
 
     private fun showAutocompletePlaces() {
@@ -237,6 +221,31 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
             } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
                 Snackbar.make(mContent, getString(R.string.stationlist_error_address_location), Snackbar.LENGTH_LONG)
             }
+        }
+    }
+
+    override fun onReceiveEvents(event: Event) {
+        super.onReceiveEvents(event)
+
+        if (TextUtils.equals(LocationEventType.REQUEST_UPDATES, event.type)) {
+            if (event.error != null) {
+                updateMessage(getString(R.string.stationlist_error_location))
+            } else {
+                mMap?.isMyLocationEnabled = true
+            }
+        } else if (TextUtils.equals(LocationEventType.UPDATE_LOCATION, event.type)) {
+            if (mUserLocation == null) {
+                mUserLocation = event.data as Location
+                MapUtils.zoomOnLocation(mMap!!, mUserLocation!!)
+            }
+        } else if (TextUtils.equals(StationListEventType.UPDATE_LOADER, event.type)) {
+            updateLoader(event.data as Boolean)
+        } else if (TextUtils.equals(StationListEventType.UPDATE_MESSAGE, event.type)) {
+            updateMessage(getString(R.string.stationlist_error_data))
+        }
+        else if (TextUtils.equals(StationListEventType.RESPONSE_LOAD_DATA, event.type)) {
+            mDataset = event.data as Dataset
+            updateView(mDataset)
         }
     }
 

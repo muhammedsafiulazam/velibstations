@@ -1,9 +1,10 @@
-package com.muhammedsafiulazam.velibstations.feature.stationinfo
+package com.muhammedsafiulazam.velibstations.feature.stationinfo.view
 
 import android.view.View
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.muhammedsafiulazam.velibstations.R
+import com.muhammedsafiulazam.velibstations.feature.stationinfo.model.Property
 
 /**
  * Created by Muhammed Safiul Azam on 25/07/2019.
