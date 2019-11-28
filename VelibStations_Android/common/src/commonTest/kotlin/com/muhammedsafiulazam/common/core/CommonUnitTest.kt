@@ -13,7 +13,7 @@ open class CommonUnitTest {
     @BeforeTest
     fun beforeTest() {
         CoroutineUtils.DISPATCHER_MAIN = CoroutineUtils.DISPATCHER_IO
-        // TODO - Don't make any sense.
+        // TODO - Doesn't make any sense.
         AddOnManager.initialize(this)
     }
 

@@ -19,6 +19,9 @@
 		02B5FC1323900017001544BB /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 02B5FC1223900017001544BB /* swiftgen.yml */; };
 		02B5FC1923900556001544BB /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FC1723900556001544BB /* Strings.swift */; };
 		02B5FC1A23900556001544BB /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FC1823900556001544BB /* Assets.swift */; };
+		02B5FC1D23900C55001544BB /* DatabaseManagerUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FC1C23900C55001544BB /* DatabaseManagerUnitTest.swift */; };
+		02B5FC24239015AB001544BB /* VelibDatabaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FC23239015AB001544BB /* VelibDatabaseUnitTest.swift */; };
+		02B5FC2723901B74001544BB /* UnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FC2623901B74001544BB /* UnitTest.swift */; };
 		02B63EA5234F319200E145DA /* google_map_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 02B63EA4234F319200E145DA /* google_map_style.json */; };
 		02B8BA96234399300087D8CF /* ViewID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA95234399300087D8CF /* ViewID.swift */; };
 		02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523B82302EF3600EB1080 /* AppDelegate.swift */; };
@@ -86,6 +89,9 @@
 		02B5FC1223900017001544BB /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		02B5FC1723900556001544BB /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		02B5FC1823900556001544BB /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		02B5FC1C23900C55001544BB /* DatabaseManagerUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManagerUnitTest.swift; sourceTree = "<group>"; };
+		02B5FC23239015AB001544BB /* VelibDatabaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelibDatabaseUnitTest.swift; sourceTree = "<group>"; };
+		02B5FC2623901B74001544BB /* UnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTest.swift; sourceTree = "<group>"; };
 		02B63EA4234F319200E145DA /* google_map_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = google_map_style.json; sourceTree = "<group>"; };
 		02B8BA95234399300087D8CF /* ViewID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewID.swift; sourceTree = "<group>"; };
 		02D523B52302EF3600EB1080 /* VelibStations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelibStations.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +274,40 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		02B5FC21239014DF001544BB /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				02B5FC222390157B001544BB /* Velib */,
+				02B5FC1C23900C55001544BB /* DatabaseManagerUnitTest.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		02B5FC222390157B001544BB /* Velib */ = {
+			isa = PBXGroup;
+			children = (
+				02B5FC23239015AB001544BB /* VelibDatabaseUnitTest.swift */,
+			);
+			path = Velib;
+			sourceTree = "<group>";
+		};
+		02B5FC2523901AEA001544BB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				02B5FC2823901BA4001544BB /* Core */,
+				02B5FC21239014DF001544BB /* Database */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		02B5FC2823901BA4001544BB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				02B5FC2623901B74001544BB /* UnitTest.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		02B63EA1234F304300E145DA /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +374,7 @@
 		02D523CC2302EF3800EB1080 /* VelibStationsTests */ = {
 			isa = PBXGroup;
 			children = (
+				02B5FC2523901AEA001544BB /* Common */,
 				02D523CD2302EF3800EB1080 /* VelibStationsTests.swift */,
 				02D523CF2302EF3800EB1080 /* Info.plist */,
 			);
@@ -732,6 +773,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B5FC1D23900C55001544BB /* DatabaseManagerUnitTest.swift in Sources */,
+				02B5FC2723901B74001544BB /* UnitTest.swift in Sources */,
+				02B5FC24239015AB001544BB /* VelibDatabaseUnitTest.swift in Sources */,
 				02D523CE2302EF3800EB1080 /* VelibStationsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -921,6 +965,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LD_VERIFY_BITCODE = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.muhammedsafiulazam.VelibStations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -943,6 +988,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LD_VERIFY_BITCODE = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.muhammedsafiulazam.VelibStations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -957,6 +1003,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"../VelibStations_Android/common/build/xcode-frameworks\"",
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MDFInternationalization\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MDFTextAccessibility\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
+				);
 				INFOPLIST_FILE = VelibStationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -978,6 +1034,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"../VelibStations_Android/common/build/xcode-frameworks\"",
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MDFInternationalization\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MDFTextAccessibility\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
+				);
 				INFOPLIST_FILE = VelibStationsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -998,6 +1064,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"../VelibStations_Android/common/build/xcode-frameworks\"",
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MDFInternationalization\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MDFTextAccessibility\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialComponents\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
+				);
 				INFOPLIST_FILE = VelibStationsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

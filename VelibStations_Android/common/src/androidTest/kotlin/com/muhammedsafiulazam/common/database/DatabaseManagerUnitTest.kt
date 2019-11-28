@@ -14,7 +14,7 @@ class DatabaseManagerUnitTest : AndroidUnitTest() {
      */
     fun accessVelibDatabase() {
         val databaseManager: IDatabaseManager = AddOnManager.getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager
-        val photoDatabase: IVelibDatabase? = databaseManager.getVelibDatabase()
-        asserter.assertTrue("accessVelibDatabase", photoDatabase != null)
+        val velibDatabase: IVelibDatabase? = databaseManager.getVelibDatabase()
+        asserter.assertTrue("accessVelibDatabase", velibDatabase != null)
     }
 }

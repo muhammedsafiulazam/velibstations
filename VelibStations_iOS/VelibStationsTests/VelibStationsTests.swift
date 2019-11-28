@@ -9,7 +9,7 @@
 import XCTest
 @testable import VelibStations
 
-class VelibStationsTests: XCTestCase {
+/*class VelibStationsTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -31,4 +31,4 @@ class VelibStationsTests: XCTestCase {
         }
     }
 
-}
+}*/
