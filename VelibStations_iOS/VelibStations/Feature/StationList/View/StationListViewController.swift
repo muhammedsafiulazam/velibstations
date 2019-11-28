@@ -14,8 +14,6 @@ import MaterialComponents.MaterialSnackbar
 
 class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDelegate, GMSAutocompleteViewControllerDelegate {
     
-    private let KEY_MARKER: String = "KEY_MARKER"
-    
     @IBOutlet weak var mMapView: GMSMapView!
     @IBOutlet weak var mActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var mSearchBar: UISearchBar!
@@ -42,7 +40,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
         MapUtils.initializeDynamicMap(map: mMapView)
         
         mSearchBar.delegate = self
-        mSearchBar.placeholder = "StationList.Search".localized()
+        mSearchBar.placeholder = L10n.StationList.search
         
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         mLocationManager = getAddOn(type: AddOnType().LOCATION_MANAGER) as? ILocationManager
@@ -87,7 +85,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
                 self.onClickRetry()
             }
             action.handler = actionHandler
-            action.title = "StationList.Button.Retry".localized()
+            action.title = L10n.StationList.Button.retry
             mSnackbar?.action = action
             
             MDCSnackbarManager.show(mSnackbar)
@@ -178,7 +176,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Swift.Error) {
         let snackbar = MDCSnackbarMessage()
-        snackbar.text = "StationList.Error.Address.Location".localized()
+        snackbar.text = L10n.StationList.Error.Address.location
         MDCSnackbarManager.show(snackbar)
     }
     
@@ -191,7 +189,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
         
         if(LocationEventType().REQUEST_UPDATES == event.type) {
             if (event.error != nil) {
-                updateMessage(message: "StationList.Error.Location".localized())
+                updateMessage(message: L10n.StationList.Error.location)
             }
         } else if (LocationEventType().UPDATE_LOCATION == event.type) {
             if (mUserLocation == nil) {
@@ -201,7 +199,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
         } else if (StationListEventType.UPDATE_LOADER == event.type) {
             updateLoader(show: event.data as! Bool)
         } else if (StationListEventType.UPDATE_MESSAGE == event.type) {
-            updateMessage(message: "StationList.Error.Data".localized())
+            updateMessage(message: L10n.StationList.Error.data)
         } else if (StationListEventType.RESPONSE_LOAD_DATA == event.type) {
             mDataset = event.data as? Dataset
             updateView(dataset: mDataset)

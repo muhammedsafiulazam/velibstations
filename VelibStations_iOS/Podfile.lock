@@ -60,11 +60,13 @@ PODS:
     - MaterialComponents/private/Math
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
+  - SwiftGen (6.1.0)
 
 DEPENDENCIES:
   - GoogleMaps (= 3.5.0.0)
   - GooglePlaces (= 3.5.0.0)
   - MaterialComponents/Snackbar
+  - SwiftGen (~> 6.1.0)
 
 SPEC REPOS:
   trunk:
@@ -73,6 +75,7 @@ SPEC REPOS:
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
+    - SwiftGen
 
 SPEC CHECKSUMS:
   GoogleMaps: 32ca02de09de357a10ac773f2c70f1986751392d
@@ -80,7 +83,8 @@ SPEC CHECKSUMS:
   MaterialComponents: 6aaf2be26ffa19d33c8c463ca6d6204443d8f974
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
 
-PODFILE CHECKSUM: 0bf89305e136aeafa33bcfbec68821302a3e68d8
+PODFILE CHECKSUM: 18b57e3cdb3e557881e3e8ffb594144a94c4cb45
 
 COCOAPODS: 1.8.3

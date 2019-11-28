@@ -93,7 +93,7 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
                 self.onClickRetry()
             }
             action.handler = actionHandler
-            action.title = "StationInfo.Button.Retry".localized()
+            action.title = L10n.StationInfo.Button.retry
             mSnackbar?.action = action
             
             MDCSnackbarManager.show(mSnackbar)
@@ -145,7 +145,7 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
         if (StationInfoEventType.UPDATE_LOADER == event.type) {
             updateLoader(show: event.data as! Bool)
         } else if (StationInfoEventType.UPDATE_MESSAGE == event.type) {
-            updateMessage(message: "StationInfo.Error.Data".localized())
+            updateMessage(message: L10n.StationInfo.Error.data)
         } else if (StationInfoEventType.RESPONSE_LOAD_DATA == event.type) {
             updateView(properties: event.data as? NSArray)
         }

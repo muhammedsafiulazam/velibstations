@@ -16,6 +16,9 @@
 		02B32D1D2355F76E00BEC137 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B32D1C2355F76E00BEC137 /* BaseView.swift */; };
 		02B32D1F2355FC6800BEC137 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B32D1E2355FC6800BEC137 /* BaseViewModel.swift */; };
 		02B5FC00238FD786001544BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02B5FBFE238FD786001544BB /* Localizable.strings */; };
+		02B5FC1323900017001544BB /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 02B5FC1223900017001544BB /* swiftgen.yml */; };
+		02B5FC1923900556001544BB /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FC1723900556001544BB /* Strings.swift */; };
+		02B5FC1A23900556001544BB /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5FC1823900556001544BB /* Assets.swift */; };
 		02B63EA5234F319200E145DA /* google_map_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 02B63EA4234F319200E145DA /* google_map_style.json */; };
 		02B8BA96234399300087D8CF /* ViewID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B8BA95234399300087D8CF /* ViewID.swift */; };
 		02D523B92302EF3600EB1080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D523B82302EF3600EB1080 /* AppDelegate.swift */; };
@@ -80,6 +83,9 @@
 		02B32D1E2355FC6800BEC137 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		02B5FBFF238FD786001544BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02B5FC0B238FD9DC001544BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02B5FC1223900017001544BB /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		02B5FC1723900556001544BB /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		02B5FC1823900556001544BB /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		02B63EA4234F319200E145DA /* google_map_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = google_map_style.json; sourceTree = "<group>"; };
 		02B8BA95234399300087D8CF /* ViewID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewID.swift; sourceTree = "<group>"; };
 		02D523B52302EF3600EB1080 /* VelibStations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelibStations.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +259,15 @@
 			path = StationInfo;
 			sourceTree = "<group>";
 		};
+		02B5FC162390050F001544BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				02B5FC1823900556001544BB /* Assets.swift */,
+				02B5FC1723900556001544BB /* Strings.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		02B63EA1234F304300E145DA /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +287,7 @@
 		02D523AC2302EF3600EB1080 = {
 			isa = PBXGroup;
 			children = (
+				02B5FC1223900017001544BB /* swiftgen.yml */,
 				02B32D1A2355F73800BEC137 /* Common */,
 				02A1D6152316BB79004E5C52 /* CommonKit.framework */,
 				02D523B72302EF3600EB1080 /* VelibStations */,
@@ -296,6 +312,7 @@
 		02D523B72302EF3600EB1080 /* VelibStations */ = {
 			isa = PBXGroup;
 			children = (
+				02B5FC162390050F001544BB /* Resources */,
 				02B5FC0C238FDA29001544BB /* Storyboard */,
 				02B63EA1234F304300E145DA /* Style */,
 				02B1E4F2234DE18C00CC3050 /* Extension */,
@@ -512,6 +529,7 @@
 				02D523C02302EF3800EB1080 /* Assets.xcassets in Resources */,
 				02D523BE2302EF3600EB1080 /* Main.storyboard in Resources */,
 				02D9B17F234B6CBF0065339C /* StationList.storyboard in Resources */,
+				02B5FC1323900017001544BB /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +565,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"../VelibStations_Android/common/build/xcode-frameworks\"\n./gradlew :common:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+			shellScript = "cd \"../VelibStations_Android/common/build/xcode-frameworks\"\n./gradlew :common:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n\n$PODS_ROOT/SwiftGen/bin/swiftgen config run --config $PROJECT_DIR/swiftgen.yml\n";
 		};
 		08E3AE0FD036422332E43B22 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -692,9 +710,11 @@
 			files = (
 				02D523BB2302EF3600EB1080 /* ViewController.swift in Sources */,
 				02B1E4FB234DEE3F00CC3050 /* Property.swift in Sources */,
+				02B5FC1923900556001544BB /* Strings.swift in Sources */,
 				02B1E4F6234DE65700CC3050 /* PropertyTableCell.swift in Sources */,
 				02D9B189234B94550065339C /* MapUtils.swift in Sources */,
 				02B1E4F9234DECF300CC3050 /* StationInfoEventType.swift in Sources */,
+				02B5FC1A23900556001544BB /* Assets.swift in Sources */,
 				02B32D1D2355F76E00BEC137 /* BaseView.swift in Sources */,
 				02E76D392344DCCB00A105FB /* StationInfoViewController.swift in Sources */,
 				02B8BA96234399300087D8CF /* ViewID.swift in Sources */,

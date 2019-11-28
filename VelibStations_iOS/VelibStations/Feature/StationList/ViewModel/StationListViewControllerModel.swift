@@ -70,7 +70,7 @@ class StationListViewControllerModel : BaseViewModel {
                 // Hide loader.
                 updateLoader(show: true)
                 
-                updateMessage(message: "StationList.Error.Data".localized())
+                updateMessage(message: L10n.StationList.Error.data)
             } else {
                 // Hide loader.
                 updateLoader(show: false)
