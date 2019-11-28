@@ -30,11 +30,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.muhammedsafiulazam.velibstations.feature.stationlist.StationListActivity"
+        <activity android:name="com.muhammedsafiulazam.velibstations.feature.stationlist.view.StationListActivity"
                 android:label="@string/stationlist_title"
                 />
 
-        <activity android:name="com.muhammedsafiulazam.velibstations.feature.stationinfo.StationInfoActivity"
+        <activity android:name="com.muhammedsafiulazam.velibstations.feature.stationinfo.view.StationInfoActivity"
                 android:label="@string/stationinfo_title"
                 />
     </application>

@@ -7,6 +7,12 @@ plugins {
 
 android {
     compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 26
+        targetSdkVersion 28
+    }
+
     // Access Android libraries in androidMain.
     // Add an AndroidManifest.xml according as well.
     sourceSets {

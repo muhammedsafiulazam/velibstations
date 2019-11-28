@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        AddOnManager().initialize(context: self)
+        
         var dictionary: NSDictionary?
         if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
            dictionary = NSDictionary(contentsOfFile: path)

@@ -50,15 +50,5 @@ actual object CoroutineUtils {
     actual suspend fun delay(milliseconds: Long) {
         kotlinx.coroutines.delay(milliseconds)
     }
-
-    actual fun uiTests() {
-        CoroutineUtils.DISPATCHER_MAIN = NsQueueDispatcher(
-            dispatch_get_main_queue()
-        )
-    }
-
-    actual fun unitTests() {
-        CoroutineUtils.DISPATCHER_MAIN = CoroutineUtils.DISPATCHER_IO
-    }
 }
 

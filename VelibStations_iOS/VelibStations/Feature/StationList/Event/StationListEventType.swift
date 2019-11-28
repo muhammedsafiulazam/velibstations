@@ -12,8 +12,9 @@ class StationListEventType {
     private static let TAG: String = "STATION_LIST_EVENT_TYPE_"
     
     // Types.
-    static let LOAD_DATA_REQUEST: String = TAG + "LOAD_DATA_REQUEST"
-    static let LOAD_DATA_BUSY: String = TAG + "LOAD_DATA_BUSY"
-    static let LOAD_DATA_ERROR: String = TAG + "LOAD_DATA_ERROR"
-    static let LOAD_DATA_RESPONSE: String = TAG + "LOAD_DATA_RESPONSE"
+    static let UPDATE_LOADER: String = TAG + "UPDATE_LOADER"
+    static let UPDATE_MESSAGE: String = TAG + "UPDATE_MESSAGE"
+    
+    static let REQUEST_LOAD_DATA: String = TAG + "REQUEST_LOAD_DATA"
+    static let RESPONSE_LOAD_DATA: String = TAG + "RESPONSE_LOAD_DATA"
 }

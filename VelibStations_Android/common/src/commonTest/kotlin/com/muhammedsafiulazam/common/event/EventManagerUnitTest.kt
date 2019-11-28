@@ -1,20 +1,22 @@
 import com.muhammedsafiulazam.common.addon.AddOnManager
 import com.muhammedsafiulazam.common.addon.AddOnType
+import com.muhammedsafiulazam.common.core.CommonUnitTest
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.utils.CoroutineUtils
-import kotlin.test.BeforeTest
+import com.muhammedsafiulazam.common.service.model.Error
+import kotlinx.coroutines.delay
 import kotlin.test.Test
 import kotlin.test.asserter
 
-class EventManagerUnitTest {
-    @BeforeTest
-    fun beforeTest() {
-        CoroutineUtils.unitTests()
-    }
+class EventManagerUnitTest : CommonUnitTest() {
+
+    private val DUMMY_EVENT_TYPE: String = "DUMMY_EVENT_TYPE"
+    private val DUMMY_EVENT_DATA: String = "DUMMY_EVENT_DATA"
+    private val DUMMY_EVENT_ERROR: Error = Error("", "")
 
     @Test
-    fun receiveEvents() = CoroutineUtils.runBlocking() {
+    fun exchangeEvents() = CoroutineUtils.runBlocking() {
         var e: Event? = null
 
         val eventManager: IEventManager = AddOnManager.getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
@@ -22,10 +24,13 @@ class EventManagerUnitTest {
             e = event
         })
 
-        val event: Event = Event("", null, null)
-        eventManager.send(event)
+        eventManager.send(createDummyEvent())
 
-        CoroutineUtils.delay(1000)
-        asserter.assertTrue("", e != null)
+        CoroutineUtils.delay(DELAY_MINIMUM)
+        asserter.assertTrue("exchangeEvents", e != null && e!!.data != null && e!!.error != null)
+    }
+
+    private fun createDummyEvent() : Event {
+        return Event(DUMMY_EVENT_TYPE, DUMMY_EVENT_DATA, DUMMY_EVENT_ERROR)
     }
 }

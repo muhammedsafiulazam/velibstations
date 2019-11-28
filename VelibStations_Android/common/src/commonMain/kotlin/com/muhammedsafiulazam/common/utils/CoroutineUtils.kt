@@ -14,8 +14,5 @@ expect object CoroutineUtils {
 
     fun runBlocking(block: suspend () -> Unit)
     suspend fun delay(milliseconds: Long)
-
-    fun uiTests()
-    fun unitTests()
 }
 

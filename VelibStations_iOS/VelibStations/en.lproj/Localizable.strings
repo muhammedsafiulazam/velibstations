@@ -1,0 +1,41 @@
+/*
+  Localizable.strings
+  VelibStations
+
+  Created by Safi on 09/10/2019.
+  
+*/
+
+// Station List.
+"StationList.Title" = "Velibs Stations";
+"StationList.Error.Data" = "Sorry! Failed to load data.";
+"StationList.Error.Location" = "Sorry! Failed to load location.";
+"StationList.Button.Retry" = "Retry";
+"StationList.Error.Address.Location" = "Sorry! Invalid address.";
+"StationList.Search" = "Search";
+
+// Station Info.
+"StationInfo.Title" = "Station Info";
+"StationInfo.Error.Data" = "Sorry! Failed to load data.";
+"StationInfo.Button.Retry" = "Retry";
+
+"StationInfo.Property.Name" = "Name:";
+"StationInfo.Property.Code" = "Code:";
+"StationInfo.Property.State" = "State:";
+"StationInfo.Property.Due.Date" = "Due Date:";
+"StationInfo.Property.Latitude" = "Latitude:";
+"StationInfo.Property.Longitude" = "Longitude:";
+"StationInfo.Property.Kiosk.State" = "Kiosk State:";
+"StationInfo.Property.Credit.Card" = "Credit Card:";
+"StationInfo.Property.Overflow.Activation" = "Overflow Activation:";
+"StationInfo.Property.Max.Bike.Overflow" = "Max Bike Overflow";
+"StationInfo.Property.NB.eDock" = "eDock:";
+"StationInfo.Property.NB.Free.eDock" = "Free eDock:";
+"StationInfo.Property.NB.Dock" = "Dock:";
+"StationInfo.Property.NB.Free.Dock" = "Free Dock";
+"StationInfo.Property.NB.eBike" = "eBike:";
+"StationInfo.Property.NB.Bike" = "Bike:";
+"StationInfo.Property.NB.Bike.Overflow" = "Bike Overflow:";
+"StationInfo.Property.NB.eBike.Overflow" = "eBike Overflow:";
+"StationInfo.Property.NB.Overflow" = "Overflow:";
+"StationInfo.Property.Density.Level" = "Density Level:";

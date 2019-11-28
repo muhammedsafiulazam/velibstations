@@ -2,7 +2,6 @@ package com.muhammedsafiulazam.common.service.velib
 
 import com.muhammedsafiulazam.common.addon.AddOn
 import com.muhammedsafiulazam.common.addon.AddOnType
-import com.muhammedsafiulazam.common.database.IDatabaseManager
 import com.muhammedsafiulazam.common.event.Event
 import com.muhammedsafiulazam.common.event.IEventManager
 import com.muhammedsafiulazam.common.service.ServiceClient
@@ -18,10 +17,6 @@ class VelibService(val serviceClient: ServiceClient) : AddOn(), IVelibService {
         val url = "${URL_VELIB}&geofilter.distance=${latitude}%2C${longitude}%2C${radius}&start=${index}&rows=${count}"
 
         serviceClient.call(url, callback = { response: Dataset?, error: Error? ->
-            // Save data.
-            val databaseManager: IDatabaseManager? = getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager?
-            databaseManager?.getVelibDatabase()?.addData(response)
-
             // Dispatch event.
             val event = Event(VelibServiceEventType.GET_DATA, response, error)
             val eventManager: IEventManager? = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager?
