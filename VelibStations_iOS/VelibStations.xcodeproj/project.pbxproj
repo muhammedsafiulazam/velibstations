@@ -36,6 +36,7 @@
 		02D9B183234B78400065339C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02D9B182234B78400065339C /* Keys.plist */; };
 		02D9B186234B93680065339C /* StationListEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9B185234B93680065339C /* StationListEventType.swift */; };
 		02D9B189234B94550065339C /* MapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D9B188234B94550065339C /* MapUtils.swift */; };
+		02DCBBE123AA6FFC00AD0507 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DCBBE023AA6FFC00AD0507 /* BaseModel.swift */; };
 		02E76D352344DBAD00A105FB /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D342344DBAD00A105FB /* StationListViewController.swift */; };
 		02E76D372344DBBD00A105FB /* StationListViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */; };
 		02E76D392344DCCB00A105FB /* StationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E76D382344DCCB00A105FB /* StationInfoViewController.swift */; };
@@ -112,6 +113,7 @@
 		02D9B182234B78400065339C /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		02D9B185234B93680065339C /* StationListEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListEventType.swift; sourceTree = "<group>"; };
 		02D9B188234B94550065339C /* MapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
+		02DCBBE023AA6FFC00AD0507 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		02E76D342344DBAD00A105FB /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
 		02E76D362344DBBD00A105FB /* StationListViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewControllerModel.swift; sourceTree = "<group>"; };
 		02E76D382344DCCB00A105FB /* StationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfoViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				02B32D1C2355F76E00BEC137 /* BaseView.swift */,
 				02B32D1E2355FC6800BEC137 /* BaseViewModel.swift */,
+				02DCBBE023AA6FFC00AD0507 /* BaseModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02DCBBE123AA6FFC00AD0507 /* BaseModel.swift in Sources */,
 				02D523BB2302EF3600EB1080 /* ViewController.swift in Sources */,
 				02B1E4FB234DEE3F00CC3050 /* Property.swift in Sources */,
 				02B5FC1923900556001544BB /* Strings.swift in Sources */,

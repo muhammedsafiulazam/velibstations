@@ -16,10 +16,16 @@ class BaseView : UIViewController, IBaseView {
     private var mEventSubscriber: IEventSubscriber? = nil
     private var isViewReady: Bool = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Ready flag.
         isViewReady = false
-        onViewLoad()
+        
+        // Essential addons for view.
+        addAddOn(type: AddOnType().EVENT_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER)!)
+        addAddOn(type: AddOnType().VIEW_MANAGEER, addOn: AddOnManager().getAddOn(type: AddOnType().VIEW_MANAGEER)!)
+        addAddOn(type: AddOnType().LOCATION_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().LOCATION_MANAGER)!)
     }
     
     func getData() -> Any? {
@@ -36,24 +42,14 @@ class BaseView : UIViewController, IBaseView {
     
     func setViewModel(viewModel: String) {
         mViewModel = (NSClassFromString(viewModel) as! BaseViewModel.Type).init()
-        mViewModel?.setView(view: self)
-    }
-    
-    func onViewLoad() {
-        addAddOn(type: AddOnType().EVENT_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER)!)
-        addAddOn(type: AddOnType().VIEW_MANAGEER, addOn: AddOnManager().getAddOn(type: AddOnType().VIEW_MANAGEER)!)
-        addAddOn(type: AddOnType().LOCATION_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().LOCATION_MANAGER)!)
-    }
-    
-    func onViewUnload() {
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if (!isViewReady) {
             isViewReady = true
-            mViewModel?.onViewLoad()
+            // Load viewmodel.
+            mViewModel?.onLoad()
         }
     }
     
@@ -77,8 +73,8 @@ class BaseView : UIViewController, IBaseView {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        onViewUnload()
-        mViewModel?.onViewUnload()
+        // Unload viewmodel.
+        mViewModel?.onUnload()
         
         clearAddOns()
         receiveEvents(receive: false)

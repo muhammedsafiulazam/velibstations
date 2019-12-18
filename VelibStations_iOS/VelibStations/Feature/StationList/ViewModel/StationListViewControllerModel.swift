@@ -15,8 +15,8 @@ class StationListViewControllerModel : BaseViewModel {
     private var mServiceManager: IServiceManager? = nil
     private var mDatabaseManager: IDatabaseManager? = nil
 
-    override func onViewLoad() {
-        super.onViewLoad()
+    override func onLoad() {
+        super.onLoad()
         
         mServiceManager = getAddOn(type: AddOnType().SERVICE_MANAGER) as? IServiceManager
         mDatabaseManager = getAddOn(type: AddOnType().DATABASE_MANAGER) as? IDatabaseManager
@@ -81,8 +81,8 @@ class StationListViewControllerModel : BaseViewModel {
         }
     }
     
-    override func onViewUnload() {
+    override func onUnload() {
         receiveEvents(receive: false)
-        super.onViewUnload()
+        super.onUnload()
     }
 }

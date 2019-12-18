@@ -26,15 +26,22 @@ open class BaseView : AppCompatActivity(), IBaseView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Ready flag.
         isViewReady = false
-        onViewLoad(savedInstanceState)
-    }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        onViewSave(outState)
-    }
+        // Essential addons for view.
+        addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
+        addAddOn(AddOnType.VIEW_MANAGEER, AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER)!!)
+        addAddOn(AddOnType.LOCATION_MANAGER, AddOnManager.getAddOn(AddOnType.LOCATION_MANAGER)!!)
 
+        // Load data.
+        val dataIdentifier: String? = intent.getStringExtra(ViewManager.KEY_DATA_IDENTIFIER)
+        if (dataIdentifier != null) {
+            val viewManager: ViewManager? = getAddOn(AddOnType.VIEW_MANAGEER) as ViewManager?
+            setData(viewManager?.pop(dataIdentifier))
+        }
+    }
     override fun getData() : Any? {
         return mData
     }
@@ -49,45 +56,6 @@ open class BaseView : AppCompatActivity(), IBaseView {
 
     override fun setViewModel(viewModel: String) {
         mViewModel = ViewModelProviders.of(this).get(Class.forName(viewModel) as Class<ViewModel>) as? IBaseViewModel
-        mViewModel?.setView(this)
-    }
-
-    override fun onViewLoad(state: Bundle?) {
-        // Essential addons for view.
-        addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
-        addAddOn(AddOnType.VIEW_MANAGEER, AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER)!!)
-        addAddOn(AddOnType.LOCATION_MANAGER, AddOnManager.getAddOn(AddOnType.LOCATION_MANAGER)!!)
-
-        // Load data.
-        val dataIdentifier: String? = intent.getStringExtra(ViewManager.KEY_DATA_IDENTIFIER)
-        if (dataIdentifier != null) {
-            val viewManager: ViewManager? = getAddOn(AddOnType.VIEW_MANAGEER) as ViewManager?
-            setData(viewManager?.pop(dataIdentifier))
-        }
-    }
-
-    override fun onViewStart() {
-
-    }
-
-    override fun onViewSave(state: Bundle?) {
-
-    }
-
-    override fun onViewResume() {
-
-    }
-
-    override fun onViewPause() {
-
-    }
-
-    override fun onViewStop() {
-
-    }
-
-    override fun onViewUnload() {
-
     }
 
     override fun onStart() {
@@ -96,29 +64,9 @@ open class BaseView : AppCompatActivity(), IBaseView {
 
         if (!isViewReady) {
             isViewReady = true
-            mViewModel?.onViewLoad()
+            // Load viewmodel.
+            mViewModel?.onLoad()
         }
-        onViewStart()
-        mViewModel?.onViewStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        onViewResume()
-        mViewModel?.onViewResume()
-    }
-
-    override fun onPause() {
-        onViewPause()
-        mViewModel?.onViewPause()
-        super.onPause()
-    }
-
-    override fun onStop() {
-        onViewStop()
-        mViewModel?.onViewStop()
-        onViewDeactive()
-        super.onStop()
     }
 
     fun receiveEvents(receive: Boolean) {
@@ -140,8 +88,8 @@ open class BaseView : AppCompatActivity(), IBaseView {
     }
 
     override fun onDestroy() {
-        onViewUnload()
-        mViewModel?.onViewUnload()
+        // Unload viewmodel.
+        mViewModel?.onUnload()
 
         clearAddOns()
         receiveEvents(false)

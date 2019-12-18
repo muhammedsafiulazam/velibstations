@@ -7,7 +7,4 @@ actual interface IBaseView : IAddOn {
     actual fun setData(data: Any?)
     actual fun getViewModel() : IBaseViewModel?
     actual fun setViewModel(viewModel: String)
-
-    fun onViewLoad()
-    fun onViewUnload()
 }

@@ -10,14 +10,12 @@ import CommonKit
 
 class StationInfoViewControllerModel : BaseViewModel {
     
+    private var mRecord: Record? = nil
     private var mEventManager: IEventManager? = nil
     
-    private var mRecord: Record? = nil
-    
-    override func onViewLoad() {
-        super.onViewLoad()
+    override func onLoad() {
+        super.onLoad()
         
-        mRecord = getView()?.getData() as? Record
         mEventManager = getAddOn(type: AddOnType().EVENT_MANAGER) as? IEventManager
         
         receiveEvents(receive: true)
@@ -45,6 +43,8 @@ class StationInfoViewControllerModel : BaseViewModel {
         if (StationInfoEventType.REQUEST_LOAD_DATA == event.type) {
             // Show loader.
             updateLoader(show: true)
+            
+            mRecord = event.data as? Record
             onCreatePropertyList(record: mRecord)
         }
     }
@@ -81,8 +81,8 @@ class StationInfoViewControllerModel : BaseViewModel {
         responseLoadData(response: properties)
     }
     
-    override func onViewUnload() {
+    override func onUnload() {
         receiveEvents(receive: false)
-        super.onViewUnload()
+        super.onUnload()
     }
 }

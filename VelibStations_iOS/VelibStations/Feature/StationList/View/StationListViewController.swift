@@ -27,8 +27,8 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
     
     private var mSnackbar: MDCSnackbarMessage? = nil
     
-    override func onViewLoad() {
-        super.onViewLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         setViewModel(viewModel: NSStringFromClass(StationListViewControllerModel.self))
         
@@ -206,9 +206,9 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
         }
     }
     
-    override func onViewUnload() {
+    override func viewDidDisappear(_ animated: Bool) {
         mLocationManager?.cancelUpdates()
         receiveEvents(receive: false)
-        super.onViewUnload()
+        super.viewDidDisappear(animated)
     }
 }

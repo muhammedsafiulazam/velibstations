@@ -11,15 +11,11 @@ import CommonKit
 
 class ViewController: BaseView {
     
-    override func onViewLoad() {
-        super.onViewLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         let viewManager: IViewManager? = getAddOn(type: AddOnType().VIEW_MANAGEER) as? IViewManager
         viewManager?.loadView(view: ViewID.VIEW_CONTROLLER_DEFAULT, story: ViewID.STORYBOARD_STATION_LIST)
-    }
-    
-    override func onViewUnload() {
-        super.onViewUnload()
     }
 }
 

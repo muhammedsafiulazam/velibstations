@@ -58,8 +58,8 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
     private var mSnackbar: Snackbar? = null
     private lateinit var mSearchMenuItem: MenuItem
 
-    override fun onViewLoad(state: Bundle?) {
-        super.onViewLoad(state)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_stationlist)
         setViewModel(StationListActivityModel::class.java.canonicalName)
@@ -249,9 +249,9 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
         }
     }
 
-    override fun onViewUnload() {
+    override fun onDestroy() {
         mLocationManager.cancelUpdates()
         receiveEvents(false)
-        super.onViewUnload()
+        super.onDestroy()
     }
 }

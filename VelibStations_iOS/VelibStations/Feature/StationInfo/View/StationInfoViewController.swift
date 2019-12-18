@@ -23,8 +23,8 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
     private var mRecord: Record? = nil
     private var mProperties: NSMutableArray = NSMutableArray()
     
-    override func onViewLoad() {
-        super.onViewLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         setViewModel(viewModel: NSStringFromClass(StationInfoViewControllerModel.self))
         
@@ -69,7 +69,7 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
     }
     
     private func requestLoadData() {
-        let event = Event(type: StationInfoEventType.REQUEST_LOAD_DATA, data: nil, error: nil)
+        let event = Event(type: StationInfoEventType.REQUEST_LOAD_DATA, data: mRecord, error: nil)
         mEventManager?.send(event: event)
     }
     
@@ -151,8 +151,8 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
         }
     }
     
-    override func onViewUnload() {
+    override func viewDidDisappear(_ animated: Bool) {
         receiveEvents(receive: false)
-        super.onViewUnload()
+        super.viewDidDisappear(animated)
     }
 }

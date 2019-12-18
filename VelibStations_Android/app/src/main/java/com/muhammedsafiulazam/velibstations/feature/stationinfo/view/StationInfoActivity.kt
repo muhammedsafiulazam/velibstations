@@ -43,8 +43,8 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
         )
     }
 
-    override fun onViewLoad(state: Bundle?) {
-        super.onViewLoad(state)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_stationinfo)
         setViewModel(StationInfoActivityModel::class.java.canonicalName)
@@ -91,7 +91,7 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
     }
 
     private fun requestLoadData() {
-        val event = Event(StationInfoEventType.REQUEST_LOAD_DATA, null, null)
+        val event = Event(StationInfoEventType.REQUEST_LOAD_DATA, mRecord, null)
         mEventManager.send(event)
     }
 
@@ -161,8 +161,8 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
         }
     }
 
-    override fun onViewUnload() {
+    override fun onDestroy() {
         receiveEvents(false)
-        super.onViewUnload()
+        super.onDestroy()
     }
 }

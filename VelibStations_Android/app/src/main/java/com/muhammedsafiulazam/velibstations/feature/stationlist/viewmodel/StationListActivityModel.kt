@@ -20,8 +20,8 @@ class StationListActivityModel : BaseViewModel() {
     private lateinit var mServiceManager: IServiceManager
     private lateinit var mDatabaseManager: IDatabaseManager
 
-    override fun onViewLoad() {
-        super.onViewLoad()
+    override fun onLoad() {
+        super.onLoad()
         // Managers.
         mServiceManager = getAddOn(AddOnType.SERVICE_MANAGER) as IServiceManager
         mDatabaseManager = getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager
@@ -92,8 +92,8 @@ class StationListActivityModel : BaseViewModel() {
         }
     }
 
-    override fun onViewUnload() {
+    override fun onUnload() {
         receiveEvents(false)
-        super.onViewUnload()
+        super.onUnload()
     }
 }

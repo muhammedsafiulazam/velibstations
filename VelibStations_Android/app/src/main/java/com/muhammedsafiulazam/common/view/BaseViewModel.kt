@@ -14,42 +14,32 @@ import com.muhammedsafiulazam.common.event.IEventSubscriber
  */
 
 open class BaseViewModel : ViewModel(), IBaseViewModel {
-
-    private var mView: IBaseView? = null
+    private var mModel: IBaseModel? = null
     private var mEventSubscriber: IEventSubscriber? = null
 
-    override fun getView() : IBaseView? {
-        return mView
+
+    override fun getModel(): IBaseModel? {
+        return mModel
     }
 
-    override fun setView(view: IBaseView?) {
-        mView = view
+    override fun setModel(model: String) {
+        mModel = Class.forName(model).newInstance() as IBaseModel?
     }
 
-    override fun onViewLoad() {
+    override fun onLoad() {
         // Essential addons for activity model.
         addAddOn(AddOnType.SERVICE_MANAGER, AddOnManager.getAddOn(AddOnType.SERVICE_MANAGER)!!)
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
         addAddOn(AddOnType.DATABASE_MANAGER, AddOnManager.getAddOn(AddOnType.DATABASE_MANAGER)!!)
+
+        // Load model.
+        mModel?.onLoad()
     }
 
-    override fun onViewStart() {
+    override fun onUnload() {
+        // Unload model.
+        mModel?.onUnload()
 
-    }
-
-    override fun onViewResume() {
-
-    }
-
-    override fun onViewPause() {
-
-    }
-
-    override fun onViewStop() {
-
-    }
-
-    override fun onViewUnload() {
         clearAddOns()
         receiveEvents(false)
     }

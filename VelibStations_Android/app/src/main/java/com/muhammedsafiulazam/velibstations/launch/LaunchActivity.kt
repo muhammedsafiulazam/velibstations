@@ -13,8 +13,8 @@ import com.muhammedsafiulazam.velibstations.feature.stationlist.view.StationList
  */
 
 class LaunchActivity : BaseView() {
-    override fun onViewLoad(state: Bundle?) {
-        super.onViewLoad(state)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
     }
 

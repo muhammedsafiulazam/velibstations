@@ -14,14 +14,11 @@ import com.muhammedsafiulazam.velibstations.feature.stationinfo.event.StationInf
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.model.Property
 
 class StationInfoActivityModel : BaseViewModel() {
-    private lateinit var mRecord: Record
+    private var mRecord: Record? = null
     private lateinit var mEventManager: IEventManager
 
-    override fun onViewLoad() {
-        super.onViewLoad()
-
-        // Data.
-        mRecord = getView()?.getData() as Record
+    override fun onLoad() {
+        super.onLoad()
 
         // Managers.
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
@@ -51,14 +48,15 @@ class StationInfoActivityModel : BaseViewModel() {
         if (TextUtils.equals(StationInfoEventType.REQUEST_LOAD_DATA, event.type)) {
             // Show loader.
             updateLoader(true)
+            mRecord = event.data as Record?
             onCreatePropertyList(mRecord)
         }
     }
 
-    fun onCreatePropertyList(record: Record) {
+    fun onCreatePropertyList(record: Record?) {
         try {
 
-            val fields = record.fields!!
+            val fields = record?.fields!!
             val propertyList: MutableList<Property> = mutableListOf()
 
             val viewManager: IViewManager? = AddOnManager.getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager?
@@ -202,8 +200,8 @@ class StationInfoActivityModel : BaseViewModel() {
         }
     }
 
-    override fun onViewUnload() {
+    override fun onUnload() {
         receiveEvents(false)
-        super.onViewUnload()
+        super.onUnload()
     }
 }

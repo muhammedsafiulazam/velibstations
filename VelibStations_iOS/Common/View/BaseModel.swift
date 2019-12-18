@@ -1,34 +1,26 @@
 //
-//  BaseViewModel.swift
+//  BaseModel.swift
 //  VelibStations
 //
-//  Created by Safi on 15/10/2019.
+//  Created by Safi on 18/12/2019.
 //
 
 import Foundation
-import UIKit
 import CommonKit
 
-class BaseViewModel : IBaseViewModel {
+class BaseModel: IBaseModel {
     
-    private var mModel: IBaseModel? = nil
     private var mEventSubscriber: IEventSubscriber? = nil
     
     required init() {
         
     }
     
-    func getModel() -> IBaseModel? {
-        mModel
-    }
-    
-    func setModel(model: String) {
-        mModel = (NSClassFromString(model) as! BaseModel.Type).init()
-    }
-    
     func onLoad() {
         // Essential addons for activity model.
+        addAddOn(type: AddOnType().SERVICE_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().SERVICE_MANAGER)!)
         addAddOn(type: AddOnType().EVENT_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().EVENT_MANAGER)!)
+        addAddOn(type: AddOnType().DATABASE_MANAGER, addOn: AddOnManager().getAddOn(type: AddOnType().DATABASE_MANAGER)!)
     }
     
     func onUnload() {
@@ -86,4 +78,3 @@ class BaseViewModel : IBaseViewModel {
         mAddOn.clearAddOns()
     }
 }
-
