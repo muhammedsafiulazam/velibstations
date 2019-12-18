@@ -24,16 +24,12 @@ open class BaseViewModel : ViewModel(), IBaseViewModel {
 
     override fun setModel(model: String) {
         mModel = Class.forName(model).newInstance() as IBaseModel?
+        mModel?.onLoad()
     }
 
     override fun onLoad() {
-        // Essential addons for activity model.
-        addAddOn(AddOnType.SERVICE_MANAGER, AddOnManager.getAddOn(AddOnType.SERVICE_MANAGER)!!)
+        // Essential addons.
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
-        addAddOn(AddOnType.DATABASE_MANAGER, AddOnManager.getAddOn(AddOnType.DATABASE_MANAGER)!!)
-
-        // Load model.
-        mModel?.onLoad()
     }
 
     override fun onUnload() {

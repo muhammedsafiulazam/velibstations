@@ -52,7 +52,7 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
         mContent = findViewById(android.R.id.content)
 
         updateMessage(null)
-        updateLoader(false)
+        updateLoader(true)
         updateView(null)
 
         mRecord = getData() as Record
@@ -91,12 +91,14 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
     }
 
     private fun requestLoadData() {
-        val event = Event(StationInfoEventType.REQUEST_LOAD_DATA, mRecord, null)
+        updateLoader(true)
+        val event = Event(StationInfoEventType.VIEWMODEL_REQUEST_LOAD_DATA, mRecord, null)
         mEventManager.send(event)
     }
 
     private fun updateLoader(show: Boolean) {
         if (show) {
+            updateMessage(null)
             stationinfo_pgb_loader.visibility = View.VISIBLE
         } else {
             stationinfo_pgb_loader.visibility = View.GONE
@@ -105,6 +107,7 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
 
     private fun updateMessage(message: Any?) {
         if (message != null) {
+            updateLoader(false)
             updateMessage(null)
 
             var text: String? = ""
@@ -142,13 +145,7 @@ class StationInfoActivity : BaseView(), OnMapReadyCallback {
     override fun onReceiveEvents(event: Event) {
         super.onReceiveEvents(event)
 
-        if (TextUtils.equals(StationInfoEventType.UPDATE_LOADER, event.type)) {
-            updateLoader(event.data as Boolean)
-        }
-        else if (TextUtils.equals(StationInfoEventType.UPDATE_MESSAGE, event.type)) {
-            updateMessage(getString(R.string.stationinfo_error_data))
-        }
-        else if (TextUtils.equals(StationInfoEventType.RESPONSE_LOAD_DATA, event.type)) {
+        if (TextUtils.equals(StationInfoEventType.VIEWMODEL_RESPONSE_LOAD_DATA, event.type)) {
             updateView(event.data as List<Property>)
         }
     }

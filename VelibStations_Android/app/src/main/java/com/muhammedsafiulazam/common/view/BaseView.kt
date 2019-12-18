@@ -22,13 +22,8 @@ open class BaseView : AppCompatActivity(), IBaseView {
     private var mViewModel: IBaseViewModel? = null
     private var mEventSubscriber: IEventSubscriber? = null
 
-    private var isViewReady: Boolean = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Ready flag.
-        isViewReady = false
 
         // Essential addons for view.
         addAddOn(AddOnType.EVENT_MANAGER, AddOnManager.getAddOn(AddOnType.EVENT_MANAGER)!!)
@@ -56,17 +51,12 @@ open class BaseView : AppCompatActivity(), IBaseView {
 
     override fun setViewModel(viewModel: String) {
         mViewModel = ViewModelProviders.of(this).get(Class.forName(viewModel) as Class<ViewModel>) as? IBaseViewModel
+        mViewModel?.onLoad()
     }
 
     override fun onStart() {
         super.onStart()
         onViewActive()
-
-        if (!isViewReady) {
-            isViewReady = true
-            // Load viewmodel.
-            mViewModel?.onLoad()
-        }
     }
 
     fun receiveEvents(receive: Boolean) {

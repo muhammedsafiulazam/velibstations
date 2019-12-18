@@ -4,10 +4,10 @@ object StationListEventType {
     // Tag.
     private const val TAG = "STATION_LIST_EVENT_TYPE_"
 
-    // Types.
-    const val UPDATE_LOADER: String = TAG + "UPDATE_LOADER"
-    const val UPDATE_MESSAGE: String = TAG + "UPDATE_MESSAGE"
+    // Event types.
+    const val VIEWMODEL_REQUEST_LOAD_DATA: String = TAG + "VIEWMODEL_REQUEST_LOAD_DATA"
+    const val VIEWMODEL_RESPONSE_LOAD_DATA: String = TAG + "VIEWMODEL_RESPONSE_LOAD_DATA"
 
-    const val REQUEST_LOAD_DATA: String = TAG + "REQUEST_LOAD_DATA"
-    const val RESPONSE_LOAD_DATA: String = TAG + "RESPONSE_LOAD_DATA"
+    const val MODEL_REQUEST_LOAD_DATA: String = TAG + "MODEL_REQUEST_LOAD_DATA"
+    const val MODEL_RESPONSE_LOAD_DATA: String = TAG + "MODEL_RESPONSE_LOAD_DATA"
 }

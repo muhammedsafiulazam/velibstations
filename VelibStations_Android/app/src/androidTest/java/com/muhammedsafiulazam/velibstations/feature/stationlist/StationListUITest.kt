@@ -31,7 +31,7 @@ class StationListUITest : BaseUITest() {
 
     @Test
     fun loadStationList(){
-        wait(Arrays.asList(StationListEventType.RESPONSE_LOAD_DATA), object : IBeforeWait {
+        wait(Arrays.asList(StationListEventType.VIEWMODEL_RESPONSE_LOAD_DATA), object : IBeforeWait {
             override fun beforeWait() {
                 val intent = Intent(getContext(), StationListActivity::class.java)
                 mActivityTestRule.launchActivity(intent)

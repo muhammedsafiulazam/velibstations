@@ -30,6 +30,7 @@ import com.muhammedsafiulazam.common.service.velib.model.Fields
 import com.muhammedsafiulazam.common.service.velib.model.Record
 import com.muhammedsafiulazam.common.utils.CoroutineUtils
 import com.muhammedsafiulazam.common.view.BaseView
+import com.muhammedsafiulazam.common.view.BaseViewModel
 import com.muhammedsafiulazam.common.view.IViewManager
 import com.muhammedsafiulazam.velibstations.R
 import com.muhammedsafiulazam.velibstations.feature.stationinfo.view.StationInfoActivity
@@ -62,14 +63,17 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_stationlist)
+
+        // Set view-model.
         setViewModel(StationListActivityModel::class.java.canonicalName)
 
         mContent = findViewById(android.R.id.content)
 
         updateMessage(null)
-        updateLoader(false)
+        updateLoader(true)
         updateView(null)
 
+        // Addons.
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
         mLocationManager = getAddOn(AddOnType.LOCATION_MANAGER) as ILocationManager
         mViewManager = getAddOn(AddOnType.VIEW_MANAGEER) as IViewManager
@@ -78,7 +82,7 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
         mMapFragment = supportFragmentManager.findFragmentById(R.id.stationlist_mpv_map) as SupportMapFragment
         mMapFragment.getMapAsync(this)
 
-        // Receive events.
+        // Enable events.
         receiveEvents(true)
     }
 
@@ -94,8 +98,12 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
         return true
     }
 
+    /**
+     * Request to load data.
+     */
     private fun requestLoadData(location: Location) {
-        val event = Event(StationListEventType.REQUEST_LOAD_DATA, location, null)
+        updateLoader(true)
+        val event = Event(StationListEventType.VIEWMODEL_REQUEST_LOAD_DATA, location, null)
         mEventManager.send(event)
     }
 
@@ -123,6 +131,7 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
 
     private fun updateLoader(show: Boolean) {
         if (show) {
+            updateMessage(null)
             stationlist_pgb_loader.visibility = View.VISIBLE
         } else {
             stationlist_pgb_loader.visibility = View.GONE
@@ -131,6 +140,7 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
 
     private fun updateMessage(message: Any?) {
         if (message != null) {
+            updateLoader(false)
             updateMessage(null)
 
             var text: String? = ""
@@ -226,7 +236,6 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
 
     override fun onReceiveEvents(event: Event) {
         super.onReceiveEvents(event)
-
         if (TextUtils.equals(LocationEventType.REQUEST_UPDATES, event.type)) {
             if (event.error != null) {
                 updateMessage(getString(R.string.stationlist_error_location))
@@ -238,19 +247,19 @@ class StationListActivity : BaseView(), OnMapReadyCallback {
                 mUserLocation = event.data as Location
                 MapUtils.zoomOnLocation(mMap!!, mUserLocation!!)
             }
-        } else if (TextUtils.equals(StationListEventType.UPDATE_LOADER, event.type)) {
-            updateLoader(event.data as Boolean)
-        } else if (TextUtils.equals(StationListEventType.UPDATE_MESSAGE, event.type)) {
-            updateMessage(getString(R.string.stationlist_error_data))
-        }
-        else if (TextUtils.equals(StationListEventType.RESPONSE_LOAD_DATA, event.type)) {
-            mDataset = event.data as Dataset
-            updateView(mDataset)
+        }else if (TextUtils.equals(StationListEventType.VIEWMODEL_RESPONSE_LOAD_DATA, event.type)) {
+            if (event.error != null) {
+                updateMessage(getString(R.string.stationlist_error_data))
+            } else {
+                mDataset = event.data as Dataset
+                updateView(mDataset)
+            }
         }
     }
 
     override fun onDestroy() {
         mLocationManager.cancelUpdates()
+        // Disable events.
         receiveEvents(false)
         super.onDestroy()
     }

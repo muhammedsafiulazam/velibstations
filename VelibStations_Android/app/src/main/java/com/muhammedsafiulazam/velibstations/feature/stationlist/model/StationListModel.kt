@@ -1,4 +1,4 @@
-package com.muhammedsafiulazam.velibstations.feature.stationlist.viewmodel
+package com.muhammedsafiulazam.velibstations.feature.stationlist.model
 
 import android.text.TextUtils
 import com.muhammedsafiulazam.common.addon.AddOnType
@@ -11,51 +11,54 @@ import com.muhammedsafiulazam.common.service.IServiceManager
 import com.muhammedsafiulazam.common.service.model.Error
 import com.muhammedsafiulazam.common.service.velib.event.VelibServiceEventType
 import com.muhammedsafiulazam.common.service.velib.model.Dataset
-import com.muhammedsafiulazam.common.view.BaseViewModel
-import com.muhammedsafiulazam.velibstations.R
+import com.muhammedsafiulazam.common.view.BaseModel
 import com.muhammedsafiulazam.velibstations.feature.stationlist.event.StationListEventType
-import com.muhammedsafiulazam.velibstations.feature.stationlist.model.StationListModel
 
-class StationListActivityModel : BaseViewModel() {
-    private var mLocation: Location? = null
+class StationListModel : BaseModel() {
+
     private lateinit var mEventManager: IEventManager
+    private lateinit var mServiceManager: IServiceManager
+    private lateinit var mDatabaseManager: IDatabaseManager
+
+    private var mLocation: Location? = null
 
     override fun onLoad() {
         super.onLoad()
 
-        // Set model.
-        setModel(StationListModel::class.java.canonicalName)
-
-        // Addons.
         mEventManager = getAddOn(AddOnType.EVENT_MANAGER) as IEventManager
+        mServiceManager = getAddOn(AddOnType.SERVICE_MANAGER) as IServiceManager
+        mDatabaseManager = getAddOn(AddOnType.DATABASE_MANAGER) as IDatabaseManager
 
         // Enable events.
         receiveEvents(true)
     }
 
-    /**
-     * Request to load data.
-     */
-    private fun requestLoadData(location: Location?) {
-        val event = Event(StationListEventType.MODEL_REQUEST_LOAD_DATA, location, null)
-        mEventManager.send(event)
-    }
-
-    /**
-     * Response with loaded data.
-     */
     private fun responseLoadData(response: Any?, error: Error?) {
-        val event = Event(StationListEventType.VIEWMODEL_RESPONSE_LOAD_DATA, response, error)
+        val event = Event(StationListEventType.MODEL_RESPONSE_LOAD_DATA, response, error)
         mEventManager.send(event)
     }
 
     override fun onReceiveEvents(event: Event) {
         super.onReceiveEvents(event)
-        if (TextUtils.equals(StationListEventType.VIEWMODEL_REQUEST_LOAD_DATA, event.type)) {
+        if (TextUtils.equals(StationListEventType.MODEL_REQUEST_LOAD_DATA, event.type)) {
             mLocation = event.data as Location
-            requestLoadData(mLocation)
+            // Call service.
+            mServiceManager.getVelibService().getData(mLocation!!.latitude, mLocation!!.longitude)
 
-        } else if (TextUtils.equals(StationListEventType.MODEL_RESPONSE_LOAD_DATA, event.type)) {
+        } else if (TextUtils.equals(VelibServiceEventType.GET_DATA, event.type)) {
+            if (event.error != null) {
+                // Call db.
+                mDatabaseManager.getVelibDatabase().getData(mLocation!!.latitude, mLocation!!.longitude)
+            } else {
+                // Response.
+                responseLoadData(event.data, event.error)
+
+                // Save in db.
+                mDatabaseManager.getVelibDatabase().saveData(event.data as Dataset?)
+            }
+
+        } else if (TextUtils.equals(VelibDatabaseEventType.GET_DATA, event.type)) {
+            // Response.
             responseLoadData(event.data, event.error)
         }
     }
