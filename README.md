@@ -13,7 +13,7 @@ Features:
 
 Sources:
 
-   1. Architecture: MVVM + AddOn
+   1. Architecture: SOLID + MVVM + CLEAN + AddOn
    2. Managers: Activity + Location + Service + Database + Event.
    3. Events + Callbacks ( BroadcastChannel + ReceiveChannel ).
    4. Kotlinx: Coroutine + Serializer + SQLDelight + KTor + Etc.
