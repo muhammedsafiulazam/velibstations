@@ -69,12 +69,14 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
     }
     
     private func requestLoadData() {
-        let event = Event(type: StationInfoEventType.REQUEST_LOAD_DATA, data: mRecord, error: nil)
+        updateLoader(show: true)
+        let event = Event(type: StationInfoEventType.VIEWMODEL_REQUEST_LOAD_DATA, data: mRecord, error: nil)
         mEventManager?.send(event: event)
     }
     
     private func updateLoader(show: Bool) {
         if (show) {
+            updateMessage(message: nil)
             mActivityIndicatorView.startAnimating()
         } else {
             mActivityIndicatorView.stopAnimating()
@@ -83,6 +85,7 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
     
     private func updateMessage(message: String?) {
         if (message != nil) {
+            updateLoader(show: false)
             updateMessage(message: nil)
             
             mSnackbar = MDCSnackbarMessage()
@@ -141,12 +144,7 @@ class StationInfoViewController : BaseView, UITableViewDelegate, UITableViewData
     
     override func onReceiveEvents(event: Event) {
         super.onReceiveEvents(event: event)
-        
-        if (StationInfoEventType.UPDATE_LOADER == event.type) {
-            updateLoader(show: event.data as! Bool)
-        } else if (StationInfoEventType.UPDATE_MESSAGE == event.type) {
-            updateMessage(message: L10n.StationInfo.Error.data)
-        } else if (StationInfoEventType.RESPONSE_LOAD_DATA == event.type) {
+        if (StationInfoEventType.VIEWMODEL_RESPONSE_LOAD_DATA == event.type) {
             updateView(properties: event.data as? NSArray)
         }
     }

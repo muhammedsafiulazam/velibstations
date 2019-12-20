@@ -11,10 +11,10 @@ class StationInfoEventType {
     // Tag.
     private static let TAG: String = "STATION_INFO_EVENT_TYPE_"
     
-    // Types.
-    static let UPDATE_LOADER: String = TAG + "UPDATE_LOADER"
-    static let UPDATE_MESSAGE: String = TAG + "UPDATE_MESSAGE"
+    // Event types.
+    static let VIEWMODEL_REQUEST_LOAD_DATA: String = TAG + "VIEWMODEL_REQUEST_LOAD_DATA"
+    static let VIEWMODEL_RESPONSE_LOAD_DATA: String = TAG + "VIEWMODEL_RESPONSE_LOAD_DATA"
     
-    static let REQUEST_LOAD_DATA: String = TAG + "REQUEST_LOAD_DATA"
-    static let RESPONSE_LOAD_DATA: String = TAG + "RESPONSE_LOAD_DATA"
+    static let MODEL_REQUEST_LOAD_DATA: String = TAG + "MODEL_REQUEST_LOAD_DATA"
+    static let MODEL_RESPONSE_LOAD_DATA: String = TAG + "MODEL_RESPONSE_LOAD_DATA"
 }

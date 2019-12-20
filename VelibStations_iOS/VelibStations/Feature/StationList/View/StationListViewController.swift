@@ -67,6 +67,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
     
     private func updateLoader(show: Bool) {
         if (show) {
+            updateMessage(message: nil)
             mActivityIndicatorView.startAnimating()
         } else {
             mActivityIndicatorView.stopAnimating()
@@ -75,6 +76,7 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
     
     private func updateMessage(message: String?) {
         if (message != nil) {
+            updateLoader(show: false)
             updateMessage(message: nil)
             
             mSnackbar = MDCSnackbarMessage()
@@ -99,7 +101,8 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
     }
     
     private func requestLoadData(location: Location) {
-        let event = Event(type: StationListEventType.REQUEST_LOAD_DATA, data: location, error: nil)
+        updateLoader(show: true)
+        let event = Event(type: StationListEventType.VIEWMODEL_REQUEST_LOAD_DATA, data: location, error: nil)
         mEventManager?.send(event: event)
     }
     
@@ -196,13 +199,13 @@ class StationListViewController : BaseView, GMSMapViewDelegate, UISearchBarDeleg
                 mUserLocation = event.data as? Location
                 MapUtils.zoomOnLocation(map: mMapView, location: mUserLocation!)
             }
-        } else if (StationListEventType.UPDATE_LOADER == event.type) {
-            updateLoader(show: event.data as! Bool)
-        } else if (StationListEventType.UPDATE_MESSAGE == event.type) {
-            updateMessage(message: L10n.StationList.Error.data)
-        } else if (StationListEventType.RESPONSE_LOAD_DATA == event.type) {
-            mDataset = event.data as? Dataset
-            updateView(dataset: mDataset)
+        } else if (StationListEventType.VIEWMODEL_RESPONSE_LOAD_DATA == event.type) {
+            if (event.error != nil) {
+                updateMessage(message: L10n.StationList.Error.data)
+            } else {
+                mDataset = event.data as? Dataset
+                updateView(dataset: mDataset)
+            }
         }
     }
     

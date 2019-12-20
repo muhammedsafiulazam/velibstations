@@ -24,6 +24,7 @@ class BaseViewModel : IBaseViewModel {
     
     func setModel(model: String) {
         mModel = (NSClassFromString(model) as! BaseModel.Type).init()
+        mModel?.onLoad()
     }
     
     func onLoad() {
@@ -32,6 +33,9 @@ class BaseViewModel : IBaseViewModel {
     }
     
     func onUnload() {
+        // Unload model.
+        mModel?.onUnload()
+        
         clearAddOns()
         receiveEvents(receive: false)
     }
