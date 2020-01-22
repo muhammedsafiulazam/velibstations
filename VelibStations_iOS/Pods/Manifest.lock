@@ -1,11 +1,11 @@
 PODS:
-  - GoogleMaps (3.5.0):
-    - GoogleMaps/Maps (= 3.5.0)
-  - GoogleMaps/Base (3.5.0)
-  - GoogleMaps/Maps (3.5.0):
+  - GoogleMaps (3.6.0):
+    - GoogleMaps/Maps (= 3.6.0)
+  - GoogleMaps/Base (3.6.0)
+  - GoogleMaps/Maps (3.6.0):
     - GoogleMaps/Base
-  - GooglePlaces (3.5.0):
-    - GoogleMaps/Base (= 3.5.0)
+  - GooglePlaces (3.6.0):
+    - GoogleMaps/Base (= 3.6.0)
   - MaterialComponents/AnimationTiming (92.1.0)
   - MaterialComponents/Buttons (92.1.0):
     - MaterialComponents/Elevation
@@ -63,8 +63,8 @@ PODS:
   - SwiftGen (6.1.0)
 
 DEPENDENCIES:
-  - GoogleMaps (= 3.5.0.0)
-  - GooglePlaces (= 3.5.0.0)
+  - GoogleMaps (= 3.6.0.0)
+  - GooglePlaces (= 3.6.0.0)
   - MaterialComponents/Snackbar
   - SwiftGen (~> 6.1.0)
 
@@ -78,13 +78,13 @@ SPEC REPOS:
     - SwiftGen
 
 SPEC CHECKSUMS:
-  GoogleMaps: 32ca02de09de357a10ac773f2c70f1986751392d
-  GooglePlaces: be6f19fe8aa6ff0b5bcccfa1b8805cc977ea1450
+  GoogleMaps: 82f8fe307193bb4de6ef6bf9e88f1d624b718f9d
+  GooglePlaces: 1b9d29cf3e164903d873600f511f42acdfe85294
   MaterialComponents: 6aaf2be26ffa19d33c8c463ca6d6204443d8f974
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
 
-PODFILE CHECKSUM: 18b57e3cdb3e557881e3e8ffb594144a94c4cb45
+PODFILE CHECKSUM: b788f221658d036462cde7cff55134bddd4d1068
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.8.4
